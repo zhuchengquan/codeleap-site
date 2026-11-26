@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>平台与课堂 · 码跃少儿编程</title>
+<meta name="description" content="孩子上课用的是什么平台：三类账号权限、一节课留下的 6 条记录、4 个课堂工具的用法与边界、家长端能看到与看不到什么、登录与上传故障自查。">
+<link rel="canonical" href="https://codeleap.example/platform.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="平台与课堂 · 码跃少儿编程">
+<meta property="og:description" content="孩子上课用的是什么平台：三类账号权限、一节课留下的 6 条记录、4 个课堂工具的用法与边界、家长端能看到与看不到什么、登录与上传故障自查。">
+<meta property="og:url" content="https://codeleap.example/platform.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b7bf3'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' fill='%23fff' text-anchor='middle'%3E%E7%A0%81%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f9fe;--bg-2:#eef4fd;--ink:#16213a;--muted:#56657e;--faint:#8695ab;--primary:#2b7bf3;--primary-soft:rgba(43,123,243,.10);--accent:#f0663a;--accent-soft:rgba(240,102,58,.10);--ok:#12a06a;--ok-soft:rgba(18,160,106,.12);--glass:rgba(255,255,255,.72);--glass-2:rgba(255,255,255,.94);--glass-head:rgba(255,255,255,.88);--stroke:rgba(27,52,92,.10);--stroke-2:rgba(27,52,92,.16);--shadow:0 12px 32px rgba(26,48,84,.07);--radius:18px;--radius-sm:13px;--font-display:"Nunito","Noto Sans SC",sans-serif;--font-body:"Nunito","Noto Sans SC",sans-serif;--font-mono:"JetBrains Mono","Noto Sans SC",monospace}
+[data-theme="dark"]{--bg:#0d1524;--bg-2:#101a2c;--ink:#eef3fb;--muted:#a7b6cc;--faint:#7d8ea8;--primary:#5a9dff;--primary-soft:rgba(90,157,255,.14);--accent:#ff8660;--accent-soft:rgba(255,134,96,.12);--ok:#4dd49b;--ok-soft:rgba(77,212,155,.15);--glass:rgba(255,255,255,.06);--glass-2:rgba(255,255,255,.10);--glass-head:rgba(18,28,46,.88);--stroke:rgba(255,255,255,.10);--stroke-2:rgba(255,255,255,.18);--shadow:0 16px 40px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.78;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:11px 18px;background:var(--glass-head);border-bottom:1px solid var(--stroke);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);flex-wrap:wrap}
+.nav{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.nav::-webkit-scrollbar{display:none}
+@media(max-width:820px){.nav{order:9;flex:1 1 100%;padding:2px 0 0}}
+.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:15.5px}
+.brand .m{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:var(--primary);color:#fff;font-size:14px;font-weight:700}
+.tagline{font-size:12.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted)}
+.sp{flex:1}
+.icon-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 16px;border:1px solid var(--stroke-2);border-radius:999px;background:var(--glass);color:var(--ink);font-family:inherit;font-size:13.5px;white-space:nowrap}
+.btn.active{border-color:var(--primary);color:var(--primary);background:var(--primary-soft);font-weight:600}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 22px;border-radius:999px;background:var(--accent);color:#fff;font-size:14.5px;box-shadow:0 10px 24px rgba(240,102,58,.26);border:0;cursor:pointer;font-family:inherit}
+.wrap{max-width:1020px;margin:0 auto;padding:32px 20px 60px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.05em;color:var(--primary)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--primary);font-style:normal}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+@media(max-width:880px){.hero{grid-template-columns:1fr;gap:24px}}
+.hero.solo{grid-template-columns:1fr}
+.hero.solo .lead{max-width:760px}
+.hero h1{margin:11px 0 13px;font-size:clamp(26px,3.8vw,37px);font-weight:800;line-height:1.3}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{margin:0;font-size:14.5px;line-height:1.9;color:var(--muted);max-width:520px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:22px}
+@media(max-width:640px){.nums{grid-template-columns:repeat(2,1fr)}}
+.n{padding:13px 15px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.n b{display:block;font-family:var(--font-display);font-size:21px;font-weight:800;color:var(--accent);line-height:1.15;font-variant-numeric:tabular-nums}
+.n span{display:block;font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.6}
+.shot{border-radius:var(--radius);overflow:hidden;border:1px solid var(--stroke);box-shadow:var(--shadow);margin:0}
+.shot img{display:block;width:100%;height:auto}
+.sec{margin-top:44px}
+.sec-head span{display:block;font-size:12px;letter-spacing:.06em;color:var(--faint);margin-bottom:6px}
+.sec-head h2{margin:0;font-size:clamp(20px,2.6vw,26px);font-weight:700;line-height:1.35}
+.sec-head p{margin:8px 0 0;font-size:13.5px;line-height:1.8;color:var(--muted);max-width:660px}
+.box{padding:22px 24px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);box-shadow:var(--shadow)}
+.box h4{margin:0 0 10px;font-size:14.5px;font-weight:700}
+.box ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.box li{font-size:13px;line-height:1.85;color:var(--muted)}
+.box li b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+@media(max-width:860px){.three{grid-template-columns:1fr}}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.tiles.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.tiles{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.tiles.g2{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tiles{grid-template-columns:1fr}}
+@media(max-width:600px){.tiles.g2{grid-template-columns:1fr}}
+.tile{padding:19px 21px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.tile i{font-family:var(--font-mono);font-size:11.5px;font-style:normal;color:var(--accent);letter-spacing:.02em}
+.tile h4{margin:8px 0 6px;font-size:15px;font-weight:700;line-height:1.4}
+.tile p{margin:0;font-size:13px;line-height:1.82;color:var(--muted)}
+.matrix{width:100%;border-collapse:collapse;margin-top:20px;font-size:13px;background:var(--glass-2);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.matrix th,.matrix td{border-bottom:1px solid var(--stroke);padding:11px 13px;text-align:left;vertical-align:top;line-height:1.7}
+.matrix thead th{background:var(--primary-soft);color:var(--ink);font-weight:600;font-size:12.5px;white-space:nowrap}
+.matrix tbody th{background:var(--bg-2);font-weight:600;white-space:nowrap;color:var(--ink)}
+.matrix td{color:var(--muted)}
+.matrix td b{color:var(--ink);font-weight:600}
+.matrix tr:last-child td,.matrix tr:last-child th{border-bottom:0}
+.table-wrap{overflow-x:auto;margin-top:20px;-webkit-overflow-scrolling:touch;border-radius:var(--radius);border:1px solid var(--stroke)}
+.table-wrap .matrix{margin-top:0;box-shadow:none;border-radius:0;min-width:720px}
+.timeline{margin-top:22px;display:grid;gap:0}
+.tl{display:grid;grid-template-columns:92px 26px 1fr;gap:0;align-items:start}
+.tl .when{padding:14px 0 0;font-family:var(--font-mono);font-size:12px;color:var(--faint);text-align:right;padding-right:12px}
+.tl .rail{position:relative;display:flex;justify-content:center;padding-top:18px}
+.tl .rail::before{content:"";position:absolute;top:0;bottom:-6px;width:1px;background:var(--stroke-2)}
+.tl .dot{width:9px;height:9px;border-radius:50%;background:var(--primary);position:relative;z-index:1}
+.tl:last-child .rail::before{bottom:auto;height:18px}
+.tl .what{padding:10px 0 18px 14px}
+.tl .what h4{margin:0 0 4px;font-size:14.5px;font-weight:700}
+.tl .what p{margin:0;font-size:13px;line-height:1.82;color:var(--muted)}
+.steps{display:grid;gap:10px;margin-top:20px}
+.stp{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:16px 18px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.stp .k{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--primary-soft);color:var(--primary);font-family:var(--font-mono);font-size:12px}
+.stp h4{margin:0 0 5px;font-size:14.5px;font-weight:700}
+.stp p{margin:0;font-size:13px;line-height:1.85;color:var(--muted)}
+.stp p b{color:var(--ink);font-weight:600}
+.check{display:grid;gap:7px;margin-top:16px}
+.check .c{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:13px;line-height:1.8;color:var(--muted)}
+.check .c i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ok-soft);color:var(--ok);font-style:normal;font-size:12px}
+.check .c i.x{background:var(--accent-soft);color:var(--accent)}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:8px 14px;margin-top:16px;font-size:13px;line-height:1.8}
+.kv k{color:var(--faint);font-size:12.5px}
+.kv v{color:var(--muted)}
+.kv v b{color:var(--ink);font-weight:600}
+.note{margin-top:18px;padding:16px 20px;border-radius:var(--radius-sm);background:var(--accent-soft);border-left:3px solid var(--accent);font-size:13.5px;line-height:1.9;color:var(--muted)}
+.note b{color:var(--ink)}
+.faq{display:grid;gap:8px;margin-top:20px}
+.faq details{border-radius:var(--radius-sm);border:1px solid var(--stroke);background:var(--glass-2);overflow:hidden}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;cursor:pointer;list-style:none;font-size:14px;font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{width:15px;height:15px;color:var(--faint);flex:none}
+.faq .fb{padding:0 18px 16px;font-size:13.5px;line-height:1.88;color:var(--muted)}
+.cta{margin-top:34px;display:flex;align-items:center;flex-wrap:wrap;gap:16px;padding:24px 26px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid rgba(240,102,58,.22)}
+.cta .tt{flex:1;min-width:240px}
+.cta b{display:block;font-size:15.5px;font-weight:700}
+.cta span{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.7}
+.foot{max-width:1020px;margin:0 auto;padding:0 20px 52px;font-size:12px;line-height:1.9;color:var(--faint)}
+.foot a{color:var(--primary)}
+.crumbs{font-size:12px;color:var(--faint);margin-bottom:10px}
+.crumbs a{color:var(--primary)}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <span class="tagline">平台与课堂</span>
+  <div class="sp"></div>
+  <nav class="nav">
+  <a class="btn" href="curriculum-map.html">课程 × 考级</a>
+  <a class="btn active" href="platform.html" aria-current="page">平台与课堂</a>
+  <a class="btn" href="assessment.html">测评体系</a>
+  <a class="btn" href="operations.html">校区运营</a>
+  <a class="btn" href="studio.html">作品</a>
+  </nav>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="btn-primary" href="index.html#trial" style="height:38px;padding:0 16px;font-size:13.5px">预约试听</a>
+</div>
+
+<div class="wrap">
+  <div class="crumbs"><a href="index.html">首页</a> / 上课用的系统</div>
+  <section class="hero solo">
+    <div>
+      <span class="eyebrow"><i></i>上课用的系统</span>
+      <h1>不是把纸笔换成平板，<br>是让 90 分钟<em>每个动作都留痕</em></h1>
+      <p class="lead">家长最常问的一句是「孩子在电脑上到底做了什么」。这一页讲清楚五件事：账号怎么开、课堂工具怎么用、作业怎么留、报告里有什么、以及我们明确不采集什么。</p>
+      <div class="nums">
+<div class="n"><b>3 类</b><span>学生 / 家长 / 教师账号，权限各自独立</span></div>
+<div class="n"><b>6 条</b><span>一节课留下的记录，可回看</span></div>
+<div class="n"><b>4 个</b><span>课堂工具，不是装饰</span></div>
+<div class="n"><b>0 项</b><span>人脸与课堂录像采集</span></div></div>
+    </div>
+    
+  </section>
+
+<section class="sec"><div class="sec-head"><span>账号体系</span><h2>三类账号，三套权限</h2><p>同一个平台，孩子、家长、老师看到的是三个不同的世界。权限不是「设置一下」，是从建号那天就定死的。</p></div>
+<div class="table-wrap"><table class="matrix">
+<thead><tr><th>角色</th><th>谁创建</th><th>能做什么</th><th>明确不能做什么</th></tr></thead>
+<tbody>
+<tr><th>学生账号</th><td>开班时由教务批量创建，手机号后 4 位 + 随机初始密码</td><td>登录学习平台上课、写代码、交作业、看自己的作品与积分</td><td>看不到同班其他学员的作品、成绩与联系方式</td></tr>
+<tr><th>家长账号</th><td>报名时用报名手机号绑定，一个孩子可绑多位家长</td><td>查课时余额与消耗明细、每节课报告、作品集、赛考与补课提醒</td><td>不能替孩子提交代码或改作业；看不到其他家庭任何数据</td></tr>
+<tr><th>教师账号</th><td>校区管理员开通，按课程范围授权（L1–L4 分别授权）</td><td>排课、点名、发起课堂互动、布置作业、写课堂评价、看本班学情</td><td>不能改学费与退费、不能导出家长手机号、不能跨校区看数据</td></tr>
+</tbody></table></div>
+<div class="note"><b>为什么把「不能做什么」写这么细：</b>权限的边界就是数据安全的边界。一个老师能导出全校区家长手机号，是最容易出事的设计，我们从账号层就堵掉了。</div></section><section class="sec"><div class="sec-head"><span>课堂留痕</span><h2>一节课结束，留下六条记录</h2><p>所谓「学情」，不是老师凭印象说一句「这节课还行」。它应该是可回看的具体动作。</p></div>
+<div class="steps">
+  <div class="stp"><span class="k">01</span><div><h4>签到</h4><p>上课前 5 分钟开放，迟到会标黄。签到不是考勤工具，是课时扣减的依据——<b>没签到不会自动扣课时</b>，由教务在课后核对。</p></div></div>
+  <div class="stp"><span class="k">02</span><div><h4>课堂互动</h4><p>抢答、随机点名、随堂小测。答对答错都记录，老师能看到「这个知识点全班错了 6 个人」，下一节课会回补。</p></div></div>
+  <div class="stp"><span class="k">03</span><div><h4>代码快照</h4><p>关键节点自动保存一次，不要求孩子每一步都保存。老师回看的是「他怎么一步步改出来的」，而不是最后那份正确代码。</p></div></div>
+  <div class="stp"><span class="k">04</span><div><h4>当堂作品</h4><p>下课前 10 分钟提交到作品库，命名规则是「阶段-课次-作品名」。没做完也能提交，标记为「未完成」，下次课继续。</p></div></div>
+  <div class="stp"><span class="k">05</span><div><h4>课堂评价</h4><p>老师用 3 分钟填三项：参与度、卡在哪一步、下节课要不要单独跟进。这段文字家长端可见。</p></div></div>
+  <div class="stp"><span class="k">06</span><div><h4>课后作业</h4><p>自动推送，写明预计用时（L1 约 15 分钟、L3 约 30 分钟）。作业不批改对错，只看「有没有动手」和「卡在哪」。</p></div></div>
+</div></section><section class="sec"><div class="sec-head"><span>课堂工具</span><h2>四个工具，各自解决一个问题</h2><p>工具本身不产生教学效果，用在对的时机才产生。我们把每个工具的「用途」和「用几次」都写清楚。</p></div>
+<div class="tiles g2">
+  <div class="tile"><i>TOOL 01</i><h4>趣味抢答</h4><p>一道题 10 秒，第一个答对的孩子上台讲思路。作用不是比谁快，是把走神的孩子拉回课堂。</p></div>
+  <div class="tile"><i>TOOL 02</i><h4>随机点名</h4><p>按名单随机抽人回答，不按举手。避免课堂被三个爱举手的孩子占满，也让每个孩子知道「随时可能被点到」。</p></div>
+  <div class="tile"><i>TOOL 03</i><h4>任务计时器</h4><p>给任务设 15 或 20 分钟，时间到必须停手讲思路。防止「无限试错」把一节课耗在一个 bug 上。</p></div>
+  <div class="tile"><i>TOOL 04</i><h4>分组投屏</h4><p>把某个孩子的屏幕投到大屏，讲「这个写法为什么好」或「这个错误很多人都会犯」。被投屏是奖励，不是罚站。</p></div>
+</div>
+<div class="note"><b>工具的使用边界：</b>抢答与点名每节课合计不超过 3 次。工具用多了会变成表演，孩子忙着抢答，反而不写代码了。</div></section><section class="sec"><div class="sec-head"><span>家长视角</span><h2>你能看到什么，看不到什么</h2><p>把「看不到」的部分主动说清楚，比列一堆功能更能建立信任。</p></div>
+<div class="two">
+  <div class="box"><h4>家长端能看到</h4><ul>
+    <li><b>课时余额与每一笔消耗</b>：哪天、哪节课、扣了几课时</li>
+    <li><b>每节课报告</b>：今天做了什么、卡在哪、老师的一句话评价</li>
+    <li><b>作品集</b>：按阶段归档，可下载、可分享给家人</li>
+    <li><b>赛考与补课提醒</b>：报名节点、模考时间、缺课补课安排</li>
+    <li><b>请假记录</b>：什么时候请的、补在哪一节</li>
+  </ul></div>
+  <div class="box"><h4>家长端看不到</h4><ul>
+    <li><b>同班其他孩子的作品与成绩</b>：任何排名、榜单都不对家长开放</li>
+    <li><b>老师内部教研记录</b>：课堂观察表、磨课笔记属于内部资料</li>
+    <li><b>其他家庭联系方式</b>：班级群由教务建，不导出通讯录</li>
+    <li><b>孩子的草稿</b>：被标记为「课堂练习未提交」的中间代码不展示</li>
+  </ul></div>
+</div>
+<div class="note"><b>这不是功能缺失，是底线。</b>家长能随时看到别人家孩子的分数，这个班很快就变成比较场，孩子第一个受不了。</div></section><section class="sec"><div class="sec-head"><span>数据与隐私</span><h2>孩子数据的五条硬规则</h2></div>
+<div class="check">
+  <div class="c"><i>✓</i><span><b>只采集必要信息</b>：姓名、年级、手机号、学习记录。不采集身份证号、精确家庭住址、家长工作单位。</span></div>
+  <div class="c"><i>✓</i><span><b>不做人脸识别，不录课堂视频</b>：除非公开课且家长书面同意，否则教室里没有摄像设备对着孩子。</span></div>
+  <div class="c"><i>✓</i><span><b>数据可导出、可删除</b>：家长提交申请后 7 个工作日内处理，结课后 12 个月休眠、24 个月清除。</span></div>
+  <div class="c"><i>✓</i><span><b>教师离职即回收</b>：账号 24 小时内停用，历史班级数据保留但不可再访问。</span></div>
+  <div class="c"><i class="x">×</i><span><b>不做的事</b>：不把学习数据卖给第三方、不用孩子的作品做招生广告（除非单独签授权）。</span></div>
+</div></section><section class="sec"><div class="sec-head"><span>故障自查</span><h2>90% 的「打不开」，这三步能自己解决</h2><p>下面这张表按真实报障顺序整理。先自查，再找我们，能省掉半天等待。</p></div>
+<div class="table-wrap"><table class="matrix">
+<thead><tr><th>现象</th><th>先自己试这三步</th><th>还不行，多久找我们</th></tr></thead>
+<tbody>
+<tr><th>登录不上 / 密码错</th><td>确认报名手机号后 4 位；换 Chrome 或 Edge；清一次缓存再登</td><td>教务 4 小时内重置密码（工作日）</td></tr>
+<tr><th>提示「无权查看」</th><td>确认孩子是否已加入本期班级；是否刚调班还没生效</td><td>教务核对班级关系，当天处理</td></tr>
+<tr><th>作品上传一直转圈</th><td>等 3 分钟；换网络（手机热点试一次）；先保存到本地再重传</td><td>技术查存储服务，当天回复</td></tr>
+<tr><th>页面白屏 / 打不开</th><td>换浏览器；关闭广告拦截插件；Ctrl+F5 强制刷新</td><td>把截图和时间点发教务，24 小时内定位</td></tr>
+<tr><th>作业看不到</th><td>确认老师是否已发布；下拉刷新一次列表</td><td>主讲当天课后补发</td></tr>
+</tbody></table></div></section>
+
+<section class="sec"><div class="sec-head"><span>FAQ</span><h2>家长最常问的四个问题</h2></div><div class="faq"><details><summary>孩子在家能登录上课平台吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">能。学习平台全天可登录，作品、作业、课程资源都能看。但直播课只在排课时间开，平时登录是「练习模式」，不会自动扣课时。</div></details>
+<details><summary>家长账号能看到孩子写的代码吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">能看到提交过的作品和关键节点快照，看不到被老师标记为「课堂练习未提交」的草稿。我们不想让孩子因为「写了一半会被家长看见」而不敢试错。</div></details>
+<details><summary>平台会记录孩子在电脑上的其他操作吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">不会。只记录平台内的学习动作（登录、答题、提交、作业），不采集平台外的浏览记录，也不装任何客户端监控软件。</div></details>
+<details><summary>换手机号、换班，之前的数据会丢吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">不会。账号跟着学员走，换班只改「班级关系」，历史报告与作品都保留。换手机号需要教务在后台改绑，本人不能自助改。</div></details></div></section>
+
+  <section class="cta">
+    <div class="tt"><b>想看看这套系统真实跑起来的样子？</b><span>试听那节课，老师会用平台完整跑一遍：签到、抢答、写代码、提交作品、当堂评价。下课后你会收到一份真实的课堂报告样例，而不是一张宣传单。</span></div>
+    <a class="btn-primary" href="index.html#trial">预约免费试听</a>
+  </section>
+
+</div>
+
+<div class="foot">
+  <p><b>码跃少儿编程 CodeLeap</b> · 合肥 · 高新 / 政务 / 滨湖三校区 · 400-860-2026</p>
+  <p><a href="index.html">官网首页</a> · <a href="curriculum-map.html">课程 × 考级</a> · <a href="platform.html">平台与课堂</a> · <a href="assessment.html">测评体系</a> · <a href="studio.html">作品与创作</a> · <a href="hardware.html">教具与硬件</a> · <a href="operations.html">校区运营</a> · <a href="blog.html">知识库</a> · <a href="team.html">师资与教研</a> · <a href="campus.html">校区与到店</a> · <a href="enroll.html">在线报名</a></p>
+  <p>内容示例站点：页面中的机构数据、师资、价格与流程均为演示内容，正式上线前需替换为真实信息与合同条款。</p>
+</div>
+
+<script>
+(function () {
+  var KEY = "codeleap-theme";
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem(KEY); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  var btn = document.getElementById("themeBtn");
+  if (btn) btn.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+  });
+  document.querySelectorAll(".faq summary").forEach(function (s) {
+    s.addEventListener("click", function () {
+      var d = s.parentElement;
+      if (!d.open) document.querySelectorAll(".faq details[open]").forEach(function (o) { if (o !== d) o.open = false; });
+    });
+  });
+})();
+</script>
+</body>
+</html>

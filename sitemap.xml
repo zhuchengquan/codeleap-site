@@ -103,10 +103,40 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://codeleap.example/manual.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <loc>https://codeleap.example/curriculum-map.html</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://codeleap.example/platform.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codeleap.example/assessment.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codeleap.example/studio.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://codeleap.example/hardware.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://codeleap.example/operations.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://codeleap.example/legal.html</loc>

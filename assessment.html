@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>测评体系 · 码跃少儿编程</title>
+<meta name="description" content="入学测评、阶段测评、赛前模考、OJ 题库四层怎么运作；一份阶段报告的 8 个固定字段；知识点未掌握、独立完成度不足时分别怎么处置。">
+<link rel="canonical" href="https://codeleap.example/assessment.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="测评体系 · 码跃少儿编程">
+<meta property="og:description" content="入学测评、阶段测评、赛前模考、OJ 题库四层怎么运作；一份阶段报告的 8 个固定字段；知识点未掌握、独立完成度不足时分别怎么处置。">
+<meta property="og:url" content="https://codeleap.example/assessment.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b7bf3'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' fill='%23fff' text-anchor='middle'%3E%E7%A0%81%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f9fe;--bg-2:#eef4fd;--ink:#16213a;--muted:#56657e;--faint:#8695ab;--primary:#2b7bf3;--primary-soft:rgba(43,123,243,.10);--accent:#f0663a;--accent-soft:rgba(240,102,58,.10);--ok:#12a06a;--ok-soft:rgba(18,160,106,.12);--glass:rgba(255,255,255,.72);--glass-2:rgba(255,255,255,.94);--glass-head:rgba(255,255,255,.88);--stroke:rgba(27,52,92,.10);--stroke-2:rgba(27,52,92,.16);--shadow:0 12px 32px rgba(26,48,84,.07);--radius:18px;--radius-sm:13px;--font-display:"Nunito","Noto Sans SC",sans-serif;--font-body:"Nunito","Noto Sans SC",sans-serif;--font-mono:"JetBrains Mono","Noto Sans SC",monospace}
+[data-theme="dark"]{--bg:#0d1524;--bg-2:#101a2c;--ink:#eef3fb;--muted:#a7b6cc;--faint:#7d8ea8;--primary:#5a9dff;--primary-soft:rgba(90,157,255,.14);--accent:#ff8660;--accent-soft:rgba(255,134,96,.12);--ok:#4dd49b;--ok-soft:rgba(77,212,155,.15);--glass:rgba(255,255,255,.06);--glass-2:rgba(255,255,255,.10);--glass-head:rgba(18,28,46,.88);--stroke:rgba(255,255,255,.10);--stroke-2:rgba(255,255,255,.18);--shadow:0 16px 40px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.78;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:11px 18px;background:var(--glass-head);border-bottom:1px solid var(--stroke);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);flex-wrap:wrap}
+.nav{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.nav::-webkit-scrollbar{display:none}
+@media(max-width:820px){.nav{order:9;flex:1 1 100%;padding:2px 0 0}}
+.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:15.5px}
+.brand .m{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:var(--primary);color:#fff;font-size:14px;font-weight:700}
+.tagline{font-size:12.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted)}
+.sp{flex:1}
+.icon-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 16px;border:1px solid var(--stroke-2);border-radius:999px;background:var(--glass);color:var(--ink);font-family:inherit;font-size:13.5px;white-space:nowrap}
+.btn.active{border-color:var(--primary);color:var(--primary);background:var(--primary-soft);font-weight:600}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 22px;border-radius:999px;background:var(--accent);color:#fff;font-size:14.5px;box-shadow:0 10px 24px rgba(240,102,58,.26);border:0;cursor:pointer;font-family:inherit}
+.wrap{max-width:1020px;margin:0 auto;padding:32px 20px 60px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.05em;color:var(--primary)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--primary);font-style:normal}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+@media(max-width:880px){.hero{grid-template-columns:1fr;gap:24px}}
+.hero.solo{grid-template-columns:1fr}
+.hero.solo .lead{max-width:760px}
+.hero h1{margin:11px 0 13px;font-size:clamp(26px,3.8vw,37px);font-weight:800;line-height:1.3}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{margin:0;font-size:14.5px;line-height:1.9;color:var(--muted);max-width:520px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:22px}
+@media(max-width:640px){.nums{grid-template-columns:repeat(2,1fr)}}
+.n{padding:13px 15px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.n b{display:block;font-family:var(--font-display);font-size:21px;font-weight:800;color:var(--accent);line-height:1.15;font-variant-numeric:tabular-nums}
+.n span{display:block;font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.6}
+.shot{border-radius:var(--radius);overflow:hidden;border:1px solid var(--stroke);box-shadow:var(--shadow);margin:0}
+.shot img{display:block;width:100%;height:auto}
+.sec{margin-top:44px}
+.sec-head span{display:block;font-size:12px;letter-spacing:.06em;color:var(--faint);margin-bottom:6px}
+.sec-head h2{margin:0;font-size:clamp(20px,2.6vw,26px);font-weight:700;line-height:1.35}
+.sec-head p{margin:8px 0 0;font-size:13.5px;line-height:1.8;color:var(--muted);max-width:660px}
+.box{padding:22px 24px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);box-shadow:var(--shadow)}
+.box h4{margin:0 0 10px;font-size:14.5px;font-weight:700}
+.box ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.box li{font-size:13px;line-height:1.85;color:var(--muted)}
+.box li b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+@media(max-width:860px){.three{grid-template-columns:1fr}}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.tiles.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.tiles{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.tiles.g2{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tiles{grid-template-columns:1fr}}
+@media(max-width:600px){.tiles.g2{grid-template-columns:1fr}}
+.tile{padding:19px 21px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.tile i{font-family:var(--font-mono);font-size:11.5px;font-style:normal;color:var(--accent);letter-spacing:.02em}
+.tile h4{margin:8px 0 6px;font-size:15px;font-weight:700;line-height:1.4}
+.tile p{margin:0;font-size:13px;line-height:1.82;color:var(--muted)}
+.matrix{width:100%;border-collapse:collapse;margin-top:20px;font-size:13px;background:var(--glass-2);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.matrix th,.matrix td{border-bottom:1px solid var(--stroke);padding:11px 13px;text-align:left;vertical-align:top;line-height:1.7}
+.matrix thead th{background:var(--primary-soft);color:var(--ink);font-weight:600;font-size:12.5px;white-space:nowrap}
+.matrix tbody th{background:var(--bg-2);font-weight:600;white-space:nowrap;color:var(--ink)}
+.matrix td{color:var(--muted)}
+.matrix td b{color:var(--ink);font-weight:600}
+.matrix tr:last-child td,.matrix tr:last-child th{border-bottom:0}
+.table-wrap{overflow-x:auto;margin-top:20px;-webkit-overflow-scrolling:touch;border-radius:var(--radius);border:1px solid var(--stroke)}
+.table-wrap .matrix{margin-top:0;box-shadow:none;border-radius:0;min-width:720px}
+.timeline{margin-top:22px;display:grid;gap:0}
+.tl{display:grid;grid-template-columns:92px 26px 1fr;gap:0;align-items:start}
+.tl .when{padding:14px 0 0;font-family:var(--font-mono);font-size:12px;color:var(--faint);text-align:right;padding-right:12px}
+.tl .rail{position:relative;display:flex;justify-content:center;padding-top:18px}
+.tl .rail::before{content:"";position:absolute;top:0;bottom:-6px;width:1px;background:var(--stroke-2)}
+.tl .dot{width:9px;height:9px;border-radius:50%;background:var(--primary);position:relative;z-index:1}
+.tl:last-child .rail::before{bottom:auto;height:18px}
+.tl .what{padding:10px 0 18px 14px}
+.tl .what h4{margin:0 0 4px;font-size:14.5px;font-weight:700}
+.tl .what p{margin:0;font-size:13px;line-height:1.82;color:var(--muted)}
+.steps{display:grid;gap:10px;margin-top:20px}
+.stp{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:16px 18px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.stp .k{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--primary-soft);color:var(--primary);font-family:var(--font-mono);font-size:12px}
+.stp h4{margin:0 0 5px;font-size:14.5px;font-weight:700}
+.stp p{margin:0;font-size:13px;line-height:1.85;color:var(--muted)}
+.stp p b{color:var(--ink);font-weight:600}
+.check{display:grid;gap:7px;margin-top:16px}
+.check .c{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:13px;line-height:1.8;color:var(--muted)}
+.check .c i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ok-soft);color:var(--ok);font-style:normal;font-size:12px}
+.check .c i.x{background:var(--accent-soft);color:var(--accent)}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:8px 14px;margin-top:16px;font-size:13px;line-height:1.8}
+.kv k{color:var(--faint);font-size:12.5px}
+.kv v{color:var(--muted)}
+.kv v b{color:var(--ink);font-weight:600}
+.note{margin-top:18px;padding:16px 20px;border-radius:var(--radius-sm);background:var(--accent-soft);border-left:3px solid var(--accent);font-size:13.5px;line-height:1.9;color:var(--muted)}
+.note b{color:var(--ink)}
+.faq{display:grid;gap:8px;margin-top:20px}
+.faq details{border-radius:var(--radius-sm);border:1px solid var(--stroke);background:var(--glass-2);overflow:hidden}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;cursor:pointer;list-style:none;font-size:14px;font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{width:15px;height:15px;color:var(--faint);flex:none}
+.faq .fb{padding:0 18px 16px;font-size:13.5px;line-height:1.88;color:var(--muted)}
+.cta{margin-top:34px;display:flex;align-items:center;flex-wrap:wrap;gap:16px;padding:24px 26px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid rgba(240,102,58,.22)}
+.cta .tt{flex:1;min-width:240px}
+.cta b{display:block;font-size:15.5px;font-weight:700}
+.cta span{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.7}
+.foot{max-width:1020px;margin:0 auto;padding:0 20px 52px;font-size:12px;line-height:1.9;color:var(--faint)}
+.foot a{color:var(--primary)}
+.crumbs{font-size:12px;color:var(--faint);margin-bottom:10px}
+.crumbs a{color:var(--primary)}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <span class="tagline">测评体系</span>
+  <div class="sp"></div>
+  <nav class="nav">
+  <a class="btn" href="curriculum-map.html">课程 × 考级</a>
+  <a class="btn" href="platform.html">平台与课堂</a>
+  <a class="btn active" href="assessment.html" aria-current="page">测评体系</a>
+  <a class="btn" href="operations.html">校区运营</a>
+  <a class="btn" href="studio.html">作品</a>
+  </nav>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="btn-primary" href="index.html#trial" style="height:38px;padding:0 16px;font-size:13.5px">预约试听</a>
+</div>
+
+<div class="wrap">
+  <div class="crumbs"><a href="index.html">首页</a> / 怎么判断学得好不好</div>
+  <section class="hero solo">
+    <div>
+      <span class="eyebrow"><i></i>怎么判断学得好不好</span>
+      <h1>不靠感觉说「学得不错」，<br><em>靠四层可回看的测评</em></h1>
+      <p class="lead">家长最难判断的是「孩子到底学进去了没有」。这一页把测评拆成四层，也把「分数低了我们怎么处置」写清楚——包括什么时候该降阶。</p>
+      <div class="nums">
+<div class="n"><b>4 层</b><span>入学 / 阶段 / 模考 / 日常题库</span></div>
+<div class="n"><b>8 项</b><span>一份阶段报告里必须有的字段</span></div>
+<div class="n"><b>30 分钟</b><span>入学测评的实际时长</span></div>
+<div class="n"><b>5 题</b><span>日常 OJ 的每周下限</span></div></div>
+    </div>
+    
+  </section>
+
+<section class="sec"><div class="sec-head"><span>四层测评</span><h2>从进门到赛前，四次不同目的的「体检」</h2><p>测评不是考试的同义词。入学测评定起点，阶段测评定节奏，模考定赛前状态，OJ 定日常手感。</p></div>
+<div class="tiles g2">
+  <div class="tile"><i>第 1 层</i><h4>入学测评（30 分钟）</h4><p>不是考试，是「定位」。三部分：给一个图形化任务让他做完、问 5 个逻辑问题、让他读一段代码说出在干什么。结果决定起点阶段，不决定「能不能学」。</p></div>
+  <div class="tile"><i>第 2 层</i><h4>阶段测评（每 12 课时）</h4><p>随堂 20 分钟，不提前通知。测的是刚学完的 12 课时，不是整本书。分数只用于调整下阶段节奏，不排名、不通报家长群。</p></div>
+  <div class="tile"><i>第 3 层</i><h4>模考（赛前 4 周）</h4><p>按真实考试时长与题型，连续 4 套。第一套通常很难看，那正是模考的意义——把问题提前暴露在教室里，而不是考场上。</p></div>
+  <div class="tile"><i>第 4 层</i><h4>OJ 题库（日常）</h4><p>L3 起每周至少 5 题，按知识点推送。提交记录、通过率、错题本都留痕，老师能看到「他卡在哪个知识点上反复错」。</p></div>
+</div></section><section class="sec"><div class="sec-head"><span>入学测评</span><h2>30 分钟，看三件事</h2><p>我们不看孩子已经会多少，看他遇到不会的东西时怎么反应。</p></div>
+<div class="table-wrap"><table class="matrix">
+<thead><tr><th>环节</th><th>具体做什么</th><th>我们在看什么</th><th>结果怎么用</th></tr></thead>
+<tbody>
+<tr><th>动手任务（12 分钟）</th><td>给一个「小猫走迷宫」的半成品，让他补 3 块积木让它能走完</td><td>是否敢试错、卡住时会不会自己找线索</td><td>判断起点：L1 还是可以直接进 L2</td></tr>
+<tr><th>逻辑问答（8 分钟）</th><td>5 个问题：排序、找规律、如果……那么……</td><td>抽象与拆解能力，不看知识量</td><td>决定是否需要先补「逻辑热身」4 课时</td></tr>
+<tr><th>读代码（10 分钟）</th><td>给一段 15 行的 Python 或积木脚本，说出它在干什么</td><td>能否把代码翻译成日常语言</td><td>决定 L3 起点是第 1 课还是第 9 课</td></tr>
+</tbody></table></div>
+<div class="note"><b>测评不做的事：</b>不打分排名、不发给家长群、不作为「能不能报名」的门槛。零基础的孩子测完通常是「建议从 L1 第 1 课开始」，这也是一个有效结论。</div></section><section class="sec"><div class="sec-head"><span>报告字段</span><h2>一份阶段报告，固定八个字段</h2><p>字段固定，才能横向比较；描述具体，家长才知道下一步做什么。</p></div>
+<div class="kv">
+  <k>出勤</k><v>实到 / 应到，迟到与请假单列，<b>不把请假算成缺课</b></v>
+  <k>知识点掌握</k><v>本阶段 6–8 个知识点，每个标「独立完成 / 提示后完成 / 未掌握」</v>
+  <k>独立完成度</k><v>当堂作品里，<b>老师改动超过 30% 的作品会单独标注</b></v>
+  <k>卡点类型</k><v>概念不清 / 拼写与语法 / 调试方法 / 注意力，四类分开记</v>
+  <k>作品质量</k><v>能否独立跑通、有无注释、有没有自己的改动</v>
+  <k>作业完成</k><v>提交率与平均用时，不评价「认不认真」</v>
+  <k>下阶段建议</k><v>继续 / 补 4 课时 / 降阶重学，三选一并写理由</v>
+  <k>教师备注</k><v>一句话，具体到某件事，禁止写「表现良好」这类空话</v>
+</div>
+<div class="note"><b>为什么把字段固定死：</b>不固定字段，报告就会变成「老师凭印象写两句」。固定之后，换老师接手也能看懂这个孩子的问题在哪。</div></section><section class="sec"><div class="sec-head"><span>日常训练</span><h2>OJ 题库：练手，不是刷榜</h2></div>
+<div class="two">
+  <div class="box"><h4>题库怎么用</h4><ul>
+    <li><b>按知识点推送</b>：学完循环推循环题，不混着推</li>
+    <li><b>难度递进</b>：每题标注「必做 / 选做 / 挑战」，必做不做完不进下一组</li>
+    <li><b>提交即记录</b>：每次提交的代码、用时、通过用例都留痕</li>
+    <li><b>错题本自动生成</b>：同一知识点错 3 次，老师会安排一次 1 对 1 讲解</li>
+  </ul></div>
+  <div class="box"><h4>我们不做的</h4><ul>
+    <li><b>不搞刷题排行榜</b>：题量排名会让孩子抄答案</li>
+    <li><b>不用 OJ 替代上课</b>：OJ 是练手，不是教学</li>
+    <li><b>不把通过率当卖点</b>：题库难度可调，通过率说明不了能力</li>
+    <li><b>不公开孩子的错误代码</b>：错题本只对本人和主讲可见</li>
+  </ul></div>
+</div></section><section class="sec"><div class="sec-head"><span>不达标怎么办</span><h2>四种情况，四种处置</h2><p>「补课」不是万能答案。有的是知识点问题，有的是阶段选错了，处置方式完全不同。</p></div>
+<div class="table-wrap"><table class="matrix">
+<thead><tr><th>情况</th><th>处置</th><th>谁来决定</th><th>家长会收到什么</th></tr></thead>
+<tbody>
+<tr><th>单个知识点未掌握</th><td>下节课前 10 分钟单独补，不额外收费</td><td>主讲</td><td>课堂报告里注明「已补」</td></tr>
+<tr><th>连续两个知识点未掌握</th><td>安排 1 次 60 分钟补课（消耗 1 课时）</td><td>主讲 + 教务确认课时</td><td>补课时间与内容说明</td></tr>
+<tr><th>整阶段独立完成度低于 50%</th><td>建议降阶重学，剩余课时可结转</td><td>教研组 + 家长面谈</td><td>书面建议与课时结转方案</td></tr>
+<tr><th>作品涉及抄袭/代做</th><td>作品退回重做，不计入阶段成果</td><td>主讲</td><td>当面沟通，不在群里点名</td></tr>
+</tbody></table></div></section>
+
+<section class="sec"><div class="sec-head"><span>FAQ</span><h2>家长最常问的四个问题</h2></div><div class="faq"><details><summary>入学测评要收费吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">不收费，30 分钟，需要提前预约。测完当天给口头结论，书面建议 2 个工作日内发。</div></details>
+<details><summary>阶段测评分数低，会不会被劝退？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">不会。阶段测评的作用是调整节奏，不是筛选。真正会建议降阶的，是「连续两个阶段独立完成度都低于 50%」这种情况，而且必须和家长面谈。</div></details>
+<details><summary>OJ 上的题和考级题一样吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">不一样。OJ 练的是「把知识用出来」，考级题更接近大纲覆盖。两者互补，不能互相替代。</div></details>
+<details><summary>模考成绩差，还去参加比赛吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">看差在哪。如果是「会做但做不完」，去，练的就是限时；如果是「知识点大片空白」，建议这次不报，省下的时间补基础。</div></details></div></section>
+
+  <section class="cta">
+    <div class="tt"><b>先做一次入学测评，再谈报不报</b><span>30 分钟，三部分，测完告诉你：建议从哪个阶段开始、需要先补哪两项能力、大概多久能进入考级节奏。不推销课程。</span></div>
+    <a class="btn-primary" href="index.html#trial">预约入学测评</a>
+  </section>
+
+</div>
+
+<div class="foot">
+  <p><b>码跃少儿编程 CodeLeap</b> · 合肥 · 高新 / 政务 / 滨湖三校区 · 400-860-2026</p>
+  <p><a href="index.html">官网首页</a> · <a href="curriculum-map.html">课程 × 考级</a> · <a href="platform.html">平台与课堂</a> · <a href="assessment.html">测评体系</a> · <a href="studio.html">作品与创作</a> · <a href="hardware.html">教具与硬件</a> · <a href="operations.html">校区运营</a> · <a href="blog.html">知识库</a> · <a href="team.html">师资与教研</a> · <a href="campus.html">校区与到店</a> · <a href="enroll.html">在线报名</a></p>
+  <p>内容示例站点：页面中的机构数据、师资、价格与流程均为演示内容，正式上线前需替换为真实信息与合同条款。</p>
+</div>
+
+<script>
+(function () {
+  var KEY = "codeleap-theme";
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem(KEY); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  var btn = document.getElementById("themeBtn");
+  if (btn) btn.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+  });
+  document.querySelectorAll(".faq summary").forEach(function (s) {
+    s.addEventListener("click", function () {
+      var d = s.parentElement;
+      if (!d.open) document.querySelectorAll(".faq details[open]").forEach(function (o) { if (o !== d) o.open = false; });
+    });
+  });
+})();
+</script>
+</body>
+</html>

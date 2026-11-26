@@ -16,3 +16,9 @@ package-lock.json
 *.log
 _*.html
 *.tmp
+
+# 抓取/生成手册用的中间脚本与数据（不入库）
+_yuque_src/
+
+# 页面生成器的调试截图（不入库）
+_build/shots/
