@@ -25,10 +25,12 @@
 | `results.html` | 荣誉与成果：KPI、逐年趋势、赛事分布、获奖记录、学员故事、统计口径 |
 | `camp.html` | 寒假集训营活动页（倒计时、三个营、价格、报名） |
 | `brochure.html` / `招生简章.pdf` | A4 两页可打印招生简章 |
+| `team.html` | 师资与教研：四位主讲的边界、选人三道关、教研四工序、课堂观察表、90 天新师路径 |
+| `manual.html` | 平台使用手册复刻版：5aqima 平台 69 篇操作文档（左侧目录 + 正文 + 站内搜索 + 图片放大） |
 | `legal.html` | 隐私政策 / 服务条款 / 退费规则 |
 | `404.html` | 品牌化 404 |
 
-配套：`robots.txt`、`sitemap.xml`、`assets/`（图片与 WebP 变体）。
+配套：`robots.txt`、`sitemap.xml`、`assets/`（图片与 WebP 变体）、`assets/manual/`（手册复刻用到的 147 张截图）。
 
 ## 本地预览
 
@@ -68,12 +70,23 @@ python -m http.server 8000
 ├── results.html          荣誉与成果
 ├── camp.html             寒假营
 ├── brochure.html         招生简章（可打印）
+├── team.html             师资与教研
+├── manual.html           平台使用手册复刻版（69 篇）
 ├── legal.html            政策与条款
 ├── 404.html
 ├── robots.txt
 ├── sitemap.xml
-└── assets/               图片与 WebP
+├── assets/               图片与 WebP
+└── assets/manual/        手册截图（147 张，本地化）
 ```
+
+## 关于 `manual.html`（第三方内容复刻）
+
+该页复刻自语雀公开知识库《5aqima 平台使用手册》（作者 尹登峰，协作者 双双、loumuu，建站方 奇码星球 / 编缘科技）。
+
+- 原文共 69 篇、标称 72,745 字，本页逐篇保留标题、正文、操作步骤与截图，未做删改；其中 7 篇在原文中只有标题、没有正文，按原样保留并标注。
+- 147 张截图已从语雀图床下载到 `assets/manual/` 本地引用，避免外链失效。
+- 版权归原作者与权利方所有；本页仅作站内阅读复刻，二次分发前请取得授权。
 
 ## 许可
 
