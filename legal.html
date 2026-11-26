@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 · 服务条款 · 退费规则 — 码跃少儿编程</title>
+<meta name="description" content="码跃少儿编程的隐私政策、服务条款与退费规则：我们收集哪些信息、课时如何计算与补课、退费按什么比例核算。">
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root {
+  --bg: #f6f9fe;
+  --bg-2: #eef4fd;
+  --ink: #16213a;
+  --muted: #56657e;
+  --faint: #8695ab;
+  --primary: #2b7bf3;
+  --primary-soft: rgba(43, 123, 243, .10);
+  --accent: #f0663a;
+  --accent-soft: rgba(240, 102, 58, .10);
+  --ok: #12a06a;
+  --ok-soft: rgba(18, 160, 106, .12);
+  --warn: #b7791f;
+  --warn-soft: rgba(183, 121, 31, .11);
+  --glass: rgba(255, 255, 255, .72);
+  --glass-2: rgba(255, 255, 255, .94);
+  --glass-head: rgba(255, 255, 255, .88);
+  --stroke: rgba(27, 52, 92, .10);
+  --stroke-2: rgba(27, 52, 92, .16);
+  --shadow: 0 12px 32px rgba(26, 48, 84, .07);
+  --radius: 18px;
+  --radius-sm: 13px;
+  --font-display: "Nunito", "Noto Sans SC", sans-serif;
+  --font-body: "Nunito", "Noto Sans SC", sans-serif;
+  --font-mono: "JetBrains Mono", "Noto Sans SC", monospace;
+}
+[data-theme="dark"] {
+  --bg: #0d1524;
+  --bg-2: #101a2c;
+  --ink: #eef3fb;
+  --muted: #a7b6cc;
+  --faint: #7d8ea8;
+  --primary: #5a9dff;
+  --primary-soft: rgba(90, 157, 255, .14);
+  --accent: #ff8660;
+  --accent-soft: rgba(255, 134, 96, .12);
+  --ok: #4dd49b;
+  --ok-soft: rgba(77, 212, 155, .15);
+  --warn: #e8b45c;
+  --warn-soft: rgba(232, 180, 92, .13);
+  --glass: rgba(255, 255, 255, .06);
+  --glass-2: rgba(255, 255, 255, .10);
+  --glass-head: rgba(18, 28, 46, .88);
+  --stroke: rgba(255, 255, 255, .10);
+  --stroke-2: rgba(255, 255, 255, .18);
+  --shadow: 0 16px 40px rgba(0, 0, 0, .35);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.82;
+  letter-spacing: .01em;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: .01em; }
+a { color: inherit; text-decoration: none; }
+
+.bar {
+  position: sticky; top: 0; z-index: 30;
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 20px;
+  background: var(--glass-head);
+  border-bottom: 1px solid var(--stroke);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+.brand { display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-display); font-weight: 700; font-size: 16px; }
+.brand .m { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--primary); color: #fff; font-size: 15px; font-weight: 700; }
+.pill { font-size: 12px; letter-spacing: .04em; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--stroke-2); color: var(--muted); }
+.sp { flex: 1; }
+.icon-btn { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--stroke-2); background: var(--glass); color: var(--muted); cursor: pointer; }
+.icon-btn:hover { color: var(--ink); border-color: var(--primary); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 38px; padding: 0 16px;
+  border: 1px solid var(--stroke-2); border-radius: 999px;
+  background: var(--glass); color: var(--ink);
+  font-family: inherit; font-size: 13.5px; cursor: pointer;
+}
+
+/* 头部 */
+.wrap { max-width: 1040px; margin: 0 auto; padding: 34px 20px 60px; }
+.hero { margin-bottom: 26px; }
+.hero .eyebrow { font-size: 12.5px; letter-spacing: .06em; color: var(--faint); }
+.hero h1 { margin: 8px 0 10px; font-size: clamp(26px, 4vw, 38px); font-weight: 800; line-height: 1.28; }
+.hero p { margin: 0; max-width: 640px; font-size: 14.5px; line-height: 1.85; color: var(--muted); }
+.meta-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.tag { font-size: 12px; padding: 4px 11px; border-radius: 999px; border: 1px solid var(--stroke-2); color: var(--muted); background: var(--glass); }
+.tag b { color: var(--ink); font-weight: 600; }
+
+/* 两栏：目录 + 正文 */
+.layout { display: grid; grid-template-columns: 192px 1fr; gap: 34px; align-items: start; }
+@media (max-width: 860px) { .layout { grid-template-columns: 1fr; gap: 20px; } }
+
+.toc { position: sticky; top: 74px; }
+.toc h5 { margin: 0 0 10px; font-size: 11.5px; letter-spacing: .1em; font-weight: 600; color: var(--faint); font-family: var(--font-body); }
+.toc ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; }
+.toc ol li a {
+  display: flex; gap: 8px;
+  padding: 7px 10px;
+  border-radius: 9px;
+  font-size: 13.5px;
+  color: var(--muted);
+  border-left: 2px solid transparent;
+}
+.toc ol li a:hover { background: var(--primary-soft); color: var(--ink); }
+.toc ol li a .n { font-family: var(--font-mono); font-size: 11.5px; color: var(--faint); padding-top: 2px; }
+.toc .toc-sub { margin: 16px 0 0; padding: 10px 12px; border-radius: 10px; background: var(--glass); border: 1px solid var(--stroke); font-size: 11.5px; line-height: 1.7; color: var(--faint); }
+@media (max-width: 860px) {
+  .toc { position: static; }
+  .toc ol { grid-auto-flow: column; grid-auto-columns: max-content; overflow-x: auto; gap: 6px; }
+  .toc ol li a { border-left: 0; border: 1px solid var(--stroke-2); border-radius: 999px; padding: 5px 12px; white-space: nowrap; }
+  .toc .toc-sub { display: none; }
+  .toc h5 { display: none; }
+}
+
+.doc { display: grid; gap: 30px; scroll-margin-top: 80px; }
+.block { scroll-margin-top: 86px; }
+.block > header { margin-bottom: 12px; }
+.block .kicker { font-size: 11.5px; letter-spacing: .08em; color: var(--accent); font-family: var(--font-mono); }
+.block h2 { margin: 4px 0 8px; font-size: clamp(20px, 2.6vw, 25px); font-weight: 700; line-height: 1.35; }
+.block .sub { margin: 0; font-size: 13.5px; color: var(--muted); }
+
+.card {
+  padding: 20px 22px;
+  border-radius: var(--radius-sm);
+  background: var(--glass-2);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+.clause { margin: 0; }
+.clause h4 { margin: 0 0 6px; font-size: 14.5px; font-weight: 600; display: flex; align-items: baseline; gap: 8px; }
+.clause h4 .no { font-family: var(--font-mono); font-size: 11.5px; color: var(--primary); background: var(--primary-soft); padding: 1px 7px; border-radius: 5px; font-weight: 400; }
+.clause p { margin: 0 0 10px; font-size: 13.8px; line-height: 1.85; color: var(--muted); }
+.clause p:last-child { margin-bottom: 0; }
+.clause p b { color: var(--ink); font-weight: 600; }
+.clause ul { margin: 0 0 10px; padding-left: 18px; display: grid; gap: 5px; }
+.clause ul li { font-size: 13.8px; line-height: 1.8; color: var(--muted); }
+.clause ul li b { color: var(--ink); font-weight: 600; }
+
+.divider { height: 1px; background: var(--stroke); margin: 22px 0; }
+
+/* 退费表 */
+.tbl-wrap { overflow-x: auto; margin: 4px 0 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--stroke); vertical-align: top; }
+th { font-weight: 600; font-size: 12.5px; color: var(--muted); background: var(--primary-soft); white-space: nowrap; }
+td { color: var(--muted); line-height: 1.7; }
+td b { color: var(--ink); font-weight: 600; }
+tr:last-child td { border-bottom: 0; }
+
+.warn-box {
+  margin-top: 14px;
+  padding: 13px 16px;
+  border-radius: 11px;
+  background: var(--warn-soft);
+  border: 1px solid rgba(183, 121, 31, .22);
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.warn-box b { color: var(--ink); }
+
+.steps { display: grid; gap: 8px; margin-top: 4px; }
+.step { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; }
+.step .i { display: grid; place-items: center; width: 22px; height: 22px; margin-top: 4px; border-radius: 50%; background: var(--primary-soft); color: var(--primary); font-family: var(--font-mono); font-size: 11.5px; }
+.step p { margin: 0; font-size: 13.5px; line-height: 1.8; color: var(--muted); }
+.step p b { color: var(--ink); font-weight: 600; }
+
+.foot {
+  max-width: 1040px; margin: 0 auto;
+  padding: 22px 20px 54px;
+  border-top: 1px solid var(--stroke);
+  font-size: 12.5px; line-height: 1.9; color: var(--faint);
+}
+.foot a { color: var(--primary); }
+@media (prefers-reduced-motion: reduce) { .toc ol li a { transition: none; } }
+</style>
+<link rel="canonical" href="https://codeleap.example/legal.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="隐私政策 · 服务条款 · 退费规则 — 码跃少儿编程">
+<meta property="og:description" content="码跃少儿编程的隐私政策、服务条款与退费规则：我们收集哪些信息、课时如何计算与补课、退费按什么比例核算。">
+<meta property="og:url" content="https://codeleap.example/legal.html">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <span class="pill">政策与条款</span>
+  <div class="sp"></div>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="btn" href="index.html">返回官网</a>
+</div>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">政策与条款</div>
+    <h1>我们把规则写在明面上</h1>
+    <p>孩子上课要用到手机号、姓名和作品，家长缴费要算清课时与退费。这三件事在本站都找不到清楚的说法，就只能靠口头承诺——所以我们把它写下来。</p>
+    <div class="meta-row">
+      <span class="tag">生效日期 <b>2026 年 11 月 26 日</b></span>
+      <span class="tag">版本 <b>v1.0</b></span>
+      <span class="tag">适用 <b>线下三个校区与线上课</b></span>
+    </div>
+  </div>
+
+  <div class="layout">
+
+    <nav class="toc" aria-label="页内目录">
+      <h5>本页内容</h5>
+      <ol>
+        <li><a href="#privacy"><span class="n">01</span>隐私政策</a></li>
+        <li><a href="#terms"><span class="n">02</span>服务条款</a></li>
+        <li><a href="#refund"><span class="n">03</span>退费规则</a></li>
+      </ol>
+      <p class="toc-sub">本页为演示文本，条款结构与口径按常见教培机构惯例撰写，正式对外前须经法务审核并与实际合同一致。</p>
+    </nav>
+
+    <div class="doc">
+
+      <!-- 01 隐私政策 -->
+      <section class="block" id="privacy">
+        <header>
+          <span class="kicker">01 / PRIVACY</span>
+          <h2>隐私政策</h2>
+          <p class="sub">我们收集的信息很少，且绝大多数只在学校内部使用。</p>
+        </header>
+
+        <div class="card">
+          <div class="clause">
+            <h4><span class="no">1.1</span>我们收集什么</h4>
+            <p>报名与上课过程中，我们会记录以下信息：</p>
+            <ul>
+              <li><b>监护人信息</b>：姓名、手机号、微信号（选填）。用于排课通知、请假与缴费沟通。</li>
+              <li><b>学员信息</b>：姓名、年龄、年级、就读学校（选填）。用于分班与教学设计。</li>
+              <li><b>学习记录</b>：出勤、每节课的作品文件、课堂报告中的能力评级与老师评语。</li>
+              <li><b>缴费记录</b>：订单号、金额、优惠类型、支付方式。我们不保存银行卡号与支付密码。</li>
+            </ul>
+            <p>我们<b>不收集</b>：身份证号、家庭住址、人脸与指纹、学籍号、家庭收入、孩子的社交账号。</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">1.2</span>用来做什么</h4>
+            <p>以上信息只用于四件事：安排班级与老师、发送上课与赛事通知、生成课堂报告与学习档案、处理缴费与退费。</p>
+            <p>我们<b>不会</b>把学员信息用于电话营销、不会转卖给第三方、不会用于算法推荐。如果未来要做结营作品展示或宣传素材，会<b>单独征求监护人书面同意</b>，且可以随时撤回。</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">1.3</span>存在哪里</h4>
+            <p>正式运营时，学员档案存放在机构的教务系统，仅任课老师、班主任与教务管理员可按需查看，操作留有日志。</p>
+            <p><b>关于本演示站点：</b>你在本站在线报名、预约试听、寒假营登记时填写的信息，<b>只写入你自己浏览器的 localStorage，不会上传到任何服务器</b>。清除浏览器数据即彻底删除。页面上的家长中心同样是本地演示，输入任意 11 位手机号即可进入，不构成真实身份验证。</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">1.4</span>第三方会看到什么</h4>
+            <p>打开本站页面时，浏览器会向字体服务商（飞书字体镜像）请求字体文件，对方会记录你的 IP 与请求时间，这是任何网站加载外部资源都会发生的事。</p>
+            <p>本站<b>不接入</b>广告 SDK、行为埋点、第三方统计与社交分享插件。若后续接入赛事报名系统（如 CCF 官网），跳转后适用对方的隐私政策。</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">1.5</span>关于孩子的信息</h4>
+            <p>学员均为未成年人，所有信息由<b>监护人提供并同意</b>。我们遵循最小必要原则：能不分班就不收集学校，能不填就不填微信。</p>
+            <p>课堂作品（代码、截图、演示视频）仅用于教学存档与家长查看，未经同意不公开发布。</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">1.6</span>家长可以要求什么</h4>
+            <p>监护人有权随时：查询孩子的全部记录、要求更正错误信息、要求删除不再需要的记录、撤回作品展示的授权。</p>
+            <p>提出方式：拨打 400-860-2026，或发邮件至 privacy@codeleap.example。我们会在 <b>5 个工作日内</b>响应，删除类请求在核实身份后 <b>10 个工作日内</b>完成。</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">1.7</span>保留多久</h4>
+            <p>在读期间长期保留；结课或退费后保留 <b>2 年</b>（用于复课查询与教学回访），到期删除。缴费凭证按财税要求保留 <b>5 年</b>，这部分不能提前删除。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 服务条款 -->
+      <section class="block" id="terms">
+        <header>
+          <span class="kicker">02 / TERMS</span>
+          <h2>服务条款</h2>
+          <p class="sub">课时怎么算、请假怎么补、作品归谁——这几条最容易起争议，所以写得细一点。</p>
+        </header>
+
+        <div class="card">
+          <div class="clause">
+            <h4><span class="no">2.1</span>我们提供什么</h4>
+            <p>面向 6–16 岁学员的编程课程（图形化、Python、C++ 竞赛方向）、入学测评与学习规划、课堂报告与阶段评估。</p>
+            <p>我们也协助学员报名 GESP、CSP-J/S 等公开赛事，但<b>只协助报名与备赛辅导，不代办、不承诺任何成绩与升学结果</b>。</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">2.2</span>报名与名额</h4>
+            <p>以<b>缴费到账</b>确认名额，留信息不等于占位。班额上限 6 人（常规班）与 12 人（集训营），满员后进入候补名单。</p>
+            <p>价格以当期公示为准。优惠（两人同报、续费折扣、兄妹同报、老带新）<b>不叠加，按最优一项计算</b>，报名时系统自动取最优，不另行议价。</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">2.3</span>课时与有效期</h4>
+            <p>常规班一期 <b>48 课时</b>，每次 90 分钟（竞赛班 120 分钟）计 1 课时。学年课时有效期 <b>12 个月</b>，自首次上课起算。</p>
+            <p>因升学、搬迁等原因可申请延期一次，最长延长 <b>3 个月</b>，延期期间不占用新学年课时。</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">2.4</span>请假与补课</h4>
+            <p>请假需在<b>上课前 4 小时</b>通过顾问或家长端提交，当次课时不计消耗。未提前提交视为缺课，计入课时消耗。</p>
+            <p>每学年提供 <b>4 次免费补课</b>。补课安排在同阶段、同进度的其他班次，<b>不跨阶段</b>（如 L3 的课不能补到 L1 班上）。线上课全部有回放，可随时补看。</p>
+            <p>因机构原因停课（老师临时病假、场地问题），课时顺延并提前通知，不计消耗，也不占用免费补课次数。</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">2.5</span>作品归谁</h4>
+            <p>学员在课堂上完成的代码、游戏与文档，<b>著作权归学员本人</b>。机构可在获得监护人同意后，用于教学案例、招生展示与公开演示，并注明作者与年龄。</p>
+            <p>课程课件、讲义、题库与课堂录像的著作权归机构，学员仅可用于个人学习，不得复制传播或商用。</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">2.6</span>课堂秩序与设备</h4>
+            <p>课堂禁止携带玩具与零食（饮用水除外）。学员故意损坏教室设备（显示器、键盘、机器人套件）的，按设备折旧价赔偿。</p>
+            <p>线上课需自备可运行 Python 的电脑。因家庭网络或设备问题导致无法上课的，不计入机构责任，可看回放补课。</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">2.7</span>我们不承诺什么</h4>
+            <p>编程学习依赖持续练习，机构<b>不对</b>以下事项作任何承诺：考级必过、竞赛获奖、升学加分、短期速成。宣传材料中出现的学员成绩均为个体案例，不代表平均水平。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 退费规则 -->
+      <section class="block" id="refund">
+        <header>
+          <span class="kicker">03 / REFUND</span>
+          <h2>退费规则</h2>
+          <p class="sub">按已消耗课时核算，不设“一经售出概不退费”这类条款。</p>
+        </header>
+
+        <div class="card">
+          <div class="clause">
+            <h4><span class="no">3.1</span>常规班退费比例</h4>
+            <div class="tbl-wrap">
+              <table>
+                <thead>
+                  <tr><th>申请时点</th><th>退费金额</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>开课前</b></td>
+                    <td>全额退</td>
+                    <td>已领取的教材与套件按成本价扣除</td>
+                  </tr>
+                  <tr>
+                    <td><b>已上 1–2 次课</b></td>
+                    <td>全额退</td>
+                    <td>含教材与平台使用费，不扣任何费用</td>
+                  </tr>
+                  <tr>
+                    <td><b>已上 3 次课起，剩余 ≥ 50%</b></td>
+                    <td>按未消耗课时退</td>
+                    <td>不额外收取手续费</td>
+                  </tr>
+                  <tr>
+                    <td><b>已开课，剩余 &lt; 50%</b></td>
+                    <td>按未消耗课时退</td>
+                    <td>已发放的赠品课时不予折现</td>
+                  </tr>
+                  <tr>
+                    <td><b>课时已全部消耗</b></td>
+                    <td>不予退费</td>
+                    <td>可申请下一期续费优惠</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="warn-box">
+              <b>未消耗课时怎么算：</b>总课时减去已上课时（含请假未提前 4 小时告知的当次）。赠送课时不计入退费基数。<b>单课时价 = 实付金额 ÷ 总课时</b>，按实付而非挂牌价计算，已享受的优惠不再追回。
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">3.2</span>集训营退费</h4>
+            <p>寒假/暑期集训营为短期连续课程，按<b>剩余天数</b>折算：</p>
+            <ul>
+              <li>开营前 7 日以上：全额退，扣材料费。</li>
+              <li>开营前 7 日内：退 90%。</li>
+              <li>开营后：按未开始的天数折算，扣 10% 组织成本；已过 3 天及以上不予退费。</li>
+            </ul>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">3.3</span>这些情况不退</h4>
+            <ul>
+              <li>已消耗的课时费用。</li>
+              <li>已代为缴纳的赛事报名费（该项由主办方规则决定，我们只转交）。</li>
+              <li>已使用且影响二次销售的教材、套件与赠品。</li>
+              <li>因学员违反课堂秩序被劝退的，按未消耗课时退，不额外补偿。</li>
+            </ul>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">3.4</span>怎么申请</h4>
+            <div class="steps">
+              <div class="step"><span class="i">1</span><p><b>提出申请</b>：向班主任或顾问提出，说明学员姓名与退费原因。无需提供额外证明。</p></div>
+              <div class="step"><span class="i">2</span><p><b>核算确认</b>：教务出具核算单，列出总课时、已消耗、未消耗、应退金额，双方确认签字。</p></div>
+              <div class="step"><span class="i">3</span><p><b>原路退回</b>：自受理起 <b>7 个工作日内</b>完成审批并发起退款；到账时间取决于支付渠道，微信与支付宝通常即时，银行卡 <b>15 个工作日内</b>。</p></div>
+              <div class="step"><span class="i">4</span><p><b>开具凭证</b>：退费完成后提供结算凭证，可开票部分按实际消费金额重开发票。</p></div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="clause">
+            <h4><span class="no">3.5</span>谈不拢怎么办</h4>
+            <p>先与校区负责人协商；协商不成，可向当地市场监管部门（12315）或教育主管部门投诉。我们接受调解结果，并按调解意见执行退费。</p>
+            <p>本页条款与报名时签署的书面合同不一致的，<b>以书面合同为准</b>；合同条款如低于本页标准，以更有利于家长的一方执行。</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<div class="foot">
+  <b>版本记录</b>：v1.0 · 2026 年 11 月 26 日首次发布。<br>
+  本页为演示文本，用于展示教培机构官网应有的合规结构，<b>不构成任何法律意见</b>；正式上线须由法务审核，并与实际签署的合同、当地监管要求保持一致。<br>
+  码跃少儿编程 · 合肥 · 400-860-2026 · privacy@codeleap.example ·
+  <a href="index.html">官网</a> · <a href="camp.html">寒假集训营</a> · <a href="enroll.html">在线报名</a> · <a href="brochure.html">招生简章</a> · <a href="parent.html">家长中心</a> · <a href="404.html">404 预览</a>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var root = document.documentElement;
+  var saved = null;
+  try { saved = localStorage.getItem("codeleap-theme"); } catch (e) {}
+  if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+  document.getElementById("themeBtn").addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("codeleap-theme", next); } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>

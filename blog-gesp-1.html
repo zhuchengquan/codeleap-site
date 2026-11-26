@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GESP 一级到底考什么？两周备考不靠刷题 · 码跃少儿编程</title>
+<meta name="description" content="满分 100，60 分及格，90 分以上可跨一级。15 道选择、10 道判断、2 道编程——失分几乎不在「不会」，而在格式和读题。">
+<link rel="canonical" href="https://codeleap.example/blog-gesp-1.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="GESP 一级到底考什么？两周备考不靠刷题">
+<meta property="og:description" content="满分 100，60 分及格，90 分以上可跨一级。15 道选择、10 道判断、2 道编程——失分几乎不在「不会」，而在格式和读题。">
+<meta property="og:url" content="https://codeleap.example/blog-gesp-1.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b7bf3'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' fill='%23fff' text-anchor='middle'%3E%E7%A0%81%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f9fe;--bg-2:#eef4fd;--ink:#16213a;--muted:#56657e;--faint:#8695ab;--primary:#2b7bf3;--primary-soft:rgba(43,123,243,.10);--accent:#f0663a;--accent-soft:rgba(240,102,58,.10);--ok:#12a06a;--ok-soft:rgba(18,160,106,.12);--glass:rgba(255,255,255,.72);--glass-2:rgba(255,255,255,.94);--glass-head:rgba(255,255,255,.88);--stroke:rgba(27,52,92,.10);--stroke-2:rgba(27,52,92,.16);--shadow:0 12px 32px rgba(26,48,84,.07);--radius:18px;--radius-sm:13px;--font-display:"Nunito","Noto Sans SC",sans-serif;--font-body:"Nunito","Noto Sans SC",sans-serif;--font-mono:"JetBrains Mono","Noto Sans SC",monospace}
+[data-theme="dark"]{--bg:#0d1524;--bg-2:#101a2c;--ink:#eef3fb;--muted:#a7b6cc;--faint:#7d8ea8;--primary:#5a9dff;--primary-soft:rgba(90,157,255,.14);--accent:#ff8660;--accent-soft:rgba(255,134,96,.12);--ok:#4dd49b;--ok-soft:rgba(77,212,155,.15);--glass:rgba(255,255,255,.06);--glass-2:rgba(255,255,255,.10);--glass-head:rgba(18,28,46,.88);--stroke:rgba(255,255,255,.10);--stroke-2:rgba(255,255,255,.18);--shadow:0 16px 40px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.78;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-display);letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:11px 18px;background:var(--glass-head);border-bottom:1px solid var(--stroke);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:15.5px}
+.brand .m{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:var(--primary);color:#fff;font-size:14px;font-weight:700}
+.tagline{font-size:12.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted)}
+.sp{flex:1}
+.icon-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 16px;border:1px solid var(--stroke-2);border-radius:999px;background:var(--glass);color:var(--ink);font-family:inherit;font-size:13.5px}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 22px;border-radius:999px;background:var(--accent);color:#fff;font-size:14.5px;box-shadow:0 10px 24px rgba(240,102,58,.26)}
+.btn-line{display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--ink);font-size:14px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.05em;color:var(--primary)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--primary);font-style:normal}
+.wrap{max-width:1000px;margin:0 auto;padding:32px 20px 60px}
+.foot{max-width:1000px;margin:0 auto;padding:0 20px 52px;font-size:12px;line-height:1.9;color:var(--faint)}
+.foot a{color:var(--primary)}
+
+.art-wrap{max-width:1080px;margin:0 auto;padding:26px 20px 60px;display:grid;grid-template-columns:minmax(0,720px) 260px;gap:44px;align-items:start}
+@media(max-width:980px){.art-wrap{grid-template-columns:1fr;gap:0}.side{display:none}}
+.crumb{font-size:12px;color:var(--faint);margin-bottom:16px}
+.crumb a{color:var(--primary)}
+.art h1{margin:8px 0 14px;font-size:clamp(24px,3.3vw,33px);font-weight:800;line-height:1.36;letter-spacing:.01em}
+.art .meta-line{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--faint);margin-bottom:20px}
+.art .lead{margin:0 0 8px;font-size:15.5px;line-height:1.95;color:var(--muted);padding-bottom:22px;border-bottom:1px solid var(--stroke)}
+.art p{margin:0 0 18px;font-size:15.5px;line-height:1.96;color:var(--ink)}
+.art h2{margin:36px 0 14px;font-size:20px;font-weight:700;line-height:1.45}
+.art ul,.art ol{margin:0 0 18px;padding-left:22px;display:grid;gap:9px}
+.art li{font-size:15px;line-height:1.92;color:var(--ink)}
+.art li b{font-weight:600;color:var(--ink)}
+.art li span{color:var(--muted)}
+.art code{font-family:var(--font-mono);font-size:13px;padding:1px 5px;border-radius:5px;background:var(--primary-soft);color:var(--primary)}
+.note{margin:24px 0;padding:16px 20px;border-radius:var(--radius-sm);background:var(--primary-soft);border-left:3px solid var(--primary);font-size:14px;line-height:1.92;color:var(--muted)}
+.note b{color:var(--ink)}
+.quote{margin:26px 0;padding:2px 0 2px 18px;border-left:2px solid var(--stroke-2);font-size:15px;line-height:1.94;color:var(--muted)}
+.tbl{margin:20px 0 24px;border:1px solid var(--stroke);border-radius:var(--radius-sm);overflow:hidden}
+.tbl table{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th{text-align:left;padding:10px 14px;background:var(--primary-soft);color:var(--ink);font-weight:600;font-size:13px}
+.tbl td{padding:10px 14px;border-top:1px solid var(--stroke);color:var(--muted);line-height:1.7;vertical-align:top}
+.tbl td b{color:var(--ink)}
+.author{margin:40px 0 0;padding:18px 20px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);display:flex;gap:14px;align-items:flex-start;box-shadow:var(--shadow)}
+.author img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none}
+.author b{display:block;font-size:14px}
+.author span{display:block;font-size:12.5px;line-height:1.75;color:var(--muted);margin-top:3px}
+.related{margin-top:38px}
+.related h3{font-size:12px;margin:0 0 12px;color:var(--faint);font-weight:500;letter-spacing:.06em}
+.rel{display:grid;gap:10px}
+.rel a{display:block;padding:15px 18px;border-radius:var(--radius-sm);border:1px solid var(--stroke);background:var(--glass-2)}
+.rel a:hover{border-color:var(--stroke-2)}
+.rel b{font-size:14px;font-weight:600}
+.rel span{display:block;font-size:12px;color:var(--faint);margin-top:4px}
+.cta{margin-top:34px;display:flex;align-items:center;flex-wrap:wrap;gap:16px;padding:24px 26px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid rgba(240,102,58,.22)}
+.cta .tt{flex:1;min-width:230px}
+.cta b{display:block;font-size:15.5px;font-weight:700}
+.cta span{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.7}
+.side{position:sticky;top:26px}
+.side .box{padding:18px 20px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);box-shadow:var(--shadow)}
+.side h4{margin:0 0 10px;font-size:12px;letter-spacing:.06em;color:var(--faint);font-weight:500}
+.side ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.side li{font-size:13px;line-height:1.6}
+.side li a{color:var(--primary)}
+.side .k{display:block;font-size:12px;color:var(--faint);margin-top:2px}
+.side .toc{display:grid;gap:8px;font-size:12.5px;color:var(--muted)}
+
+.art{min-width:0}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <span class="tagline">知识库</span>
+  <div class="sp"></div>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="btn" href="index.html">官网首页</a>
+</div>
+<div class="art-wrap">
+  <article class="art">
+    <p class="crumb"><a href="blog.html">知识库</a> · <a href="campus.html">校区与到店</a> / 考级竞赛</p>
+    <span class="eyebrow"><i></i>考级竞赛</span>
+    <h1>GESP 一级到底考什么？两周备考不靠刷题</h1>
+    <div class="meta-line"><span>2026-11-20</span><span>阅读约 7 分钟</span><span>作者：陈昊</span></div>
+    <p class="lead">每年 3、6、9、12 月各一场，一级是所有人的第一关，也是最容易被轻视的一关。我们带过几百个孩子考一级，发现失分几乎不在「不会做」，而在「格式」和「读题」。这篇把卷面结构和两周备考节奏写清楚。</p>
+    
+<p>先纠正一个流传很广的说法：一级「随便考考就能过」。真实情况是，一级的通过门槛确实不高，但编程题占一半分，而编程题的失分几乎全部来自格式与读题——这两样不专门练，分数就会卡在 55 到 65 之间反复。</p>
+<h2>一、卷面结构：分值是怎么分的</h2>
+<div class="tbl"><table>
+<tr><th>题型</th><th>题量</th><th>分值</th><th>小计</th></tr>
+<tr><td>选择题</td><td>15 题</td><td>每题 2 分</td><td><b>30 分</b></td></tr>
+<tr><td>判断题</td><td>10 题</td><td>每题 2 分</td><td><b>20 分</b></td></tr>
+<tr><td>编程题</td><td>2 题</td><td>每题 25 分</td><td><b>50 分</b></td></tr>
+<tr><td colspan="3">合计 / 及格线 / 跨级线</td><td><b>100 / 60 / 90</b></td></tr>
+</table></div>
+<p>两个关键事实值得先说：一是<b>编程题占一半分</b>，只刷选择题一定过不了一级；二是 <b>90 分以上可以跨一级</b>，这意味着目标不该只定在 60 分——多拿 30 分，能省掉后面整整一期课的时间和费用。</p>
+<h2>二、一级编程题的真实失分点</h2>
+<p>一级编程题常见题型：输入两个数做加减、判断奇偶、按次数循环输出、简单累加求和。看起来简单，但失分集中在四处：</p>
+<ul>
+<li><b>输入读错。</b><span>题目说「输入两个整数，用空格隔开」，孩子写了两次 <code>input()</code> 分别读，遇到一行两个数就直接崩。这是最高频的错误。</span></li>
+<li><b>输出格式。</b><span>要求输出「结果是 7」，孩子只输出 <code>7</code>；或者多打了一个句号、少了一个空格。机器判题不认这些「人情」。</span></li>
+<li><b>循环边界。</b><span><code>for i in range(1, n)</code> 少跑一次，或者 <code>range(n)</code> 从 0 开始导致输出数量对不上。差一位，整题零分。</span></li>
+<li><b>变量名随手写。</b><span><code>a</code>、<code>b</code>、<code>x</code> 混着用，写到第三行自己都分不清哪个是累加器，改错时越改越乱。</span></li>
+</ul>
+<p>注意这四条都不是知识点问题，是<b>规范和习惯</b>问题。所以我们备考时不比刷题量，改做「格式训练」：同一道题，要求孩子先抄一遍题目里的输入输出描述，再动手写代码，写完对照着念一遍自己的输出。</p>
+<h2>三、两周节奏：每周两次课，每天在家 20 分钟</h2>
+<div class="tbl"><table>
+<tr><th>时间</th><th>做什么</th><th>这一段的验收标准</th></tr>
+<tr><td><b>第 1 周前 3 天</b></td><td>把一级考纲知识点过一遍（顺序、循环、条件、输入输出），每个点配 2 道最小练习</td><td>能独立写出来，不是「看懂了」</td></tr>
+<tr><td><b>第 1 周末</b></td><td>完整做 1 套真题，计时 2 小时</td><td>拿到真实基线分，暴露格式问题</td></tr>
+<tr><td><b>第 2 周前 3 天</b></td><td>只改错题 + 格式专项，每题都要求写注释说明输入什么、输出什么</td><td>错题重做能一次过</td></tr>
+<tr><td><b>第 2 周末</b></td><td>再做 1 套真题</td><td>85 分以上可以放心去考</td></tr>
+</table></div>
+<div class="note">别做的事：<b>不要一周刷五套真题。</b>一级的题型高度重复，刷到第三套以后边际收益接近零，反而会让格式错误固化成习惯——考场上照样扣分。</div>
+<h2>四、家长能帮上的三件事</h2>
+<ul>
+<li><b>帮孩子读一遍题干，重点是「输入」「输出」两段。</b><span>很多孩子不是不会写，是漏读了条件。家长念一遍，比讲十遍语法有用。</span></li>
+<li><b>考前一周确认设备和考试环境。</b><span>一级是上机考，提前熟悉考试系统的登录和提交方式，别在考场门口才第一次见。</span></li>
+<li><b>别问「能不能过」，问「今天这道题你卡在哪一步」。</b><span>前者制造压力，后者制造方法。这句话我们建议家长在考前一周每天说一次。</span></li>
+</ul>
+<div class="quote">一个真实案例：有个孩子两次模拟考都是 62 分，我们一看，两道编程题代码全对，只是输出多了一个空格。改掉空格，正式考试 96 分，直接跨级。</div>
+<h2>五、过了 90 分之后怎么走</h2>
+<p>90 分以上可以跨一级，通常建议直接跳到三级。但跨级有个前提：<b>二级的核心是嵌套循环和数组的初步使用</b>，如果这两块没接触过，跨到三级后会在前两周明显吃力。</p>
+<p>我们的做法是先补 8 课时的衔接内容再进三级，比硬跳更稳。跨级省下的是一期课的钱，不该省掉的是这两周的地基。</p>
+<div class="note">一句话总结：<b>一级考的不是会不会，是规范不规范。</b>把输入输出格式练成条件反射，比多刷十套题有效。</div>
+
+    <div class="author">
+      <img src="assets/teacher-chen.jpg" srcset="assets/teacher-chen.jpg 240w" sizes="52px" width="52" height="52" alt="陈昊" loading="lazy" decoding="async">
+      <div><b>陈昊</b><span>竞赛班主教练 · 前算法工程师 · 带出 43 名 CSP-J 一等奖</span></div>
+    </div>
+    <div class="related">
+      <h3>接着读</h3>
+      <div class="rel"><a href="blog-after-scratch.html"><b>Scratch 学完之后去哪？三条路线的真实区别</b><span>学习路径 · 6 分钟</span></a><a href="blog-when-to-start.html"><b>孩子几岁开始学编程合适？先看他能不能做这三件事</b><span>选课判断 · 6 分钟</span></a></div>
+    </div>
+    <div class="cta">
+      <div class="tt"><b>先带孩子做一次免费测评</b><span>45 分钟试听 + 一次能力测评，给一份书面建议：适合哪个阶段、还需要补什么。不合适我们会直说。</span></div>
+      <a class="btn-primary" href="index.html#trial">预约免费试听</a>
+    </div>
+  </article>
+  <aside class="side">
+    <div class="box">
+      <h4>本文涉及的阶段</h4>
+      <ul>
+        <li><a href="course-l2.html">L2 进阶图形化与硬件</a><span class="k">8–10 岁 · 48 课时</span></li>
+        <li><a href="course-l3.html">L3 Python 编程</a><span class="k">9–12 岁 · 48 课时</span></li>
+        <li><a href="course-l4.html">L4 C++ 竞赛</a><span class="k">11–16 岁 · 48 课时</span></li>
+      </ul>
+    </div>
+    <div class="box" style="margin-top:12px">
+      <h4>知识库</h4>
+      <div class="toc"><a href="blog-when-to-start.html">几岁开始学编程合适</a><a href="blog-gesp-1.html">GESP 一级怎么准备</a><a href="blog-after-scratch.html">Scratch 之后学什么</a><a href="blog.html">全部文章与速答</a></div>
+    </div>
+  </aside>
+</div>
+<div class="foot">
+  <p><b>码跃少儿编程 CodeLeap</b> · 合肥 · 高新 / 政务 / 滨湖三校区 · 400-860-2026</p>
+  <p><a href="index.html">官网首页</a> · <a href="index.html#courses">课程体系</a> · <a href="course-l1.html">L1</a> · <a href="course-l2.html">L2</a> · <a href="course-l3.html">L3</a> · <a href="course-l4.html">L4</a> · <a href="blog.html">知识库</a> · <a href="campus.html">校区与到店</a> · <a href="results.html">荣誉与成果</a> · <a href="camp.html">寒假营</a> · <a href="enroll.html">在线报名</a> · <a href="brochure.html">招生简章</a> · <a href="parent.html">家长中心</a> · <a href="legal.html">政策与条款</a></p>
+  <p>内容示例站点：文中课表、价格、人数与统计数据均为演示用途，正式上线前请替换为真实信息；教育判断类内容仅供参考，不构成对个体孩子的结论。</p>
+</div>
+<script>
+(function () {
+  var KEY = "codeleap-theme";
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem(KEY); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  var btn = document.getElementById("themeBtn");
+  if (btn) btn.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
+

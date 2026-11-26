@@ -1,0 +1,2740 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="dns-prefetch" href="https://miaoda.feishu.cn">
+<link rel="canonical" href="https://codeleap.example/index.html">
+<title>码跃少儿编程 CodeLeap · 从积木编程到信息学竞赛</title>
+<meta name="description" content="码跃少儿编程面向 6–16 岁孩子，提供 Scratch、Python、C++ 与 GESP / CSP-J/S 竞赛小班课，线上线下同步开课，每节课都有作品带回家。">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef3fc">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="码跃少儿编程 · 从积木编程到信息学竞赛">
+<meta property="og:description" content="面向 6–16 岁孩子的编程小班课：Scratch、Python、C++ 与 GESP / CSP-J/S 竞赛。6 人小班，前两次课不满意全额退。">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%232b7bf3'/%3E%3Cpath d='M11 10l-4 6 4 6M21 10l4 6-4 6' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "码跃少儿编程 CodeLeap",
+  "alternateName": "CodeLeap",
+  "description": "面向 6 至 16 岁孩子的少儿编程教育机构，开设 Scratch、Python、C++ 与信息学竞赛小班课。",
+  "telephone": "+86-400-860-2026",
+  "areaServed": "合肥",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "合肥",
+    "addressRegion": "安徽",
+    "addressCountry": "CN"
+  },
+  "knowsAbout": ["少儿编程", "Scratch", "Python", "C++", "GESP", "CSP-J/S"]
+}
+</script>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<script>
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem("codeleap-theme"); } catch (e) {}
+  var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var theme = saved || (prefersDark ? "dark" : "light");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+<style>
+/* ===== 设计变量：iOS 液态玻璃 + 洛谷式内容布局 ===== */
+:root {
+  color-scheme: light;
+  --font-display: "Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body: "Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Noto Sans SC", monospace;
+
+  --bg: #eef3fc;
+  --bg-blob-1: rgba(120, 190, 255, 0.55);
+  --bg-blob-2: rgba(255, 170, 130, 0.42);
+  --bg-blob-3: rgba(150, 240, 210, 0.45);
+
+  --ink: #0e1a33;
+  --muted: #55668a;
+  --faint: #8b99b6;
+
+  --primary: #2b7bf3;
+  --primary-soft: rgba(43, 123, 243, 0.12);
+  --on-primary: #ffffff;
+  --accent: #f0663a;
+  --accent-soft: rgba(240, 102, 58, 0.14);
+  --success: #1f9d64;
+  --gold: #c98a00;
+
+  --glass: rgba(255, 255, 255, 0.56);
+  --glass-strong: rgba(255, 255, 255, 0.8);
+  --glass-head: rgba(255, 255, 255, 0.68);
+  --stroke: rgba(255, 255, 255, 0.8);
+  --stroke-2: rgba(20, 50, 110, 0.1);
+  --shadow: 0 12px 36px rgba(30, 70, 150, 0.12);
+  --shadow-sm: 0 4px 14px rgba(30, 70, 150, 0.08);
+
+  --radius: 18px;
+  --radius-sm: 12px;
+  --container: 1180px;
+  --nav-h: 68px;
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --bg-blob-1: rgba(50, 110, 220, 0.35);
+  --bg-blob-2: rgba(220, 100, 60, 0.22);
+  --bg-blob-3: rgba(40, 170, 130, 0.2);
+
+  --ink: #e9effa;
+  --muted: #a7b5d0;
+  --faint: #7c8ba8;
+
+  --primary: #5b9bff;
+  --primary-soft: rgba(91, 155, 255, 0.16);
+  --on-primary: #071022;
+  --accent: #ff9566;
+  --accent-soft: rgba(255, 149, 102, 0.16);
+  --success: #3dd68c;
+  --gold: #f3c04e;
+
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-strong: rgba(255, 255, 255, 0.1);
+  --glass-head: rgba(16, 24, 40, 0.72);
+  --stroke: rgba(255, 255, 255, 0.14);
+  --stroke-2: rgba(255, 255, 255, 0.08);
+  --shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== 基础 ===== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.78;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+h1, h2, h3, h4 { margin: 0; line-height: 1.25; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+::selection { background: var(--primary); color: var(--on-primary); }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+
+/* 背景液态光斑 */
+.bg-blobs {
+  position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none;
+  background: var(--bg);
+}
+.bg-blobs span {
+  position: absolute; border-radius: 50%; filter: blur(90px);
+  animation: drift 26s ease-in-out infinite alternate;
+}
+.bg-blobs span:nth-child(1) { width: 56vw; height: 56vw; left: -18vw; top: -20vw; background: var(--bg-blob-1); }
+.bg-blobs span:nth-child(2) { width: 46vw; height: 46vw; right: -16vw; top: 8vh; background: var(--bg-blob-2); animation-delay: -8s; }
+.bg-blobs span:nth-child(3) { width: 50vw; height: 50vw; left: 22vw; bottom: -28vw; background: var(--bg-blob-3); animation-delay: -16s; }
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(6vw, 4vh, 0) scale(1.12); }
+}
+
+.container { width: min(var(--container), calc(100% - 48px)); margin: 0 auto; }
+.glass {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+
+/* ===== 按钮 ===== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 46px; padding: 0 22px; border-radius: 999px;
+  font-size: 15px; font-weight: 500; border: 1px solid transparent;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+}
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn-primary { background: var(--primary); color: var(--on-primary); box-shadow: 0 8px 22px rgba(43, 123, 243, 0.3); }
+.btn-primary:hover { box-shadow: 0 12px 28px rgba(43, 123, 243, 0.4); }
+.btn-accent { background: var(--accent); color: #ffffff; box-shadow: 0 8px 22px rgba(240, 102, 58, 0.3); }
+.btn-accent:hover { box-shadow: 0 12px 28px rgba(240, 102, 58, 0.4); }
+[data-theme="dark"] .btn-accent { color: #1a0d06; }
+.btn-ghost {
+  background: var(--glass); color: var(--ink); border-color: var(--stroke);
+  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+}
+.btn-ghost:hover { background: var(--glass-strong); }
+.btn-sm { min-height: 38px; padding: 0 16px; font-size: 14px; }
+
+/* ===== 导航 ===== */
+.nav {
+  position: sticky; top: 0; z-index: 50; height: var(--nav-h);
+  background: var(--glass-head);
+  -webkit-backdrop-filter: blur(24px) saturate(180%); backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid var(--stroke-2);
+}
+.nav-inner { height: 100%; display: flex; align-items: center; gap: 28px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 23px; font-weight: 700; letter-spacing: 0.01em; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--primary), #7cc4ff);
+  box-shadow: 0 6px 16px rgba(43, 123, 243, 0.35);
+}
+[data-theme="dark"] .brand-mark { background: linear-gradient(135deg, #2b7bf3, #6fb6ff); }
+.brand-mark svg { width: 20px; height: 20px; color: #fff; }
+.brand small { font-family: var(--font-body); font-size: 12px; font-weight: 500; color: var(--muted); margin-left: 4px; letter-spacing: 1px; }
+.nav-links { display: flex; align-items: center; gap: 2px; margin-left: auto; }
+.nav-links a {
+  padding: 8px 12px; border-radius: 999px; font-size: 14px; color: var(--muted); font-weight: 500;
+  transition: background .18s ease, color .18s ease;
+}
+.nav-links a:hover { color: var(--ink); background: var(--primary-soft); }
+.nav-links a.active { color: var(--primary); background: var(--primary-soft); }
+.nav-actions { display: flex; align-items: center; gap: 10px; margin-left: 8px; }
+.icon-btn {
+  width: 40px; height: 40px; border-radius: 999px; display: grid; place-items: center;
+  background: var(--glass); border: 1px solid var(--stroke); color: var(--ink);
+  transition: background .18s ease, transform .18s ease;
+}
+.icon-btn:hover { background: var(--glass-strong); transform: translateY(-1px); }
+.icon-btn svg { width: 18px; height: 18px; }
+.icon-btn .sun { display: none; }
+[data-theme="dark"] .icon-btn .sun { display: block; }
+[data-theme="dark"] .icon-btn .moon { display: none; }
+.nav-toggle { display: none; }
+.nav-close { display: none; }
+
+/* ===== 首屏 ===== */
+.hero { padding: 72px 0 48px; position: relative; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px;
+  background: var(--glass); border: 1px solid var(--stroke); font-size: 13px; font-weight: 500; color: var(--muted);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+}
+.eyebrow i { width: 7px; height: 7px; border-radius: 50%; background: var(--success); box-shadow: 0 0 0 4px rgba(31, 157, 100, .18); }
+.hero h1 {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(36px, 4.8vw, 58px); line-height: 1.22; letter-spacing: 0.01em; margin: 22px 0 16px;
+  text-wrap: balance;
+}
+.hero h1 em { font-style: normal; color: var(--primary); position: relative; }
+.hero h1 em::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 10px; border-radius: 4px;
+  background: var(--accent-soft); z-index: -1;
+}
+.hero-lead { font-size: 17.5px; color: var(--muted); max-width: 520px; text-wrap: pretty; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 40px; }
+.stat { padding: 16px 18px; border-radius: var(--radius-sm); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+.stat b { display: block; font-family: var(--font-display); font-weight: 700; font-size: 29px; line-height: 1.1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.stat span { display: block; margin-top: 6px; font-size: 12.5px; color: var(--muted); }
+
+.hero-visual { position: relative; }
+.hero-frame {
+  border-radius: 30px; overflow: hidden; border: 1px solid var(--stroke);
+  box-shadow: var(--shadow); background: var(--glass);
+}
+.hero-frame img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.float-chip {
+  position: absolute; display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px;
+  font-size: 13px; font-weight: 500; background: var(--glass-strong); border: 1px solid var(--stroke);
+  -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); box-shadow: var(--shadow-sm); white-space: nowrap;
+}
+.float-chip svg { width: 15px; height: 15px; color: var(--primary); }
+.chip-a { top: 18px; right: 18px; }
+.chip-b { top: 70px; right: 18px; }
+.chip-b svg { color: var(--accent); }
+
+.code-panel {
+  position: absolute; left: -28px; bottom: -22px; width: min(360px, 82%);
+  border-radius: 16px; overflow: hidden; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.6;
+  background: var(--glass-strong); border: 1px solid var(--stroke);
+  -webkit-backdrop-filter: blur(26px) saturate(170%); backdrop-filter: blur(26px) saturate(170%);
+  box-shadow: var(--shadow);
+}
+.code-head { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-bottom: 1px solid var(--stroke-2); font-family: var(--font-body); font-size: 12px; color: var(--muted); }
+.code-head .dots { display: inline-flex; gap: 5px; }
+.code-head .dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--primary); opacity: .55; }
+.code-head .dots i:nth-child(2) { background: var(--gold); }
+.code-head .dots i:nth-child(3) { background: var(--success); }
+.code-head .code-file { flex: 1; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0; }
+.code-run { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); font-weight: 500; }
+.code-run svg { width: 11px; height: 11px; }
+.code-body { padding: 10px 0; counter-reset: line; }
+.code-body li { counter-increment: line; padding: 1px 14px 1px 0; color: var(--ink); transition: background .3s ease; white-space: pre; }
+.code-body li::before { content: counter(line); display: inline-block; width: 34px; text-align: right; margin-right: 14px; color: var(--faint); font-size: 11px; }
+.code-body li.active { background: var(--primary-soft); box-shadow: inset 3px 0 0 var(--primary); }
+.kw { color: var(--accent); }
+.fn { color: var(--primary); }
+.num { color: var(--gold); }
+.str { color: var(--success); }
+.code-out { display: flex; align-items: center; gap: 8px; padding: 9px 14px; border-top: 1px solid var(--stroke-2); font-family: var(--font-body); font-size: 12px; color: var(--muted); transition: color .3s ease, background .3s ease; }
+.code-out svg { width: 14px; height: 14px; color: var(--success); flex: none; }
+.code-out.lit { color: var(--success); background: rgba(31, 157, 100, .1); }
+
+/* ===== 合作条 ===== */
+.partners { padding: 20px 0 8px; }
+.partners-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 36px; padding: 18px 26px; border-radius: var(--radius); }
+.partners-label { font-size: 13px; color: var(--faint); font-weight: 500; }
+.partners-inner ul { display: flex; flex-wrap: wrap; gap: 14px 32px; }
+.partners-inner li { font-size: 14.5px; font-weight: 500; color: var(--muted); display: inline-flex; align-items: center; gap: 8px; }
+.partners-inner li svg { width: 16px; height: 16px; color: var(--primary); }
+
+/* ===== 区块通用 ===== */
+.section { padding: 96px 0; }
+.sec-head { max-width: 680px; margin-bottom: 44px; }
+.sec-head h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(27px, 3.2vw, 38px); letter-spacing: 0.01em; line-height: 1.34; margin: 16px 0 12px; text-wrap: balance; }
+.sec-head p { color: var(--muted); font-size: 16.5px; text-wrap: pretty; }
+.sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.sec-head.center .eyebrow { justify-content: center; }
+
+/* ===== 课程体系 ===== */
+.stage-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
+.stage-card {
+  text-align: left; padding: 18px 18px 16px; border-radius: var(--radius-sm); border: 1.5px solid var(--stroke-2);
+  background: var(--glass); color: var(--ink); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  transition: border-color .2s ease, transform .2s ease, background .2s ease;
+}
+.stage-card:hover { transform: translateY(-3px); border-color: var(--stroke); }
+.stage-card.selected { border-color: var(--primary); background: var(--primary-soft); }
+.stage-card .lvl { display: inline-block; padding: 2px 9px; border-radius: 6px; font-family: var(--font-mono); font-size: 12px; font-weight: 600; background: var(--primary); color: var(--on-primary); }
+.stage-card h3 { font-size: 17px; font-weight: 700; margin-top: 12px; }
+.stage-card p { font-size: 13.5px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+.stage-card .age { display: inline-block; margin-top: 12px; font-size: 12.5px; color: var(--primary); font-weight: 500; }
+
+.course-detail { display: grid; grid-template-columns: 1.3fr 1fr; gap: 0; border-radius: var(--radius); overflow: hidden; }
+.cd-main { padding: 30px 32px; }
+.cd-side { padding: 30px 32px; border-left: 1px solid var(--stroke-2); background: var(--glass-strong); display: flex; flex-direction: column; gap: 14px; }
+.cd-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.cd-top h3 { font-family: var(--font-display); font-weight: 700; font-size: 25px; letter-spacing: 0.01em; }
+.cd-top .age { padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 500; }
+.cd-desc { color: var(--muted); margin-top: 10px; }
+.cd-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px; }
+.cd-facts li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 14px; border-radius: var(--radius-sm); background: var(--primary-soft); font-size: 14px; }
+.cd-facts li span { color: var(--muted); }
+.cd-facts li b { font-weight: 600; }
+.cd-main h4, .cd-side h4 { font-size: 14px; font-weight: 700; color: var(--muted); letter-spacing: .5px; margin: 20px 0 8px; }
+.cd-side h4 { margin: 6px 0 0; }
+.cd-list li, .works li { display: flex; gap: 10px; padding: 6px 0; font-size: 15px; }
+.cd-list svg, .works svg { width: 18px; height: 18px; flex: none; margin-top: 4px; color: var(--success); }
+.works svg { color: var(--accent); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { padding: 6px 12px; border-radius: 999px; font-size: 13px; background: var(--glass); border: 1px solid var(--stroke-2); color: var(--ink); }
+.cd-side .btn { margin-top: 8px; }
+
+/* ===== 学习路径 ===== */
+.path { position: relative; margin-top: 22px; padding: 26px 30px; border-radius: var(--radius); display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.path::before {
+  content: ""; position: absolute; left: 30px; right: 30px; top: 50%; height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent)); opacity: .35;
+}
+.path li { position: relative; padding: 10px 14px; border-radius: var(--radius-sm); background: var(--glass-strong); border: 1px solid var(--stroke); }
+.path b { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+.path b i { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); flex: none; box-shadow: 0 0 0 4px var(--primary-soft); }
+.path span { display: block; font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+/* ===== 教学模式 ===== */
+.method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
+.method-photo { border-radius: var(--radius); overflow: hidden; position: relative; min-height: 420px; }
+.method-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.method-quote {
+  position: absolute; left: 20px; right: 20px; bottom: 20px; padding: 18px 20px; border-radius: var(--radius-sm);
+  background: var(--glass-strong); border: 1px solid var(--stroke);
+  -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px); font-size: 15px;
+}
+.method-quote b { display: block; margin-top: 8px; font-size: 13px; color: var(--muted); font-weight: 500; }
+.features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.feature { padding: 22px; border-radius: var(--radius-sm); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); transition: transform .2s ease, background .2s ease; }
+.feature:hover { transform: translateY(-3px); background: var(--glass-strong); }
+.feature .ico { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); margin-bottom: 14px; }
+.feature:nth-child(even) .ico { background: var(--accent-soft); color: var(--accent); }
+.feature .ico svg { width: 20px; height: 20px; }
+.feature h3 { font-size: 16.5px; font-weight: 700; }
+.feature p { font-size: 14.5px; color: var(--muted); margin-top: 6px; }
+
+/* ===== 师资 ===== */
+.teacher-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.teacher { border-radius: var(--radius); overflow: hidden; background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); transition: transform .2s ease; }
+.teacher:hover { transform: translateY(-4px); }
+.teacher img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.teacher .t-body { padding: 16px 18px 20px; }
+.teacher h3 { font-size: 18px; font-weight: 700; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.teacher h3 span { font-size: 12.5px; font-weight: 500; color: var(--primary); }
+.teacher p { font-size: 14px; color: var(--muted); margin-top: 8px; }
+.teacher .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.teacher .tags span { font-size: 12px; padding: 3px 9px; border-radius: 6px; background: var(--primary-soft); color: var(--primary); font-weight: 500; }
+
+/* ===== 学员成果 ===== */
+.results-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 28px; align-items: center; }
+.results-photo { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--stroke); box-shadow: var(--shadow); }
+.results-photo img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.result-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.result-stats li { padding: 20px 22px; border-radius: var(--radius-sm); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+.result-stats b { display: block; font-family: var(--font-display); font-weight: 700; font-size: 34px; line-height: 1.1; color: var(--primary); font-variant-numeric: tabular-nums; }
+.result-stats li:nth-child(2) b { color: var(--accent); }
+.result-stats li:nth-child(3) b { color: var(--gold); }
+.result-stats li:nth-child(4) b { color: var(--success); }
+.result-stats span { display: block; margin-top: 8px; font-size: 14px; color: var(--muted); }
+.works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+.work-card { padding: 0; overflow: hidden; display: block; text-align: left; font-family: inherit; font-size: inherit; color: var(--ink); border-radius: var(--radius-sm); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); transition: transform .2s ease, background .2s ease; }
+.work-card:hover { transform: translateY(-4px); background: var(--glass-strong); }
+.work-card img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.wc-body { padding: 16px 18px 18px; }
+.work-card .wc-ico { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); margin-bottom: 12px; }
+.work-card .wc-ico svg { width: 18px; height: 18px; }
+.work-card h3 { font-size: 16px; font-weight: 700; }
+.work-card p { font-size: 14px; color: var(--muted); margin-top: 6px; }
+.work-card span { display: inline-block; margin-top: 10px; font-family: var(--font-mono); font-size: 12px; color: var(--primary); }
+
+/* ===== 学费 ===== */
+.seg { display: flex; width: fit-content; padding: 4px; border-radius: 999px; background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); margin: 0 auto 30px; }
+.seg button { border: 0; background: transparent; padding: 8px 20px; border-radius: 999px; font-size: 14px; font-weight: 500; color: var(--muted); transition: background .18s ease, color .18s ease; }
+.seg button.active { background: var(--primary); color: var(--on-primary); }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+.plan { padding: 28px; border-radius: var(--radius); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); display: flex; flex-direction: column; position: relative; }
+.plan.hot { border-color: var(--primary); box-shadow: 0 16px 44px rgba(43, 123, 243, 0.22); background: var(--glass-strong); }
+.plan .badge { position: absolute; top: -13px; left: 28px; padding: 4px 12px; border-radius: 999px; background: var(--accent); color: #fff; font-size: 12.5px; font-weight: 500; }
+[data-theme="dark"] .plan .badge { color: #1a0d06; }
+.plan h3 { font-size: 20px; font-weight: 700; }
+.plan .plan-sub { font-size: 13.5px; color: var(--muted); margin-top: 4px; }
+.plan .price-row { display: flex; align-items: baseline; gap: 6px; margin: 18px 0 4px; }
+.plan .price-row small { font-size: 14px; color: var(--muted); }
+.plan .price { font-family: var(--font-display); font-weight: 700; font-size: 40px; line-height: 1.1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.plan .price-unit { font-size: 13px; color: var(--faint); }
+.plan .price.free { color: var(--success); }
+.plan ul { margin: 18px 0 24px; display: grid; gap: 9px; }
+.plan li { display: flex; gap: 10px; font-size: 15px; }
+.plan li svg { width: 18px; height: 18px; flex: none; margin-top: 4px; color: var(--success); }
+.plan .btn { margin-top: auto; width: 100%; }
+.price-note { text-align: center; margin-top: 22px; font-size: 13.5px; color: var(--muted); }
+
+/* ===== 评价 ===== */
+.quote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.quote { padding: 26px; border-radius: var(--radius); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); display: flex; flex-direction: column; }
+.quote .stars { display: flex; gap: 3px; color: var(--gold); margin-bottom: 14px; }
+.quote .stars svg { width: 16px; height: 16px; }
+.quote p { font-size: 15px; flex: 1; }
+.quote footer { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
+.quote .ava { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 17px; color: #fff; background: linear-gradient(135deg, var(--primary), #7cc4ff); flex: none; }
+.quote:nth-child(2) .ava { background: linear-gradient(135deg, var(--accent), #ffb08a); }
+.quote:nth-child(3) .ava { background: linear-gradient(135deg, var(--success), #8ff0c4); }
+.quote b { font-size: 14.5px; display: block; }
+.quote span { font-size: 12.5px; color: var(--muted); }
+
+/* ===== 报名流程 ===== */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+.step { padding: 24px; border-radius: var(--radius-sm); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); counter-increment: step; }
+.step::before { content: "0" counter(step); font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--primary); }
+.step h3 { font-size: 17px; font-weight: 700; margin-top: 10px; }
+.step p { font-size: 14px; color: var(--muted); margin-top: 6px; }
+
+/* ===== 校区 ===== */
+.campus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.campus { padding: 24px; border-radius: var(--radius); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+.campus h3 { font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.campus h3 svg { width: 18px; height: 18px; color: var(--primary); }
+.campus p { font-size: 14.5px; color: var(--muted); margin-top: 10px; }
+.campus .campus-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.campus .campus-tags span { font-size: 12.5px; padding: 4px 10px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); font-weight: 500; }
+
+/* ===== 关于我们 ===== */
+.about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center; }
+.about-grid p { color: var(--muted); font-size: 16px; }
+.about-grid p + p { margin-top: 14px; }
+.about-points { display: grid; gap: 14px; }
+.about-points li { padding: 20px 22px; border-radius: var(--radius-sm); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); display: flex; gap: 16px; }
+.about-points b { display: block; font-size: 16px; }
+.about-points span { font-size: 14px; color: var(--muted); }
+.about-points .num-mark { font-family: var(--font-display); font-weight: 700; font-size: 30px; line-height: 1.1; color: var(--primary); min-width: 46px; font-variant-numeric: tabular-nums; }
+
+/* ===== FAQ ===== */
+.faq { max-width: 860px; margin: 0 auto; display: grid; gap: 10px; }
+.faq details { border-radius: var(--radius-sm); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); overflow: hidden; }
+.faq summary { list-style: none; cursor: pointer; padding: 18px 22px; font-weight: 600; font-size: 16px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary svg { width: 18px; height: 18px; flex: none; color: var(--muted); transition: transform .2s ease; }
+.faq details[open] summary svg { transform: rotate(180deg); }
+.faq details[open] summary { color: var(--primary); }
+.faq .faq-body { padding: 0 22px 20px; color: var(--muted); font-size: 15px; }
+
+/* ===== 预约试听 ===== */
+.trial-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 28px; align-items: start; }
+.trial-form { padding: 32px; border-radius: var(--radius); }
+.trial-form h3 { font-size: 22px; font-weight: 700; }
+.trial-form .form-sub { font-size: 14px; color: var(--muted); margin: 6px 0 22px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.field label { font-size: 13.5px; font-weight: 500; color: var(--muted); }
+.field input, .field select, .field textarea {
+  font-family: inherit; font-size: 15px; color: var(--ink); width: 100%;
+  padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--stroke-2);
+  background: var(--glass); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  transition: border-color .18s ease, background .18s ease;
+}
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--primary); background: var(--glass-strong); }
+.field textarea { resize: vertical; min-height: 84px; }
+.field input.err { border-color: var(--accent); }
+.consent { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--muted); margin: 4px 0 18px; }
+.consent input { margin-top: 3px; accent-color: var(--primary); }
+.form-ok { display: none; text-align: center; padding: 30px 10px; }
+.form-ok .ok-ico { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto 16px; background: rgba(31, 157, 100, .14); color: var(--success); }
+.form-ok .ok-ico svg { width: 30px; height: 30px; }
+.form-ok h3 { font-size: 22px; }
+.form-ok p { color: var(--muted); margin-top: 8px; }
+.trial-form.done form { display: none; }
+.trial-form.done .form-ok { display: block; }
+.contact-card { padding: 30px; border-radius: var(--radius); display: grid; gap: 16px; }
+.contact-card h3 { font-size: 20px; font-weight: 700; }
+.contact-card p { font-size: 14px; color: var(--muted); }
+.contact-line { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: var(--radius-sm); background: var(--glass); border: 1px solid var(--stroke); }
+.contact-line .ico { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); flex: none; }
+.contact-line:nth-child(odd) .ico { background: var(--accent-soft); color: var(--accent); }
+.contact-line .ico svg { width: 18px; height: 18px; }
+.contact-line b { display: block; font-size: 15px; }
+.contact-line span { font-size: 12.5px; color: var(--muted); }
+
+/* ===== 开班计划 ===== */
+.sched-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.filter-btn {
+  padding: 8px 16px; border-radius: 999px; font-size: 14px; font-weight: 500; font-family: inherit;
+  background: var(--glass); border: 1px solid var(--stroke); color: var(--muted);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  transition: background .18s ease, color .18s ease, border-color .18s ease;
+}
+.filter-btn:hover { background: var(--glass-strong); color: var(--ink); }
+.filter-btn.active { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+.sched-wrap { border-radius: var(--radius); overflow: hidden; }
+.sched-head, .sched-row {
+  display: grid; grid-template-columns: 1.6fr .8fr 1fr 1.4fr .9fr 104px;
+  gap: 14px; align-items: center;
+}
+.sched-head {
+  padding: 13px 22px; font-size: 12.5px; font-weight: 600; color: var(--faint);
+  letter-spacing: 0.04em; border-bottom: 1px solid var(--stroke-2);
+}
+.sched-row { padding: 16px 22px; font-size: 14px; border-bottom: 1px solid var(--stroke-2); transition: background .18s ease; }
+.sched-row:last-child { border-bottom: 0; }
+.sched-row:hover { background: var(--primary-soft); }
+.sched-row .sc-name b { display: block; font-size: 15px; font-weight: 600; }
+.sched-row .sc-name span { font-size: 12px; color: var(--faint); font-family: var(--font-mono); letter-spacing: 0; }
+.sched-row .sc-campus { color: var(--muted); }
+.sched-row .sc-date, .sched-row .sc-time { font-variant-numeric: tabular-nums; }
+.sched-row .sc-time { color: var(--muted); font-size: 13.5px; }
+.badge-seat { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-size: 12.5px; font-weight: 500; white-space: nowrap; }
+.badge-seat i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.badge-seat.ok { background: rgba(31, 157, 100, .14); color: var(--success); }
+.badge-seat.few { background: var(--accent-soft); color: var(--accent); }
+.badge-seat.full { background: rgba(125, 138, 160, .16); color: var(--faint); }
+.badge-seat.neutral { background: var(--primary-soft); color: var(--primary); }
+.sched-row .btn { justify-self: end; }
+.sched-empty { padding: 44px 22px; text-align: center; color: var(--muted); font-size: 14.5px; }
+.sched-note { margin-top: 14px; font-size: 13px; color: var(--faint); }
+
+/* ===== 教育资讯 ===== */
+.news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.news-card {
+  text-align: left; padding: 24px; border-radius: var(--radius); font-family: inherit; font-size: inherit;
+  background: var(--glass); border: 1px solid var(--stroke); color: var(--ink);
+  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  display: flex; flex-direction: column; transition: transform .2s ease, background .2s ease;
+}
+.news-card:hover { transform: translateY(-4px); background: var(--glass-strong); }
+.news-meta { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--faint); }
+.news-meta .n-tag { padding: 2px 9px; border-radius: 6px; background: var(--primary-soft); color: var(--primary); font-weight: 500; }
+.news-card h3 { font-size: 17.5px; font-weight: 700; margin: 12px 0 8px; line-height: 1.5; }
+.news-card p { font-size: 14px; color: var(--muted); flex: 1; }
+.news-more { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-size: 13.5px; font-weight: 500; color: var(--primary); }
+.news-more svg { width: 15px; height: 15px; }
+
+/* 资讯阅读层 */
+.reader { position: fixed; inset: 0; z-index: 95; display: none; }
+.reader.open { display: block; }
+.reader-backdrop { position: absolute; inset: 0; background: rgba(6, 14, 30, .55); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.reader-panel {
+  position: relative; z-index: 1; width: min(720px, calc(100% - 32px));
+  max-height: calc(100vh - 96px); overflow-y: auto; margin: 48px auto;
+  padding: 36px 38px 40px; border-radius: 24px;
+  background: var(--bg); border: 1px solid var(--stroke); box-shadow: 0 30px 80px rgba(10, 24, 50, .3);
+}
+.reader-close {
+  position: absolute; top: 18px; right: 18px; width: 38px; height: 38px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--glass); border: 1px solid var(--stroke); color: var(--ink);
+}
+.reader-close svg { width: 17px; height: 17px; }
+.reader-panel h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(23px, 3vw, 31px); line-height: 1.42; letter-spacing: 0.01em; margin: 14px 0 18px; padding-right: 44px; }
+.reader-body p { font-size: 15.5px; margin-bottom: 14px; text-wrap: pretty; }
+.reader-body h3 { font-size: 16.5px; font-weight: 700; margin: 22px 0 8px; }
+.reader-body ul { margin: 0 0 14px; display: grid; gap: 8px; }
+.reader-body li { font-size: 15px; padding-left: 20px; position: relative; }
+.reader-body li::before { content: ""; position: absolute; left: 2px; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+.reader-foot { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--stroke-2); }
+
+/* ===== 品牌历程与资质 ===== */
+.about-extra { margin-top: 56px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 36px; align-items: start; }
+.blk-title { font-size: 19px; font-weight: 700; margin-bottom: 14px; }
+.blk-title small { display: block; font-size: 13px; font-weight: 400; color: var(--muted); margin-top: 4px; }
+.timeline { border-radius: var(--radius); padding: 6px 26px; }
+.tl-item { display: grid; grid-template-columns: 76px 1fr; gap: 20px; padding: 17px 0; border-bottom: 1px solid var(--stroke-2); }
+.tl-item:last-child { border-bottom: 0; }
+.tl-year { font-family: var(--font-display); font-weight: 700; font-size: 17px; color: var(--primary); font-variant-numeric: tabular-nums; }
+.tl-body b { display: block; font-size: 15.5px; font-weight: 600; }
+.tl-body span { font-size: 13.5px; color: var(--muted); }
+.cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.cert { display: flex; gap: 14px; padding: 18px; border-radius: var(--radius-sm); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+.cert .ico { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); flex: none; }
+.cert .ico svg { width: 18px; height: 18px; }
+.cert b { display: block; font-size: 14.5px; font-weight: 600; }
+.cert span { font-size: 12.5px; color: var(--muted); }
+
+/* ===== 招聘与合作 ===== */
+.job-list { display: grid; gap: 12px; }
+.job {
+  display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+  padding: 22px 26px; border-radius: var(--radius-sm);
+  background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+}
+.job h3 { font-size: 16.5px; font-weight: 700; }
+.job p { font-size: 13.5px; color: var(--muted); margin-top: 4px; }
+.job .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.job .tags span { font-size: 12px; padding: 3px 9px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); font-weight: 500; }
+.coop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+.coop { padding: 20px; border-radius: var(--radius-sm); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+.coop b { display: block; font-size: 15px; }
+.coop span { display: block; font-size: 13.5px; color: var(--muted); margin-top: 6px; }
+
+/* ===== 课堂报告样例 ===== */
+.report-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; align-items: start; margin-top: 44px; }
+.report-sheet { padding: 26px 28px; border-radius: 16px; background: var(--glass-strong); border: 1px solid var(--stroke); box-shadow: var(--shadow-sm); }
+.report-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 14px; flex-wrap: wrap; padding-bottom: 14px; border-bottom: 1px dashed var(--stroke-2); }
+.report-head h3 { font-size: 17px; font-weight: 700; }
+.report-head span { font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.report-block { margin-top: 18px; }
+.report-block h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: var(--faint); margin-bottom: 8px; }
+.report-rows { display: grid; gap: 7px; }
+.report-row { display: grid; grid-template-columns: 0.9fr 1.7fr auto; gap: 12px; align-items: center; padding: 9px 12px; border-radius: 9px; background: var(--primary-soft); font-size: 13.5px; }
+.report-row b { font-weight: 600; }
+.report-row span { color: var(--muted); font-size: 13px; }
+.r-tag { font-size: 12px; font-weight: 500; font-style: normal; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.r-tag.ok { background: rgba(31, 157, 100, .16); color: var(--success); }
+.r-tag.mid { background: var(--accent-soft); color: var(--accent); }
+.r-tag.low { background: rgba(125, 138, 160, .18); color: var(--faint); }
+.report-note { font-size: 13.5px; padding: 14px 16px; border-radius: 9px; background: var(--glass); border-left: 3px solid var(--primary); }
+.report-note b { display: block; font-size: 12px; font-weight: 600; color: var(--faint); margin-bottom: 4px; letter-spacing: 0.04em; }
+.report-next { display: flex; gap: 8px; font-size: 13.5px; color: var(--muted); }
+.report-next b { color: var(--ink); font-weight: 600; flex: none; }
+.report-side h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+.report-side p { font-size: 14.5px; color: var(--muted); margin-top: 8px; }
+.report-points { display: grid; gap: 12px; margin-top: 22px; }
+.report-points li { display: flex; gap: 12px; padding: 16px 18px; border-radius: var(--radius-sm); background: var(--glass); border: 1px solid var(--stroke); }
+.report-points .ico { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); flex: none; }
+.report-points .ico svg { width: 16px; height: 16px; }
+.report-points b { display: block; font-size: 14.5px; }
+.report-points span { font-size: 13px; color: var(--muted); }
+
+/* ===== 预约进度 ===== */
+.ok-steps { display: grid; gap: 8px; margin: 18px auto 0; max-width: 390px; text-align: left; }
+.ok-step { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; background: var(--glass); border: 1px solid var(--stroke-2); }
+.ok-step i { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 12px; font-weight: 600; background: var(--primary); color: var(--on-primary); flex: none; }
+.ok-step b { font-size: 13.5px; }
+.ok-step span { margin-left: auto; font-size: 12px; color: var(--muted); }
+
+/* 赛事与考级日历 */
+.cal-block { margin-top: 46px; }
+.cal-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; margin-bottom: 18px; }
+.cal-head h3 { font-family: var(--font-display); font-size: 20px; font-weight: 700; letter-spacing: .01em; color: var(--ink); margin: 0; }
+.cal-hint { font-size: 12.5px; color: var(--faint); }
+.cal-next { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; padding: 18px 22px; border-radius: var(--radius); border: 1px solid var(--stroke); background: var(--glass-strong); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); margin-bottom: 16px; }
+.cal-next-count { font-family: var(--font-display); font-size: 32px; font-weight: 800; line-height: 1; color: var(--primary); font-variant-numeric: tabular-nums; flex: none; }
+.cal-next-count small { font-size: 12.5px; font-weight: 600; margin-left: 5px; color: var(--muted); }
+.cal-next-body { flex: 1; min-width: 200px; }
+.cal-next-body b { display: block; font-size: 15.5px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+.cal-next-body span { font-size: 12.5px; line-height: 1.6; color: var(--muted); }
+.cal-systems { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.cal-sys { padding: 16px 18px; border-radius: var(--radius-sm); border: 1px solid var(--stroke); background: var(--glass); }
+.cal-sys-tag { display: inline-block; font-family: var(--font-mono); font-size: 11.5px; font-weight: 600; letter-spacing: .04em; padding: 3px 9px; border-radius: 6px; color: #fff; background: var(--primary); margin-bottom: 9px; }
+.cal-sys p { font-size: 13.5px; line-height: 1.74; color: var(--muted); margin: 0; }
+.cal-sys p b { color: var(--ink); font-weight: 600; }
+.cal-line { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.cal-item { display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--stroke); background: var(--glass); }
+.cal-date { flex: none; width: 54px; text-align: center; font-variant-numeric: tabular-nums; }
+.cal-date b { display: block; font-family: var(--font-display); font-size: 21px; font-weight: 800; line-height: 1.15; color: var(--ink); }
+.cal-date span { font-size: 11px; color: var(--faint); }
+.cal-name { flex: 1; min-width: 0; }
+.cal-name b { display: block; font-size: 14.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.cal-name span { font-size: 12.5px; line-height: 1.55; color: var(--muted); }
+.cal-tag { flex: none; font-family: var(--font-mono); font-size: 11px; letter-spacing: .02em; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--stroke-2); color: var(--muted); }
+.cal-tag.soon { border-color: rgba(43, 123, 243, .45); color: var(--primary); background: rgba(43, 123, 243, .09); }
+.cal-tag.past { color: var(--faint); border-color: var(--stroke); }
+
+/* 老带新转介绍 */
+.referral { display: grid; grid-template-columns: 1.45fr 1fr; gap: 30px; margin-top: 24px; padding: 26px 28px; border-radius: var(--radius); border: 1px solid var(--stroke); background: var(--glass); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
+.referral h3 { font-family: var(--font-display); font-size: 20px; font-weight: 700; letter-spacing: .01em; color: var(--ink); margin: 0 0 10px; }
+.referral p { font-size: 14px; line-height: 1.78; color: var(--muted); margin: 0 0 12px; }
+.ref-rules { margin: 0; padding-left: 18px; font-size: 12.5px; line-height: 1.9; color: var(--faint); }
+.ref-card { display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 18px 20px; border-radius: var(--radius-sm); border: 1px solid var(--stroke-2); background: var(--glass-strong); }
+.ref-label { font-size: 11.5px; letter-spacing: .08em; color: var(--faint); }
+.ref-code { font-family: var(--font-mono); font-size: 25px; font-weight: 600; letter-spacing: .07em; color: var(--primary); font-variant-numeric: tabular-nums; }
+.ref-note { font-size: 12.5px; line-height: 1.7; color: var(--faint); margin: 0; }
+.ref-input { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--stroke-2); background: rgba(255, 255, 255, .55); font-family: inherit; font-size: 14px; letter-spacing: .05em; color: var(--ink); }
+.ref-input:focus { outline: none; border-color: var(--primary); }
+[data-theme="dark"] .ref-input { background: rgba(255, 255, 255, .08); }
+@media (max-width: 860px) {
+  .cal-systems { grid-template-columns: 1fr; }
+  .referral { grid-template-columns: 1fr; gap: 20px; padding: 22px; }
+  .cal-item { gap: 12px; padding: 12px 14px; }
+}
+
+/* 作品详情层 */
+.work-shot { border-radius: 12px; overflow: hidden; border: 1px solid var(--stroke); margin: 6px 0 20px; }
+.work-shot img { width: 100%; display: block; }
+.code-snip { font-family: var(--font-mono); font-size: 12.5px; line-height: 1.75; letter-spacing: 0; padding: 16px 18px; border-radius: 10px; margin: 10px 0 18px; overflow-x: auto; white-space: pre; background: rgba(24, 38, 64, .06); border: 1px solid var(--stroke-2); }
+[data-theme="dark"] .code-snip { background: rgba(255, 255, 255, .06); }
+
+/* ===== 课程大纲 ===== */
+.outline-bar { display: flex; gap: 3px; height: 12px; margin-top: 12px; }
+.outline-bar span { height: 100%; border-radius: 4px; }
+.outline-legend { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px 20px; margin-top: 14px; }
+.outline-legend li { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.outline-legend li i { width: 8px; height: 8px; border-radius: 3px; flex: none; }
+.outline-legend li b { margin-left: auto; font-size: 12.5px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* ===== 选课测评 ===== */
+.quiz { margin-top: 20px; padding: 30px 32px; border-radius: var(--radius); }
+.quiz-intro h3 { font-size: 18px; font-weight: 700; }
+.quiz-intro p { font-size: 14px; color: var(--muted); margin: 6px 0 18px; max-width: 560px; }
+.quiz-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.quiz-step { font-size: 12.5px; color: var(--faint); font-variant-numeric: tabular-nums; }
+.quiz-dots { display: flex; gap: 6px; }
+.quiz-dots i { width: 24px; height: 4px; border-radius: 2px; background: var(--stroke-2); transition: background .2s ease; }
+.quiz-dots i.on { background: var(--primary); }
+.quiz-q { font-size: 19px; font-weight: 700; line-height: 1.5; margin: 14px 0 18px; }
+.quiz-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.quiz-opt {
+  text-align: left; padding: 14px 16px; border-radius: var(--radius-sm); font-family: inherit; font-size: 14.5px;
+  background: var(--glass); border: 1px solid var(--stroke-2); color: var(--ink);
+  transition: border-color .18s ease, background .18s ease, transform .18s ease;
+}
+.quiz-opt:hover { border-color: var(--primary); background: var(--primary-soft); transform: translateY(-1px); }
+.quiz-back { margin-top: 18px; padding: 0; border: 0; background: none; font-size: 13px; color: var(--faint); font-family: inherit; }
+.quiz-back:hover { color: var(--primary); }
+.quiz-back[disabled] { opacity: 0; pointer-events: none; }
+.quiz-result h3 { font-size: 24px; font-weight: 700; line-height: 1.4; margin: 14px 0 10px; }
+.quiz-result p { font-size: 15px; color: var(--muted); max-width: 620px; }
+.qr-badge { display: inline-block; font-family: var(--font-mono); font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 6px; background: var(--primary); color: var(--on-primary); letter-spacing: 0; }
+.qr-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+
+/* ===== 学费估算 ===== */
+.estimator { margin-top: 22px; display: grid; grid-template-columns: 1.4fr 1fr; border-radius: var(--radius); overflow: hidden; }
+.est-controls { padding: 28px 30px; display: grid; gap: 18px; align-content: start; }
+.est-row { display: grid; gap: 9px; }
+.est-row label { font-size: 12.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; }
+.est-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.est-chips button {
+  padding: 8px 15px; border-radius: 999px; font-family: inherit; font-size: 13.5px; font-weight: 500;
+  background: var(--glass); border: 1px solid var(--stroke); color: var(--muted);
+  transition: background .18s ease, color .18s ease, border-color .18s ease;
+}
+.est-chips button:hover { background: var(--glass-strong); color: var(--ink); }
+.est-chips button.active { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+.est-note { font-size: 12.5px; color: var(--faint); }
+.est-result {
+  padding: 28px 30px; border-left: 1px solid var(--stroke-2); background: var(--glass-strong);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+}
+.est-label { font-size: 12.5px; color: var(--muted); }
+.est-price { display: flex; align-items: baseline; gap: 3px; margin: 2px 0; }
+.est-price small { font-size: 16px; font-weight: 500; color: var(--muted); }
+.est-price b { font-family: var(--font-display); font-size: 44px; font-weight: 700; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.est-sub { font-size: 13px; color: var(--muted); }
+.est-save { font-size: 12.5px; font-weight: 500; color: var(--success); min-height: 18px; }
+.est-result .btn { margin-top: auto; width: 100%; }
+
+@media (max-width: 1080px) {
+  .estimator { grid-template-columns: 1fr; }
+  .est-result { border-left: 0; border-top: 1px solid var(--stroke-2); }
+  .outline-legend { grid-template-columns: 1fr; }
+  .report-grid { grid-template-columns: 1fr; gap: 26px; }
+}
+@media (max-width: 820px) {
+  .report-row { grid-template-columns: 1fr; gap: 4px; }
+  .r-tag { justify-self: start; }
+  .quiz { padding: 22px; }
+  .quiz-options { grid-template-columns: 1fr; }
+  .quiz-q { font-size: 17px; }
+  .quiz-result h3 { font-size: 20px; }
+  .est-controls, .est-result { padding: 22px; }
+  .est-price b { font-size: 38px; }
+}
+
+/* ===== 返回顶部 ===== */
+.to-top {
+  position: fixed; right: 24px; bottom: 26px; z-index: 60; width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--glass-strong); border: 1px solid var(--stroke); color: var(--ink);
+  -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); box-shadow: var(--shadow-sm);
+  opacity: 0; visibility: hidden; transform: translateY(10px);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s, background .2s ease;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top svg { width: 18px; height: 18px; }
+
+@media (max-width: 1080px) {
+  .news-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-extra { grid-template-columns: 1fr; gap: 30px; }
+  .coop-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 820px) {
+  .news-grid, .cert-grid { grid-template-columns: 1fr; }
+  .sched-head { display: none; }
+  .sched-row { grid-template-columns: 1fr auto; row-gap: 10px; padding: 18px 16px; }
+  .sched-row .btn { justify-self: end; }
+  .tl-item { grid-template-columns: 1fr; gap: 4px; }
+  .timeline { padding: 4px 18px; }
+  .reader-panel { margin: 20px auto; padding: 28px 20px 32px; max-height: calc(100vh - 40px); }
+  .job { padding: 18px; }
+  .to-top { right: 16px; bottom: 18px; }
+}
+
+/* ===== 页脚 ===== */
+.footer { margin-top: 40px; padding: 56px 0 28px; border-top: 1px solid var(--stroke-2); background: var(--glass-head); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 32px; }
+.footer .brand { font-size: 22px; }
+.footer-about { font-size: 14px; color: var(--muted); margin-top: 14px; max-width: 360px; }
+.footer h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+.footer ul { display: grid; gap: 8px; }
+.footer ul a, .footer ul li { font-size: 14px; color: var(--muted); }
+.footer ul a:hover { color: var(--primary); }
+.footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--stroke-2); font-size: 12.5px; color: var(--faint); }
+.footer-legal { display: inline-flex; flex-wrap: wrap; gap: 18px; }
+.footer-legal a:hover { color: var(--primary); }
+
+/* ===== Toast ===== */
+.toast {
+  position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 20px); z-index: 100;
+  padding: 12px 20px; border-radius: 999px; background: var(--ink); color: var(--bg);
+  font-size: 14px; font-weight: 500; opacity: 0; pointer-events: none; transition: opacity .25s ease, transform .25s ease;
+  display: flex; align-items: center; gap: 8px; box-shadow: var(--shadow);
+}
+.toast svg { width: 16px; height: 16px; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ===== 滚动揭示 ===== */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ===== 响应式 ===== */
+@media (max-width: 1024px) {
+  .hero-grid, .method-grid, .results-grid, .about-grid, .trial-grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 48px; }
+  .hero-visual { max-width: 560px; }
+  .stage-grid { grid-template-columns: repeat(2, 1fr); }
+  .teacher-grid { grid-template-columns: repeat(2, 1fr); }
+  .course-detail { grid-template-columns: 1fr; }
+  .cd-side { border-left: 0; border-top: 1px solid var(--stroke-2); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .method-photo { min-height: 320px; }
+}
+@media (max-width: 1080px) {
+  .nav-toggle { display: grid; }
+  .nav-links {
+    position: fixed; inset: var(--nav-h) 0 auto 0; flex-direction: column; align-items: stretch; gap: 4px;
+    padding: 14px 18px 20px; margin: 0; background: var(--glass-head); border-bottom: 1px solid var(--stroke-2);
+    -webkit-backdrop-filter: blur(24px) saturate(180%); backdrop-filter: blur(24px) saturate(180%);
+    transform: translateY(-12px); opacity: 0; visibility: hidden; transition: opacity .2s ease, transform .2s ease, visibility .2s;
+  }
+  .nav-links a { padding: 12px 16px; font-size: 16px; }
+  .nav.open .nav-links { opacity: 1; visibility: visible; transform: none; }
+  .nav.open .nav-toggle .menu { display: none; }
+  .nav.open .nav-toggle .x { display: block; }
+  .nav-toggle .x { display: none; }
+}
+@media (max-width: 820px) {
+  :root { --nav-h: 62px; }
+  .container { width: calc(100% - 36px); }
+  .section { padding: 68px 0; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .code-panel { position: static; width: 100%; margin-top: 14px; }
+  .chip-b { display: none; }
+  .path { grid-template-columns: 1fr; padding: 20px; }
+  .path::before { display: none; }
+  .features, .result-stats, .quote-grid, .steps, .campus-grid, .works-grid, .pricing-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .cd-main, .cd-side { padding: 22px; }
+  .trial-form, .contact-card { padding: 22px; }
+}
+@media (max-width: 520px) {
+  .stage-grid, .teacher-grid, .footer-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 38px; }
+  .brand small { display: none; }
+  .nav-actions .btn-ghost { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+/* ===== 锚点定位与移动端快捷预约 ===== */
+section[id] { scroll-margin-top: 80px; }
+.mbar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 45;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  background: var(--glass-head);
+  border-top: 1px solid var(--stroke);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  transform: translateY(115%);
+  transition: transform .26s ease;
+}
+.mbar.show { transform: none; }
+.mbar.hide { display: none !important; }
+.mbar .mb-call, .mbar .mb-book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 46px;
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.mbar .mb-call { flex: none; width: 86px; background: var(--glass-strong); border: 1px solid var(--stroke-2); color: var(--ink); }
+.mbar .mb-call svg { width: 16px; height: 16px; }
+.mbar .mb-book { flex: 1; background: var(--accent); color: #fff; box-shadow: 0 6px 18px rgba(240, 102, 58, .28); }
+.mbar-x {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px; height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--faint);
+  cursor: pointer;
+}
+.mbar-x svg { width: 15px; height: 15px; }
+@media (max-width: 720px) {
+  .mbar { display: flex; }
+  .to-top { bottom: 88px; }
+  .footer { padding-bottom: 96px; }
+}
+@media (prefers-reduced-motion: reduce) { .mbar { transition: none; } }
+/* 寒假营通告条 */
+.notch-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--accent-soft, rgba(240, 102, 58, .10));
+  background: color-mix(in srgb, var(--accent) 11%, transparent);
+  border-bottom: 1px solid rgba(240, 102, 58, .18);
+}
+.notch {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px;
+  font-size: 13px;
+  color: var(--ink);
+}
+.notch b { font-weight: 600; letter-spacing: .02em; }
+.notch .nt { font-size: 12.5px; color: var(--muted); }
+.notch .go {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--accent);
+}
+.notch .go svg { width: 13px; height: 13px; }
+.notch .nd { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.notch-x {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px; height: 34px;
+  margin-right: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--faint);
+  cursor: pointer;
+}
+.notch-x svg { width: 13px; height: 13px; }
+.notch-wrap.hide { display: none; }
+@media (max-width: 720px) {
+  .notch { padding: 8px 14px; font-size: 12.5px; gap: 8px; }
+  .notch .nt { display: none; }
+}
+</style>
+<link rel="preload" as="image" href="assets/hero.webp" imagesrcset="assets/hero-640.webp 640w, assets/hero.webp 1000w" imagesizes="(max-width: 880px) 92vw, 540px" fetchpriority="high">
+</head>
+<body>
+
+<div class="bg-blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<!-- SVG 图标库 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/><path d="M14 4l-4 16"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.2 6.8.8-5 4.7 1.3 6.8L12 17.6 6 21l1.3-6.8-5-4.7 6.8-.8z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18.5 14.5a6.5 6.5 0 0 1 3 5.5"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.4A8 8 0 1 1 21 12z"/><path d="M8 11h8M8 15h5"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"/></symbol>
+    <symbol id="i-game" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8h10a4 4 0 0 1 4 4v3a3 3 0 0 1-5.3 1.9L14.5 15h-5l-1.2 1.9A3 3 0 0 1 3 15v-3a4 4 0 0 1 4-4z"/><path d="M8 11v3M6.5 12.5h3M16 11.5h.01M18 13.5h.01"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  </defs>
+</svg>
+
+<!-- ===== 导航 ===== -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="码跃少儿编程 首页">
+      <span class="brand-mark"><svg><use href="#i-code"></use></svg></span>
+      码跃少儿编程<small>CodeLeap</small>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="主导航">
+      <a href="#courses">课程体系</a>
+      <a href="#method">教学模式</a>
+      <a href="#teachers">师资团队</a>
+      <a href="#results">学员成果</a>
+      <a href="#pricing">学费</a>
+      <a href="#schedule">开班与赛历</a>
+      <a href="#campus">校区</a>
+      <a href="#news">教育资讯</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="切换明暗模式">
+        <svg class="moon"><use href="#i-moon"></use></svg>
+        <svg class="sun"><use href="#i-sun"></use></svg>
+      </button>
+      <a class="btn btn-primary btn-sm" href="#trial">预约试听</a>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">
+        <svg class="menu"><use href="#i-menu"></use></svg>
+        <svg class="x"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="notch-wrap" id="notchWrap">
+    <a class="notch" href="camp.html">
+      <span class="nd"></span>
+      <b>2027 寒假集训营</b>
+      <span class="nt">1 月 25–29 日 · 5 天 15 课时 · 每营 12 人</span>
+      <span class="go">看名额<svg><use href="#i-arrow"></use></svg></span>
+    </a>
+    <button class="notch-x" id="notchClose" type="button" aria-label="关闭活动通告"><svg><use href="#i-x"></use></svg></button>
+  </div>
+
+  <!-- ===== 首屏 ===== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow"><i></i>面向 6–16 岁 · 图形化 → Python → C++ → 信息学竞赛</span>
+        <h1>让孩子从<em>玩游戏</em>，<br>到做出自己的游戏</h1>
+        <p class="hero-lead">码跃少儿编程用 6 人小班、项目制课堂，带孩子从 Scratch 积木一路走到 GESP、CSP-J/S 赛场。每节课都有作品带回家，每阶段都有看得见的成长记录。</p>
+        <div class="hero-cta">
+          <a class="btn btn-accent" href="#trial">预约免费试听<svg><use href="#i-arrow"></use></svg></a>
+          <a class="btn btn-ghost" href="#courses">查看课程体系</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>3200+</b><span>在读学员</span></div>
+          <div class="stat"><b>12 所</b><span>合作中小学</span></div>
+          <div class="stat"><b>286 项</b><span>竞赛奖项</span></div>
+          <div class="stat"><b>93%</b><span>年度续费率</span></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-frame"><img src="assets/hero.jpg" srcset="assets/hero-640.webp 640w, assets/hero.webp 1000w" sizes="(max-width: 880px) 92vw, 540px" alt="两个孩子正在用笔记本电脑学习积木编程" width="1000" height="1000" fetchpriority="high" decoding="async"></div>
+        <span class="float-chip chip-a"><svg><use href="#i-award"></use></svg>GESP 认证考点</span>
+        <span class="float-chip chip-b"><svg><use href="#i-users"></use></svg>6 人小班</span>
+        <div class="code-panel" aria-hidden="true">
+          <div class="code-head">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="code-file">turtle_square.py</span>
+            <span class="code-run"><svg><use href="#i-play"></use></svg>运行</span>
+          </div>
+          <ol class="code-body" id="codeBody">
+            <li><span class="kw">import</span> turtle</li>
+            <li>t = turtle.Turtle()</li>
+            <li><span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">4</span>):</li>
+            <li>    t.forward(<span class="num">100</span>)</li>
+            <li>    t.right(<span class="num">90</span>)</li>
+            <li>t.write(<span class="str">"我画出了一个正方形"</span>)</li>
+          </ol>
+          <div class="code-out" id="codeOut"><svg><use href="#i-check"></use></svg><span>运行结果：画出一个边长 100 的正方形</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 合作与认证 ===== -->
+  <section class="partners">
+    <div class="container partners-inner glass reveal">
+      <span class="partners-label">合作与认证</span>
+      <ul>
+        <li><svg><use href="#i-check"></use></svg>中国电子学会 等级考试 报名点</li>
+        <li><svg><use href="#i-check"></use></svg>GESP 认证考点</li>
+        <li><svg><use href="#i-check"></use></svg>蓝桥杯青少组 合作单位</li>
+        <li><svg><use href="#i-check"></use></svg>12 所中小学 课后服务 合作</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== 课程体系 ===== -->
+  <section class="section" id="courses">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><i></i>课程体系</span>
+        <h2>从积木到 C++，一条路走到竞赛</h2>
+        <p>四个阶段按认知发展衔接，先建立兴趣与自信，再过渡到代码与算法。点击任一阶段查看课时、作品和可参加的认证。</p>
+      </div>
+
+      <div class="stage-grid reveal" id="stageGrid" role="tablist" aria-label="课程阶段">
+        <button class="stage-card selected" type="button" role="tab" aria-selected="true" data-stage="0">
+          <span class="lvl">L1</span><h3>启蒙 · 图形化编程</h3><p>用 Scratch 积木做动画和小游戏，建立顺序、循环、条件的思维。</p><span class="age">6–8 岁 · 零基础</span>
+        </button>
+        <button class="stage-card" type="button" role="tab" aria-selected="false" data-stage="1">
+          <span class="lvl">L2</span><h3>进阶 · 图形化与硬件</h3><p>变量、列表、函数与克隆，接入摄像头与传感器做体感作品。</p><span class="age">8–10 岁</span>
+        </button>
+        <button class="stage-card" type="button" role="tab" aria-selected="false" data-stage="2">
+          <span class="lvl">L3</span><h3>Python 编程</h3><p>从真实代码出发，用 Turtle 与 Pygame 做小游戏和实用小工具。</p><span class="age">9–12 岁</span>
+        </button>
+        <button class="stage-card" type="button" role="tab" aria-selected="false" data-stage="3">
+          <span class="lvl">L4</span><h3>C++ · 算法与竞赛</h3><p>系统学习数据结构与算法，备战 GESP 与 CSP-J/S。</p><span class="age">11–16 岁</span>
+        </button>
+      </div>
+
+      <div class="course-detail glass reveal" id="courseDetail" role="tabpanel">
+        <div class="cd-main">
+          <div class="cd-top"><h3 id="cdTitle"></h3><span class="age" id="cdAge"></span></div>
+          <p class="cd-desc" id="cdDesc"></p>
+          <ul class="cd-facts" id="cdFacts"></ul>
+          <h4>这个阶段学会什么</h4>
+          <ul class="cd-list" id="cdList"></ul>
+          <h4>48 课时怎么分配</h4>
+          <div class="outline-bar" id="cdOutline" aria-hidden="true"></div>
+          <ul class="outline-legend" id="cdLegend"></ul>
+        </div>
+        <div class="cd-side">
+          <h4>带回家的作品</h4>
+          <ul class="works" id="cdWorks"></ul>
+          <h4>可参加的认证与考试</h4>
+          <div class="chips" id="cdChips"></div>
+          <a class="btn btn-primary" href="#trial" id="cdCta">预约这个阶段的试听</a>
+          <p style="margin:10px 0 0;font-size:12.5px;line-height:1.7;color:var(--faint)">想看清这一阶段的完整安排？<a id="cdMore" href="course-l1.html" style="color:var(--primary);font-weight:500">打开 L1 课程页</a>：课时怎么排、会做出什么、孩子会卡在哪，一页讲完。</p>
+        </div>
+      </div>
+
+      <ol class="path glass reveal" aria-label="学习路径">
+        <li><b><i></i>兴趣起步</b><span>每节课一个小作品，先让孩子愿意来</span></li>
+        <li><b><i></i>思维成形</b><span>拆解问题、调试纠错，形成自己的解决路径</span></li>
+        <li><b><i></i>代码过渡</b><span>图形化到文本代码无缝衔接，不劝退</span></li>
+        <li><b><i></i>赛场验证</b><span>GESP / CSP-J/S 成绩成为升学简历的一部分</span></li>
+      </ol>
+
+      <div class="quiz glass reveal" id="quiz">
+        <div class="quiz-intro" id="quizIntro">
+          <h3>不确定孩子该从哪个阶段开始？</h3>
+          <p>五个问题，帮孩子匹配最近的起点，大约需要两分钟。不收集任何个人信息，答案只在你的浏览器里计算。</p>
+          <button class="btn btn-accent" type="button" id="quizStart">开始测评<svg><use href="#i-arrow"></use></svg></button>
+        </div>
+        <div class="quiz-body" id="quizBody" hidden>
+          <div class="quiz-top">
+            <span class="quiz-step" id="quizStep"></span>
+            <div class="quiz-dots" id="quizDots" aria-hidden="true"></div>
+          </div>
+          <h3 class="quiz-q" id="quizQ"></h3>
+          <div class="quiz-options" id="quizOptions"></div>
+          <button class="quiz-back" type="button" id="quizBack">← 上一题</button>
+        </div>
+        <div class="quiz-result" id="quizResult" hidden>
+          <span class="qr-badge" id="qrBadge">L1</span>
+          <h3 id="qrTitle"></h3>
+          <p id="qrReason"></p>
+          <div class="qr-actions">
+            <a class="btn btn-accent" href="#trial" id="qrBook">用这个起点预约试听<svg><use href="#i-arrow"></use></svg></a>
+            <button class="btn btn-ghost" type="button" id="quizRetry">重新测一次</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 教学模式 ===== -->
+  <section class="section" id="method">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><i></i>教学模式</span>
+        <h2>为什么孩子在这里能坚持下来</h2>
+        <p>编程课不该是听老师讲、照着抄。我们把每节课都设计成一次"动手做、当场跑、上台讲"的循环。</p>
+      </div>
+      <div class="method-grid">
+        <div class="method-photo reveal">
+          <img src="assets/classroom.jpg" srcset="assets/classroom-640.webp 640w, assets/classroom.webp 900w" sizes="(max-width: 760px) 92vw, 460px" alt="老师带着四个孩子在小班课堂里编程" width="900" height="900" loading="lazy" decoding="async">
+          <div class="method-quote">"每节课最后一个环节是孩子上台演示自己的作品。讲得出来，才是真的学会了。"<b>— 王雨晴 · Scratch 与 Python 教研组长</b></div>
+        </div>
+        <div class="features reveal">
+          <div class="feature"><div class="ico"><svg><use href="#i-users"></use></svg></div><h3>6 人小班</h3><p>每个孩子每节课至少 5 次被单独指导，助教全程盯每个人的屏幕。</p></div>
+          <div class="feature"><div class="ico"><svg><use href="#i-layers"></use></svg></div><h3>项目制课堂</h3><p>8 次课完成一个完整项目，结课有作品、有演示、有讲稿。</p></div>
+          <div class="feature"><div class="ico"><svg><use href="#i-monitor"></use></svg></div><h3>线上线下同质量</h3><p>线上班同样是 6 人直播小班，课程实时回放，随时补课。</p></div>
+          <div class="feature"><div class="ico"><svg><use href="#i-file"></use></svg></div><h3>家长透明</h3><p>每节课后推送课堂报告、作品视频与下阶段建议，成长看得见。</p></div>
+          <div class="feature"><div class="ico"><svg><use href="#i-cpu"></use></svg></div><h3>自研学习平台</h3><p>课堂练习、课后作业与错题记录都在线完成，老师与家长同步可见。</p></div>
+          <div class="feature"><div class="ico"><svg><use href="#i-shield"></use></svg></div><h3>前两次课不满意全额退</h3><p>先试再定，不合适就退，不让孩子和家长被课时绑定。</p></div>
+        </div>
+      </div>
+
+      <div class="report-grid reveal">
+        <div class="report-sheet">
+          <div class="report-head">
+            <div>
+              <h3>课堂报告 · 列表与 for 循环</h3>
+              <span>李明轩 · 三年级 · L3 Python 班 · 第 12 课</span>
+            </div>
+            <span>2026 年 11 月 21 日</span>
+          </div>
+          <div class="report-block">
+            <h4>本节能力项</h4>
+            <div class="report-rows">
+              <div class="report-row"><b>语法运用</b><span>能独立写出 for 循环遍历列表，并正确取到每个元素</span><em class="r-tag ok">独立完成</em></div>
+              <div class="report-row"><b>调试能力</b><span>遇到下标越界，提示后能自己定位到出错的那一行</span><em class="r-tag mid">需提示</em></div>
+              <div class="report-row"><b>表达与演示</b><span>上台讲解了作品思路，顺序清楚，能回答同学提问</span><em class="r-tag ok">独立完成</em></div>
+            </div>
+          </div>
+          <div class="report-block">
+            <h4>当堂作品</h4>
+            <div class="report-next"><b>作品</b><span>用 Turtle 画出渐变螺旋，颜色存在列表里循环取用，共 36 行代码。</span></div>
+          </div>
+          <div class="report-block">
+            <div class="report-note"><b>老师评语</b>今天第一次遇到 IndexError，孩子一开始想把整段删掉重写。我们花了几分钟一起读报错、看下标，后来他自己找到了越界的位置。这个卡点值得记住：下次遇到报错，先读提示，再动手。</div>
+          </div>
+          <div class="report-block">
+            <h4>下节预告</h4>
+            <div class="report-next"><b>内容</b><span>字典的键值访问，配合做一个「班级点名器」小工具。</span></div>
+          </div>
+        </div>
+        <div class="report-side">
+          <h3>每节课后，家长收到的就是这样一份报告</h3>
+          <p>不是一句「今天表现不错」，而是具体到每个能力项、卡在哪一步、下节课做什么。</p>
+          <ul class="report-points">
+            <li><span class="ico"><svg><use href="#i-file"></use></svg></span><div><b>当堂生成，当晚推送</b><span>老师在课后 2 小时内填写，家长端可回看全部历史报告。</span></div></li>
+            <li><span class="ico"><svg><use href="#i-layers"></use></svg></span><div><b>能力项对应课程目标</b><span>每个阶段的能力表在开课时就已确定，不是临时打分。</span></div></li>
+            <li><span class="ico"><svg><use href="#i-monitor"></use></svg></span><div><b>作品与代码可回看</b><span>报告里附作品源文件与运行录像，随时能看到孩子做过什么。</span></div></li>
+          </ul>
+          <div class="hero-cta" style="margin-top:22px">
+            <a class="btn btn-primary" href="#trial">预约一节试听课</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 师资 ===== -->
+  <section class="section" id="teachers">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><i></i>师资团队</span>
+        <h2>懂计算机，更懂孩子</h2>
+        <p>所有主讲老师均为计算机相关专业出身，经 60 小时儿童教学培训与 3 轮试讲考核后上岗，每学期接受教研考核。</p>
+      </div>
+      <div class="teacher-grid">
+        <article class="teacher reveal">
+          <img src="assets/teacher-li.jpg" srcset="assets/teacher-li.webp 480w" sizes="96px" alt="教学总监李思远" width="480" height="480" loading="lazy" decoding="async">
+          <div class="t-body"><h3>李思远<span>教学总监</span></h3><p>中国科学技术大学计算机硕士，8 年信息学竞赛教学经验，GESP 与 CSP-J/S 认证教练。</p><div class="tags"><span>C++ 竞赛</span><span>数据结构</span><span>教研负责人</span></div></div>
+        </article>
+        <article class="teacher reveal">
+          <img src="assets/teacher-wang.jpg" srcset="assets/teacher-wang.webp 480w" sizes="96px" alt="教研组长王雨晴" width="480" height="480" loading="lazy" decoding="async">
+          <div class="t-body"><h3>王雨晴<span>Scratch / Python 教研组长</span></h3><p>北京师范大学教育学本科，6 年少儿编程一线教学，主导研发 120 节图形化与 Python 课程。</p><div class="tags"><span>Scratch</span><span>Python</span><span>课堂设计</span></div></div>
+        </article>
+        <article class="teacher reveal">
+          <img src="assets/teacher-chen.jpg" srcset="assets/teacher-chen.webp 480w" sizes="96px" alt="竞赛班主教练陈昊" width="480" height="480" loading="lazy" decoding="async">
+          <div class="t-body"><h3>陈昊<span>竞赛班主教练</span></h3><p>前互联网公司算法工程师，5 年 OJ 刷题带教经验，累计带出 43 名 CSP-J 一等奖学员。</p><div class="tags"><span>CSP-J/S</span><span>算法</span><span>OJ 刷题</span></div></div>
+        </article>
+        <article class="teacher reveal">
+          <img src="assets/teacher-zhao.jpg" srcset="assets/teacher-zhao.webp 480w" sizes="96px" alt="启蒙段主讲赵一诺" width="480" height="480" loading="lazy" decoding="async">
+          <div class="t-body"><h3>赵一诺<span>启蒙段主讲</span></h3><p>浙江大学数字媒体艺术专业，擅长故事化教学与游戏化课堂，家长满意度 98%。</p><div class="tags"><span>Scratch</span><span>故事化教学</span><span>零基础</span></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 学员成果 ===== -->
+  <section class="section" id="results">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><i></i>学员成果</span>
+        <h2>奖项是结果，作品是过程</h2>
+        <p>2025 学年，码跃学员参加 GESP、CSP-J/S、蓝桥杯等赛事共 310 人次。下面是部分数据与学员代表作品。</p>
+      </div>
+      <div class="results-grid">
+        <div class="results-photo reveal"><img src="assets/trophy.jpg" srcset="assets/trophy-640.webp 640w, assets/trophy.webp 800w" sizes="(max-width: 900px) 92vw, 360px" alt="少年在领奖台上举起奖杯" width="800" height="800" loading="lazy" decoding="async"></div>
+        <ul class="result-stats reveal">
+          <li><b>96%</b><span>GESP 各级别通过率</span></li>
+          <li><b>23 人</b><span>CSP-J 入门级 一等奖</span></li>
+          <li><b>112 项</b><span>蓝桥杯青少组 省赛奖项</span></li>
+          <li><b>310 人次</b><span>2025 学年 参赛人次</span></li>
+        </ul>
+      </div>
+      <div class="works-grid reveal">
+        <button class="work-card" type="button" data-work="0">
+          <img src="assets/work-sort.jpg" srcset="assets/work-sort-640.webp 640w, assets/work-sort.webp 900w" sizes="(max-width: 780px) 92vw, 300px" alt="校园垃圾分类小游戏的运行画面" width="900" height="563" loading="lazy" decoding="async">
+          <div class="wc-body"><h3>校园垃圾分类大挑战</h3><p>用克隆与变量计分做的小游戏，在校园科技节上被 200 多名同学试玩。</p><span>李同学 · 9 岁 · Scratch</span></div>
+        </button>
+        <button class="work-card" type="button" data-work="1">
+          <img src="assets/work-snake.jpg" srcset="assets/work-snake-640.webp 640w, assets/work-snake.webp 900w" sizes="(max-width: 780px) 92vw, 300px" alt="贪吃蛇大作战的游戏画面" width="900" height="563" loading="lazy" decoding="async">
+          <div class="wc-body"><h3>贪吃蛇大作战</h3><p>基于 Pygame 的贪吃蛇，自己设计了加速道具与速度曲线。</p><span>张同学 · 11 岁 · Python</span></div>
+        </button>
+        <button class="work-card" type="button" data-work="2">
+          <img src="assets/work-maze.jpg" srcset="assets/work-maze-640.webp 640w, assets/work-maze.webp 900w" sizes="(max-width: 780px) 92vw, 300px" alt="迷宫最短路算法的可视化画面" width="900" height="563" loading="lazy" decoding="async">
+          <div class="wc-body"><h3>迷宫最短路可视化</h3><p>用 BFS 求迷宫最短路，并把搜索过程逐帧画出来，获 CSP-J 一等奖。</p><span>王同学 · 13 岁 · C++</span></div>
+        </button>
+      </div>
+      <p style="margin-top:14px;font-size:13px;color:var(--faint)">点击任一作品可以看它的思路、用到的技术和老师点评。</p>
+      <p style="margin-top:8px;font-size:13px;color:var(--faint)">想看全部奖项、逐年趋势与统计口径？<a href="results.html" style="color:var(--primary);font-weight:500">打开荣誉与成果页</a>，按年份与赛事分类列出，并注明每个数字是怎么算的。</p>
+    </div>
+  </section>
+
+  <!-- ===== 学费 ===== -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow"><i></i>学费与班型</span>
+        <h2>透明的价格，按阶段付费</h2>
+        <p>不卖多年课包，按学年付费；前两次课不满意全额退。</p>
+      </div>
+      <div class="seg reveal" role="group" aria-label="选择上课方式">
+        <button class="active" type="button" data-mode="offline">线下小班</button>
+        <button type="button" data-mode="online">线上直播小班</button>
+      </div>
+      <div class="pricing-grid reveal">
+        <article class="plan">
+          <h3>体验课</h3>
+          <p class="plan-sub">先试再定，含水平测评</p>
+          <div class="price-row"><span class="price free">免费</span></div>
+          <span class="price-unit">1 次课 · 90 分钟</span>
+          <ul>
+            <li><svg><use href="#i-check"></use></svg>1 次完整小班课试听</li>
+            <li><svg><use href="#i-check"></use></svg>编程基础与逻辑思维测评</li>
+            <li><svg><use href="#i-check"></use></svg>1 对 1 学习路径规划</li>
+            <li><svg><use href="#i-check"></use></svg>试听作品与课堂报告</li>
+          </ul>
+          <a class="btn btn-ghost" href="#trial">预约体验课</a>
+        </article>
+        <article class="plan hot">
+          <span class="badge">最多家长选择</span>
+          <h3>兴趣与进阶班</h3>
+          <p class="plan-sub">Scratch 启蒙 / 进阶 · Python 编程</p>
+          <div class="price-row"><small>¥</small><span class="price" data-offline="4,980" data-online="3,980">4,980</span><small>/ 学年</small></div>
+          <span class="price-unit" id="unitMid">48 课时 · 每周 1 次 · 每次 90 分钟</span>
+          <ul>
+            <li><svg><use href="#i-check"></use></svg>6 人小班，主讲 + 助教</li>
+            <li><svg><use href="#i-check"></use></svg>全部课件、素材与作品源文件</li>
+            <li><svg><use href="#i-check"></use></svg>阶段测评与家长课堂报告</li>
+            <li><svg><use href="#i-check"></use></svg>电子学会 / GESP 对应级别报考指导</li>
+            <li><svg><use href="#i-check"></use></svg>课程回放与课后作业批改</li>
+          </ul>
+          <a class="btn btn-primary" href="#trial">预约试听</a>
+        </article>
+        <article class="plan">
+          <h3>C++ 竞赛班</h3>
+          <p class="plan-sub">算法与数据结构 · GESP / CSP-J/S 备赛</p>
+          <div class="price-row"><small>¥</small><span class="price" data-offline="7,980" data-online="6,480">7,980</span><small>/ 学年</small></div>
+          <span class="price-unit">48 课时 · 每周 1 次 · 每次 120 分钟</span>
+          <ul>
+            <li><svg><use href="#i-check"></use></svg>竞赛教练授课，入班需测评</li>
+            <li><svg><use href="#i-check"></use></svg>自研 OJ 刷题账号与题解</li>
+            <li><svg><use href="#i-check"></use></svg>每月 1 次模拟赛与讲评</li>
+            <li><svg><use href="#i-check"></use></svg>赛前集训与报名全程指导</li>
+            <li><svg><use href="#i-check"></use></svg>升学科技特长生规划咨询</li>
+          </ul>
+          <a class="btn btn-ghost" href="#trial">预约测评</a>
+        </article>
+      </div>
+      <div class="estimator glass reveal">
+        <div class="est-controls">
+          <div class="est-row">
+            <label>课程阶段</label>
+            <div class="est-chips" id="estStage" role="group" aria-label="课程阶段">
+              <button class="active" type="button" data-price="interest">兴趣与进阶班</button>
+              <button type="button" data-price="comp">C++ 竞赛班</button>
+            </div>
+          </div>
+          <div class="est-row">
+            <label>上课方式</label>
+            <div class="est-chips" id="estMode" role="group" aria-label="上课方式">
+              <button class="active" type="button" data-mode="offline">线下小班</button>
+              <button type="button" data-mode="online">线上直播</button>
+            </div>
+          </div>
+          <div class="est-row">
+            <label>优惠方式</label>
+            <div class="est-chips" id="estDiscount" role="group" aria-label="优惠方式">
+              <button class="active" type="button" data-off="none">不使用优惠</button>
+              <button type="button" data-off="couple">两人同报</button>
+              <button type="button" data-off="renew">老学员续费</button>
+              <button type="button" data-off="sibling">兄妹同报</button>
+            </div>
+          </div>
+          <p class="est-note">优惠不叠加，按最低价计算；报价已含教材与平台使用费。</p>
+        </div>
+        <div class="est-result">
+          <span class="est-label">一学年学费</span>
+          <div class="est-price"><small>¥</small><b id="estPrice">4,980</b></div>
+          <span class="est-sub" id="estSub">48 课时 · 每周 1 次 · 约 ¥415/月</span>
+          <span class="est-save" id="estSave"></span>
+          <a class="btn btn-primary" href="#trial">按这个方案预约试听</a>
+        </div>
+      </div>
+      <p class="price-note">两人同报各减 ¥300 · 老学员续费 9 折 · 兄妹同报第二人 8.5 折 · 价格含全部教材与平台使用费</p>
+
+      <div class="referral reveal">
+        <div>
+          <span class="eyebrow" style="margin-bottom:10px"><i></i>老带新</span>
+          <h3>把课推荐给朋友，双方都有减</h3>
+          <p>在读学员推荐新学员报名任一学年课包，推荐人获得 ¥200 续费抵扣，新学员首期学费立减 ¥200。累计推荐 3 人，额外赠送 1 次赛前集训课。</p>
+          <ul class="ref-rules">
+            <li>被推荐人须为首次在码跃就读的新学员</li>
+            <li>抵扣在下一学年续费时使用，不折现、不转让</li>
+            <li>同一名新学员只计一次推荐，与两人同报优惠不叠加，按更优的一项执行</li>
+          </ul>
+        </div>
+        <div class="ref-card">
+          <span class="ref-label">你的专属推荐码</span>
+          <div class="ref-code" id="refCode">CL-0000</div>
+          <input class="ref-input" id="refPhone" type="text" inputmode="numeric" maxlength="4" placeholder="填写手机号后四位" aria-label="手机号后四位">
+          <button class="btn btn-primary btn-sm" type="button" id="refGen">生成推荐码</button>
+          <p class="ref-note" id="refNote">填后四位即可生成，推荐码会记在顾问处，朋友报名时出示即可。</p>
+        </div>
+      </div>
+      <p class="price-note" style="margin-top:16px">需要一份能打印的版本？<a href="brochure.html" target="_blank" rel="noopener" style="color:var(--primary);font-weight:500">打开 2026–2027 学年招生简章</a>（A4 两页，可直接打印或存为 PDF）</p>
+      <p class="price-note" style="margin-top:6px">已经做过测评、确定了班型？<a href="enroll.html" style="color:var(--primary);font-weight:500">直接在线报名</a>（选班次、填信息、自动算最优优惠、生成订单）</p>
+    </div>
+  </section>
+
+  <!-- ===== 家长评价 ===== -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><i></i>家长评价</span>
+        <h2>家长们怎么说</h2>
+      </div>
+      <div class="quote-grid">
+        <blockquote class="quote reveal">
+          <div class="stars"><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg></div>
+          <p>孩子之前学了半年钢琴都坐不住，来码跃一年没请过一次假。每周回家第一件事就是给我演示他做的小游戏，还非要教我。</p>
+          <footer><span class="ava">周</span><div><b>周女士</b><span>Scratch 进阶班 家长 · 孩子 8 岁</span></div></footer>
+        </blockquote>
+        <blockquote class="quote reveal">
+          <div class="stars"><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg></div>
+          <p>竞赛班的模拟赛很有用，孩子每次都能看到自己在同类选手里的位置。去年 CSP-J 拿到一等奖，和老师一起定计划、改代码的日子很值。</p>
+          <footer><span class="ava">陈</span><div><b>陈先生</b><span>C++ 竞赛班 家长 · 孩子 14 岁</span></div></footer>
+        </blockquote>
+        <blockquote class="quote reveal">
+          <div class="stars"><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg></div>
+          <p>我们在外地，上的是线上小班。六个人一起上课，老师每个孩子都会点到，课后报告写得很细，比我想象中的网课好太多。</p>
+          <footer><span class="ava">刘</span><div><b>刘女士</b><span>Python 线上班 家长 · 孩子 11 岁</span></div></footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 开班计划 ===== -->
+  <section class="section" id="schedule">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><i></i>近期开班</span>
+        <h2>这个月新开的班，还剩几个位</h2>
+        <p>以下是 2026 年 12 月已排定的班次。选择校区筛选，点「预约」直接登记，顾问会确认名额后再锁定。</p>
+      </div>
+      <div class="sched-filters reveal" id="schedFilters" role="group" aria-label="按校区筛选">
+        <button class="filter-btn active" type="button" data-campus="all">全部校区</button>
+        <button class="filter-btn" type="button" data-campus="高新">高新校区</button>
+        <button class="filter-btn" type="button" data-campus="政务">政务校区</button>
+        <button class="filter-btn" type="button" data-campus="滨湖">滨湖校区</button>
+        <button class="filter-btn" type="button" data-campus="线上">线上直播</button>
+      </div>
+      <div class="sched-wrap glass reveal">
+        <div class="sched-head">
+          <span>课程</span><span>校区</span><span>开课日期</span><span>上课时段</span><span>名额</span><span></span>
+        </div>
+        <div id="schedBody"></div>
+      </div>
+      <p class="sched-note">班次与名额会随时变动，以上信息仅供参考，实际开课以课程顾问确认的排课表为准。</p>
+
+      <div class="cal-block reveal">
+        <div class="cal-head">
+          <h3>赛事与考级日历</h3>
+          <span class="cal-hint">GESP 日期取自 CCF 官方通知；CSP-J/S 为往年惯例，最终以官网当期通知为准</span>
+        </div>
+        <div class="cal-next" id="calNext"></div>
+        <div class="cal-systems">
+          <div class="cal-sys">
+            <span class="cal-sys-tag">GESP</span>
+            <p><b>CCF 编程能力等级认证</b>，一年四次，在 3、6、9、12 月各举办一次。图形化编程 1–4 级，Python 与 C++ 各 1–8 级；1–4 级考 2 小时，5–8 级考 3 小时。首次报名从 1 级开始，单级 90 分以上可跨一级报考。</p>
+          </div>
+          <div class="cal-sys">
+            <span class="cal-sys-tag">CSP-J/S</span>
+            <p><b>CCF 非专业级软件能力认证</b>，分 J（入门组）与 S（提高组）。第一轮为集中笔试，成绩优异者进入第二轮上机认证。这是信息学竞赛体系的第一道门槛，也是很多孩子第一次面对真正意义上的算法考试。</p>
+          </div>
+        </div>
+        <ol class="cal-line" id="calLine"></ol>
+        <p class="sched-note">以上日期按 CCF 官方通知与往年惯例整理，具体时间、报名截止与考点以官网当期通知为准。码跃提供赛前备考与报名流程指导，不对考试结果或升学结果作任何承诺。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 报名流程 ===== -->
+  <section class="section" id="enroll">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><i></i>报名流程</span>
+        <h2>四步开始第一节课</h2>
+      </div>
+      <ol class="steps reveal">
+        <li class="step"><h3>预约试听</h3><p>留下孩子年龄与意向课程，课程顾问 1 个工作日内联系确认时间。</p></li>
+        <li class="step"><h3>水平测评</h3><p>试听课同步完成逻辑思维与基础测评，判断适合从哪个阶段进入。</p></li>
+        <li class="step"><h3>定制方案</h3><p>根据测评结果与目标（兴趣 / 考级 / 竞赛）给出阶段与班型建议。</p></li>
+        <li class="step"><h3>正式开课</h3><p>确认班次后开课，前两次课不满意全额退款。</p></li>
+      </ol>
+      <p class="sched-note">已报名学员可以进 <a href="parent.html" style="color:var(--primary);font-weight:500">家长中心</a> 查看课时进度、每次课的课堂报告与作品集。</p>
+    </div>
+  </section>
+
+  <!-- ===== 校区 ===== -->
+  <section class="section" id="campus">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><i></i>校区与时间</span>
+        <h2>线下三个校区，线上全国开课</h2>
+        <p>所有线下校区均设小班教室与家长等候区，线上班与线下班使用同一套教研与课件。</p>
+      </div>
+      <div class="campus-grid">
+        <article class="campus reveal"><h3><svg><use href="#i-pin"></use></svg>高新校区</h3><p>高新区望江西路 创新产业园 B 座 3 层<br>周二至周五 14:00–20:00 · 周末 9:00–18:00</p><div class="campus-tags"><span>6 间小班教室</span><span>竞赛机房</span><span>家长等候区</span></div></article>
+        <article class="campus reveal"><h3><svg><use href="#i-pin"></use></svg>政务校区</h3><p>政务区潜山路 置地广场 A 座 2 层<br>周二至周五 14:00–20:00 · 周末 9:00–18:00</p><div class="campus-tags"><span>5 间小班教室</span><span>启蒙教室</span><span>家长等候区</span></div></article>
+        <article class="campus reveal"><h3><svg><use href="#i-pin"></use></svg>滨湖校区</h3><p>滨湖新区紫云路 利港广场 3 层<br>周五 15:00–20:00 · 周末 9:00–18:00</p><div class="campus-tags"><span>4 间小班教室</span><span>竞赛小班教室</span><span>家长等候区</span></div></article>
+      </div>
+      <div class="reveal" style="margin-top:26px;display:flex;flex-wrap:wrap;gap:10px">
+        <a class="btn btn-primary" href="campus.html">看校区详情与到店预约</a>
+        <a class="btn btn-ghost" href="campus.html#flow">到店一次会经历什么<svg><use href="#i-arrow"></use></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 关于我们 ===== -->
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="reveal">
+        <span class="eyebrow"><i></i>关于码跃</span>
+        <h2 style="font-family:var(--font-display);font-weight:700;font-size:clamp(27px,3.2vw,38px);line-height:1.34;letter-spacing:0.01em;margin:16px 0 14px">做中学，赛中学</h2>
+        <p>码跃少儿编程成立于 2018 年，从一间 6 人小教室开始，到今天服务 3200 余名学员。我们始终只做一件事：让孩子用编程把想法做出来。</p>
+        <p>我们不承诺"人人都能拿奖"，但承诺每个孩子都能在课堂上完成属于自己的作品，并能清楚地讲出它是怎么运行的。竞赛是给有兴趣、有天赋的孩子的额外通道，而不是所有孩子的终点。</p>
+        <div class="hero-cta" style="margin-top:24px">
+          <a class="btn btn-primary" href="#trial">来上一节体验课</a>
+        </div>
+      </div>
+      <ul class="about-points reveal">
+        <li><span class="num-mark">01</span><div><b>做中学</b><span>每节课 70% 时间孩子在动手，作品当堂运行。</span></div></li>
+        <li><span class="num-mark">02</span><div><b>赛中学</b><span>以考级与竞赛节点倒逼阶段目标，用成绩验证学习。</span></div></li>
+        <li><span class="num-mark">03</span><div><b>看得见的成长</b><span>课堂报告、作品集与竞赛记录，家长随时可查。</span></div></li>
+      </ul>
+    </div>
+
+    <div class="container about-extra">
+      <div class="reveal">
+        <h3 class="blk-title">发展历程<small>从一间教室，到三个校区与一个线上学部</small></h3>
+        <div class="timeline glass">
+          <div class="tl-item"><span class="tl-year">2018</span><div class="tl-body"><b>一间 6 人教室起步</b><span>首期图形化编程班开班，第一个学期招到 18 名学员。</span></div></div>
+          <div class="tl-item"><span class="tl-year">2020</span><div class="tl-body"><b>开出线上直播小班</b><span>疫情后把课堂搬到线上，同一套教研覆盖合肥以外的城市。</span></div></div>
+          <div class="tl-item"><span class="tl-year">2022</span><div class="tl-body"><b>成为等级考试报名点</b><span>取得中国电子学会青少年等级考试报名点资质，开设 Python 阶段。</span></div></div>
+          <div class="tl-item"><span class="tl-year">2023</span><div class="tl-body"><b>开设 C++ 竞赛班</b><span>获得 GESP 认证考点资质，竞赛班首期开班，配套自研 OJ。</span></div></div>
+          <div class="tl-item"><span class="tl-year">2024</span><div class="tl-body"><b>第一批竞赛成绩</b><span>学员首获 CSP-J 一等奖，三个线下校区陆续成型。</span></div></div>
+          <div class="tl-item"><span class="tl-year">2026</span><div class="tl-body"><b>3200 余名在读学员</b><span>与 12 所中小学建立课后服务合作，教研体系迭代到第 4 版。</span></div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3 class="blk-title">资质与认证<small>可以核对的考试与授权资质</small></h3>
+        <div class="cert-grid">
+          <div class="cert"><span class="ico"><svg><use href="#i-shield"></use></svg></span><div><b>中国电子学会 等级考试报名点</b><span>图形化、Python、C++ 三个方向</span></div></div>
+          <div class="cert"><span class="ico"><svg><use href="#i-award"></use></svg></span><div><b>GESP 认证考点</b><span>中国计算机学会 编程能力等级认证</span></div></div>
+          <div class="cert"><span class="ico"><svg><use href="#i-award"></use></svg></span><div><b>蓝桥杯青少组 合作单位</b><span>省赛集训与报名组织</span></div></div>
+          <div class="cert"><span class="ico"><svg><use href="#i-users"></use></svg></span><div><b>12 所中小学 课后服务合作</b><span>编程社团课与竞赛集训</span></div></div>
+          <div class="cert"><span class="ico"><svg><use href="#i-file"></use></svg></span><div><b>办学许可 已备案</b><span>面向 6–16 岁非学历教育培训</span></div></div>
+          <div class="cert"><span class="ico"><svg><use href="#i-cpu"></use></svg></span><div><b>教学平台 软件著作权</b><span>课堂练习、作业与错题记录系统</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 教育资讯 ===== -->
+  <section class="section" id="news">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><i></i>教育资讯</span>
+        <h2>家长最常问的问题，我们写成文章</h2>
+        <p>选课、考级、备赛、学习习惯，教研组每周整理一篇。点开可以读全文。</p>
+      </div>
+      <div class="sched-filters reveal" id="newsFilters" role="group" aria-label="按主题筛选资讯">
+        <button class="filter-btn active" type="button" data-tag="all">全部</button>
+        <button class="filter-btn" type="button" data-tag="选课指南">选课指南</button>
+        <button class="filter-btn" type="button" data-tag="考级竞赛">考级竞赛</button>
+        <button class="filter-btn" type="button" data-tag="教学手记">教学手记</button>
+        <button class="filter-btn" type="button" data-tag="备赛规划">备赛规划</button>
+        <button class="filter-btn" type="button" data-tag="家庭教育">家庭教育</button>
+        <button class="filter-btn" type="button" data-tag="工具指南">工具指南</button>
+      </div>
+      <div class="news-grid reveal" id="newsGrid"></div>
+      <div style="margin-top:24px;display:flex;flex-wrap:wrap;gap:10px" class="reveal">
+        <a class="btn btn-ghost" href="#faq">还有疑问？看常见问题<svg><use href="#i-arrow"></use></svg></a>
+        <a class="btn btn-ghost" href="blog.html">进知识库：长文与 8 条速答<svg><use href="#i-arrow"></use></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow"><i></i>常见问题</span>
+        <h2>家长最关心的几件事</h2>
+      </div>
+      <div class="faq reveal">
+        <details open>
+          <summary>孩子零基础能学吗？<svg><use href="#i-chev"></use></svg></summary>
+          <div class="faq-body">可以。6–8 岁零基础从 L1 图形化编程开始，不需要认识英文单词或打字。课程按认知发展设计，第一节就能做出会动的动画。</div>
+        </details>
+        <details>
+          <summary>学编程会不会影响学业？<svg><use href="#i-chev"></use></svg></summary>
+          <div class="faq-body">每周 1 次课、课后 20 分钟以内的练习。编程训练的拆解问题与调试习惯，对数学应用题和物理学习都有正向帮助。我们不建议在孩子已经明显超负荷时再加课，顾问会在试听时如实给出建议。</div>
+        </details>
+        <details>
+          <summary>先学 Scratch 还是直接学 Python / C++？<svg><use href="#i-chev"></use></svg></summary>
+          <div class="faq-body">9 岁以下建议从图形化开始，先建立"我能做出来"的信心；9 岁以上、有较强阅读与打字能力的孩子可以直接进 Python；11 岁以上目标是竞赛的孩子，通常需要 Python 或图形化的基础再进入 C++。</div>
+        </details>
+        <details>
+          <summary>GESP 和 CSP-J/S 是什么关系？<svg><use href="#i-chev"></use></svg></summary>
+          <div class="faq-body">GESP 是中国计算机学会的编程能力等级认证，分图形化、Python、C++ 三个方向，适合阶段性检验；CSP-J/S 是信息学奥赛的入门级与提高级认证，是竞赛通道的入口。GESP 达到一定等级可免除 CSP-J/S 的初赛。</div>
+        </details>
+        <details>
+          <summary>线上课和线下课怎么选？<svg><use href="#i-chev"></use></svg></summary>
+          <div class="faq-body">同一套教研、课件和作业体系。线下课有更集中的课堂氛围和当面指导；线上课省去通勤，适合距离远或时间紧的家庭。启蒙段孩子我们更推荐线下。</div>
+        </details>
+        <details>
+          <summary>缺课怎么办？<svg><use href="#i-chev"></use></svg></summary>
+          <div class="faq-body">线上课有回放可随时补看；线下课可预约同期平行班补课，或转为线上课补课。每学年有 4 次免费补课额度。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 招聘与合作 ===== -->
+  <section class="section" id="careers">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><i></i>加入我们</span>
+        <h2>我们在找懂技术、也喜欢孩子的人</h2>
+        <p>全职岗位提供五险一金、系统教研培训与竞赛带队补贴。简历投递至 hr@codeleap.example（演示邮箱）。</p>
+      </div>
+      <div class="job-list reveal">
+        <article class="job">
+          <div>
+            <h3>少儿编程讲师（Scratch / Python）</h3>
+            <p>合肥 · 全职 · 8–15K · 计算机或教育相关专业，有教学经验优先</p>
+            <div class="tags"><span>教研培训</span><span>双休</span><span>带班补贴</span></div>
+          </div>
+          <div class="job-right"><a class="btn btn-ghost btn-sm" href="mailto:hr@codeleap.example">投递简历</a></div>
+        </article>
+        <article class="job">
+          <div>
+            <h3>C++ 竞赛教练</h3>
+            <p>合肥 · 全职 · 15–25K · 有 CSP-J/S 获奖经历或 OI 背景，负责竞赛班与模拟赛讲评</p>
+            <div class="tags"><span>CSP-J/S</span><span>OJ 建设</span><span>赛事带教</span></div>
+          </div>
+          <div class="job-right"><a class="btn btn-ghost btn-sm" href="mailto:hr@codeleap.example">投递简历</a></div>
+        </article>
+        <article class="job">
+          <div>
+            <h3>课程顾问</h3>
+            <p>合肥 · 全职 · 6–12K + 提成 · 负责试听邀约、家长沟通与学习方案讲解</p>
+            <div class="tags"><span>无经验可培养</span><span>排班灵活</span><span>转正编制</span></div>
+          </div>
+          <div class="job-right"><a class="btn btn-ghost btn-sm" href="mailto:hr@codeleap.example">投递简历</a></div>
+        </article>
+      </div>
+      <div class="coop-grid reveal">
+        <div class="coop"><b>校园课后服务</b><span>为中小学提供编程社团课、竞赛集训与教师培训，可按学期达成合作。</span></div>
+        <div class="coop"><b>机构课程合作</b><span>输出教研体系、课件与师资培训，支持本地机构开设编程课程。</span></div>
+        <div class="coop"><b>企业亲子工作坊</b><span>为员工子女提供半日编程活动，含设备、材料与讲师。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 服务承诺与条款 ===== -->
+  <section class="section" id="policy">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow"><i></i>服务承诺</span>
+        <h2>退费、转班与补课规则</h2>
+        <p>规则写在这里，报名之前就能完整读完。</p>
+      </div>
+      <div class="faq reveal">
+        <details open>
+          <summary>退费规则<svg><use href="#i-chev"></use></svg></summary>
+          <div class="faq-body">前两次课不满意，全额退款（含教材与平台使用费）。从第三次课起申请退费，按未消耗课时比例退还，已消耗课时与已发放教材按实际成本结算。退费申请自受理起 7 个工作日内办结，原路退回。</div>
+        </details>
+        <details>
+          <summary>转班规则<svg><use href="#i-chev"></use></svg></summary>
+          <div class="faq-body">同一阶段内可免费转班一次，需在开课前 3 天提出，视目标班次余位安排。跨阶段转班（例如从 Python 转到 C++）需重新测评，按测评结果确定入班阶段。</div>
+        </details>
+        <details>
+          <summary>补课与请假<svg><use href="#i-chev"></use></svg></summary>
+          <div class="faq-body">每学年提供 4 次免费补课。请假需在上课前 4 小时通过顾问或家长端提交，未提前提交视为缺课，计入课时消耗。线上课全部有回放，可随时补看。</div>
+        </details>
+        <details>
+          <summary>课时有效期<svg><use href="#i-chev"></use></svg></summary>
+          <div class="faq-body">学年课时有效期为 12 个月，自首次上课起算。因升学、搬迁等原因可申请延期一次，最长延长 3 个月，延期期间不占用新学年课时。</div>
+        </details>
+        <details>
+          <summary>个人信息与隐私<svg><use href="#i-chev"></use></svg></summary>
+          <div class="faq-body">我们只收集课程服务必需的信息：孩子姓名、年龄、家长联系方式与上课记录。信息仅用于教学、排课与家长沟通，不向任何第三方提供或用于商业推广。家长可随时申请查询、更正或删除孩子的信息。</div>
+        </details>
+        <details>
+          <summary>课堂影像使用<svg><use href="#i-chev"></use></svg></summary>
+          <div class="faq-body">课堂中拍摄的作品照片与演示视频，默认仅用于向家长反馈学习情况。如需用于公众号、宣传物料等对外场景，会单独取得家长书面同意，未同意的孩子不会出现在任何对外内容中。</div>
+        </details>
+      </div>
+      <p class="price-note" style="margin-top:16px">以上是摘要。完整的隐私政策、服务条款与退费核算方式（含单课时价怎么算、未消耗课时怎么扣）见<a href="legal.html" style="color:var(--primary);font-weight:500">《政策与条款》</a>，页面里逐条编号，可直接引用。</p>
+    </div>
+  </section>
+
+  <!-- ===== 预约试听 ===== -->
+  <section class="section" id="trial">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow"><i></i>预约免费试听</span>
+        <h2>留个信息，孩子来上一节课</h2>
+        <p>提交后课程顾问将在 1 个工作日内与您联系确认时间。试听当天完成测评并出具学习方案。</p>
+      </div>
+      <div class="trial-grid">
+        <div class="trial-form glass reveal" id="trialForm">
+          <form id="trialFormEl" novalidate>
+            <h3>试听预约</h3>
+            <p class="form-sub">带 * 为必填。信息仅用于课程顾问与您联系。</p>
+            <div class="form-row">
+              <div class="field"><label for="fName">孩子姓名 *</label><input id="fName" name="name" type="text" autocomplete="name" placeholder="例如：李小明" required></div>
+              <div class="field"><label for="fAge">孩子年龄 *</label>
+                <select id="fAge" name="age" required>
+                  <option value="">请选择</option>
+                  <option>6 岁</option><option>7 岁</option><option>8 岁</option><option>9 岁</option><option>10 岁</option><option>11 岁</option><option>12 岁</option><option>13 岁</option><option>14 岁</option><option>15 岁</option><option>16 岁</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field"><label for="fCourse">意向课程 *</label>
+                <select id="fCourse" name="course" required>
+                  <option value="">请选择</option>
+                  <option>L1 启蒙 · 图形化编程</option>
+                  <option>L2 进阶 · 图形化与硬件</option>
+                  <option>L3 Python 编程</option>
+                  <option>L4 C++ · 算法与竞赛</option>
+                  <option>还不确定，想听顾问建议</option>
+                </select>
+              </div>
+              <div class="field"><label for="fMode">上课方式</label>
+                <select id="fMode" name="mode">
+                  <option>线下小班</option><option>线上直播小班</option><option>都可以</option>
+                </select>
+              </div>
+            </div>
+            <div class="field"><label for="fPhone">家长手机号 *</label><input id="fPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="用于课程顾问与您联系" required></div>
+            <div class="field"><label for="fNote">想了解的内容</label><textarea id="fNote" name="note" placeholder="例如：孩子学过半年 Scratch，想了解 Python 班；或希望周末上课"></textarea></div>
+            <label class="consent"><input type="checkbox" id="fConsent" required><span>我已阅读并同意码跃少儿编程仅将以上信息用于课程咨询与试听安排，不会用于其他用途。</span></label>
+            <button class="btn btn-accent" type="submit" style="width:100%">提交预约<svg><use href="#i-arrow"></use></svg></button>
+          </form>
+          <div class="form-ok">
+            <div class="ok-ico"><svg><use href="#i-check"></use></svg></div>
+            <h3>预约已登记</h3>
+            <p id="okText">课程顾问将在 1 个工作日内与您联系。您也可以直接拨打 400-860-2026 咨询。</p>
+            <div class="ok-steps">
+              <div class="ok-step"><i>1</i><b>预约已提交</b><span>刚刚</span></div>
+              <div class="ok-step"><i>2</i><b>顾问联系确认时间</b><span>1 个工作日内</span></div>
+              <div class="ok-step"><i>3</i><b>到店试听与水平测评</b><span>与你约定的时间</span></div>
+            </div>
+            <button class="btn btn-ghost btn-sm" type="button" id="okReset" style="margin-top:18px">再填一份</button>
+          </div>
+        </div>
+        <aside class="contact-card glass reveal">
+          <h3>直接联系我们</h3>
+          <p>工作日 9:00–20:00，周末 9:00–18:00。</p>
+          <div class="contact-line"><span class="ico"><svg><use href="#i-phone"></use></svg></span><div><b>400-860-2026</b><span>课程咨询 · 预约试听</span></div></div>
+          <div class="contact-line"><span class="ico"><svg><use href="#i-chat"></use></svg></span><div><b>微信：codeleap-edu</b><span>添加后发送"试听"获取课程大纲</span></div></div>
+          <div class="contact-line"><span class="ico"><svg><use href="#i-pin"></use></svg></span><div><b>高新校区</b><span>高新区望江西路 创新产业园 B 座 3 层</span></div></div>
+          <div class="contact-line"><span class="ico"><svg><use href="#i-clock"></use></svg></span><div><b>试听时长</b><span>90 分钟 · 含测评与学习规划</span></div></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== 页脚 ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top"><span class="brand-mark"><svg><use href="#i-code"></use></svg></span>码跃少儿编程<small>CodeLeap</small></a>
+        <p class="footer-about">面向 6–16 岁孩子的编程教育机构。Scratch、Python、C++ 与信息学竞赛小班课，线上线下同步开课，让每个孩子都能把想法做出来。</p>
+      </div>
+      <div>
+        <h4>课程</h4>
+        <ul>
+          <li><a href="#courses">图形化编程</a></li>
+          <li><a href="#courses">Python 编程</a></li>
+          <li><a href="#courses">C++ 与算法</a></li>
+          <li><a href="#pricing">学费与班型</a></li>
+          <li><a href="#schedule">近期开班</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>了解我们</h4>
+        <ul>
+          <li><a href="#about">关于码跃</a></li>
+          <li><a href="#teachers">师资团队</a></li>
+          <li><a href="#results">学员成果</a></li>
+          <li><a href="#news">教育资讯</a></li>
+          <li><a href="blog.html">知识库（长文与速答）</a></li>
+          <li><a href="camp.html">2027 寒假集训营</a></li>
+          <li><a href="results.html">荣誉与成果</a></li>
+          <li><a href="course-l1.html">L1 课程页</a></li>
+          <li><a href="course-l2.html">L2 课程页</a></li>
+          <li><a href="course-l3.html">L3 课程页</a></li>
+          <li><a href="course-l4.html">L4 课程页</a></li>
+          <li><a href="brochure.html" target="_blank" rel="noopener">招生简章（打印版）</a></li>
+          <li><a href="parent.html">家长中心</a></li>
+          <li><a href="enroll.html">在线报名</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#careers">加入我们</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系我们</h4>
+        <ul>
+          <li>400-860-2026</li>
+          <li>微信：codeleap-edu</li>
+          <li>高新 / 政务 / 滨湖 三个校区</li>
+          <li><a href="#trial">预约免费试听</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 码跃少儿编程 CodeLeap</span>
+      <span class="footer-legal"><a href="legal.html#refund">退费规则</a><a href="legal.html#privacy">隐私政策</a><a href="legal.html#terms">服务条款</a><a href="#careers">招聘</a><a href="#trial">预约试听</a></span>
+      <span>演示站点：页面中的数据、师资与联系方式均为示例内容</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><svg><use href="#i-check"></use></svg><span id="toastText"></span></div>
+
+<!-- ===== 资讯阅读层 ===== -->
+<div class="reader" id="reader" role="dialog" aria-modal="true" aria-labelledby="readerTitle" aria-hidden="true">
+  <div class="reader-backdrop" data-reader-close="1"></div>
+  <div class="reader-panel" id="readerPanel">
+    <button class="reader-close" id="readerClose" type="button" aria-label="关闭阅读层"><svg><use href="#i-x"></use></svg></button>
+    <div class="news-meta" id="readerMeta"></div>
+    <h2 id="readerTitle"></h2>
+    <div class="reader-body" id="readerBody"></div>
+    <div class="reader-foot">
+      <a class="btn btn-accent" href="#trial" data-reader-close="1">预约免费试听<svg><use href="#i-arrow"></use></svg></a>
+      <button class="btn btn-ghost" type="button" data-reader-close="1">返回继续阅读</button>
+    </div>
+  </div>
+</div>
+
+<a class="to-top" id="toTop" href="#top" aria-label="返回顶部"><svg style="transform:rotate(180deg)"><use href="#i-chev"></use></svg></a>
+
+<div class="mbar" id="mobileBar" aria-label="快速预约">
+  <a class="mb-call" href="tel:4008602026"><svg><use href="#i-phone"></use></svg>电话</a>
+  <a class="mb-book" href="#trial">预约免费试听</a>
+  <button class="mbar-x" id="mbarClose" type="button" aria-label="收起快捷预约栏"><svg><use href="#i-x"></use></svg></button>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var bar = document.getElementById("mobileBar");
+  if (!bar) return;
+  var closed = false;
+  try { closed = sessionStorage.getItem("codeleap-mbar") === "off"; } catch (e) {}
+  if (closed) { bar.classList.add("hide"); return; }
+  var sync = function () {
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    if (y > 560) bar.classList.add("show");
+    else bar.classList.remove("show");
+  };
+  window.addEventListener("scroll", sync, { passive: true });
+  sync();
+  document.getElementById("mbarClose").addEventListener("click", function () {
+    bar.classList.remove("show");
+    bar.classList.add("hide");
+    try { sessionStorage.setItem("codeleap-mbar", "off"); } catch (e) {}
+  });
+
+  var notchWrap = document.getElementById("notchWrap");
+  if (notchWrap) {
+    var notchOff = false;
+    try { notchOff = sessionStorage.getItem("codeleap-notch") === "off"; } catch (e) {}
+    if (notchOff) {
+      notchWrap.classList.add("hide");
+    } else {
+      document.getElementById("notchClose").addEventListener("click", function () {
+        notchWrap.classList.add("hide");
+        try { sessionStorage.setItem("codeleap-notch", "off"); } catch (e) {}
+      });
+    }
+  }
+})();
+</script>
+
+<script>
+(function () {
+  "use strict";
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ===== 明暗模式 ===== */
+  var root = document.documentElement;
+  var themeToggle = document.getElementById("themeToggle");
+  themeToggle.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("codeleap-theme", next); } catch (e) {}
+  });
+
+  /* ===== 移动端菜单 ===== */
+  var nav = document.getElementById("nav");
+  var navToggle = document.getElementById("navToggle");
+  function closeNav() {
+    nav.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+  navToggle.addEventListener("click", function () {
+    var open = nav.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  document.querySelectorAll(".nav-links a").forEach(function (a) { a.addEventListener("click", closeNav); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeNav(); });
+
+  /* ===== 导航高亮当前区块 ===== */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-links a"));
+  var sections = navLinks.map(function (a) { return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
+  if ("IntersectionObserver" in window) {
+    var navObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(function (a) {
+          a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id);
+        });
+      });
+    }, { rootMargin: "-40% 0px -55% 0px", threshold: 0 });
+    sections.forEach(function (s) { navObs.observe(s); });
+  }
+
+  /* ===== 滚动揭示 ===== */
+  var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  if (!("IntersectionObserver" in window) || reduceMotion) {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var revObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add("in"); revObs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(function (el) { revObs.observe(el); });
+  }
+
+  /* ===== 首屏代码面板：逐行高亮 ===== */
+  var codeLines = Array.prototype.slice.call(document.querySelectorAll("#codeBody li"));
+  var codeOut = document.getElementById("codeOut");
+  if (!reduceMotion && codeLines.length) {
+    var sequence = [2, 3, 4, 2, 3, 4, 5];
+    var idx = 0;
+    setInterval(function () {
+      codeLines.forEach(function (li) { li.classList.remove("active"); });
+      var i = sequence[idx % sequence.length];
+      codeLines[i].classList.add("active");
+      codeOut.classList.toggle("lit", i === 5);
+      idx++;
+    }, 650);
+  } else {
+    codeLines[2].classList.add("active");
+  }
+
+  /* ===== 课程阶段切换 ===== */
+  var stages = [
+    {
+      title: "启蒙 · 图形化编程", age: "6–8 岁 · 零基础",
+      desc: "用 Scratch 积木把动画和游戏做出来。孩子不需要打字，就能理解顺序、循环、条件、事件这些编程最核心的概念，并在每一节课上看到自己的作品动起来。",
+      facts: [["课时", "48 课时 / 学年"], ["频率", "每周 1 次 · 90 分钟"], ["班型", "6 人小班 · 主讲 + 助教"], ["形式", "线下 / 线上直播"]],
+      list: ["序列、循环、条件与事件驱动", "角色、舞台、坐标与运动", "用广播与消息组织多角色互动", "录音、绘图与简单动画原理", "上台讲解自己的作品"],
+      works: ["会讲故事的动画短片", "迷宫探险小游戏", "像素画板与电子贺卡"],
+      exams: ["电子学会 图形化 一级", "电子学会 图形化 二级", "GESP 图形化 一级"],
+      outline: [["认识 Scratch 与角色", 8], ["运动、坐标与造型", 10], ["循环与条件判断", 12], ["广播与多角色互动", 10], ["综合项目与上台演示", 8]],
+      cta: "预约启蒙阶段试听"
+    },
+    {
+      title: "进阶 · 图形化与硬件", age: "8–10 岁 · 有图形化基础",
+      desc: "在图形化环境里引入变量、列表、函数与克隆，并把摄像头、麦克风与传感器接进作品，让孩子理解数据与状态，为过渡到文本代码打好基础。",
+      facts: [["课时", "48 课时 / 学年"], ["频率", "每周 1 次 · 90 分钟"], ["班型", "6 人小班 · 主讲 + 助教"], ["形式", "线下 / 线上直播"]],
+      list: ["变量、列表与简单数据结构", "函数封装与克隆体管理", "多分支条件与布尔逻辑", "摄像头体感与传感器输入", "调试：定位并修复自己的 Bug"],
+      works: ["体感水果切切乐", "打地鼠与弹球对战", "智能感应小夜灯（硬件）"],
+      exams: ["电子学会 图形化 三级", "电子学会 图形化 四级", "GESP 图形化 二至三级"],
+      outline: [["变量与数据", 10], ["列表与函数封装", 12], ["克隆与多分支逻辑", 10], ["传感器与体感输入", 8], ["综合项目与上台演示", 8]],
+      cta: "预约进阶阶段试听"
+    },
+    {
+      title: "Python 编程", age: "9–12 岁 · 零基础可学",
+      desc: "从第一行真正的代码开始，用 Turtle 绘图、小游戏和实用小工具学习语法与程序结构，同时引入列表、字典等基础数据结构与简单算法。",
+      facts: [["课时", "48 课时 / 学年"], ["频率", "每周 1 次 · 90 分钟"], ["班型", "6 人小班 · 主讲 + 助教"], ["形式", "线下 / 线上直播"]],
+      list: ["变量、类型、输入输出与运算", "分支、循环与函数", "字符串、列表、字典", "Turtle 绘图与 Pygame 小游戏", "文件读写与简单数据处理"],
+      works: ["海龟绘图：分形与图案", "猜数字与文字冒险游戏", "班级成绩统计小工具"],
+      exams: ["电子学会 Python 一级", "GESP Python 一至二级"],
+      outline: [["Python 基础语法", 12], ["流程控制与函数", 12], ["字符串、列表与字典", 10], ["Turtle 与 Pygame 实战", 8], ["综合项目与上台演示", 6]],
+      cta: "预约 Python 阶段试听"
+    },
+    {
+      title: "C++ · 算法与竞赛", age: "11–16 岁 · 需测评入班",
+      desc: "系统学习 C++ 语法、数据结构与竞赛常用算法，以 GESP 与 CSP-J/S 为阶段目标，每周配合 OJ 刷题与讲评，让孩子的每一分努力都有赛场验证。",
+      facts: [["课时", "48 课时 / 学年"], ["频率", "每周 1 次 · 120 分钟"], ["班型", "8 人竞赛班 · 竞赛教练"], ["形式", "线下 / 线上直播 + OJ"]],
+      list: ["C++ 语法、STL 与调试", "枚举、模拟、排序与二分", "递归、搜索（DFS / BFS）", "基础动态规划与贪心", "真题训练与赛场策略"],
+      works: ["OJ 刷题记录与题解集", "迷宫最短路可视化", "模拟赛完整题解报告"],
+      exams: ["GESP C++ 一至八级", "CSP-J 入门级", "CSP-S 提高级", "蓝桥杯青少组"],
+      outline: [["C++ 语法与 STL", 10], ["排序、二分与模拟", 8], ["递归与搜索", 12], ["动态规划入门", 10], ["真题与模拟赛讲评", 8]],
+      cta: "预约竞赛班测评"
+    }
+  ];
+  var stageCards = Array.prototype.slice.call(document.querySelectorAll(".stage-card"));
+  var cdTitle = document.getElementById("cdTitle");
+  var cdAge = document.getElementById("cdAge");
+  var cdDesc = document.getElementById("cdDesc");
+  var cdFacts = document.getElementById("cdFacts");
+  var cdList = document.getElementById("cdList");
+  var cdWorks = document.getElementById("cdWorks");
+  var cdChips = document.getElementById("cdChips");
+  var cdOutline = document.getElementById("cdOutline");
+  var cdLegend = document.getElementById("cdLegend");
+  var cdCta = document.getElementById("cdCta");
+  var checkSvg = '<svg aria-hidden="true"><use href="#i-check"></use></svg>';
+
+  function renderStage(i) {
+    var s = stages[i];
+    cdTitle.textContent = s.title;
+    cdAge.textContent = s.age;
+    cdDesc.textContent = s.desc;
+    cdFacts.innerHTML = s.facts.map(function (f) { return "<li><span>" + f[0] + "</span><b>" + f[1] + "</b></li>"; }).join("");
+    cdList.innerHTML = s.list.map(function (t) { return "<li>" + checkSvg + "<span>" + t + "</span></li>"; }).join("");
+    cdWorks.innerHTML = s.works.map(function (t) { return "<li>" + checkSvg + "<span>" + t + "</span></li>"; }).join("");
+    cdChips.innerHTML = s.exams.map(function (t) { return "<span>" + t + "</span>"; }).join("");
+    var outlineColors = ["#2b7bf3", "#5b9bff", "#8ec5ff", "#f0663a", "#ffa37a", "#ffc9b4"];
+    var totalHours = 0;
+    s.outline.forEach(function (o) { totalHours += o[1]; });
+    cdOutline.innerHTML = s.outline.map(function (o, k) {
+      return '<span style="width:' + (o[1] / totalHours * 100).toFixed(2) + '%;background:' + outlineColors[k % outlineColors.length] + '"></span>';
+    }).join("");
+    cdLegend.innerHTML = s.outline.map(function (o, k) {
+      return '<li><i style="background:' + outlineColors[k % outlineColors.length] + '"></i><span>' + o[0] + '</span><b>' + o[1] + ' 课时</b></li>';
+    }).join("");
+    cdCta.textContent = s.cta;
+    var cdMore = document.getElementById("cdMore");
+    if (cdMore) {
+      var slug = ["l1", "l2", "l3", "l4"][i] || "l1";
+      cdMore.href = "course-" + slug + ".html";
+      cdMore.textContent = "打开 L" + (i + 1) + " 课程页";
+    }
+    stageCards.forEach(function (c, k) {
+      c.classList.toggle("selected", k === i);
+      c.setAttribute("aria-selected", k === i ? "true" : "false");
+    });
+  }
+  stageCards.forEach(function (c) {
+    c.addEventListener("click", function () { renderStage(parseInt(c.getAttribute("data-stage"), 10)); });
+  });
+  renderStage(0);
+
+  /* ===== 学费：线上 / 线下切换 ===== */
+  var segButtons = Array.prototype.slice.call(document.querySelectorAll(".seg button"));
+  segButtons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      segButtons.forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active");
+      var mode = b.getAttribute("data-mode");
+      document.querySelectorAll(".price[data-offline]").forEach(function (p) {
+        p.textContent = p.getAttribute("data-" + mode);
+      });
+      var unit = document.getElementById("unitMid");
+      if (unit) unit.textContent = (mode === "online" ? "48 课时 · 每周 1 次 · 每次 90 分钟 · 线上直播" : "48 课时 · 每周 1 次 · 每次 90 分钟");
+    });
+  });
+
+  /* ===== 老带新推荐码 ===== */
+  var refGen = document.getElementById("refGen");
+  var refCode = document.getElementById("refCode");
+  var refPhone = document.getElementById("refPhone");
+  var refNote = document.getElementById("refNote");
+  if (refGen && refCode && refPhone && refNote) {
+    var makeRefCode = function () {
+      var v = (refPhone.value || "").replace(/\D/g, "");
+      if (v.length !== 4) { showToast("请填写手机号后四位"); refPhone.focus(); return; }
+      var letters = "ABCDEFGHJKLMNPQRSTUVWXYZ";
+      var sum = 0;
+      for (var i = 0; i < 4; i++) sum += parseInt(v.charAt(i), 10) * (i + 2);
+      var code = "CL-" + v + letters.charAt(sum % letters.length);
+      refCode.textContent = code;
+      refCode.setAttribute("data-code", code);
+      refCode.style.cursor = "pointer";
+      refNote.textContent = "点一下推荐码可复制。朋友报名时出示，双方优惠在缴费时直接抵扣。";
+      showToast("推荐码已生成");
+    };
+    refGen.addEventListener("click", makeRefCode);
+    refPhone.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") makeRefCode();
+    });
+    refCode.addEventListener("click", function () {
+      var c = refCode.getAttribute("data-code");
+      if (!c) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(c).then(function () { showToast("推荐码 " + c + " 已复制"); }, function () { showToast("推荐码：" + c); });
+      } else {
+        showToast("推荐码：" + c);
+      }
+    });
+  }
+
+  /* ===== 试听预约表单 ===== */
+  var formEl = document.getElementById("trialFormEl");
+  var formWrap = document.getElementById("trialForm");
+  var toast = document.getElementById("toast");
+  var toastText = document.getElementById("toastText");
+  var toastTimer = null;
+  function showToast(msg) {
+    toastText.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 2600);
+  }
+  formEl.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = document.getElementById("fName");
+    var age = document.getElementById("fAge");
+    var course = document.getElementById("fCourse");
+    var phone = document.getElementById("fPhone");
+    var consent = document.getElementById("fConsent");
+    var ok = true;
+    [name, age, course, phone].forEach(function (f) {
+      var bad = !f.value.trim();
+      f.classList.toggle("err", bad);
+      if (bad) ok = false;
+    });
+    if (!/^1\d{10}$/.test(phone.value.replace(/\s/g, ""))) { phone.classList.add("err"); ok = false; }
+    if (!consent.checked) ok = false;
+    if (!ok) { showToast("请检查带 * 的必填项与手机号格式"); return; }
+    var record = {
+      name: name.value.trim(), age: age.value, course: course.value,
+      mode: document.getElementById("fMode").value, phone: phone.value.trim(),
+      note: document.getElementById("fNote").value.trim(), time: new Date().toISOString()
+    };
+    try {
+      var list = JSON.parse(localStorage.getItem("codeleap-trial") || "[]");
+      list.push(record);
+      localStorage.setItem("codeleap-trial", JSON.stringify(list));
+    } catch (err) {}
+    document.getElementById("okText").textContent = "已为 " + record.name + " 登记 " + record.course + " 的试听。课程顾问将在 1 个工作日内与您联系，也可直接拨打 400-860-2026。";
+    formWrap.classList.add("done");
+  });
+  document.getElementById("okReset").addEventListener("click", function () {
+    formEl.reset();
+    formWrap.classList.remove("done");
+  });
+
+  /* ===== 开班计划：按校区筛选 ===== */
+  var schedules = [
+    { level: "L1", name: "图形化启蒙", cls: "6 人班", campus: "高新", date: "12月5日", week: "周六", time: "09:00–10:30", seat: "余 2 位", state: "few" },
+    { level: "L1", name: "图形化启蒙", cls: "6 人班", campus: "政务", date: "12月6日", week: "周日", time: "10:30–12:00", seat: "余 3 位", state: "ok" },
+    { level: "L3", name: "Python 编程", cls: "6 人直播", campus: "线上", date: "12月8日", week: "周二", time: "19:00–20:30", seat: "余 4 位", state: "ok" },
+    { level: "L2", name: "图形化进阶", cls: "6 人班", campus: "滨湖", date: "12月12日", week: "周六", time: "14:00–15:30", seat: "已满", state: "full" },
+    { level: "L3", name: "Python 编程", cls: "6 人班", campus: "高新", date: "12月13日", week: "周日", time: "09:00–10:30", seat: "余 1 位", state: "few" },
+    { level: "L4", name: "C++ 竞赛", cls: "8 人班", campus: "高新", date: "12月19日", week: "周六", time: "15:00–17:00", seat: "需测评", state: "neutral" },
+    { level: "L4", name: "C++ 竞赛", cls: "8 人直播", campus: "线上", date: "12月20日", week: "周日", time: "19:00–21:00", seat: "需测评", state: "neutral" },
+    { level: "L2", name: "图形化进阶", cls: "6 人班", campus: "政务", date: "12月26日", week: "周六", time: "10:00–11:30", seat: "余 5 位", state: "ok" }
+  ];
+  var schedBody = document.getElementById("schedBody");
+  var schedFilters = document.getElementById("schedFilters");
+  var currentCampus = "all";
+
+  function renderSched() {
+    var rows = schedules.filter(function (s) {
+      return currentCampus === "all" || s.campus === currentCampus;
+    });
+    if (!rows.length) {
+      schedBody.innerHTML = '<div class="sched-empty">这个校区近期还没有排定班次。可以先预约试听，开班后我们会第一时间通知你。</div>';
+      return;
+    }
+    schedBody.innerHTML = rows.map(function (s) {
+      var label = s.state === "full" ? "等位" : (s.state === "neutral" ? "预约测评" : "预约");
+      var btnCls = (s.state === "ok" || s.state === "few") ? "btn-primary" : "btn-ghost";
+      return '<div class="sched-row">'
+        + '<div class="sc-name"><b>' + s.name + '</b><span>' + s.level + ' · ' + s.cls + '</span></div>'
+        + '<div class="sc-campus">' + s.campus + '</div>'
+        + '<div class="sc-date">' + s.date + '</div>'
+        + '<div class="sc-time">' + s.week + ' ' + s.time + '</div>'
+        + '<div><span class="badge-seat ' + s.state + '"><i></i>' + s.seat + '</span></div>'
+        + '<a class="btn ' + btnCls + ' btn-sm" href="#trial">' + label + '</a>'
+        + '</div>';
+    }).join("");
+  }
+
+  if (schedFilters) {
+    schedFilters.addEventListener("click", function (e) {
+      var btn = e.target.closest(".filter-btn");
+      if (!btn) return;
+      Array.prototype.forEach.call(schedFilters.querySelectorAll(".filter-btn"), function (b) {
+        b.classList.remove("active");
+      });
+      btn.classList.add("active");
+      currentCampus = btn.getAttribute("data-campus");
+      renderSched();
+    });
+    renderSched();
+  }
+
+  /* ===== 赛事与考级日历 ===== */
+  var exams = [
+    { y: 2026, m: 12, d: 26, tag: "GESP", sure: true, name: "GESP 2026 年 12 月场", note: "总第 16 次认证 · 1–4 级 9:30–11:30、5–8 级 13:30–16:30" },
+    { y: 2027, m: 3, d: 13, tag: "GESP", sure: false, name: "GESP 2027 年 3 月场（预计）", note: "按往年规律推算在 3 月中旬 · 以官网当期通知为准" },
+    { y: 2027, m: 6, d: 26, tag: "GESP", sure: false, name: "GESP 2027 年 6 月场（预计）", note: "按往年规律推算在 6 月下旬 · 以官网当期通知为准" },
+    { y: 2027, m: 9, d: 11, tag: "GESP", sure: false, name: "GESP 2027 年 9 月场（预计）", note: "按往年规律推算在 9 月中旬 · 以官网当期通知为准" },
+    { y: 2027, m: 9, d: 18, tag: "CSP", sure: false, name: "CSP-J/S 2027 第一轮（预计）", note: "集中笔试 · 往年多在 9 月中下旬，入门组上午、提高组下午" },
+    { y: 2027, m: 11, d: 6, tag: "CSP", sure: false, name: "CSP-J/S 2027 第二轮（预计）", note: "上机认证 · 往年多在 11 月初，入门组与提高组各占半天" }
+  ];
+
+  var calLine = document.getElementById("calLine");
+  var calNext = document.getElementById("calNext");
+  if (calLine && calNext) {
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    var calItems = exams.map(function (e) {
+      var dt = new Date(e.y, e.m - 1, e.d);
+      return { e: e, diff: Math.round((dt - today) / 86400000) };
+    });
+    calLine.innerHTML = calItems.map(function (it) {
+      var state = it.diff < 0 ? "past" : (it.diff <= 45 ? "soon" : "");
+      var tagText;
+      if (it.diff < 0) tagText = "已结束";
+      else if (it.diff === 0) tagText = "今天";
+      else if (it.diff === 1) tagText = "明天";
+      else if (it.diff <= 45) tagText = "还有 " + it.diff + " 天";
+      else tagText = it.e.sure ? "已公布" : "预计";
+      return '<li class="cal-item">'
+        + '<div class="cal-date"><b>' + it.e.d + '</b><span>' + it.e.m + ' 月</span></div>'
+        + '<div class="cal-name"><b>' + it.e.name + '</b><span>' + it.e.note + '</span></div>'
+        + '<span class="cal-tag ' + state + '">' + tagText + '</span>'
+        + '</li>';
+    }).join("");
+
+    var nextItem = null;
+    for (var ci = 0; ci < calItems.length; ci++) {
+      if (calItems[ci].diff >= 0) { nextItem = calItems[ci]; break; }
+    }
+    if (nextItem) {
+      var ne = nextItem.e;
+      calNext.innerHTML = '<div class="cal-next-count">' + nextItem.diff + '<small>' + (nextItem.diff === 0 ? "今天" : "天后") + '</small></div>'
+        + '<div class="cal-next-body"><b>' + ne.name + '</b><span>' + ne.y + ' 年 ' + ne.m + ' 月 ' + ne.d + ' 日 · ' + ne.note + '</span></div>'
+        + '<a class="btn btn-ghost btn-sm" href="#trial">问备考安排</a>';
+    } else {
+      calNext.innerHTML = '<div class="cal-next-body"><b>本年度已排定的认证全部结束</b><span>下一年度的认证时间待 CCF 官网公布，公布后我们会第一时间更新，并在开班表里同步备考班次。</span></div>';
+    }
+  }
+
+  /* ===== 教育资讯 ===== */
+  var articles = [
+    {
+      tag: "选课指南", date: "2026-11-12", read: "6 分钟",
+      title: "9 岁学 Python 还是先学 Scratch？一份按能力而非年龄的选课建议",
+      excerpt: "同样是三年级，有的孩子适合先玩积木，有的可以直接写代码。判断标准其实不是年龄，而是这三件事。",
+      body: [
+        "<p>这是课程顾问被问得最多的一个问题。很多家长希望得到一个年龄数字，比如「九岁就该学 Python」，但实际判断依据并不在年龄上。</p>",
+        "<h3>先看这三件事</h3>",
+        "<ul><li>能不能独立读完一段三百字左右的中文说明，并说出重点；</li><li>能不能在键盘上找到任意字母，并把简单单词完整敲出来；</li><li>遇到「没成功」时，是愿意再试一次，还是立刻想放弃。</li></ul>",
+        "<p>三条都过关，可以直接进入 Python，不必再花一个学期摆积木。若有一到两条不具备，先用一学期 Scratch 建立「我能做出来」的经验，再转文本代码，过渡会顺很多。</p>",
+        "<h3>为什么有些孩子反而该晚一点写代码</h3>",
+        "<p>Scratch 的价值不在「简单」，而在于它能让孩子在半小时内看到结果。一个还没建立自信的孩子直接面对满屏英文报错，最容易发生的不是学不会，而是再也不想打开电脑。先给他成功经验，比先给他语法更重要。</p>",
+        "<p>我们在试听时会用二十分钟观察孩子读题、打字和遇到错误时的反应，再给出阶段建议。这个判断比按年级分班更接近真实情况。</p>"
+      ]
+    },
+    {
+      tag: "考级竞赛", date: "2026-10-28", read: "7 分钟",
+      title: "GESP 和 CSP-J/S 到底什么关系？家长需要知道的四件事",
+      excerpt: "两个缩写经常同时出现在招生简章里，但它们一个是等级认证，一个是竞赛，用途完全不同。",
+      body: [
+        "<p>GESP 和 CSP-J/S 都由中国计算机学会（CCF）主办，所以经常被放在一起说，但它们的定位差别很大。</p>",
+        "<h3>GESP 是等级认证</h3>",
+        "<p>它按级别考核编程能力，覆盖图形化、Python、C++ 三个方向，一年有多次考试机会。作用是分阶段检验学习成果：孩子学到哪、掌握到什么程度，有一个外部标尺。</p>",
+        "<h3>CSP-J/S 是竞赛</h3>",
+        "<p>分入门级（J）与提高级（S），有初赛与复赛两个环节，考察的是算法设计与程序实现能力。它是信息学竞赛通道的入口，也是不少学校科技特长生关注的材料。</p>",
+        "<h3>两者的衔接</h3>",
+        "<p>按往年规则，GESP 达到一定级别可以免去 CSP-J/S 的初赛环节，具体级别与当年政策有关，报名前应以 CCF 当年发布的通知为准。</p>",
+        "<h3>我们的建议</h3>",
+        "<p>不要为了攒证书赶考。按学习阶段考对应的级别，把考试当作一次阶段复盘；真正决定竞赛成绩的，是平时的题量和调试能力，而不是考了几张证书。</p>"
+      ]
+    },
+    {
+      tag: "教学手记", date: "2026-10-09", read: "5 分钟",
+      title: "孩子代码一报错就哭，我们怎么教他面对失败",
+      excerpt: "编程课上最常见的情绪不是无聊，而是挫败。处理方式决定了孩子会不会留下来。",
+      body: [
+        "<p>在编程课上，孩子遇到的失败比在其他兴趣班密集得多：一节课可能报错十几次。这不是课程设计的问题，而是编程这件事本身的样子。</p>",
+        "<h3>我们不让老师直接替孩子跑通</h3>",
+        "<p>看到孩子卡住，最容易的做法是老师上手改两行，屏幕一亮，孩子笑了。但下一次他自己遇到同样的错误，依然不会。我们要求老师先不碰键盘，只提问。</p>",
+        "<h3>三步提问法</h3>",
+        "<ul><li>先读报错：报错提示里写了第几行、哪个词，让孩子自己念出来；</li><li>再复述意图：问他这一行本来想让程序做什么；</li><li>最后只改一处：一次只动一个地方，改完立刻运行看变化。</li></ul>",
+        "<p>这套流程慢，但一个月后孩子会自己形成习惯。很多家长反馈，孩子在家里做数学题也开始先读题、再动笔，而不是猜一个答案。</p>",
+        "<p>失败不是要绕过的东西，它恰好是编程课最值钱的部分。</p>"
+      ]
+    },
+    {
+      tag: "备赛规划", date: "2026-09-20", read: "6 分钟",
+      title: "信息学竞赛的一年该怎么排：从暑假到复赛的三个阶段",
+      excerpt: "备赛不是临考前突击刷题，而是把一年切成三段，每段只解决一个问题。",
+      body: [
+        "<p>竞赛班的家长常问：「现在开始还来得及吗？」答案取决于目标级别与当前基础，但一年的节奏大致是固定的。</p>",
+        "<h3>第一阶段：暑假打地基</h3>",
+        "<p>集中解决语法与基础数据结构。这段时间题量最大，也最枯燥，但决定了后面能不能读懂题解。我们的做法是每天固定题量、当天讲评，不允许攒到最后一起补。</p>",
+        "<h3>第二阶段：九月熟悉赛场</h3>",
+        "<p>初赛前后以模拟赛为主，重点不是做对多少题，而是熟悉时间分配、读题顺序和提交节奏。很多孩子第一次参赛失分，不是因为不会，而是因为把时间花在了错误的题上。</p>",
+        "<h3>第三阶段：十月复盘</h3>",
+        "<p>复赛之后无论结果如何都要复盘：哪道题卡住、卡在思路还是实现、下次遇到同类题该先做什么。这份复盘比成绩单更有用。</p>",
+        "<p>各级赛事的具体时间以主办方当年通知为准，以上只是我们排课时的节奏参考。</p>"
+      ]
+    },
+    {
+      tag: "家庭教育", date: "2026-09-05", read: "5 分钟",
+      title: "不懂编程的家长，每周 40 分钟能陪孩子做什么",
+      excerpt: "不用会写代码也能帮上忙。三件事比盯着屏幕更有用，也更能让孩子愿意继续学下去。",
+      body: [
+        "<p>家长最常问的是：我自己不懂编程，能帮上什么忙？答案是能，而且帮的不是技术。</p>",
+        "<h3>第一件：帮他守住一段时间，而不是帮他改代码</h3>",
+        "<p>每周固定 40 分钟，把手机收起来，让孩子自己坐在电脑前。你不需要看代码写得对不对，只需要保证这段时间不被打断。孩子对「这是我自己的一段时间」的感受，比任何督促都有效。</p>",
+        "<h3>第二件：让他讲，你先别评价</h3>",
+        "<p>作品做完后请他讲一遍：这是做什么的、按哪个键会发生什么、哪里最难。讲的过程会暴露他到底懂没懂，而你只需要听完，然后问一句「那如果我想让它更快呢」。不要急着说「这个地方做得不好」，评价会让他下次不想讲。</p>",
+        "<h3>第三件：把作品留下来</h3>",
+        "<p>给孩子的作品建一个文件夹或相册，按日期命名。半年后翻回去看，他会自己发现「我以前只会做这个，现在能做那个」。这份对比是家长能给的最具体的肯定。</p>",
+        "<p>剩下的部分交给课堂。老师负责技术，你负责让他愿意一直来——这两件事分工清楚，孩子的进步反而更快。</p>"
+      ]
+    },
+    {
+      tag: "工具指南", date: "2026-08-22", read: "4 分钟",
+      title: "Scratch 作品怎么保存和分享？账号、文件与导出一次讲清",
+      excerpt: "孩子辛苦做好的作品丢了最让人心疼。三种保存方式各适合什么场景，存错了会很麻烦。",
+      body: [
+        "<p>课堂上最常见的一次崩溃，不是代码报错，而是「我的作品不见了」。保存方式选错，作品真的会丢。</p>",
+        "<h3>方式一：保存在账号里</h3>",
+        "<p>登录后点保存，作品会留在云端，换一台电脑登录也能看到。适合日常练习。缺点是断网时保存会失败，页面刷新前没保存的内容就没了，所以下课前一定要确认看到「已保存」的提示。</p>",
+        "<h3>方式二：保存成本地文件</h3>",
+        "<p>通过「文件 → 保存到你的电脑」，会下载一个 .sb3 文件。这个文件可以拷进 U 盘、发邮件、放进网盘，十年后仍能打开。适合结课作品和要交给学校的作业。注意：打开它需要 Scratch 网页版或离线编辑器。</p>",
+        "<h3>方式三：发布成分享链接</h3>",
+        "<p>点「分享」后作品会公开在社区，任何人拿到链接都能在线玩，也能看到源码。适合展示，但要注意：作品里的角色名、录音、备注里不要出现真实姓名、学校、住址这些信息。</p>",
+        "<h3>我们的建议</h3>",
+        "<p>课堂练习存账号，方便随时接着做；每完成一个阶段作品就存一份 .sb3 到本地，作为作品集；要发给亲友看时再用分享链接，发之前检查一遍有没有个人信息。</p>"
+      ]
+    }
+  ];
+
+  var newsGrid = document.getElementById("newsGrid");
+  var reader = document.getElementById("reader");
+  var readerPanel = document.getElementById("readerPanel");
+  var readerMeta = document.getElementById("readerMeta");
+  var readerTitle = document.getElementById("readerTitle");
+  var readerBody = document.getElementById("readerBody");
+
+  function openSheet(metaHtml, title, bodyHtml) {
+    readerMeta.innerHTML = metaHtml;
+    readerTitle.textContent = title;
+    readerBody.innerHTML = bodyHtml;
+    reader.classList.add("open");
+    reader.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    if (readerPanel) readerPanel.scrollTop = 0;
+  }
+  function closeSheet() {
+    reader.classList.remove("open");
+    reader.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  if (newsGrid && reader) {
+    var newsFilters = document.getElementById("newsFilters");
+    var newsTag = "all";
+
+    function newsCard(a, i) {
+      return '<button class="news-card" type="button" data-article="' + i + '">'
+        + '<div class="news-meta"><span class="n-tag">' + a.tag + '</span><span>' + a.date + '</span><span>' + a.read + '</span></div>'
+        + '<h3>' + a.title + '</h3>'
+        + '<p>' + a.excerpt + '</p>'
+        + '<span class="news-more">阅读全文<svg><use href="#i-arrow"></use></svg></span>'
+        + '</button>';
+    }
+
+    function renderNews() {
+      var html = "";
+      articles.forEach(function (a, i) {
+        if (newsTag !== "all" && a.tag !== newsTag) return;
+        html += newsCard(a, i);
+      });
+      newsGrid.innerHTML = html || '<div class="sched-empty" style="grid-column:1/-1">这个主题下还没有文章，换一个标签看看。</div>';
+    }
+
+    renderNews();
+
+    if (newsFilters) {
+      newsFilters.addEventListener("click", function (e) {
+        var btn = e.target.closest(".filter-btn");
+        if (!btn) return;
+        Array.prototype.forEach.call(newsFilters.querySelectorAll(".filter-btn"), function (b) {
+          b.classList.remove("active");
+        });
+        btn.classList.add("active");
+        newsTag = btn.getAttribute("data-tag");
+        renderNews();
+      });
+    }
+
+    function openReader(i) {
+      var a = articles[i];
+      if (!a) return;
+      openSheet(
+        '<span class="n-tag">' + a.tag + '</span><span>' + a.date + '</span><span>约 ' + a.read + '</span>',
+        a.title,
+        a.body.join("")
+      );
+    }
+
+    newsGrid.addEventListener("click", function (e) {
+      var card = e.target.closest(".news-card");
+      if (card) openReader(parseInt(card.getAttribute("data-article"), 10));
+    });
+    reader.addEventListener("click", function (e) {
+      if (e.target.closest("[data-reader-close]")) closeSheet();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && reader.classList.contains("open")) closeSheet();
+    });
+  }
+
+  /* ===== 学员作品详情 ===== */
+  var works = [
+    {
+      name: "校园垃圾分类大挑战",
+      meta: "Scratch · 2026 校园科技节参展作品",
+      who: "李同学 · 9 岁 · L1 图形化启蒙 · 学习 8 个月",
+      img: "assets/work-sort.jpg",
+      lead: "把学校垃圾分类的四类标准做成了限时小游戏：垃圾从上方落下，玩家把它拖进对应的垃圾桶，答对加分、答错扣时间。",
+      tech: ["克隆体生成垃圾", "变量计分与计时", "广播消息判断对错", "随机数与难度递增"],
+      hard: "最难的不是画面，而是判断逻辑。一开始用四个「如果」逐个判断，代码长得像一条蛇；后来改成「垃圾编号 + 垃圾桶编号」直接比较，克隆体再多也不会乱。",
+      cmt: "九岁能自己把条件判断理清楚，还主动想到用编号简化代码，这是这个阶段最值得肯定的进步。作品在校园科技节上被两百多名同学试玩。",
+      code: null
+    },
+    {
+      name: "贪吃蛇大作战",
+      meta: "Python + Pygame · L3 结课项目",
+      who: "张同学 · 11 岁 · L3 Python 编程 · 学习 1 年 2 个月",
+      img: "assets/work-snake.jpg",
+      lead: "自己设计并实现的贪吃蛇，带加速道具、逐级变快的速度和吃到自己就结束的判定。",
+      tech: ["Pygame 事件循环", "列表存蛇身坐标", "碰撞检测", "道具与速度曲线"],
+      hard: "最初蛇会直接穿墙，因为它按格子坐标移动，而屏幕没有边界判断。加上取模运算后实现了穿墙，后来又改成撞墙结束，两种模式都保留了下来，可以在游戏里切换。",
+      cmt: "从照着抄，到改代码，再到自己想玩法，这是转文本语言之后最关键的一步。他现在的调试习惯是先在纸上画坐标，再回来改程序。",
+      code: [
+        "for i in range(len(snake) - 1, 0, -1):",
+        "    snake[i] = snake[i - 1].copy()",
+        "",
+        "snake[0].x += dx * CELL",
+        "snake[0].y += dy * CELL",
+        "",
+        "if snake[0] == food:",
+        "    score += 1",
+        "    speed = min(speed + 1, 20)",
+        "    food = random_food()"
+      ].join("\n")
+    },
+    {
+      name: "迷宫最短路可视化",
+      meta: "C++ · BFS 演示 · CSP-J 一等奖",
+      who: "王同学 · 13 岁 · L4 C++ 竞赛班 · 学习 2 年",
+      img: "assets/work-maze.jpg",
+      lead: "用广度优先搜索求迷宫最短路，并把搜索过程逐帧画出来：先铺满访问过的格子，再把最短路径高亮成一条线。",
+      tech: ["BFS 队列搜索", "二维数组存图", "父节点回溯路径", "简易图形输出"],
+      hard: "一开始只输出最短步数，看不出为什么这条路最短。加上父节点记录后，才能从终点倒着回溯出完整路径，这一步花了他两个晚上。",
+      cmt: "能把抽象算法讲成一张图，说明他是真的理解而不是背模板。这份作品后来成了竞赛班讲 BFS 的固定教具。",
+      code: [
+        "queue<int> q;",
+        "vis[start] = 1; q.push(start);",
+        "",
+        "while (!q.empty()) {",
+        "    int u = q.front(); q.pop();",
+        "    if (u == end) break;",
+        "    for (int v : adj[u]) {",
+        "        if (!vis[v]) {",
+        "            vis[v] = 1;",
+        "            pre[v] = u;",
+        "            q.push(v);",
+        "        }",
+        "    }",
+        "}"
+      ].join("\n")
+    }
+  ];
+
+  function escHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function openWork(i) {
+    var w = works[i];
+    if (!w) return;
+    var html = '<p>' + w.lead + '</p>'
+      + '<div class="work-shot"><img src="' + w.img + '" alt="' + w.name + '的运行画面"></div>'
+      + '<h3>用到的技术</h3>'
+      + '<div class="chips">' + w.tech.map(function (t) { return '<span>' + t + '</span>'; }).join("") + '</div>'
+      + '<h3>最难的一步</h3><p>' + w.hard + '</p>'
+      + (w.code ? '<h3>关键代码</h3><div class="code-snip">' + escHtml(w.code) + '</div>' : '')
+      + '<h3>老师点评</h3><p>' + w.cmt + '</p>'
+      + '<p style="margin-top:20px;font-size:13.5px;color:var(--faint)">' + w.who + '</p>';
+    openSheet('<span class="n-tag">学员作品</span><span>' + w.meta + '</span>', w.name, html);
+  }
+
+  var worksGrid = document.querySelector(".works-grid");
+  if (worksGrid && reader) {
+    worksGrid.addEventListener("click", function (e) {
+      var card = e.target.closest(".work-card");
+      if (!card) return;
+      openWork(parseInt(card.getAttribute("data-work"), 10));
+    });
+  }
+
+  /* ===== 选课测评 ===== */
+  var quizQuestions = [
+    { q: "孩子今年多大？", opts: [
+      { t: "6–8 岁", s: { L1: 3, L2: 1 } },
+      { t: "9–10 岁", s: { L1: 1, L2: 2, L3: 2 } },
+      { t: "11–12 岁", s: { L2: 1, L3: 3 } },
+      { t: "13 岁以上", s: { L3: 2, L4: 2 } }
+    ]},
+    { q: "孩子用键盘打字的情况是？", opts: [
+      { t: "几乎不会，需要老师帮忙", s: { L1: 3 } },
+      { t: "能敲出简单单词", s: { L2: 2, L3: 1 } },
+      { t: "比较熟练，能盲打一部分", s: { L3: 2, L4: 1 } },
+      { t: "很快，打字不构成障碍", s: { L3: 1, L4: 2 } }
+    ]},
+    { q: "程序报错的时候，孩子通常会？", opts: [
+      { t: "容易放弃，需要大人鼓励", s: { L1: 2, L2: 1 } },
+      { t: "会自己再试一两次", s: { L2: 2, L3: 1 } },
+      { t: "愿意反复试，直到跑通", s: { L3: 2, L4: 1 } },
+      { t: "喜欢钻研，越难越有劲", s: { L4: 3 } }
+    ]},
+    { q: "这次学编程，最希望达成什么？", opts: [
+      { t: "先玩得开心，培养兴趣", s: { L1: 3 } },
+      { t: "做出属于自己的作品", s: { L2: 2, L3: 2 } },
+      { t: "考级，拿到阶段证书", s: { L2: 1, L3: 2 } },
+      { t: "参加信息学竞赛", s: { L4: 4 } }
+    ]},
+    { q: "孩子之前接触过编程吗？", opts: [
+      { t: "完全没有接触", s: { L1: 1, L2: 1 } },
+      { t: "学过 Scratch 或类似积木", s: { L2: 3, L3: 1 } },
+      { t: "学过 Python", s: { L3: 3, L4: 1 } },
+      { t: "学过 C++ 或参加过比赛", s: { L4: 4 } }
+    ]}
+  ];
+  var quizInfo = {
+    L1: { title: "L1 启蒙 · 图形化编程", reason: "孩子更适合先建立兴趣，以及「我做出来了」的经验。从图形化启蒙开始，用积木把动画与小游戏做出来，一学期后再评估是否转入 Python。" },
+    L2: { title: "L2 进阶 · 图形化与硬件", reason: "已经具备基本的操作能力与耐心。建议从图形化进阶开始，接触变量、列表与函数，同时把传感器接进作品，为文本代码过渡。" },
+    L3: { title: "L3 Python 编程", reason: "阅读、打字与坚持度都已经到了写代码的门槛，可以直接进入 Python，用真实代码做小游戏和实用工具，不必再花一学期摆积木。" },
+    L4: { title: "L4 C++ · 算法与竞赛", reason: "目标明确、钻研意愿强，适合测评后进入竞赛班，以 GESP 与 CSP-J/S 为阶段目标，配合 OJ 刷题与每月模拟赛。" }
+  };
+  var quizIndex = 0;
+  var quizAnswers = [];
+  var quizIntro = document.getElementById("quizIntro");
+  var quizBody = document.getElementById("quizBody");
+  var quizResultEl = document.getElementById("quizResult");
+  var quizQ = document.getElementById("quizQ");
+  var quizOptions = document.getElementById("quizOptions");
+  var quizStep = document.getElementById("quizStep");
+  var quizDots = document.getElementById("quizDots");
+  var quizBack = document.getElementById("quizBack");
+
+  function renderQuizQuestion() {
+    var q = quizQuestions[quizIndex];
+    quizStep.textContent = "第 " + (quizIndex + 1) + " 题 / 共 " + quizQuestions.length + " 题";
+    quizDots.innerHTML = quizQuestions.map(function (x, i) {
+      return '<i class="' + (i <= quizIndex ? "on" : "") + '"></i>';
+    }).join("");
+    quizQ.textContent = q.q;
+    quizOptions.innerHTML = q.opts.map(function (o, i) {
+      return '<button class="quiz-opt" type="button" data-opt="' + i + '">' + o.t + '</button>';
+    }).join("");
+    quizBack.disabled = quizIndex === 0;
+  }
+
+  function showQuizResult() {
+    var scores = { L1: 0, L2: 0, L3: 0, L4: 0 };
+    quizAnswers.forEach(function (o) {
+      if (!o) return;
+      Object.keys(o.s).forEach(function (k) { scores[k] += o.s[k]; });
+    });
+    var best = "L1";
+    ["L2", "L3", "L4"].forEach(function (k) {
+      if (scores[k] > scores[best]) best = k;
+    });
+    var info = quizInfo[best];
+    document.getElementById("qrBadge").textContent = best;
+    document.getElementById("qrTitle").textContent = info.title;
+    document.getElementById("qrReason").textContent = info.reason;
+    quizBody.hidden = true;
+    quizResultEl.hidden = false;
+  }
+
+  if (quizIntro) {
+    document.getElementById("quizStart").addEventListener("click", function () {
+      quizIndex = 0;
+      quizAnswers = [];
+      quizIntro.hidden = true;
+      quizResultEl.hidden = true;
+      quizBody.hidden = false;
+      renderQuizQuestion();
+    });
+    quizOptions.addEventListener("click", function (e) {
+      var btn = e.target.closest(".quiz-opt");
+      if (!btn) return;
+      quizAnswers[quizIndex] = quizQuestions[quizIndex].opts[parseInt(btn.getAttribute("data-opt"), 10)];
+      if (quizIndex < quizQuestions.length - 1) {
+        quizIndex++;
+        renderQuizQuestion();
+      } else {
+        showQuizResult();
+      }
+    });
+    quizBack.addEventListener("click", function () {
+      if (quizIndex > 0) { quizIndex--; renderQuizQuestion(); }
+    });
+    document.getElementById("quizRetry").addEventListener("click", function () {
+      quizIndex = 0;
+      quizAnswers = [];
+      quizResultEl.hidden = true;
+      quizBody.hidden = false;
+      renderQuizQuestion();
+    });
+    document.getElementById("qrBook").addEventListener("click", function () {
+      var sel = document.getElementById("fCourse");
+      var code = document.getElementById("qrBadge").textContent;
+      var info = quizInfo[code];
+      if (!sel || !info) return;
+      for (var i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].text === info.title) { sel.selectedIndex = i; break; }
+      }
+    });
+  }
+
+  /* ===== 学费估算 ===== */
+  var estPrices = { interest: { offline: 4980, online: 3980 }, comp: { offline: 7980, online: 6480 } };
+  var estState = { price: "interest", mode: "offline", off: "none" };
+  var estPriceEl = document.getElementById("estPrice");
+  var estSubEl = document.getElementById("estSub");
+  var estSaveEl = document.getElementById("estSave");
+
+  function fmtNum(n) { return n.toLocaleString("en-US"); }
+
+  function renderEst() {
+    var base = estPrices[estState.price][estState.mode];
+    var total = base;
+    if (estState.off === "couple") total = base - 300;
+    else if (estState.off === "renew") total = Math.round(base * 0.9);
+    else if (estState.off === "sibling") total = Math.round(base * 0.85);
+    estPriceEl.textContent = fmtNum(total);
+    var lesson = estState.price === "comp" ? "48 课时 · 每次 120 分钟" : "48 课时 · 每次 90 分钟";
+    estSubEl.textContent = lesson + " · 约 ¥" + fmtNum(Math.round(total / 12)) + "/月";
+    estSaveEl.textContent = base > total ? "比原价省 ¥" + fmtNum(base - total) : "";
+  }
+
+  function bindChips(groupId, key, attr) {
+    var group = document.getElementById(groupId);
+    if (!group) return;
+    group.addEventListener("click", function (e) {
+      var btn = e.target.closest("button");
+      if (!btn || !group.contains(btn)) return;
+      Array.prototype.forEach.call(group.querySelectorAll("button"), function (b) {
+        b.classList.remove("active");
+      });
+      btn.classList.add("active");
+      estState[key] = btn.getAttribute(attr);
+      renderEst();
+    });
+  }
+
+  if (estPriceEl) {
+    bindChips("estStage", "price", "data-price");
+    bindChips("estMode", "mode", "data-mode");
+    bindChips("estDiscount", "off", "data-off");
+    renderEst();
+  }
+
+  /* ===== 返回顶部 ===== */
+  var toTop = document.getElementById("toTop");
+  if (toTop) {
+    function onScroll() {
+      toTop.classList.toggle("show", window.scrollY > 700);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+})();
+</script>
+</body>
+</html>

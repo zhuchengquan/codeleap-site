@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>知识库 · 码跃少儿编程</title>
+<meta name="description" content="关于少儿编程的选课判断、考级准备与学习路径：每篇都写清代价和边界，不承诺结果。另有 8 条家长高频问答与机构动态。">
+<link rel="canonical" href="https://codeleap.example/blog.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="知识库 · 码跃少儿编程">
+<meta property="og:description" content="选课判断、考级准备与学习路径，写清代价和边界。">
+<meta property="og:url" content="https://codeleap.example/blog.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b7bf3'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' fill='%23fff' text-anchor='middle'%3E%E7%A0%81%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f9fe;--bg-2:#eef4fd;--ink:#16213a;--muted:#56657e;--faint:#8695ab;--primary:#2b7bf3;--primary-soft:rgba(43,123,243,.10);--accent:#f0663a;--accent-soft:rgba(240,102,58,.10);--ok:#12a06a;--ok-soft:rgba(18,160,106,.12);--glass:rgba(255,255,255,.72);--glass-2:rgba(255,255,255,.94);--glass-head:rgba(255,255,255,.88);--stroke:rgba(27,52,92,.10);--stroke-2:rgba(27,52,92,.16);--shadow:0 12px 32px rgba(26,48,84,.07);--radius:18px;--radius-sm:13px;--font-display:"Nunito","Noto Sans SC",sans-serif;--font-body:"Nunito","Noto Sans SC",sans-serif;--font-mono:"JetBrains Mono","Noto Sans SC",monospace}
+[data-theme="dark"]{--bg:#0d1524;--bg-2:#101a2c;--ink:#eef3fb;--muted:#a7b6cc;--faint:#7d8ea8;--primary:#5a9dff;--primary-soft:rgba(90,157,255,.14);--accent:#ff8660;--accent-soft:rgba(255,134,96,.12);--ok:#4dd49b;--ok-soft:rgba(77,212,155,.15);--glass:rgba(255,255,255,.06);--glass-2:rgba(255,255,255,.10);--glass-head:rgba(18,28,46,.88);--stroke:rgba(255,255,255,.10);--stroke-2:rgba(255,255,255,.18);--shadow:0 16px 40px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.78;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-display);letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:11px 18px;background:var(--glass-head);border-bottom:1px solid var(--stroke);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:15.5px}
+.brand .m{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:var(--primary);color:#fff;font-size:14px;font-weight:700}
+.tagline{font-size:12.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted)}
+.sp{flex:1}
+.icon-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 16px;border:1px solid var(--stroke-2);border-radius:999px;background:var(--glass);color:var(--ink);font-family:inherit;font-size:13.5px}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 22px;border-radius:999px;background:var(--accent);color:#fff;font-size:14.5px;box-shadow:0 10px 24px rgba(240,102,58,.26)}
+.btn-line{display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--ink);font-size:14px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.05em;color:var(--primary)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--primary);font-style:normal}
+.wrap{max-width:1000px;margin:0 auto;padding:32px 20px 60px}
+.foot{max-width:1000px;margin:0 auto;padding:0 20px 52px;font-size:12px;line-height:1.9;color:var(--faint)}
+.foot a{color:var(--primary)}
+
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center;margin-bottom:34px}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:22px}}
+.hero h1{margin:10px 0 12px;font-size:clamp(26px,3.9vw,38px);font-weight:800;line-height:1.3}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{margin:0;font-size:14.5px;line-height:1.9;color:var(--muted);max-width:520px}
+.hero .stats{display:grid;gap:10px}
+.hero .st{padding:14px 18px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke);display:flex;align-items:baseline;gap:10px}
+.hero .st b{font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1}
+.hero .st span{font-size:12.5px;color:var(--muted)}
+.sec{margin-top:46px}
+.sec-head span{display:block;font-size:12px;letter-spacing:.06em;color:var(--faint);margin-bottom:6px}
+.sec-head h2{margin:0;font-size:clamp(19px,2.5vw,24px);font-weight:700}
+.sec-head p{margin:8px 0 0;font-size:13.5px;line-height:1.8;color:var(--muted);max-width:620px}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+@media(max-width:880px){.posts{grid-template-columns:1fr}}
+.post{display:flex;flex-direction:column;padding:22px 24px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);box-shadow:var(--shadow);text-align:left}
+.post .k{font-size:11.5px;color:var(--primary);letter-spacing:.05em}
+.post h3{margin:9px 0 8px;font-size:16.5px;line-height:1.5;font-weight:700}
+.post p{margin:0;font-size:13px;line-height:1.82;color:var(--muted);flex:1}
+.post .f{margin-top:16px;font-size:11.5px;color:var(--faint);display:flex;gap:10px;flex-wrap:wrap}
+.post .go{margin-top:12px;font-size:12.5px;color:var(--accent);font-weight:600}
+.qa{display:grid;gap:8px;margin-top:18px}
+.qa details{border-radius:var(--radius-sm);border:1px solid var(--stroke);background:var(--glass-2);overflow:hidden}
+.qa summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;cursor:pointer;list-style:none;font-size:14px;font-weight:500}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary svg{width:15px;height:15px;color:var(--faint);flex:none;transition:transform .2s}
+.qa details[open] summary svg{transform:rotate(180deg)}
+.qa .fb{padding:0 18px 16px;font-size:13.5px;line-height:1.88;color:var(--muted)}
+.news{margin-top:20px;border-radius:var(--radius);border:1px solid var(--stroke);background:var(--glass-2);overflow:hidden}
+.news .row{display:flex;align-items:center;gap:14px;padding:14px 20px;border-top:1px solid var(--stroke)}
+.news .row:first-child{border-top:0}
+.news .row time{font-family:var(--font-mono);font-size:11.5px;color:var(--faint);flex:none;width:78px}
+.news .row b{font-size:13.5px;font-weight:500;flex:1}
+.news .row em{font-style:normal;font-size:11px;padding:2px 8px;border-radius:999px;background:var(--primary-soft);color:var(--primary);flex:none}
+.sub{margin-top:34px;padding:26px 28px;border-radius:var(--radius);background:var(--primary-soft);border:1px solid rgba(43,123,243,.2);display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.sub .tt{flex:1;min-width:240px}
+.sub b{display:block;font-size:15.5px;font-weight:700}
+.sub span{display:block;font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.7}
+.sub form{display:flex;gap:8px;flex-wrap:wrap}
+.sub input{height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass-2);color:var(--ink);font-family:inherit;font-size:13.5px;min-width:200px}
+.sub button{height:42px;padding:0 20px;border-radius:999px;border:0;background:var(--primary);color:#fff;font-family:inherit;font-size:13.5px;cursor:pointer}
+.sub .hint{width:100%;font-size:12px;color:var(--faint);margin-top:-6px}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <span class="tagline">知识库</span>
+  <div class="sp"></div>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="btn" href="index.html">官网首页</a>
+</div>
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <span class="eyebrow"><i></i>知识库 · 家长决策手册</span>
+      <h1>家长最常问的问题，<br><em>我们写成了文章</em></h1>
+      <p class="lead">不谈教育理念，只谈判断方法。每篇都来自真实的咨询记录和课堂观察，写清代价和边界——包括「什么时候不该学」。</p>
+      <div class="acts" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
+        <a class="btn-primary" href="index.html#trial">预约免费试听</a>
+        <a class="btn-line" href="index.html#courses">看课程体系</a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="st"><b>3</b><span>篇长文，每篇 1500 字以上，不写水词</span></div>
+      <div class="st"><b>8</b><span>条家长高频问答，含我们最常劝退的情况</span></div>
+      <div class="st"><b>0</b><span>承诺。没有「保证学会」「保过」这类话</span></div>
+    </div>
+  </section>
+
+  <section class="sec" id="posts" style="margin-top:20px">
+    <div class="sec-head"><span>长文</span><h2>三个最常卡住家长的决策点</h2><p>要不要开始、考级怎么搞、学完去哪——按孩子真实情况判断，而不是按年龄表。</p></div>
+    <div class="posts"><a class="post" href="blog-when-to-start.html">
+  <span class="k">选课判断</span>
+  <h3>孩子几岁开始学编程合适？先看他能不能做这三件事</h3>
+  <p>年龄不是门槛。能记住并执行五步指令、失败后愿意再来一次、能独立坐住 25 分钟——三条都过，6 岁半可以开始；都不过，10 岁也吃力。</p>
+  <span class="f"><span>2026-11-18</span><span>约 6 分钟</span></span>
+  <span class="go">读全文 →</span>
+</a>
+<a class="post" href="blog-gesp-1.html">
+  <span class="k">考级竞赛</span>
+  <h3>GESP 一级到底考什么？两周备考不靠刷题</h3>
+  <p>满分 100，60 分及格，90 分以上可跨一级。15 道选择、10 道判断、2 道编程——失分几乎不在「不会」，而在格式和读题。</p>
+  <span class="f"><span>2026-11-20</span><span>约 7 分钟</span></span>
+  <span class="go">读全文 →</span>
+</a>
+<a class="post" href="blog-after-scratch.html">
+  <span class="k">学习路径</span>
+  <h3>Scratch 学完之后去哪？三条路线的真实区别</h3>
+  <p>继续图形化加深、转 Python、直接上 C++ 竞赛——三条路的适龄、成本、出口完全不同。附三个可自查的信号和一张对比表。</p>
+  <span class="f"><span>2026-11-23</span><span>约 6 分钟</span></span>
+  <span class="go">读全文 →</span>
+</a></div>
+  </section>
+
+  <section class="sec" id="qa">
+    <div class="sec-head"><span>速答</span><h2>报名前最常问的 8 个问题</h2><p>答案都是我们实际执行的口径，与招生简章、服务条款一致。</p></div>
+    <div class="qa"><details><summary>零基础能直接学 Python 吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">10 岁以上可以。9 岁以下建议先用 8 课时图形化过渡，把顺序、循环、变量这三个概念过一遍，否则第一个月会一直卡在拼写和缩进上。</div></details>
+<details><summary>一节课多长时间、几个孩子？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">L1–L3 每次 90 分钟、6 人小班；L4 竞赛班每次 120 分钟、8 人班。全部为主讲老师 + 助教双师配置。</div></details>
+<details><summary>缺课怎么办？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">提前 4 小时请假即视为有效请假，每学年 4 次免费补课，补课不跨阶段。没请假按正常消课处理。</div></details>
+<details><summary>需要自己买电脑吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">校区上课由校区提供设备。线上直播需自备电脑，Windows 或 Mac 均可，能装 Python 就行，对配置要求极低。</div></details>
+<details><summary>学多久能看出效果？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">8 课时能独立完成第一个完整作品。但更可靠的判断标准是：孩子能不能讲清楚「我做了什么、卡在哪里、后来怎么解决的」。</div></details>
+<details><summary>女孩子适合学编程吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">适合。我们女学员占比 38%，启蒙段更高。这个领域不存在性别差异，只有兴趣差异——而兴趣是可以被好作品点燃的。</div></details>
+<details><summary>会影响学校功课吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">每周 1 次课 + 每天 20 分钟练习，负担可控。真有冲突时优先学校功课，课时可以顺延，有效期 12 个月内可延期一次最长 3 个月。</div></details>
+<details><summary>试听要收费吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">免费。45 分钟体验课 + 一次能力测评，结束给一份书面建议：适合哪个阶段、需要补什么。不合适我们会直接说不合适。</div></details></div>
+  </section>
+
+  <section class="sec" id="news">
+    <div class="sec-head"><span>机构动态</span><h2>开班、考级与教研</h2><p>只记事实，不做宣传。</p></div>
+    <div class="news"><div class="row"><time>2026-11-24</time><b>2027 寒假集训营开放报名，三个营期各 12 人</b><em>招生</em></div>
+<div class="row"><time>2026-11-21</time><b>12 月 GESP 考场安排确认，考点在高新校区机房</b><em>考级</em></div>
+<div class="row"><time>2026-11-16</time><b>本月教研公开课：怎么教孩子读报错信息</b><em>教研</em></div>
+<div class="row"><time>2026-11-10</time><b>政务校区周六上午新增一个 L2 班，6 人满班</b><em>开班</em></div>
+<div class="row"><time>2026-11-03</time><b>2026 学年竞赛成果汇总发布：286 项奖项</b><em>成果</em></div></div>
+  </section>
+
+  <section class="sub">
+    <div class="tt"><b>新文章写好了，第一时间发给你</b><span>大约每月两篇，都是长文。留手机号即可，不发广告，随时回「退订」。</span></div>
+    <form id="subForm">
+      <input id="subPhone" type="tel" inputmode="numeric" maxlength="11" placeholder="11 位手机号" aria-label="手机号">
+      <button type="submit">订阅</button>
+      <span class="hint" id="subHint">演示环境：号码只存在本机浏览器，不会上传。</span>
+    </form>
+  </section>
+</div>
+<div class="foot">
+  <p><b>码跃少儿编程 CodeLeap</b> · 合肥 · 高新 / 政务 / 滨湖三校区 · 400-860-2026</p>
+  <p><a href="index.html">官网首页</a> · <a href="index.html#courses">课程体系</a> · <a href="course-l1.html">L1</a> · <a href="course-l2.html">L2</a> · <a href="course-l3.html">L3</a> · <a href="course-l4.html">L4</a> · <a href="blog.html">知识库</a> · <a href="campus.html">校区与到店</a> · <a href="results.html">荣誉与成果</a> · <a href="camp.html">寒假营</a> · <a href="enroll.html">在线报名</a> · <a href="brochure.html">招生简章</a> · <a href="parent.html">家长中心</a> · <a href="legal.html">政策与条款</a></p>
+  <p>内容示例站点：文中课表、价格、人数与统计数据均为演示用途，正式上线前请替换为真实信息；教育判断类内容仅供参考，不构成对个体孩子的结论。</p>
+</div>
+<script>
+(function () {
+  var KEY = "codeleap-theme";
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem(KEY); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  var btn = document.getElementById("themeBtn");
+  if (btn) btn.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+  });
+})();
+</script>
+<script>
+(function () {
+  var KEY = "codeleap-blog-sub";
+  var form = document.getElementById("subForm");
+  var phone = document.getElementById("subPhone");
+  var hint = document.getElementById("subHint");
+  try {
+    var saved = localStorage.getItem(KEY);
+    if (saved) { phone.value = saved; hint.textContent = "已订阅：" + saved + "（演示环境，仅存本机）"; }
+  } catch (e) {}
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var v = (phone.value || "").replace(/\s/g, "");
+    if (!/^1\d{10}$/.test(v)) { hint.textContent = "请输入 11 位手机号，以 1 开头。"; hint.style.color = "var(--accent)"; return; }
+    try { localStorage.setItem(KEY, v); } catch (e) {}
+    hint.style.color = "var(--ok)";
+    hint.textContent = "已订阅：" + v + " · 新文章会发到这个号码（演示环境，仅存本机）";
+  });
+})();
+</script>
+</body>
+</html>
+

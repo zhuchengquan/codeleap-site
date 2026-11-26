@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scratch 学完之后去哪？三条路线的真实区别 · 码跃少儿编程</title>
+<meta name="description" content="继续图形化加深、转 Python、直接上 C++ 竞赛——三条路的适龄、成本、出口完全不同。附三个可自查的信号和一张对比表。">
+<link rel="canonical" href="https://codeleap.example/blog-after-scratch.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="Scratch 学完之后去哪？三条路线的真实区别">
+<meta property="og:description" content="继续图形化加深、转 Python、直接上 C++ 竞赛——三条路的适龄、成本、出口完全不同。附三个可自查的信号和一张对比表。">
+<meta property="og:url" content="https://codeleap.example/blog-after-scratch.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b7bf3'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' fill='%23fff' text-anchor='middle'%3E%E7%A0%81%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f9fe;--bg-2:#eef4fd;--ink:#16213a;--muted:#56657e;--faint:#8695ab;--primary:#2b7bf3;--primary-soft:rgba(43,123,243,.10);--accent:#f0663a;--accent-soft:rgba(240,102,58,.10);--ok:#12a06a;--ok-soft:rgba(18,160,106,.12);--glass:rgba(255,255,255,.72);--glass-2:rgba(255,255,255,.94);--glass-head:rgba(255,255,255,.88);--stroke:rgba(27,52,92,.10);--stroke-2:rgba(27,52,92,.16);--shadow:0 12px 32px rgba(26,48,84,.07);--radius:18px;--radius-sm:13px;--font-display:"Nunito","Noto Sans SC",sans-serif;--font-body:"Nunito","Noto Sans SC",sans-serif;--font-mono:"JetBrains Mono","Noto Sans SC",monospace}
+[data-theme="dark"]{--bg:#0d1524;--bg-2:#101a2c;--ink:#eef3fb;--muted:#a7b6cc;--faint:#7d8ea8;--primary:#5a9dff;--primary-soft:rgba(90,157,255,.14);--accent:#ff8660;--accent-soft:rgba(255,134,96,.12);--ok:#4dd49b;--ok-soft:rgba(77,212,155,.15);--glass:rgba(255,255,255,.06);--glass-2:rgba(255,255,255,.10);--glass-head:rgba(18,28,46,.88);--stroke:rgba(255,255,255,.10);--stroke-2:rgba(255,255,255,.18);--shadow:0 16px 40px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.78;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-display);letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:11px 18px;background:var(--glass-head);border-bottom:1px solid var(--stroke);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:15.5px}
+.brand .m{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:var(--primary);color:#fff;font-size:14px;font-weight:700}
+.tagline{font-size:12.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted)}
+.sp{flex:1}
+.icon-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 16px;border:1px solid var(--stroke-2);border-radius:999px;background:var(--glass);color:var(--ink);font-family:inherit;font-size:13.5px}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 22px;border-radius:999px;background:var(--accent);color:#fff;font-size:14.5px;box-shadow:0 10px 24px rgba(240,102,58,.26)}
+.btn-line{display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--ink);font-size:14px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.05em;color:var(--primary)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--primary);font-style:normal}
+.wrap{max-width:1000px;margin:0 auto;padding:32px 20px 60px}
+.foot{max-width:1000px;margin:0 auto;padding:0 20px 52px;font-size:12px;line-height:1.9;color:var(--faint)}
+.foot a{color:var(--primary)}
+
+.art-wrap{max-width:1080px;margin:0 auto;padding:26px 20px 60px;display:grid;grid-template-columns:minmax(0,720px) 260px;gap:44px;align-items:start}
+@media(max-width:980px){.art-wrap{grid-template-columns:1fr;gap:0}.side{display:none}}
+.crumb{font-size:12px;color:var(--faint);margin-bottom:16px}
+.crumb a{color:var(--primary)}
+.art h1{margin:8px 0 14px;font-size:clamp(24px,3.3vw,33px);font-weight:800;line-height:1.36;letter-spacing:.01em}
+.art .meta-line{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--faint);margin-bottom:20px}
+.art .lead{margin:0 0 8px;font-size:15.5px;line-height:1.95;color:var(--muted);padding-bottom:22px;border-bottom:1px solid var(--stroke)}
+.art p{margin:0 0 18px;font-size:15.5px;line-height:1.96;color:var(--ink)}
+.art h2{margin:36px 0 14px;font-size:20px;font-weight:700;line-height:1.45}
+.art ul,.art ol{margin:0 0 18px;padding-left:22px;display:grid;gap:9px}
+.art li{font-size:15px;line-height:1.92;color:var(--ink)}
+.art li b{font-weight:600;color:var(--ink)}
+.art li span{color:var(--muted)}
+.art code{font-family:var(--font-mono);font-size:13px;padding:1px 5px;border-radius:5px;background:var(--primary-soft);color:var(--primary)}
+.note{margin:24px 0;padding:16px 20px;border-radius:var(--radius-sm);background:var(--primary-soft);border-left:3px solid var(--primary);font-size:14px;line-height:1.92;color:var(--muted)}
+.note b{color:var(--ink)}
+.quote{margin:26px 0;padding:2px 0 2px 18px;border-left:2px solid var(--stroke-2);font-size:15px;line-height:1.94;color:var(--muted)}
+.tbl{margin:20px 0 24px;border:1px solid var(--stroke);border-radius:var(--radius-sm);overflow:hidden}
+.tbl table{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th{text-align:left;padding:10px 14px;background:var(--primary-soft);color:var(--ink);font-weight:600;font-size:13px}
+.tbl td{padding:10px 14px;border-top:1px solid var(--stroke);color:var(--muted);line-height:1.7;vertical-align:top}
+.tbl td b{color:var(--ink)}
+.author{margin:40px 0 0;padding:18px 20px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);display:flex;gap:14px;align-items:flex-start;box-shadow:var(--shadow)}
+.author img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none}
+.author b{display:block;font-size:14px}
+.author span{display:block;font-size:12.5px;line-height:1.75;color:var(--muted);margin-top:3px}
+.related{margin-top:38px}
+.related h3{font-size:12px;margin:0 0 12px;color:var(--faint);font-weight:500;letter-spacing:.06em}
+.rel{display:grid;gap:10px}
+.rel a{display:block;padding:15px 18px;border-radius:var(--radius-sm);border:1px solid var(--stroke);background:var(--glass-2)}
+.rel a:hover{border-color:var(--stroke-2)}
+.rel b{font-size:14px;font-weight:600}
+.rel span{display:block;font-size:12px;color:var(--faint);margin-top:4px}
+.cta{margin-top:34px;display:flex;align-items:center;flex-wrap:wrap;gap:16px;padding:24px 26px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid rgba(240,102,58,.22)}
+.cta .tt{flex:1;min-width:230px}
+.cta b{display:block;font-size:15.5px;font-weight:700}
+.cta span{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.7}
+.side{position:sticky;top:26px}
+.side .box{padding:18px 20px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);box-shadow:var(--shadow)}
+.side h4{margin:0 0 10px;font-size:12px;letter-spacing:.06em;color:var(--faint);font-weight:500}
+.side ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.side li{font-size:13px;line-height:1.6}
+.side li a{color:var(--primary)}
+.side .k{display:block;font-size:12px;color:var(--faint);margin-top:2px}
+.side .toc{display:grid;gap:8px;font-size:12.5px;color:var(--muted)}
+
+.art{min-width:0}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <span class="tagline">知识库</span>
+  <div class="sp"></div>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="btn" href="index.html">官网首页</a>
+</div>
+<div class="art-wrap">
+  <article class="art">
+    <p class="crumb"><a href="blog.html">知识库</a> · <a href="campus.html">校区与到店</a> / 学习路径</p>
+    <span class="eyebrow"><i></i>学习路径</span>
+    <h1>Scratch 学完之后去哪？三条路线的真实区别</h1>
+    <div class="meta-line"><span>2026-11-23</span><span>阅读约 6 分钟</span><span>作者：王雨晴</span></div>
+    <p class="lead">孩子 Scratch 学了两年，作品做得挺像样，接下来呢？这是家长最常卡住的地方。市面上有三种说法，都说自己对。这篇不劝你选哪条，只把三条路各自的代价讲清楚。</p>
+    
+<p>先说一句不太讨喜的话：Scratch 学两年之后，如果还在「做一个更好看的 Scratch 作品」，边际收益已经很低了。图形化的天花板不在工具，在于它刻意隐藏了所有工程细节。所以问题不是要不要走，而是往哪走。</p>
+<h2>一、先用三个信号自查</h2>
+<ul>
+<li><b>孩子对「代码长什么样」的反应。</b><span>给他看一眼 Python 代码，是「这什么鬼」还是「我能试试」。前者说明还没到转真代码的时机，硬转只会消耗兴趣。</span></li>
+<li><b>数学底子。</b><span>分数、负数、取余这三个概念能不能用。Python 的列表下标从 0 开始、用取模判断周期性，都吃这个基础。</span></li>
+<li><b>目标是作品还是成绩。</b><span>想做游戏、做工具，走 Python；想拿竞赛成绩、走升学材料，走 C++。这两个目标的技术栈从第一天就分叉，走错要重来。</span></li>
+</ul>
+<h2>二、三条路的对比</h2>
+<div class="tbl"><table>
+<tr><th>路线</th><th>适龄</th><th>学什么</th><th>出口</th><th>课时 / 学费</th></tr>
+<tr><td><b>继续图形化加深</b><br>（L2）</td><td>8–10 岁</td><td>变量、列表、克隆、简单算法、硬件体感</td><td>作品更复杂，但仍不具备真代码能力</td><td>48 课时 / 4980 元</td></tr>
+<tr><td><b>转 Python</b><br>（L3）</td><td>9–12 岁</td><td>真代码、读报错、文件读写、基础数据结构</td><td>能独立做出可用的小工具与游戏</td><td>48 课时 / 4980 元</td></tr>
+<tr><td><b>转 C++ 竞赛</b><br>（L4）</td><td>11 岁以上</td><td>算法、数据结构、复杂度、应试节奏</td><td>CSP-J/S 等级证书，部分地区的升学材料</td><td>48 课时 / 7980 元</td></tr>
+</table></div>
+<p>三个数字值得注意：课时都是 48；价格差在 L4（每次 120 分钟、8 人班、含 OJ 账号与模考讲评）；出口差别最大的是 L4——CSP-J 一等奖在部分地区是实打实的升学材料，而 Python 的出口是能力和作品，不能直接换成分数。</p>
+<h2>三、为什么我们不让 9 岁孩子直接上 C++</h2>
+<p>每年都有家长问：反正最后要考 CSP，为什么不早点学 C++？原因是 C++ 的前置门槛不在语法，在<b>数学和抽象</b>：</p>
+<ul>
+<li><b>要先能「看见」内存。</b><span>数组越界、指针、浮点误差，这些概念要求孩子能在大脑里画出一块内存的样子。这个能力通常在 11 岁前后才稳定。</span></li>
+<li><b>竞赛题的核心是数学建模，不是写代码。</b><span>小学四年级以下的数论和组合基础，通常不足以支撑 CSP-J 的前两题。</span></li>
+<li><b>学习曲线太陡。</b><span>前 10 课时几乎都在处理编译错误和格式问题，对耐心的消耗极大，很容易把兴趣磨掉。</span></li>
+</ul>
+<p>我们见过最典型的失败：9 岁转 C++，前三周哭着来上课，两个月后回退到 Python，前后浪费一个学期。所以我们的分界线是两个条件同时满足：<b>11 岁以上，且能用分数和负数做运算</b>。缺一个都建议先补。</p>
+<h2>四、转 Python 的第一个月会发生什么</h2>
+<p>说实话：会不适应。图形化里拖一个「重复 10 次」，代码里要写 <code>for i in range(10)</code>，孩子第一次要同时记语法、拼写和缩进。第一个月最常见的三个崩溃点：</p>
+<ul>
+<li><b>缩进报错。</b><span>报 <code>IndentationError</code>，孩子看不出哪里错——因为空格是看不见的。这一关通常要 3 到 5 次课才过。</span></li>
+<li><b>名字拼错。</b><span>报 <code>NameError</code>，孩子第一反应是「程序坏了」，而不是「我打错字了」。</span></li>
+<li><b>不会读报错。</b><span>这是最关键的坎。我们的做法是让孩子练「只读最后一行」——报错的最后一行永远告诉你是什么错，前面全是路径。</span></li>
+</ul>
+<p>能过这三关的孩子，通常在转 Python 的第 6 到 8 次课会突然「通」——开始主动看报错、自己改。这个瞬间比任何作品都值得记录。</p>
+<div class="note">一句话总结：<b>Scratch 之后的选择，本质是选出口，不是选语言。</b>想让孩子「会做东西」走 Python，想让孩子「拿成绩」走 C++，想让孩子「玩得更好」继续图形化也不算浪费。</div>
+
+    <div class="author">
+      <img src="assets/teacher-wang.jpg" srcset="assets/teacher-wang.jpg 240w" sizes="52px" width="52" height="52" alt="王雨晴" loading="lazy" decoding="async">
+      <div><b>王雨晴</b><span>Scratch / Python 教研组长 · 北师大教育学</span></div>
+    </div>
+    <div class="related">
+      <h3>接着读</h3>
+      <div class="rel"><a href="blog-when-to-start.html"><b>孩子几岁开始学编程合适？先看他能不能做这三件事</b><span>选课判断 · 6 分钟</span></a><a href="blog-gesp-1.html"><b>GESP 一级到底考什么？两周备考不靠刷题</b><span>考级竞赛 · 7 分钟</span></a></div>
+    </div>
+    <div class="cta">
+      <div class="tt"><b>先带孩子做一次免费测评</b><span>45 分钟试听 + 一次能力测评，给一份书面建议：适合哪个阶段、还需要补什么。不合适我们会直说。</span></div>
+      <a class="btn-primary" href="index.html#trial">预约免费试听</a>
+    </div>
+  </article>
+  <aside class="side">
+    <div class="box">
+      <h4>本文涉及的阶段</h4>
+      <ul>
+        <li><a href="course-l2.html">L2 进阶图形化与硬件</a><span class="k">8–10 岁 · 48 课时</span></li>
+        <li><a href="course-l3.html">L3 Python 编程</a><span class="k">9–12 岁 · 48 课时</span></li>
+        <li><a href="course-l4.html">L4 C++ 竞赛</a><span class="k">11–16 岁 · 48 课时</span></li>
+      </ul>
+    </div>
+    <div class="box" style="margin-top:12px">
+      <h4>知识库</h4>
+      <div class="toc"><a href="blog-when-to-start.html">几岁开始学编程合适</a><a href="blog-gesp-1.html">GESP 一级怎么准备</a><a href="blog-after-scratch.html">Scratch 之后学什么</a><a href="blog.html">全部文章与速答</a></div>
+    </div>
+  </aside>
+</div>
+<div class="foot">
+  <p><b>码跃少儿编程 CodeLeap</b> · 合肥 · 高新 / 政务 / 滨湖三校区 · 400-860-2026</p>
+  <p><a href="index.html">官网首页</a> · <a href="index.html#courses">课程体系</a> · <a href="course-l1.html">L1</a> · <a href="course-l2.html">L2</a> · <a href="course-l3.html">L3</a> · <a href="course-l4.html">L4</a> · <a href="blog.html">知识库</a> · <a href="campus.html">校区与到店</a> · <a href="results.html">荣誉与成果</a> · <a href="camp.html">寒假营</a> · <a href="enroll.html">在线报名</a> · <a href="brochure.html">招生简章</a> · <a href="parent.html">家长中心</a> · <a href="legal.html">政策与条款</a></p>
+  <p>内容示例站点：文中课表、价格、人数与统计数据均为演示用途，正式上线前请替换为真实信息；教育判断类内容仅供参考，不构成对个体孩子的结论。</p>
+</div>
+<script>
+(function () {
+  var KEY = "codeleap-theme";
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem(KEY); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  var btn = document.getElementById("themeBtn");
+  if (btn) btn.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
+

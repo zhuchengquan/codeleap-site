@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# 本站为纯静态站点，无后台路径需要屏蔽。
+# 正式上线请把下面域名替换为真实域名，并与 sitemap.xml 中的 loc 保持一致。
+Sitemap: https://codeleap.example/sitemap.xml

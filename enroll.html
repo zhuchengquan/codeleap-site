@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>在线报名 · 码跃少儿编程</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root {
+  --bg: #f6f9fe;
+  --bg-2: #eef4fd;
+  --ink: #16213a;
+  --muted: #56657e;
+  --faint: #8695ab;
+  --primary: #2b7bf3;
+  --primary-soft: rgba(43, 123, 243, .10);
+  --accent: #f0663a;
+  --accent-soft: rgba(240, 102, 58, .10);
+  --ok: #12a06a;
+  --ok-soft: rgba(18, 160, 106, .12);
+  --glass: rgba(255, 255, 255, .72);
+  --glass-2: rgba(255, 255, 255, .94);
+  --glass-head: rgba(255, 255, 255, .88);
+  --stroke: rgba(27, 52, 92, .10);
+  --stroke-2: rgba(27, 52, 92, .16);
+  --shadow: 0 12px 32px rgba(26, 48, 84, .07);
+  --radius: 18px;
+  --radius-sm: 13px;
+  --font-display: "Nunito", "Noto Sans SC", sans-serif;
+  --font-body: "Nunito", "Noto Sans SC", sans-serif;
+  --font-mono: "JetBrains Mono", "Noto Sans SC", monospace;
+}
+[data-theme="dark"] {
+  --bg: #0d1524;
+  --bg-2: #101a2c;
+  --ink: #eef3fb;
+  --muted: #a7b6cc;
+  --faint: #7d8ea8;
+  --primary: #5a9dff;
+  --primary-soft: rgba(90, 157, 255, .14);
+  --accent: #ff8660;
+  --accent-soft: rgba(255, 134, 96, .14);
+  --ok: #4dd49b;
+  --ok-soft: rgba(77, 212, 155, .15);
+  --glass: rgba(255, 255, 255, .06);
+  --glass-2: rgba(255, 255, 255, .10);
+  --glass-head: rgba(18, 28, 46, .88);
+  --stroke: rgba(255, 255, 255, .10);
+  --stroke-2: rgba(255, 255, 255, .18);
+  --shadow: 0 16px 40px rgba(0, 0, 0, .35);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.75;
+  letter-spacing: .01em;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: .01em; }
+a { color: inherit; text-decoration: none; }
+
+/* 顶栏 */
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: var(--glass-head);
+  border-bottom: 1px solid var(--stroke);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+.brand { display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-display); font-weight: 700; font-size: 16px; }
+.brand .m { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--primary); color: #fff; font-size: 15px; font-weight: 700; }
+.pill { font-size: 12px; letter-spacing: .04em; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--stroke-2); color: var(--muted); }
+.sp { flex: 1; }
+.icon-btn { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--stroke-2); background: var(--glass); color: var(--muted); cursor: pointer; }
+.icon-btn:hover { color: var(--ink); border-color: var(--primary); }
+
+/* 步骤条 */
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 1080px;
+  margin: 22px auto 0;
+  padding: 0 20px;
+}
+.step-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--faint);
+}
+.step-node i {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--stroke-2);
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--faint);
+  flex: none;
+}
+.step-node.active { color: var(--ink); }
+.step-node.active i { background: var(--primary); border-color: var(--primary); color: #fff; }
+.step-node.done i { border-color: var(--ok); color: var(--ok); }
+.step-line { flex: 1; height: 1px; background: var(--stroke-2); min-width: 18px; }
+
+/* 主体 */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 366px;
+  gap: 20px;
+  align-items: start;
+  max-width: 1080px;
+  margin: 16px auto 60px;
+  padding: 0 20px;
+}
+@media (max-width: 900px) {
+  .main { grid-template-columns: 1fr; }
+  .summary { position: static !important; }
+}
+
+.card {
+  padding: 24px 26px;
+  border-radius: var(--radius);
+  background: var(--glass-2);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+.card h3 { margin: 0 0 4px; font-size: 17px; font-weight: 700; }
+.card .lead { margin: 0 0 18px; font-size: 13.5px; color: var(--muted); }
+.group { margin-bottom: 18px; }
+.group > label, .glabel {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: .02em;
+}
+.glabel em { font-style: normal; font-weight: 400; color: var(--faint); margin-left: 6px; font-size: 12px; }
+
+/* 选项卡 */
+.opts { display: grid; gap: 8px; }
+.opts.two { grid-template-columns: 1fr 1fr; }
+.opts.three { grid-template-columns: repeat(3, 1fr); }
+.opt {
+  position: relative;
+  display: block;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--stroke-2);
+  background: var(--glass);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 13.5px;
+  color: var(--ink);
+  transition: border-color .16s ease, background .16s ease;
+}
+.opt:hover { border-color: var(--primary); }
+.opt.sel { border-color: var(--primary); background: var(--primary-soft); }
+.opt b { display: block; font-weight: 600; font-size: 14px; }
+.opt span { display: block; font-size: 12px; color: var(--faint); margin-top: 2px; }
+.opt .price-tag { color: var(--ink); font-family: var(--font-display); font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* 输入 */
+.field { display: grid; gap: 6px; margin-bottom: 14px; }
+.field.two { grid-template-columns: 1fr 1fr; gap: 12px; }
+.field label { font-size: 12.5px; color: var(--muted); }
+.field label em { font-style: normal; color: var(--accent); margin-left: 3px; }
+input[type="text"], input[type="tel"], textarea, select {
+  width: 100%;
+  padding: 10px 13px;
+  border-radius: 11px;
+  border: 1px solid var(--stroke-2);
+  background: var(--glass);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: .01em;
+}
+input:focus, textarea:focus, select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+input.bad, textarea.bad { border-color: var(--accent); }
+textarea { min-height: 76px; resize: vertical; }
+
+/* 优惠 */
+.discs { display: grid; gap: 8px; }
+.disc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 11px;
+  border: 1px solid var(--stroke-2);
+  background: var(--glass);
+  cursor: pointer;
+  font-size: 13.5px;
+}
+.disc input { width: 16px; height: 16px; accent-color: var(--primary); flex: none; }
+.disc .dl { flex: 1; }
+.disc .dl b { font-weight: 600; }
+.disc .dl span { display: block; font-size: 12px; color: var(--faint); }
+.disc .dv { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
+.disc-on { border-color: var(--primary); background: var(--primary-soft); }
+
+/* 协议 */
+.agree { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: var(--muted); line-height: 1.7; }
+.agree input { width: 16px; height: 16px; margin-top: 4px; accent-color: var(--primary); flex: none; }
+.agree a { color: var(--primary); }
+
+/* 按钮 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  height: 44px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform .16s ease, background .16s ease, border-color .16s ease;
+}
+.btn:active { transform: scale(.98); }
+.btn-fill { background: var(--primary); color: #fff; box-shadow: 0 8px 20px rgba(43, 123, 243, .26); }
+.btn-accent { background: var(--accent); color: #fff; box-shadow: 0 8px 20px rgba(240, 102, 58, .26); }
+.btn-line { background: var(--glass); color: var(--ink); border: 1px solid var(--stroke-2); }
+.btn-line:hover { border-color: var(--primary); }
+.btn-sm { height: 36px; padding: 0 16px; font-size: 13px; }
+.foot-actions { display: flex; gap: 10px; margin-top: 20px; }
+.foot-actions .btn-fill, .foot-actions .btn-accent { flex: 1; }
+
+/* 摘要 */
+.summary {
+  position: sticky;
+  top: 76px;
+  padding: 22px 24px;
+  border-radius: var(--radius);
+  background: var(--glass-2);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+.summary h4 { margin: 0 0 14px; font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: .02em; }
+.srow { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 5px 0; font-size: 13px; color: var(--muted); }
+.srow b { font-weight: 500; color: var(--ink); text-align: right; }
+.srow.hr { margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--stroke); }
+.sum-total { display: flex; align-items: baseline; justify-content: space-between; margin-top: 6px; }
+.sum-total span { font-size: 13px; color: var(--muted); }
+.sum-total b { font-family: var(--font-display); font-size: 26px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
+.sum-total small { font-size: 14px; font-weight: 600; margin-right: 2px; }
+.save-line { margin-top: 8px; padding: 7px 10px; border-radius: 9px; background: var(--ok-soft); color: var(--ok); font-size: 12.5px; line-height: 1.6; }
+
+/* 成功页 */
+.done-wrap { max-width: 720px; margin: 30px auto 70px; padding: 0 20px; }
+.done-card { padding: 32px 30px; border-radius: var(--radius); background: var(--glass-2); border: 1px solid var(--stroke); box-shadow: var(--shadow); text-align: center; }
+.done-icon { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 50%; background: var(--ok-soft); color: var(--ok); }
+.done-icon svg { width: 30px; height: 30px; }
+.done-card h2 { margin: 0 0 6px; font-size: 24px; font-weight: 700; }
+.done-card p { margin: 0 auto 20px; max-width: 460px; color: var(--muted); font-size: 14px; }
+.order-box { display: grid; gap: 9px; padding: 18px 20px; border-radius: var(--radius-sm); border: 1px dashed var(--stroke-2); text-align: left; margin-bottom: 20px; }
+.order-box .orow { display: flex; justify-content: space-between; gap: 12px; font-size: 13.5px; }
+.order-box .orow span { color: var(--muted); }
+.order-box .orow b { font-family: var(--font-mono); font-weight: 600; letter-spacing: .02em; }
+.pay-tip { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: var(--radius-sm); background: var(--primary-soft); text-align: left; font-size: 13px; line-height: 1.7; color: var(--ink); }
+.qr-mini { flex: none; width: 74px; height: 74px; border: 1px dashed var(--stroke-2); border-radius: 8px; display: grid; place-items: center; text-align: center; font-size: 10.5px; line-height: 1.4; color: var(--faint); }
+
+/* 页脚 */
+.foot { max-width: 1080px; margin: 0 auto; padding: 0 20px 44px; font-size: 12px; line-height: 1.8; color: var(--faint); }
+.foot a { color: var(--primary); }
+
+/* 提示 */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translate(-50%, 14px);
+  padding: 11px 20px;
+  border-radius: 999px;
+  background: rgba(22, 33, 58, .93);
+  color: #fff;
+  font-size: 13.5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+  z-index: 60;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+[hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) { .btn, .toast { transition: none; } }
+</style>
+<link rel="canonical" href="https://codeleap.example/enroll.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="在线报名 · 码跃少儿编程">
+<meta property="og:url" content="https://codeleap.example/enroll.html">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <span class="pill">在线报名</span>
+  <div class="sp"></div>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="btn btn-line btn-sm" href="index.html">返回官网</a>
+</div>
+
+<div class="steps" id="stepsBar">
+  <div class="step-node active" data-node="1"><i>1</i>选择课程</div>
+  <span class="step-line"></span>
+  <div class="step-node" data-node="2"><i>2</i>填写信息</div>
+  <span class="step-line"></span>
+  <div class="step-node" data-node="3"><i>3</i>确认支付</div>
+</div>
+
+<!-- ===== 报名主体 ===== -->
+<div class="main" id="formArea">
+
+  <div>
+    <!-- 第 1 步 -->
+    <section class="card" id="step1">
+      <h3>选择课程与班型</h3>
+      <p class="lead">先选阶段，班型与价格会跟着变。不确定孩子适合哪一阶段，可以先做一次免费测评。</p>
+
+      <div class="group">
+        <span class="glabel">课程阶段<em>按能力选择，不按年龄硬分</em></span>
+        <div class="opts two" id="stageOpts"></div>
+      </div>
+
+      <div class="group">
+        <span class="glabel">上课校区<em>选线上直播则按线上价格</em></span>
+        <div class="opts two" id="campusOpts"></div>
+      </div>
+
+      <div class="group">
+        <span class="glabel">开班时间<em>以课程顾问最终确认为准</em></span>
+        <div class="opts" id="classOpts"></div>
+      </div>
+
+      <div class="foot-actions">
+        <button class="btn btn-fill" type="button" id="toStep2">下一步 · 填写信息</button>
+      </div>
+    </section>
+
+    <!-- 第 2 步 -->
+    <section class="card" id="step2" hidden>
+      <h3>学员与家长信息</h3>
+      <p class="lead">信息只用于排课、课堂报告与紧急联系，不会用于其他用途。</p>
+
+      <div class="field two">
+        <div class="field">
+          <label for="stuName">学员姓名<em>*</em></label>
+          <input type="text" id="stuName" placeholder="如 张小明" maxlength="20">
+        </div>
+        <div class="field">
+          <label for="stuAge">学员年龄<em>*</em></label>
+          <input type="text" id="stuAge" inputmode="numeric" placeholder="如 11" maxlength="2">
+        </div>
+      </div>
+
+      <div class="field two">
+        <div class="field">
+          <label for="stuGrade">在读年级<em>选填</em></label>
+          <select id="stuGrade">
+            <option value="">请选择</option>
+            <option>一年级</option><option>二年级</option><option>三年级</option>
+            <option>四年级</option><option>五年级</option><option>六年级</option>
+            <option>初一</option><option>初二</option><option>初三</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="parName">家长姓名<em>*</em></label>
+          <input type="text" id="parName" placeholder="如 张先生" maxlength="20">
+        </div>
+      </div>
+
+      <div class="field two">
+        <div class="field">
+          <label for="parPhone">联系手机<em>*</em></label>
+          <input type="tel" id="parPhone" inputmode="numeric" placeholder="11 位手机号" maxlength="11">
+        </div>
+        <div class="field">
+          <label for="parWechat">微信<em>选填，用于发课堂报告</em></label>
+          <input type="text" id="parWechat" placeholder="微信号" maxlength="30">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="note">需要老师注意的事<em>选填</em></label>
+        <textarea id="note" placeholder="如：孩子对牛奶过敏、每周三由爷爷接送、近期在准备校内考试等" maxlength="200"></textarea>
+      </div>
+
+      <div class="foot-actions">
+        <button class="btn btn-line" type="button" id="backStep1">上一步</button>
+        <button class="btn btn-fill" type="button" id="toStep3">下一步 · 确认订单</button>
+      </div>
+    </section>
+
+    <!-- 第 3 步 -->
+    <section class="card" id="step3" hidden>
+      <h3>确认订单与支付方式</h3>
+      <p class="lead">核对信息后提交。提交后会为你保留名额 24 小时，顾问会电话确认开课细节。</p>
+
+      <div class="group">
+        <span class="glabel">符合的优惠条件<em>可多选，系统自动取最省的一项</em></span>
+        <div class="discs" id="discList"></div>
+      </div>
+
+      <div class="group">
+        <span class="glabel">支付方式</span>
+        <div class="opts three" id="payOpts"></div>
+      </div>
+
+      <div class="agree" style="margin-bottom:4px">
+        <input type="checkbox" id="agreeBox">
+        <span>我已阅读并同意<a href="legal.html#refund" target="_blank" rel="noopener">报名与退费规则</a>：前两次课不满意可全额退款，第三次课起按未消耗课时比例退还。</span>
+      </div>
+
+      <div class="foot-actions">
+        <button class="btn btn-line" type="button" id="backStep2">上一步</button>
+        <button class="btn btn-accent" type="button" id="submitBtn">提交订单</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- 摘要 -->
+  <aside class="summary" id="summary">
+    <h4>费用明细</h4>
+    <div id="sumRows"></div>
+    <div class="sum-total"><span>应付金额</span><b><small>¥</small><span id="sumTotal">0</span></b></div>
+    <div class="save-line" id="saveLine" hidden></div>
+    <p style="margin:14px 0 0;font-size:12px;line-height:1.7;color:var(--faint)">报价含全部教材与平台使用费，无其他收费。课时未消耗完可申请退费。</p>
+  </aside>
+</div>
+
+<!-- ===== 成功页 ===== -->
+<div class="done-wrap" id="doneArea" hidden>
+  <div class="done-card">
+    <div class="done-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+    </div>
+    <h2>订单已提交</h2>
+    <p>名额已为你保留 24 小时。课程顾问会在 1 个工作日内电话确认开课时间与教室，请留意来电。</p>
+
+    <div class="order-box" id="orderBox"></div>
+
+    <div class="pay-tip">
+      <div class="qr-mini">此处放置<br>收款码</div>
+      <div>
+        <b>接下来怎么付款</b><br>
+        演示环境不接入真实支付。正式使用时，这里会展示所选支付方式的收款码或对公账户，付款后订单状态自动更新，并可申请电子发票。
+      </div>
+    </div>
+
+    <div class="foot-actions" style="justify-content:center;margin-top:22px">
+      <a class="btn btn-line" href="parent.html">去家长中心看档案</a>
+      <a class="btn btn-fill" href="index.html">返回官网</a>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  本页为演示流程：不接入真实支付，不产生真实订单，填写的信息只保存在本机浏览器（localStorage）。价格、班次、优惠与退款规则均为示例内容，正式上线前须替换为真实信息并接入支付与教务系统。<br>
+  码跃少儿编程 · 合肥 · <a href="index.html">官网</a> · <a href="brochure.html">招生简章</a> · <a href="parent.html">家长中心</a> · <a href="legal.html">政策与条款</a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var THEME_KEY = "codeleap-theme";
+  var ORDER_KEY = "codeleap-order";
+  var root = document.documentElement;
+
+  /* 主题 */
+  var savedTheme = null;
+  try { savedTheme = localStorage.getItem(THEME_KEY); } catch (e) {}
+  if (savedTheme === "dark" || savedTheme === "light") root.setAttribute("data-theme", savedTheme);
+  document.getElementById("themeBtn").addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
+  });
+
+  /* 提示 */
+  var toastEl = document.getElementById("toast");
+  var toastTimer = null;
+  function showToast(msg) {
+    toastEl.textContent = msg;
+    toastEl.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove("show"); }, 2400);
+  }
+
+  /* 课程与价格 */
+  var stages = [
+    { id: "L1", name: "L1 启蒙 · 图形化", age: "6–8 岁", plan: "interest", lesson: "90 分钟", desc: "Scratch 积木，建立顺序与循环" },
+    { id: "L2", name: "L2 进阶 · 图形化与硬件", age: "8–10 岁", plan: "interest", lesson: "90 分钟", desc: "变量、列表、函数与体感作品" },
+    { id: "L3", name: "L3 Python 编程", age: "9–12 岁", plan: "interest", lesson: "90 分钟", desc: "真实代码，Pygame 做小游戏" },
+    { id: "L4", name: "L4 C++ 竞赛", age: "11–16 岁", plan: "comp", lesson: "120 分钟", desc: "算法与数据结构，备赛 CSP" }
+  ];
+  var prices = { interest: { offline: 4980, online: 3980, hours: 48 }, comp: { offline: 7980, online: 6480, hours: 48 } };
+  var planNames = { interest: "兴趣与进阶班", comp: "C++ 竞赛班" };
+
+  var campuses = [
+    { id: "高新", name: "高新校区", addr: "望江西路 创新产业园 B 座 3 层" },
+    { id: "政务", name: "政务校区", addr: "潜山路 置地广场 A 座 2 层" },
+    { id: "滨湖", name: "滨湖校区", addr: "紫云路 利港广场 3 层" },
+    { id: "线上", name: "线上直播", addr: "全国开课，6 人小班" }
+  ];
+
+  var classes = {
+    interest: [
+      { id: "c1", text: "12 月 5 日 · 周六 09:00–10:30", note: "新开班 · 余 2 位" },
+      { id: "c2", text: "12 月 13 日 · 周日 09:00–10:30", note: "新开班 · 余 1 位" },
+      { id: "c3", text: "12 月 26 日 · 周六 10:00–11:30", note: "新开班 · 余 5 位" }
+    ],
+    comp: [
+      { id: "c4", text: "12 月 19 日 · 周六 15:00–17:00", note: "需测评入班 · 余 3 位" },
+      { id: "c5", text: "12 月 20 日 · 周日 19:00–21:00", note: "线上直播 · 需测评" }
+    ]
+  };
+
+  var state = {
+    stage: "L3",
+    campus: "高新",
+    cls: "c1",
+    discounts: []
+  };
+
+  var discDefs = [
+    { id: "couple", name: "两人同报", note: "与朋友一起报名，双方各减 300 元", kind: "flat", value: 300 },
+    { id: "renew", name: "老学员续费", note: "在读或已结课学员续报，按 9 折", kind: "rate", value: 0.9 },
+    { id: "sibling", name: "兄妹同报", note: "家中第二个孩子报名，按 8.5 折", kind: "rate", value: 0.85 },
+    { id: "referral", name: "老带新推荐", note: "出示在读学员推荐码，减 200 元", kind: "flat", value: 200 }
+  ];
+
+  var payDefs = [
+    { id: "wechat", name: "微信支付", note: "扫码或转账" },
+    { id: "alipay", name: "支付宝", note: "扫码支付" },
+    { id: "bank", name: "对公转账", note: "可开专票" }
+  ];
+  state.pay = "wechat";
+
+  /* 支持课程页带 ?stage=L1..L4 直达对应班型 */
+  try {
+    var qStage = (new URLSearchParams(location.search).get("stage") || "").toUpperCase();
+    if (/^L[1-4]$/.test(qStage)) state.stage = qStage;
+  } catch (e) {}
+
+  function currentStage() {
+    for (var i = 0; i < stages.length; i++) if (stages[i].id === state.stage) return stages[i];
+    return stages[0];
+  }
+  function isOnline() { return state.campus === "线上"; }
+  function basePrice() {
+    var p = prices[currentStage().plan];
+    return isOnline() ? p.online : p.offline;
+  }
+
+  /* 优惠最优计算 */
+  function calcDiscount() {
+    var base = basePrice();
+    var best = { id: "none", name: "未使用优惠", amount: 0, price: base };
+    for (var i = 0; i < state.discounts.length; i++) {
+      var def = null;
+      for (var j = 0; j < discDefs.length; j++) if (discDefs[j].id === state.discounts[i]) def = discDefs[j];
+      if (!def) continue;
+      var amount = def.kind === "flat" ? def.value : Math.round(base * (1 - def.value));
+      var price = base - amount;
+      if (price < best.price) best = { id: def.id, name: def.name, amount: amount, price: price };
+    }
+    return best;
+  }
+
+  function fmt(n) { return n.toLocaleString("zh-CN"); }
+
+  /* 渲染：阶段 */
+  var stageOpts = document.getElementById("stageOpts");
+  stageOpts.innerHTML = stages.map(function (s) {
+    return '<button class="opt' + (s.id === state.stage ? " sel" : "") + '" type="button" data-stage="' + s.id + '">'
+      + '<b>' + s.name + '</b><span>' + s.age + ' · ' + s.desc + '</span></button>';
+  }).join("");
+
+  var campusOpts = document.getElementById("campusOpts");
+  campusOpts.innerHTML = campuses.map(function (c) {
+    return '<button class="opt' + (c.id === state.campus ? " sel" : "") + '" type="button" data-campus="' + c.id + '">'
+      + '<b>' + c.name + '</b><span>' + c.addr + '</span></button>';
+  }).join("");
+
+  function getClassList(plan, online) {
+    if (online && plan === "interest") {
+      return [{ id: "c6", text: "12 月 8 日 · 周二 19:00–20:30", note: "线上直播 · 余 4 位" }];
+    }
+    return classes[plan];
+  }
+
+  function renderClasses() {
+    var plan = currentStage().plan;
+    var list = getClassList(plan, isOnline());
+    if (!list.some(function (c) { return c.id === state.cls; })) state.cls = list[0].id;
+    document.getElementById("classOpts").innerHTML = list.map(function (c) {
+      return '<button class="opt' + (c.id === state.cls ? " sel" : "") + '" type="button" data-cls="' + c.id + '">'
+        + '<b>' + c.text + '</b><span>' + c.note + '</span></button>';
+    }).join("");
+  }
+
+  function renderDiscounts() {
+    document.getElementById("discList").innerHTML = discDefs.map(function (d) {
+      var on = state.discounts.indexOf(d.id) > -1;
+      return '<label class="disc' + (on ? " disc-on" : "") + '">'
+        + '<input type="checkbox" data-disc="' + d.id + '"' + (on ? " checked" : "") + '>'
+        + '<div class="dl"><b>' + d.name + '</b><span>' + d.note + '</span></div>'
+        + '<span class="dv">' + (d.kind === "flat" ? "-¥" + d.value : (d.value * 10).toFixed(1) + " 折") + '</span>'
+        + '</label>';
+    }).join("");
+  }
+
+  function renderPay() {
+    document.getElementById("payOpts").innerHTML = payDefs.map(function (p) {
+      return '<button class="opt' + (p.id === state.pay ? " sel" : "") + '" type="button" data-pay="' + p.id + '">'
+        + '<b>' + p.name + '</b><span>' + p.note + '</span></button>';
+    }).join("");
+  }
+
+  /* 摘要 */
+  function renderSummary() {
+    var s = currentStage();
+    var base = basePrice();
+    var disc = calcDiscount();
+    var rows = [
+      { k: "课程", v: s.name },
+      { k: "班型", v: planNames[s.plan] },
+      { k: "校区", v: isOnline() ? "线上直播小班" : (state.campus + "校区") },
+      { k: "课时", v: prices[s.plan].hours + " 课时 · 每次 " + s.lesson },
+      { k: "原价", v: "¥" + fmt(base) }
+    ];
+    var html = rows.map(function (r) {
+      return '<div class="srow"><span>' + r.k + '</span><b>' + r.v + '</b></div>';
+    }).join("");
+    if (disc.amount > 0) {
+      html += '<div class="srow hr"><span>' + disc.name + '</span><b style="color:var(--ok)">- ¥' + fmt(disc.amount) + '</b></div>';
+    } else {
+      html += '<div class="srow hr"><span>优惠</span><b>未使用</b></div>';
+    }
+    document.getElementById("sumRows").innerHTML = html;
+    document.getElementById("sumTotal").textContent = fmt(disc.price);
+
+    var saveLine = document.getElementById("saveLine");
+    if (disc.amount > 0) {
+      saveLine.hidden = false;
+      saveLine.textContent = "已自动选中最省的一项：" + disc.name + "，共省 ¥" + fmt(disc.amount) + "。";
+    } else if (state.discounts.length > 0) {
+      saveLine.hidden = false;
+      saveLine.textContent = "所选项暂无优惠，可核对条件后重选。";
+    } else {
+      saveLine.hidden = true;
+    }
+  }
+
+  function refresh() {
+    renderClasses();
+    renderSummary();
+  }
+
+  /* 交互：阶段 / 校区 / 班级 */
+  stageOpts.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-stage]");
+    if (!b) return;
+    state.stage = b.getAttribute("data-stage");
+    Array.prototype.forEach.call(stageOpts.children, function (c) { c.classList.toggle("sel", c === b); });
+    refresh();
+  });
+  campusOpts.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-campus]");
+    if (!b) return;
+    state.campus = b.getAttribute("data-campus");
+    Array.prototype.forEach.call(campusOpts.children, function (c) { c.classList.toggle("sel", c === b); });
+    refresh();
+  });
+  document.getElementById("classOpts").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-cls]");
+    if (!b) return;
+    state.cls = b.getAttribute("data-cls");
+    renderClasses();
+  });
+  document.getElementById("discList").addEventListener("change", function (e) {
+    var cb = e.target;
+    if (!cb || !cb.getAttribute("data-disc")) return;
+    var id = cb.getAttribute("data-disc");
+    var idx = state.discounts.indexOf(id);
+    if (cb.checked && idx < 0) state.discounts.push(id);
+    if (!cb.checked && idx > -1) state.discounts.splice(idx, 1);
+    cb.parentElement.classList.toggle("disc-on", cb.checked);
+    renderSummary();
+  });
+  document.getElementById("payOpts").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-pay]");
+    if (!b) return;
+    state.pay = b.getAttribute("data-pay");
+    renderPay();
+  });
+
+  /* 步骤切换 */
+  var stepNodes = document.querySelectorAll("#stepsBar .step-node");
+  function goStep(n) {
+    ["step1", "step2", "step3"].forEach(function (id, i) {
+      document.getElementById(id).hidden = (i + 1 !== n);
+    });
+    Array.prototype.forEach.call(stepNodes, function (node, i) {
+      var idx = i + 1;
+      node.classList.toggle("active", idx === n);
+      node.classList.toggle("done", idx < n);
+    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  document.getElementById("toStep2").addEventListener("click", function () { goStep(2); });
+  document.getElementById("backStep1").addEventListener("click", function () { goStep(1); });
+  document.getElementById("toStep3").addEventListener("click", function () {
+    var name = document.getElementById("stuName");
+    var age = document.getElementById("stuAge");
+    var par = document.getElementById("parName");
+    var phone = document.getElementById("parPhone");
+    var ok = true;
+    [name, age, par, phone].forEach(function (f) {
+      var bad = !f.value.trim();
+      f.classList.toggle("bad", bad);
+      if (bad) ok = false;
+    });
+    if (!/^1\d{10}$/.test(phone.value.replace(/\D/g, ""))) { phone.classList.add("bad"); ok = false; }
+    if (!ok) { showToast("请检查带 * 的必填项与手机号格式"); return; }
+    goStep(3);
+    renderDiscounts();
+    renderPay();
+  });
+  document.getElementById("backStep2").addEventListener("click", function () { goStep(2); });
+
+  /* 提交订单 */
+  document.getElementById("submitBtn").addEventListener("click", function () {
+    var agree = document.getElementById("agreeBox");
+    if (!agree.checked) { showToast("请先勾选同意报名与退费规则"); return; }
+
+    var s = currentStage();
+    var disc = calcDiscount();
+    var now = new Date();
+    var stamp = "" + now.getFullYear() + ("0" + (now.getMonth() + 1)).slice(-2) + ("0" + now.getDate()).slice(-2);
+    var rand = String(Math.floor(Math.random() * 9000) + 1000);
+    var orderNo = "CL" + stamp + "-" + rand;
+
+    var campusName = isOnline() ? "线上直播" : state.campus + "校区";
+    var clsList = getClassList(s.plan, isOnline());
+    var clsText = "";
+    for (var i = 0; i < clsList.length; i++) if (clsList[i].id === state.cls) clsText = clsList[i].text;
+
+    var order = {
+      no: orderNo,
+      stage: s.name,
+      plan: planNames[s.plan],
+      campus: campusName,
+      cls: clsText,
+      hours: prices[s.plan].hours + " 课时",
+      base: basePrice(),
+      discount: disc.name,
+      discountAmount: disc.amount,
+      total: disc.price,
+      pay: state.pay,
+      student: document.getElementById("stuName").value.trim(),
+      age: document.getElementById("stuAge").value.trim(),
+      parent: document.getElementById("parName").value.trim(),
+      phone: document.getElementById("parPhone").value.trim(),
+      time: new Date().toISOString()
+    };
+    try { localStorage.setItem(ORDER_KEY, JSON.stringify(order)); } catch (e) {}
+
+    var payLabel = "微信支付";
+    for (var k = 0; k < payDefs.length; k++) if (payDefs[k].id === order.pay) payLabel = payDefs[k].name;
+
+    document.getElementById("orderBox").innerHTML = [
+      { k: "订单号", v: order.no },
+      { k: "学员", v: order.student + " · " + order.age + " 岁" },
+      { k: "课程", v: order.stage + " · " + order.plan },
+      { k: "校区与班级", v: order.campus + " · " + order.cls },
+      { k: "课时", v: order.hours },
+      { k: "优惠", v: order.discountAmount > 0 ? order.discount + "（-¥" + fmt(order.discountAmount) + "）" : "未使用" },
+      { k: "应付", v: "¥" + fmt(order.total) },
+      { k: "支付方式", v: payLabel }
+    ].map(function (r) {
+      return '<div class="orow"><span>' + r.k + '</span><b>' + r.v + '</b></div>';
+    }).join("");
+
+    document.getElementById("formArea").hidden = true;
+    document.getElementById("stepsBar").hidden = true;
+    document.getElementById("doneArea").hidden = false;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    showToast("订单已生成，顾问会尽快联系");
+  });
+
+  /* 初始化 */
+  renderClasses();
+  renderPay();
+  renderSummary();
+})();
+</script>
+
+</body>
+</html>

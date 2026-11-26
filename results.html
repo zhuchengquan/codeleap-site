@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>荣誉与成果 — 码跃少儿编程</title>
+<meta name="description" content="码跃少儿编程历届赛事成绩：286 项奖项、310 人次参赛、GESP 96% 通过率、CSP-J 一等奖 23 人，按年份与赛事分类公开，并注明统计口径。">
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root {
+  --bg: #f6f9fe;
+  --bg-2: #eef4fd;
+  --ink: #16213a;
+  --muted: #56657e;
+  --faint: #8695ab;
+  --primary: #2b7bf3;
+  --primary-soft: rgba(43, 123, 243, .10);
+  --accent: #f0663a;
+  --accent-soft: rgba(240, 102, 58, .10);
+  --gold: #c8931f;
+  --gold-soft: rgba(200, 147, 31, .12);
+  --ok: #12a06a;
+  --ok-soft: rgba(18, 160, 106, .12);
+  --glass: rgba(255, 255, 255, .72);
+  --glass-2: rgba(255, 255, 255, .94);
+  --glass-head: rgba(255, 255, 255, .88);
+  --stroke: rgba(27, 52, 92, .10);
+  --stroke-2: rgba(27, 52, 92, .16);
+  --shadow: 0 12px 32px rgba(26, 48, 84, .07);
+  --radius: 18px;
+  --radius-sm: 13px;
+  --font-display: "Nunito", "Noto Sans SC", sans-serif;
+  --font-body: "Nunito", "Noto Sans SC", sans-serif;
+  --font-mono: "JetBrains Mono", "Noto Sans SC", monospace;
+}
+[data-theme="dark"] {
+  --bg: #0d1524;
+  --bg-2: #101a2c;
+  --ink: #eef3fb;
+  --muted: #a7b6cc;
+  --faint: #7d8ea8;
+  --primary: #5a9dff;
+  --primary-soft: rgba(90, 157, 255, .14);
+  --accent: #ff8660;
+  --accent-soft: rgba(255, 134, 96, .12);
+  --gold: #e8b95c;
+  --gold-soft: rgba(232, 185, 92, .14);
+  --ok: #4dd49b;
+  --ok-soft: rgba(77, 212, 155, .15);
+  --glass: rgba(255, 255, 255, .06);
+  --glass-2: rgba(255, 255, 255, .10);
+  --glass-head: rgba(18, 28, 46, .88);
+  --stroke: rgba(255, 255, 255, .10);
+  --stroke-2: rgba(255, 255, 255, .18);
+  --shadow: 0 16px 40px rgba(0, 0, 0, .35);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.78;
+  letter-spacing: .01em;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: .01em; }
+a { color: inherit; text-decoration: none; }
+
+.bar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 20px;
+  background: var(--glass-head);
+  border-bottom: 1px solid var(--stroke);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+.brand { display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-display); font-weight: 700; font-size: 16px; }
+.brand .m { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--primary); color: #fff; font-size: 15px; font-weight: 700; }
+.pill { font-size: 12px; letter-spacing: .04em; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--stroke-2); color: var(--muted); }
+.sp { flex: 1; }
+.icon-btn { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--stroke-2); background: var(--glass); color: var(--muted); cursor: pointer; }
+.icon-btn:hover { color: var(--ink); border-color: var(--primary); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 38px; padding: 0 16px;
+  border: 1px solid var(--stroke-2); border-radius: 999px;
+  background: var(--glass); color: var(--ink);
+  font-family: inherit; font-size: 13.5px; cursor: pointer;
+}
+
+.wrap { max-width: 940px; margin: 0 auto; padding: 34px 20px 64px; }
+
+/* 首屏 */
+.hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 30px; align-items: center; }
+@media (max-width: 820px) { .hero { grid-template-columns: 1fr; gap: 22px; } }
+.hero .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; letter-spacing: .04em; color: var(--gold); }
+.hero .eyebrow i { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); font-style: normal; }
+.hero h1 { margin: 12px 0 12px; font-size: clamp(28px, 4.4vw, 42px); font-weight: 800; line-height: 1.28; }
+.hero h1 em { font-style: normal; color: var(--primary); }
+.hero p { margin: 0; font-size: 14.5px; line-height: 1.9; color: var(--muted); max-width: 480px; }
+.hero p b { color: var(--ink); font-weight: 600; }
+.hero-shot { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--stroke); }
+.hero-shot img { display: block; width: 100%; height: auto; }
+.hero-shot figcaption {
+  position: absolute; left: 12px; bottom: 12px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(12, 20, 34, .58);
+  color: #fff;
+  font-size: 11.5px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* 数字条 */
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 28px; }
+@media (max-width: 760px) { .kpis { grid-template-columns: 1fr 1fr; } }
+.kpi {
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--glass-2);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+.kpi b { display: block; font-family: var(--font-display); font-size: 26px; font-weight: 800; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.kpi b span { font-size: 13px; font-weight: 600; color: var(--muted); margin-left: 3px; }
+.kpi em { display: block; margin-top: 2px; font-size: 12px; font-style: normal; color: var(--faint); }
+
+/* 区块 */
+.sec { margin-top: 46px; }
+.sec-head { margin-bottom: 16px; }
+.sec-head span { display: block; font-size: 12px; letter-spacing: .06em; color: var(--faint); margin-bottom: 6px; }
+.sec-head h2 { margin: 0; font-size: clamp(20px, 2.8vw, 26px); font-weight: 700; line-height: 1.35; }
+.sec-head p { margin: 8px 0 0; font-size: 13.5px; line-height: 1.8; color: var(--muted); max-width: 620px; }
+
+/* 逐年柱状图 */
+.card {
+  padding: 22px 24px;
+  border-radius: var(--radius);
+  background: var(--glass-2);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  height: 190px;
+  padding: 8px 4px 0;
+}
+.col { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; }
+.col .v { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; margin-bottom: 6px; }
+.col .b {
+  width: 100%;
+  max-width: 74px;
+  border-radius: 9px 9px 4px 4px;
+  background: linear-gradient(180deg, var(--primary) 0%, rgba(43, 123, 243, .55) 100%);
+  box-shadow: 0 6px 16px rgba(43, 123, 243, .18);
+  animation: growUp .55s cubic-bezier(.22, .85, .3, 1) both;
+}
+.col:nth-child(2) .b { animation-delay: .09s; }
+.col:nth-child(3) .b { animation-delay: .18s; }
+.col:nth-child(4) .b { animation-delay: .27s; }
+@keyframes growUp { from { height: 0; } }
+.col.hi .b { background: linear-gradient(180deg, var(--accent) 0%, rgba(240, 102, 58, .5) 100%); box-shadow: 0 6px 16px rgba(240, 102, 58, .2); }
+.col .y { margin-top: 8px; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.axis { display: flex; justify-content: space-between; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--stroke); font-size: 11.5px; color: var(--faint); }
+@media (max-width: 560px) { .chart { height: 150px; gap: 10px; } }
+
+/* 赛事分布 */
+.bars { display: grid; gap: 12px; margin-top: 18px; }
+.bar-row { display: grid; grid-template-columns: 132px 1fr 54px; gap: 12px; align-items: center; }
+@media (max-width: 620px) { .bar-row { grid-template-columns: 96px 1fr 46px; gap: 8px; } }
+.bar-row .lb { font-size: 13px; color: var(--muted); }
+.bar-row .lb b { display: block; color: var(--ink); font-weight: 600; font-size: 13px; }
+.bar-row .lb span { font-size: 11px; color: var(--faint); }
+.track { display: block; height: 9px; border-radius: 999px; background: var(--primary-soft); overflow: hidden; }
+.fill { display: block; height: 100%; border-radius: 999px; background: var(--primary); }
+.fill.g { background: var(--gold); }
+.fill.a { background: var(--accent); }
+.bar-row .num { text-align: right; font-family: var(--font-display); font-weight: 700; font-size: 14px; font-variant-numeric: tabular-nums; }
+
+/* 荣誉条目 */
+.list { display: grid; gap: 0; }
+.row {
+  display: grid;
+  grid-template-columns: 62px 1fr 92px;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--stroke);
+}
+.row:last-child { border-bottom: 0; }
+.row .yr { font-family: var(--font-mono); font-size: 12px; color: var(--faint); }
+.row .ev b { display: block; font-size: 14px; font-weight: 600; }
+.row .ev span { font-size: 12px; color: var(--faint); }
+.row .md { text-align: right; font-size: 12.5px; }
+.row .md .tag { display: inline-block; padding: 2px 9px; border-radius: 999px; background: var(--gold-soft); color: var(--gold); font-size: 11.5px; font-weight: 500; }
+.row .md .tag.s { background: var(--ok-soft); color: var(--ok); }
+.row .md .tag.a { background: var(--accent-soft); color: var(--accent); }
+@media (max-width: 600px) {
+  .row { grid-template-columns: 52px 1fr; gap: 10px; }
+  .row .md { grid-column: 2; text-align: left; }
+}
+
+/* 学员故事 */
+.stories { display: grid; gap: 16px; }
+.story {
+  display: grid;
+  grid-template-columns: 236px 1fr;
+  gap: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--glass-2);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+.story img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.story .tx { padding: 20px 24px; }
+.story .who { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--faint); }
+.story .who b { color: var(--ink); font-weight: 600; font-size: 13px; }
+.story h3 { margin: 8px 0 8px; font-size: 17px; font-weight: 700; line-height: 1.45; }
+.story p { margin: 0; font-size: 13.5px; line-height: 1.85; color: var(--muted); }
+.story p + p { margin-top: 8px; }
+.story .now {
+  margin-top: 12px; padding-top: 11px;
+  border-top: 1px solid var(--stroke);
+  font-size: 12.5px; color: var(--faint);
+}
+.story .now b { color: var(--primary); font-weight: 600; }
+@media (max-width: 660px) {
+  .story { grid-template-columns: 1fr; }
+  .story img { height: 168px; }
+}
+
+/* 口径说明 */
+.note {
+  margin-top: 22px;
+  padding: 18px 22px;
+  border-radius: var(--radius-sm);
+  background: var(--gold-soft);
+  border: 1px solid rgba(200, 147, 31, .2);
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+.note b { display: block; color: var(--ink); font-size: 13.5px; margin-bottom: 6px; }
+.note ul { margin: 8px 0 0; padding-left: 17px; display: grid; gap: 4px; }
+
+/* CTA */
+.cta {
+  margin-top: 34px;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 16px;
+  padding: 24px 26px;
+  border-radius: var(--radius);
+  background: var(--primary-soft);
+  border: 1px solid rgba(43, 123, 243, .22);
+}
+.cta .tt { flex: 1; min-width: 240px; }
+.cta b { display: block; font-size: 15.5px; font-weight: 700; }
+.cta span { display: block; font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+.cta .go {
+  display: inline-flex; align-items: center; gap: 7px;
+  height: 42px; padding: 0 22px;
+  border-radius: 999px;
+  background: var(--primary); color: #fff;
+  font-size: 14px;
+  box-shadow: 0 10px 24px rgba(43, 123, 243, .22);
+}
+.cta .go svg { width: 14px; height: 14px; }
+.cta .go2 { color: var(--primary); font-size: 13.5px; }
+
+.foot { max-width: 940px; margin: 0 auto; padding: 0 20px 54px; font-size: 12px; line-height: 1.9; color: var(--faint); }
+.foot a { color: var(--primary); }
+@media (prefers-reduced-motion: reduce) { .col .b { animation: none; } }
+</style>
+<link rel="preload" as="image" href="assets/trophy.webp" imagesrcset="assets/trophy-640.webp 640w, assets/trophy.webp 800w" imagesizes="(max-width: 820px) 92vw, 400px" fetchpriority="high">
+<link rel="canonical" href="https://codeleap.example/results.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="荣誉与成果 — 码跃少儿编程">
+<meta property="og:description" content="码跃少儿编程历届赛事成绩：286 项奖项、310 人次参赛、GESP 96% 通过率、CSP-J 一等奖 23 人，按年份与赛事分类公开，并注明统计口径。">
+<meta property="og:url" content="https://codeleap.example/results.html">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <span class="pill">荣誉与成果</span>
+  <div class="sp"></div>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="btn" href="index.html">返回官网</a>
+</div>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div>
+      <span class="eyebrow"><i></i>2023–2026 累计成绩</span>
+      <h1>成绩单，<em>摊开来看</em></h1>
+      <p>很多机构只写「获奖数百人次」，家长没法判断含金量。<b>我们把每个数字拆开</b>：哪一年、哪个赛事、什么组别、几个人，以及这些数字是怎么算出来的。</p>
+    </div>
+    <figure class="hero-shot" style="margin:0">
+      <img src="assets/trophy.jpg" srcset="assets/trophy-640.webp 640w, assets/trophy.webp 800w" sizes="(max-width: 820px) 92vw, 400px" alt="学员在颁奖台上举起奖杯" width="1120" height="700" fetchpriority="high" decoding="async">
+      <figcaption>2026 年合肥市赛颁奖现场</figcaption>
+    </figure>
+  </section>
+
+  <div class="kpis">
+    <div class="kpi"><b>286<span>项</span></b><em>累计各级奖项</em></div>
+    <div class="kpi"><b>310<span>人次</span></b><em>累计参赛人次</em></div>
+    <div class="kpi"><b>23<span>人</span></b><em>CSP-J 一等奖</em></div>
+    <div class="kpi"><b>96<span>%</span></b><em>GESP 通过率</em></div>
+  </div>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span>逐年趋势</span>
+      <h2>四年，从 41 项到 85 项</h2>
+      <p>2023 年第一批学员进入可参赛阶段，此后每年参赛人数与获奖数同步上涨。2026 年略低于 2025 年，是因为参赛集中在 GESP 等级认证，奖项口径不同，我们在下面的口径说明里解释。</p>
+    </div>
+    <div class="card">
+      <div class="chart" id="chart">
+        <div class="col"><span class="v">41</span><div class="b" style="height:26%"></div><span class="y">2023</span></div>
+        <div class="col"><span class="v">68</span><div class="b" style="height:44%"></div><span class="y">2024</span></div>
+        <div class="col hi"><span class="v">92</span><div class="b" style="height:60%"></div><span class="y">2025</span></div>
+        <div class="col"><span class="v">85</span><div class="b" style="height:55%"></div><span class="y">2026</span></div>
+      </div>
+      <div class="axis"><span>数据来源：学员获奖证书复印件，按证书发放年度归档</span><span>合计 286 项</span></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span>赛事分布</span>
+      <h2>哪些赛事，占了多少</h2>
+      <p>同样的「一等奖」，在 CCF 主办的 CSP 与校内选拔赛里含金量差很多。这张图按主办方与级别分开统计。</p>
+    </div>
+    <div class="card">
+      <div class="bars">
+        <div class="bar-row">
+          <span class="lb"><b>蓝桥杯青少组</b><span>省赛 / 国赛</span></span>
+          <span class="track"><span class="fill" style="width:100%"></span></span>
+          <span class="num">112</span>
+        </div>
+        <div class="bar-row">
+          <span class="lb"><b>白名单赛事</b><span>教育部公布名单内</span></span>
+          <span class="track"><span class="fill" style="width:55%"></span></span>
+          <span class="num">62</span>
+        </div>
+        <div class="bar-row">
+          <span class="lb"><b>CSP-J/S</b><span>CCF 主办</span></span>
+          <span class="track"><span class="fill g" style="width:42%"></span></span>
+          <span class="num">47</span>
+        </div>
+        <div class="bar-row">
+          <span class="lb"><b>GESP 8 级</b><span>满级认证</span></span>
+          <span class="track"><span class="fill a" style="width:30%"></span></span>
+          <span class="num">34</span>
+        </div>
+        <div class="bar-row">
+          <span class="lb"><b>区市与校级</b><span>信息素养类</span></span>
+          <span class="track"><span class="fill" style="width:28%"></span></span>
+          <span class="num">31</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span>部分获奖记录</span>
+      <h2>按证书一个个列</h2>
+      <p>摘录近三年含金量较高的一批。同一赛事不同组别分开列，不把团体奖折算进个人数量。</p>
+    </div>
+    <div class="card" style="padding:8px 20px">
+      <div class="list">
+        <div class="row">
+          <span class="yr">2026</span>
+          <span class="ev"><b>CSP-J/S 第一轮 · 入门级</b><span>CCF 主办 · 合肥考点</span></span>
+          <span class="md"><span class="tag">一等奖 7 人</span></span>
+        </div>
+        <div class="row">
+          <span class="yr">2026</span>
+          <span class="ev"><b>GESP · C++ 8 级</b><span>CCF 编程能力等级认证</span></span>
+          <span class="md"><span class="tag s">满级 6 人</span></span>
+        </div>
+        <div class="row">
+          <span class="yr">2026</span>
+          <span class="ev"><b>蓝桥杯青少组省赛 · Scratch 初级</b><span>工信部人才交流中心主办</span></span>
+          <span class="md"><span class="tag">一等奖 9 人</span></span>
+        </div>
+        <div class="row">
+          <span class="yr">2026</span>
+          <span class="ev"><b>CSP-J 第二轮 · 入门级</b><span>上机复赛</span></span>
+          <span class="md"><span class="tag a">二等奖 4 人</span></span>
+        </div>
+        <div class="row">
+          <span class="yr">2025</span>
+          <span class="ev"><b>合肥市中小学生信息素养大赛 · 小学组</b><span>市教育局主办</span></span>
+          <span class="md"><span class="tag">一等奖 2 人</span></span>
+        </div>
+        <div class="row">
+          <span class="yr">2025</span>
+          <span class="ev"><b>蓝桥杯青少组国赛 · Python 中级</b><span>国赛阶段</span></span>
+          <span class="md"><span class="tag a">三等奖 2 人</span></span>
+        </div>
+        <div class="row">
+          <span class="yr">2025</span>
+          <span class="ev"><b>CSP-J/S 第一轮 · 入门级</b><span>CCF 主办</span></span>
+          <span class="md"><span class="tag">一等奖 5 人</span></span>
+        </div>
+        <div class="row">
+          <span class="yr">2024</span>
+          <span class="ev"><b>CSP-J 第一轮 · 入门级</b><span>首批学员首次参赛</span></span>
+          <span class="md"><span class="tag">一等奖 4 人</span></span>
+        </div>
+        <div class="row">
+          <span class="yr">2024</span>
+          <span class="ev"><b>安徽省青少年编程能力展示 · 图形化组</b><span>省级展示活动</span></span>
+          <span class="md"><span class="tag s">一等奖 3 人</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span>三个孩子的三年</span>
+      <h2>成绩背后，卡在哪一步</h2>
+      <p>奖项只是结果。下面三段是我们记录下来的真实卡点，写出来是想让家长知道：孩子会在哪里卡住，以及卡住之后我们怎么做。</p>
+    </div>
+    <div class="stories">
+
+      <article class="story">
+        <img src="assets/work-snake.jpg" srcset="assets/work-snake-640.webp 640w, assets/work-snake.webp 900w" sizes="(max-width: 660px) 100vw, 236px" alt="学员做的像素风贪吃蛇游戏画面" width="900" height="560" loading="lazy" decoding="async">
+        <div class="tx">
+          <div class="who"><b>张同学</b> · 11 岁 · L3 Python · 在读 2 年</div>
+          <h3>「蛇只动头，不动尾」——他花了三周才想明白</h3>
+          <p>第一次做贪吃蛇，他的蛇头会动，身子留在原地。老师没直接给答案，让他把蛇的每一节坐标打印出来，看着数字一行行滚过屏幕。</p>
+          <p>第四周他自己发现：新头坐标要插到列表最前面，尾巴要删掉最后一个元素。那天他改完跑通，喊了一声「原来是这样」，然后主动把代码讲给同桌听。</p>
+          <div class="now">现在：完成完整版贪吃蛇与一个成绩统计小工具 · <b>2026 年校级展示特等奖</b></div>
+        </div>
+      </article>
+
+      <article class="story">
+        <img src="assets/work-maze.jpg" srcset="assets/work-maze-640.webp 640w, assets/work-maze.webp 900w" sizes="(max-width: 660px) 100vw, 236px" alt="学员做的迷宫最短路可视化作品" width="900" height="560" loading="lazy" decoding="async">
+        <div class="tx">
+          <div class="who"><b>李同学</b> · 13 岁 · C++ 竞赛班 · 在读 3 年</div>
+          <h3>第一次模拟赛 0 分，他把答题卡交了白卷</h3>
+          <p>五年级下学期转来，逻辑很强但从不检查。第一次内部模拟赛，三道题全部输出格式错，实际 0 分。老师没有加课，只让他每次提交前读一遍题面最后一行。</p>
+          <p>半年后的 CSP-J 第一轮，他拿了入门级一等奖。真正变的不是算法水平，是他开始愿意在写完后回头看一眼。</p>
+          <div class="now">现在：<b>CSP-J 第一轮一等奖</b> · 备战 2027 年第二轮</div>
+        </div>
+      </article>
+
+      <article class="story">
+        <img src="assets/classroom.jpg" srcset="assets/classroom-640.webp 640w, assets/classroom.webp 900w" sizes="(max-width: 660px) 100vw, 236px" alt="小班教室里老师和四个孩子一起上课" width="900" height="560" loading="lazy" decoding="async">
+        <div class="tx">
+          <div class="who"><b>王同学</b> · 9 岁 · L1 图形化 · 在读 1 年半</div>
+          <h3>坐不住 40 分钟的孩子，先学会的是「举手」</h3>
+          <p>刚来时每十分钟就要离开座位，作品做到一半就换想法。老师把一节课拆成三个 15 分钟的小目标，每完成一个就在白板上贴一颗星。</p>
+          <p>三个月后他能连续做完一个完整小游戏。半年后，他学会了在卡住时先举手，而不是把鼠标一推说「不做了」。</p>
+          <div class="now">现在：独立完成 6 个图形化作品 · <b>2026 年蓝桥杯省赛三等奖</b></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="note">
+      <b>统计口径说明（请先读这段再引用数字）</b>
+      <ul>
+        <li>「累计各级奖项」包含国家级、省级、市级、区级与校级，含团体奖，同一学员在不同赛事重复获奖<b>分别计入</b>。</li>
+        <li>「310 人次参赛」为报名并实际参赛的人次，含未获奖者；未参赛不计入。</li>
+        <li>「GESP 通过率 96%」为近两年实际参加认证学员的通过比例，按人次计算，未报名者不计入分母。</li>
+        <li>「CSP-J 一等奖 23 人」为 2023–2026 四年累计，同一学员跨年重复获奖<b>按人次计</b>。</li>
+        <li>所有成绩以证书或官方公示为准，家长可到校区查阅复印件；本页为演示站点，<b>数字与姓名均为示例</b>，正式对外须替换为经核实的数据。</li>
+      </ul>
+    </div>
+
+    <div class="cta">
+      <div class="tt">
+        <b>想知道自己孩子大概能走到哪一步？</b>
+        <span>做一次 40 分钟免费测评，我们给出现阶段水平与建议路径，不推销课包。</span>
+      </div>
+      <a class="go" href="index.html#trial">预约免费测评<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h13M12 6l6 6-6 6"/></svg></a>
+      <a class="go2" href="index.html#courses">先看课程体系</a>
+    </div>
+  </section>
+
+</main>
+
+<div class="foot">
+  本页为演示站点内容，奖项、姓名、赛事成绩均为示例，用于展示「荣誉页应该怎么组织」；正式上线须替换为经核实的证书数据，并保留统计口径说明。<br>
+  码跃少儿编程 · 合肥 · <a href="index.html">官网</a> · <a href="camp.html">寒假集训营</a> · <a href="enroll.html">在线报名</a> · <a href="brochure.html">招生简章</a> · <a href="parent.html">家长中心</a> · <a href="legal.html">政策与条款</a>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var root = document.documentElement;
+  var saved = null;
+  try { saved = localStorage.getItem("codeleap-theme"); } catch (e) {}
+  if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+  document.getElementById("themeBtn").addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("codeleap-theme", next); } catch (e) {}
+  });
+
+})();
+</script>
+
+</body>
+</html>

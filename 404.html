@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>这一页不存在 — 码跃少儿编程</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root {
+  --bg: #f6f9fe;
+  --bg-2: #eef4fd;
+  --ink: #16213a;
+  --muted: #56657e;
+  --faint: #8695ab;
+  --primary: #2b7bf3;
+  --primary-soft: rgba(43, 123, 243, .10);
+  --accent: #f0663a;
+  --glass: rgba(255, 255, 255, .72);
+  --glass-2: rgba(255, 255, 255, .94);
+  --glass-head: rgba(255, 255, 255, .88);
+  --stroke: rgba(27, 52, 92, .10);
+  --stroke-2: rgba(27, 52, 92, .16);
+  --shadow: 0 12px 32px rgba(26, 48, 84, .07);
+  --radius: 18px;
+  --font-display: "Nunito", "Noto Sans SC", sans-serif;
+  --font-body: "Nunito", "Noto Sans SC", sans-serif;
+  --font-mono: "JetBrains Mono", "Noto Sans SC", monospace;
+}
+[data-theme="dark"] {
+  --bg: #0d1524;
+  --bg-2: #101a2c;
+  --ink: #eef3fb;
+  --muted: #a7b6cc;
+  --faint: #7d8ea8;
+  --primary: #5a9dff;
+  --primary-soft: rgba(90, 157, 255, .14);
+  --accent: #ff8660;
+  --glass: rgba(255, 255, 255, .06);
+  --glass-2: rgba(255, 255, 255, .10);
+  --glass-head: rgba(18, 28, 46, .88);
+  --stroke: rgba(255, 255, 255, .10);
+  --stroke-2: rgba(255, 255, 255, .18);
+  --shadow: 0 16px 40px rgba(0, 0, 0, .35);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.78;
+  letter-spacing: .01em;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: .01em; }
+a { color: inherit; text-decoration: none; }
+
+.bar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 20px;
+  background: var(--glass-head);
+  border-bottom: 1px solid var(--stroke);
+}
+.brand { display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-display); font-weight: 700; font-size: 16px; }
+.brand .m { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--primary); color: #fff; font-size: 15px; font-weight: 700; }
+.sp { flex: 1; }
+.icon-btn { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--stroke-2); background: var(--glass); color: var(--muted); cursor: pointer; }
+.icon-btn:hover { color: var(--ink); border-color: var(--primary); }
+
+.main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 56px 20px 70px;
+}
+.box { width: 100%; max-width: 660px; }
+
+.code {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 14vw, 104px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.02em;
+  color: var(--primary);
+  opacity: .16;
+  font-variant-numeric: tabular-nums;
+}
+h1 { margin: -14px 0 10px; font-size: clamp(23px, 3.6vw, 31px); font-weight: 700; line-height: 1.35; }
+.lead { margin: 0 0 6px; font-size: 14.5px; line-height: 1.85; color: var(--muted); max-width: 500px; }
+.lead b { color: var(--ink); font-weight: 600; }
+.hint {
+  margin: 14px 0 0;
+  padding: 11px 14px;
+  border-radius: 11px;
+  background: var(--glass-2);
+  border: 1px solid var(--stroke);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--faint);
+  overflow-wrap: anywhere;
+}
+
+.links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 26px; }
+@media (max-width: 520px) { .links { grid-template-columns: 1fr; } }
+.link {
+  display: flex; align-items: center; gap: 11px;
+  padding: 14px 16px;
+  border-radius: 13px;
+  background: var(--glass-2);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  transition: transform .16s ease, border-color .16s ease;
+}
+.link:hover { transform: translateY(-2px); border-color: var(--primary); }
+.link .ic { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 9px; background: var(--primary-soft); color: var(--primary); }
+.link .ic svg { width: 16px; height: 16px; }
+.link .tx b { display: block; font-size: 13.5px; font-weight: 600; }
+.link .tx span { display: block; font-size: 11.5px; color: var(--faint); }
+
+.home {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 44px; padding: 0 22px;
+  margin-top: 22px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 14.5px;
+  box-shadow: 0 10px 24px rgba(43, 123, 243, .26);
+}
+.home svg { width: 15px; height: 15px; }
+
+.foot { padding: 0 20px 40px; text-align: center; font-size: 12px; color: var(--faint); }
+.foot a { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <div class="sp"></div>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="home" href="index.html" style="margin-top:0;height:38px;padding:0 16px;font-size:13.5px;box-shadow:none">回首页</a>
+</div>
+
+<div class="main">
+  <div class="box">
+    <div class="code">404</div>
+    <h1>这一页还没有被写出来</h1>
+    <p class="lead">链接可能是旧的，也可能是我们改过地址。别着急回去，<b>下面这几个地方</b>大多数人都能找到自己要的东西。</p>
+
+    <div class="links">
+      <a class="link" href="index.html#courses">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6.5A2 2 0 016 4.5h12a1 1 0 011 1v13a1 1 0 01-1 1H6a2 2 0 01-2-2z"/><path d="M8 4.5v15"/></svg></span>
+        <span class="tx"><b>课程体系</b><span>L1 图形化到 L4 竞赛</span></span>
+      </a>
+      <a class="link" href="index.html#schedule">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span>
+        <span class="tx"><b>开班与赛历</b><span>近期班次与考级时间</span></span>
+      </a>
+      <a class="link" href="camp.html">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l2.4 5.4 5.9.6-4.4 4 1.3 5.8L12 16l-5.2 2.8 1.3-5.8-4.4-4 5.9-.6z"/></svg></span>
+        <span class="tx"><b>寒假集训营</b><span>5 天做出一个游戏</span></span>
+      </a>
+      <a class="link" href="enroll.html">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h14v16l-7-3.5L5 20z"/><path d="M9 9h6"/></svg></span>
+        <span class="tx"><b>在线报名</b><span>选班次、算优惠、下单</span></span>
+      </a>
+    </div>
+
+    <a class="home" href="index.html">
+      回到首页
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h13M12 6l6 6-6 6"/></svg>
+    </a>
+
+    <p class="hint" id="reqPath">请求地址：—</p>
+  </div>
+</div>
+
+<div class="foot">
+  找不到想要的内容？打电话 400-860-2026（9:00–20:00），或从 <a href="index.html">首页</a> 重新开始。
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var root = document.documentElement;
+  var saved = null;
+  try { saved = localStorage.getItem("codeleap-theme"); } catch (e) {}
+  if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+  document.getElementById("themeBtn").addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("codeleap-theme", next); } catch (e) {}
+  });
+
+  var el = document.getElementById("reqPath");
+  if (el) {
+    var raw = "";
+    try { raw = decodeURIComponent(location.pathname + location.search + location.hash).slice(-96); } catch (e) {}
+    el.textContent = "请求地址：" + (raw || "—");
+  }
+})();
+</script>
+
+</body>
+</html>
