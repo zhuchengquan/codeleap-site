@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /manual.html
 
 # 本站为纯静态站点，无后台路径需要屏蔽。
+# manual.html 是第三方平台手册的内部存档（页面已加 noindex），不对外收录。
 # 正式上线请把下面域名替换为真实域名，并与 sitemap.xml 中的 loc 保持一致。
 Sitemap: https://codeleap.example/sitemap.xml
