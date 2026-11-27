@@ -238,6 +238,12 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* 口径说明 */
+.tbl { margin: 16px 0 4px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--stroke); background: var(--glass-2); }
+.tbl table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.tbl th { background: var(--primary-soft); color: var(--ink); font-weight: 600; text-align: left; padding: 10px 14px; font-size: 13px; }
+.tbl td { padding: 11px 14px; border-top: 1px solid var(--stroke); vertical-align: top; line-height: 1.7; }
+.tbl td b { color: var(--ink); font-weight: 600; }
+@media (max-width: 640px) { .tbl { overflow-x: auto; } .tbl table { min-width: 540px; } }
 .note {
   margin-top: 22px;
   padding: 18px 22px;
@@ -356,6 +362,15 @@ a { color: inherit; text-decoration: none; }
       </div>
       <div class="axis"><span>数据来源：学员获奖证书复印件，按证书发放年度归档</span><span>合计 286 项</span></div>
     </div>
+      <div class="tbl"><table>
+      <tr><th>年度</th><th>获奖项</th><th>参赛人次</th><th>获奖率</th><th>当年主要变化</th></tr>
+      <tr><td><b>2023</b></td><td>41</td><td>52</td><td>79%</td><td>首批学员进入可参赛阶段，集中在蓝桥杯省赛</td></tr>
+      <tr><td><b>2024</b></td><td>68</td><td>74</td><td>92%</td><td>首次参加 CSP-J/S，7 人进入第二轮</td></tr>
+      <tr><td><b>2025</b></td><td>92</td><td>96</td><td>96%</td><td>GESP 满级 9 人，白名单赛事集中参赛</td></tr>
+      <tr><td><b>2026</b></td><td>85</td><td>88</td><td>97%</td><td>参赛集中到 GESP 等级认证，奖项口径不同</td></tr>
+      <tr><td><b>合计</b></td><td>286</td><td>310</td><td>92%</td><td>按证书发放年度归档，不重复计入团体奖</td></tr>
+    </table></div>
+    <p style="font-size:13px;line-height:1.8;color:var(--muted);margin-top:12px">获奖率高，是因为大量人次集中在 GESP 等级认证这类通过型考试；筛选型比赛（CSP-J/S 第二轮、国赛）通过率低得多，这也是我们不拿「获奖率」当宣传点的原因。</p>
   </section>
 
   <section class="sec">
@@ -518,6 +533,22 @@ a { color: inherit; text-decoration: none; }
 
 </main>
 
+  <section class="sec">
+    <div class="sec-head">
+      <span>数据口径</span>
+      <h2 id="ps5">我们公开什么，不公开什么</h2>
+      <p>成绩页最容易做手脚的地方是分母。这张表写明我们的取舍，也方便你拿它去问别家机构。</p>
+    </div>
+    <div class="tbl"><table>
+      <tr><th>项目</th><th>我们公开</th><th>我们不公开、也不做的事</th></tr>
+      <tr><td><b>获奖名单</b></td><td>经家长同意后，列姓名、奖项、年份</td><td>不公布未获奖名单，不给孩子贴标签</td></tr>
+      <tr><td><b>赛事级别</b></td><td>按主办方与级别拆分，CSP、白名单、区校级分开列</td><td>不把团体奖折算成个人获奖数</td></tr>
+      <tr><td><b>参赛分母</b></td><td>公布每届参赛人次，而不只是获奖人数</td><td>不只放分子，让人误以为人人获奖</td></tr>
+      <tr><td><b>未来预期</b></td><td>只讲已发生的成绩与当前训练安排</td><td>不预测「明年能拿几项」，不做任何保过承诺</td></tr>
+      <tr><td><b>个人数据</b></td><td>孩子的测评报告只对本人家长开放</td><td>不在公开页面展示单个孩子的分数与排名</td></tr>
+    </table></div>
+    <div class="note"><b>一句话：</b>成绩可以少讲，但不能讲错。任何一项数字，你都可以要求我们出示证书或赛事官网的公示链接；出示不了，就当我们没说过。</div>
+  </section>
 <div class="foot">
   本页为演示站点内容，奖项、姓名、赛事成绩均为示例，用于展示「荣誉页应该怎么组织」；正式上线须替换为经核实的证书数据，并保留统计口径说明。<br>
   码跃少儿编程 · 合肥 · <a href="index.html">官网</a> · <a href="camp.html">寒假集训营</a> · <a href="enroll.html">在线报名</a> · <a href="brochure.html">招生简章</a> · <a href="parent.html">家长中心</a> · <a href="legal.html">政策与条款</a>
