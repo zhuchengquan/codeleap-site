@@ -84,6 +84,24 @@ a{color:inherit;text-decoration:none}
 .side .toc{display:grid;gap:8px;font-size:12.5px;color:var(--muted)}
 
 .art{min-width:0}
+
+
+/* cl-ss:css */
+.sbox{position:fixed;inset:0;z-index:80;display:none;align-items:flex-start;justify-content:center;padding:84px 18px 20px;background:rgba(9,19,38,.40);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)}
+.sbox.on{display:flex}
+.sbox .panel{width:100%;max-width:600px;border-radius:20px;background:#fff;border:1px solid var(--stroke-2,rgba(20,50,110,.12));box-shadow:0 26px 64px rgba(12,26,52,.30);overflow:hidden}
+[data-theme="dark"] .sbox .panel{background:#111c2e;border-color:rgba(255,255,255,.14)}
+.sbox .inp{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke-2,rgba(20,50,110,.12))}
+.sbox .inp svg{width:17px;height:17px;color:var(--faint,#8695ab);flex:none}
+.sbox .inp input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink,#16213a);font-family:inherit;font-size:15px}
+.sbox .inp kbd{font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:2px 6px;border-radius:6px;border:1px solid var(--stroke-2,rgba(20,50,110,.12));color:var(--faint,#8695ab);flex:none}
+.sbox .res{max-height:54vh;overflow:auto;padding:8px}
+.sbox .item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px}
+.sbox .item:hover,.sbox .item.on{background:var(--primary-soft,rgba(43,123,243,.12))}
+.sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
+.sbox .item span{font-size:11.5px;color:var(--faint,#8695ab);white-space:nowrap}
+.sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint,#8695ab);text-align:center}
+/* /cl-ss:css */
 </style>
 </head>
 <body>
@@ -91,6 +109,9 @@ a{color:inherit;text-decoration:none}
   <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
   <span class="tagline">知识库</span>
   <div class="sp"></div>
+  <button class="icon-btn" id="searchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+  </button>
   <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
   </button>
@@ -105,7 +126,7 @@ a{color:inherit;text-decoration:none}
     <p class="lead">每年 3、6、9、12 月各一场，一级是所有人的第一关，也是最容易被轻视的一关。我们带过几百个孩子考一级，发现失分几乎不在「不会做」，而在「格式」和「读题」。这篇把卷面结构和两周备考节奏写清楚。</p>
     
 <p>先纠正一个流传很广的说法：一级「随便考考就能过」。真实情况是，一级的通过门槛确实不高，但编程题占一半分，而编程题的失分几乎全部来自格式与读题——这两样不专门练，分数就会卡在 55 到 65 之间反复。</p>
-<h2>一、卷面结构：分值是怎么分的</h2>
+<h2 id="ps1">一、卷面结构：分值是怎么分的</h2>
 <div class="tbl"><table>
 <tr><th>题型</th><th>题量</th><th>分值</th><th>小计</th></tr>
 <tr><td>选择题</td><td>15 题</td><td>每题 2 分</td><td><b>30 分</b></td></tr>
@@ -114,7 +135,7 @@ a{color:inherit;text-decoration:none}
 <tr><td colspan="3">合计 / 及格线 / 跨级线</td><td><b>100 / 60 / 90</b></td></tr>
 </table></div>
 <p>两个关键事实值得先说：一是<b>编程题占一半分</b>，只刷选择题一定过不了一级；二是 <b>90 分以上可以跨一级</b>，这意味着目标不该只定在 60 分——多拿 30 分，能省掉后面整整一期课的时间和费用。</p>
-<h2>二、一级编程题的真实失分点</h2>
+<h2 id="ps2">二、一级编程题的真实失分点</h2>
 <p>一级编程题常见题型：输入两个数做加减、判断奇偶、按次数循环输出、简单累加求和。看起来简单，但失分集中在四处：</p>
 <ul>
 <li><b>输入读错。</b><span>题目说「输入两个整数，用空格隔开」，孩子写了两次 <code>input()</code> 分别读，遇到一行两个数就直接崩。这是最高频的错误。</span></li>
@@ -123,7 +144,7 @@ a{color:inherit;text-decoration:none}
 <li><b>变量名随手写。</b><span><code>a</code>、<code>b</code>、<code>x</code> 混着用，写到第三行自己都分不清哪个是累加器，改错时越改越乱。</span></li>
 </ul>
 <p>注意这四条都不是知识点问题，是<b>规范和习惯</b>问题。所以我们备考时不比刷题量，改做「格式训练」：同一道题，要求孩子先抄一遍题目里的输入输出描述，再动手写代码，写完对照着念一遍自己的输出。</p>
-<h2>三、两周节奏：每周两次课，每天在家 20 分钟</h2>
+<h2 id="ps3">三、两周节奏：每周两次课，每天在家 20 分钟</h2>
 <div class="tbl"><table>
 <tr><th>时间</th><th>做什么</th><th>这一段的验收标准</th></tr>
 <tr><td><b>第 1 周前 3 天</b></td><td>把一级考纲知识点过一遍（顺序、循环、条件、输入输出），每个点配 2 道最小练习</td><td>能独立写出来，不是「看懂了」</td></tr>
@@ -132,14 +153,14 @@ a{color:inherit;text-decoration:none}
 <tr><td><b>第 2 周末</b></td><td>再做 1 套真题</td><td>85 分以上可以放心去考</td></tr>
 </table></div>
 <div class="note">别做的事：<b>不要一周刷五套真题。</b>一级的题型高度重复，刷到第三套以后边际收益接近零，反而会让格式错误固化成习惯——考场上照样扣分。</div>
-<h2>四、家长能帮上的三件事</h2>
+<h2 id="ps4">四、家长能帮上的三件事</h2>
 <ul>
 <li><b>帮孩子读一遍题干，重点是「输入」「输出」两段。</b><span>很多孩子不是不会写，是漏读了条件。家长念一遍，比讲十遍语法有用。</span></li>
 <li><b>考前一周确认设备和考试环境。</b><span>一级是上机考，提前熟悉考试系统的登录和提交方式，别在考场门口才第一次见。</span></li>
 <li><b>别问「能不能过」，问「今天这道题你卡在哪一步」。</b><span>前者制造压力，后者制造方法。这句话我们建议家长在考前一周每天说一次。</span></li>
 </ul>
 <div class="quote">一个真实案例：有个孩子两次模拟考都是 62 分，我们一看，两道编程题代码全对，只是输出多了一个空格。改掉空格，正式考试 96 分，直接跨级。</div>
-<h2>五、过了 90 分之后怎么走</h2>
+<h2 id="ps5">五、过了 90 分之后怎么走</h2>
 <p>90 分以上可以跨一级，通常建议直接跳到三级。但跨级有个前提：<b>二级的核心是嵌套循环和数组的初步使用</b>，如果这两块没接触过，跨到三级后会在前两周明显吃力。</p>
 <p>我们的做法是先补 8 课时的衔接内容再进三级，比硬跳更稳。跨级省下的是一期课的钱，不该省掉的是这两周的地基。</p>
 <div class="note">一句话总结：<b>一级考的不是会不会，是规范不规范。</b>把输入输出格式练成条件反射，比多刷十套题有效。</div>
@@ -190,6 +211,54 @@ a{color:inherit;text-decoration:none}
   });
 })();
 </script>
+
+
+<!-- cl-ss:tail -->
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="sInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="sRes"></div>
+  </div>
+</div>
+<script src="search-index.js"></script>
+<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('sbox');
+  var sInput = document.getElementById('sInput');
+  var sRes = document.getElementById('sRes');
+  var sBtn = document.getElementById('searchBtn');
+  var lastFocus = null;
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function openSearch() { lastFocus = document.activeElement; sbox.classList.add('on'); setTimeout(function () { sInput.focus(); if (sInput.value) sInput.select(); }, 30); }
+  function closeSearch() { sbox.classList.remove('on'); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p + ' ' + (it.x || '')).toLowerCase().indexOf(q) > -1; }) : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) { sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试</div>'; return; }
+    sRes.innerHTML = list.map(function (it, i) {
+      var h = it.u + (it.id ? '#' + it.id : '');
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + h + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) { a.addEventListener('click', function () { sbox.classList.remove('on'); }); });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+})();
+</script>
+<!-- /cl-ss:tail -->
 </body>
 </html>
 

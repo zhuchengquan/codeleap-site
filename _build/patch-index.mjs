@@ -1,39 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { ROOT } from './site-index.mjs';
 
-const ROOT = 'C:/Users/24693/Doubao/chats/2026-11-26/new-chat-1/codeleap-site';
-const PAGES = [
-  ['platform.html', '平台与课堂'],
-  ['curriculum-map.html', '课程 × 考级'],
-  ['assessment.html', '测评体系'],
-  ['studio.html', '作品与创作'],
-  ['hardware.html', '教具与硬件'],
-  ['operations.html', '校区运营'],
-  ['teaching.html', '备课与授课'],
-  ['admissions.html', '招生与学员'],
-  ['family.html', '家校沟通'],
-];
-
-const strip = (s) => s
-  .replace(/<[^>]+>/g, '')
-  .replace(/&amp;/g, '&')
-  .replace(/&lt;/g, '<')
-  .replace(/&gt;/g, '>')
-  .replace(/\s+/g, ' ')
-  .trim();
-
-const index = [];
-for (const [file, name] of PAGES) {
-  const html = fs.readFileSync(path.join(ROOT, file), 'utf8');
-  const h1 = strip((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [, name])[1]);
-  index.push({ u: file, p: name, k: '总览', t: h1, id: '' });
-  const re = /<div class="sec-head"><span>([\s\S]*?)<\/span><h2>([\s\S]*?)<\/h2>/g;
-  let m, i = 0;
-  while ((m = re.exec(html))) {
-    i += 1;
-    index.push({ u: file, p: name, k: strip(m[1]), t: strip(m[2]), id: 's' + i });
-  }
-}
+const stripTags = (s) => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
 let doc = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
 
@@ -42,16 +11,16 @@ doc = doc.replace(/\/\* cl-search:css \*\/[\s\S]*?\/\* \/cl-search:css \*\//, ''
 doc = doc.replace(/<!-- cl-search:tail -->[\s\S]*?<!-- \/cl-search:tail -->/, '');
 doc = doc.replace(/\n\s*<button class="icon-btn" id="clSearchBtn"[\s\S]*?<\/button>/, '');
 
-// 首页章节：补 id 并收集索引
+// 首页章节：补 id（索引统一由 site-index 构建，顺序与这里一致）
 let hi = 0;
 doc = doc.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/g, (all, attrs, inner) => {
   hi += 1;
-  const hit = attrs.match(/id="([^"]+)"/);
-  const id = hit ? hit[1] : 'h' + hi;
-  const out = '<h2' + (hit ? attrs : attrs + ' id="' + id + '"') + '>' + inner + '</h2>';
-  index.push({ u: 'index.html', p: '首页', k: '章节', t: strip(inner), id });
-  return out;
+  if (/id="[^"]+"/.test(attrs)) return all;
+  return '<h2' + attrs + ' id="h' + hi + '">' + inner + '</h2>';
 });
+fs.writeFileSync(path.join(ROOT, 'index.html'), doc, 'utf8');
+
+doc = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
 
 const CSS = `/* cl-search:css */
 #clSearchBtn{flex:none}
@@ -92,7 +61,7 @@ const BTN = `<button class="icon-btn" id="clSearchBtn" type="button" aria-label=
       </button>
       `;
 
-const SCRIPT = `<!-- cl-search:tail -->
+const TAIL = `<!-- cl-search:tail -->
 <div class="cl-sbox" id="clSbox" role="dialog" aria-modal="true" aria-label="站内搜索">
   <div class="panel">
     <div class="inp">
@@ -103,7 +72,7 @@ const SCRIPT = `<!-- cl-search:tail -->
     <div class="res" id="clSRes"></div>
   </div>
 </div>
-<script>window.__IDX=${JSON.stringify(index)};</script>
+<script src="search-index.js"></script>
 <script>
 (function () {
   var idx = window.__IDX || [];
@@ -116,12 +85,12 @@ const SCRIPT = `<!-- cl-search:tail -->
   function openSearch() {
     lastFocus = document.activeElement;
     sbox.classList.add('on');
-    setTimeout(function () { sInput.focus(); sInput.select(); }, 30);
+    setTimeout(function () { sInput.focus(); if (sInput.value) sInput.select(); }, 30);
   }
   function closeSearch() { sbox.classList.remove('on'); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
   function render() {
     var q = sInput.value.trim().toLowerCase();
-    var list = q ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p).toLowerCase().indexOf(q) > -1; }) : idx.slice(0, 8);
+    var list = q ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p + ' ' + (it.x || '')).toLowerCase().indexOf(q) > -1; }) : idx.slice(0, 8);
     list = list.slice(0, 10);
     if (!list.length) { sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试</div>'; return; }
     sRes.innerHTML = list.map(function (it, i) {
@@ -147,7 +116,7 @@ if (!doc.includes('id="clSearchBtn"')) {
   doc = doc.replace('<div class="nav-actions">', '<div class="nav-actions">\n      ' + BTN);
 }
 doc = doc.replace('</style>', CSS + '\n</style>');
-doc = doc.replace('</body>', SCRIPT + '\n</body>');
+doc = doc.replace('</body>', TAIL + '\n</body>');
 
 fs.writeFileSync(path.join(ROOT, 'index.html'), doc, 'utf8');
-console.log('index.html patched, index entries: ' + index.length + ', size: ' + (Buffer.byteLength(doc) / 1024).toFixed(1) + ' KB');
+console.log('index.html patched, size: ' + (Buffer.byteLength(doc) / 1024).toFixed(1) + ' KB');

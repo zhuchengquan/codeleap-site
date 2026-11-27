@@ -84,6 +84,24 @@ a{color:inherit;text-decoration:none}
 .side .toc{display:grid;gap:8px;font-size:12.5px;color:var(--muted)}
 
 .art{min-width:0}
+
+
+/* cl-ss:css */
+.sbox{position:fixed;inset:0;z-index:80;display:none;align-items:flex-start;justify-content:center;padding:84px 18px 20px;background:rgba(9,19,38,.40);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)}
+.sbox.on{display:flex}
+.sbox .panel{width:100%;max-width:600px;border-radius:20px;background:#fff;border:1px solid var(--stroke-2,rgba(20,50,110,.12));box-shadow:0 26px 64px rgba(12,26,52,.30);overflow:hidden}
+[data-theme="dark"] .sbox .panel{background:#111c2e;border-color:rgba(255,255,255,.14)}
+.sbox .inp{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke-2,rgba(20,50,110,.12))}
+.sbox .inp svg{width:17px;height:17px;color:var(--faint,#8695ab);flex:none}
+.sbox .inp input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink,#16213a);font-family:inherit;font-size:15px}
+.sbox .inp kbd{font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:2px 6px;border-radius:6px;border:1px solid var(--stroke-2,rgba(20,50,110,.12));color:var(--faint,#8695ab);flex:none}
+.sbox .res{max-height:54vh;overflow:auto;padding:8px}
+.sbox .item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px}
+.sbox .item:hover,.sbox .item.on{background:var(--primary-soft,rgba(43,123,243,.12))}
+.sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
+.sbox .item span{font-size:11.5px;color:var(--faint,#8695ab);white-space:nowrap}
+.sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint,#8695ab);text-align:center}
+/* /cl-ss:css */
 </style>
 </head>
 <body>
@@ -91,6 +109,9 @@ a{color:inherit;text-decoration:none}
   <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
   <span class="tagline">知识库</span>
   <div class="sp"></div>
+  <button class="icon-btn" id="searchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+  </button>
   <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
   </button>
@@ -105,14 +126,14 @@ a{color:inherit;text-decoration:none}
     <p class="lead">家长问得最多的问题，我们最不想用「建议 7 岁起」这种答案打发。因为同一个班里，6 岁半能坐住的，和 9 岁坐不住的，真实存在。下面是我们给咨询家长用的判断方法，可以直接拿去用。</p>
     
 <p>先把结论说出来：编程没有统一的起始年龄，只有三条前置能力。这三条不看天赋、不测智商，家长在家观察一周就能有结论。</p>
-<h2>一、先别问年龄，问这三件事</h2>
+<h2 id="ps1">一、先别问年龄，问这三件事</h2>
 <ul>
 <li><b>能接住五步指令。</b><span>不是「去把房间收拾好」，而是「把桌上的书放进抽屉，铅笔放笔袋，本子叠在书上面，然后出来洗手」。五步以上、不带重复地做完，说明工作记忆够用——编程本质上就是一串顺序指令。</span></li>
 <li><b>失败后愿意再来一次。</b><span>第一次没做对时，是「我不玩了」还是「我再试一次」。编程的日常是把九成时间花在出错和修错上，第二反应比第一反应重要。</span></li>
 <li><b>能独立坐住 25 分钟。</b><span>不需要全程专注，但能在一件事上保持 25 分钟不换目标。低于这个时长，课堂节奏会被反复打散。</span></li>
 </ul>
 <p>三条都过，6 岁半就可以开始；三条都不过，10 岁开始也吃力。只过两条的孩子通常也能上课，但前两个月需要家长陪着稳定节奏。</p>
-<h2>二、不同年龄，起步方式其实不一样</h2>
+<h2 id="ps2">二、不同年龄，起步方式其实不一样</h2>
 <div class="tbl"><table>
 <tr><th>年龄</th><th>起步方式</th><th>这一阶段真正在练什么</th></tr>
 <tr><td><b>6–7 岁</b></td><td>图形化启蒙</td><td>顺序、循环、事件触发——不谈代码，先谈「先做什么、后做什么、重复几次」</td></tr>
@@ -122,14 +143,14 @@ a{color:inherit;text-decoration:none}
 </table></div>
 <p>一个常见误区：把图形化当成低幼玩具。8–9 岁用图形化做带变量和列表的项目，思维难度并不比背语法低，只是把语法负担换成了逻辑负担。</p>
 <p>真正的分水岭不是「有没有代码」，而是<b>能不能处理变量</b>。变量一出现，孩子要开始在大脑里同时记住「现在是什么值」，这才是吃力开始的地方。所以我们不按年龄硬切阶段，按能不能过这道坎来切。</p>
-<h2>三、这三种情况，我建议再等等</h2>
+<h2 id="ps3">三、这三种情况，我建议再等等</h2>
 <ul>
 <li><b>孩子明确说不想学，只有家长觉得该学。</b><span>编程的门槛在「愿意试错」，被推着来的孩子通常三个月内放弃，之后更难劝回来。</span></li>
 <li><b>周末已经被两个以上课外班占满。</b><span>编程需要每周稳定的动手时间，断断续续不如不开始——插花式的学习最消耗兴趣。</span></li>
 <li><b>家长的期待是「赢在起跑线」而不是「多一种思考方式」。</b><span>前一种期待在半年内无法兑现，落差最终会变成对孩子的压力。</span></li>
 </ul>
 <div class="quote">我们常说的一句话：编程不是提前学知识，是提前练一种「把复杂的事拆成小步」的习惯。这个习惯 6 岁可以练，60 岁也可以练，但越早练，试错成本越低。</div>
-<h2>四、决定开始之后，试听课该看什么</h2>
+<h2 id="ps4">四、决定开始之后，试听课该看什么</h2>
 <p>别只看孩子开不开心——开心是标配，几乎所有机构都能做到。看三件更硬的事：</p>
 <ul>
 <li><b>谁在动手。</b><span>是孩子自己在拖积木、敲键盘，还是老师在台上演示、孩子在下面鼓掌。</span></li>
@@ -184,6 +205,54 @@ a{color:inherit;text-decoration:none}
   });
 })();
 </script>
+
+
+<!-- cl-ss:tail -->
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="sInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="sRes"></div>
+  </div>
+</div>
+<script src="search-index.js"></script>
+<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('sbox');
+  var sInput = document.getElementById('sInput');
+  var sRes = document.getElementById('sRes');
+  var sBtn = document.getElementById('searchBtn');
+  var lastFocus = null;
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function openSearch() { lastFocus = document.activeElement; sbox.classList.add('on'); setTimeout(function () { sInput.focus(); if (sInput.value) sInput.select(); }, 30); }
+  function closeSearch() { sbox.classList.remove('on'); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p + ' ' + (it.x || '')).toLowerCase().indexOf(q) > -1; }) : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) { sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试</div>'; return; }
+    sRes.innerHTML = list.map(function (it, i) {
+      var h = it.u + (it.id ? '#' + it.id : '');
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + h + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) { a.addEventListener('click', function () { sbox.classList.remove('on'); }); });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+})();
+</script>
+<!-- /cl-ss:tail -->
 </body>
 </html>
 

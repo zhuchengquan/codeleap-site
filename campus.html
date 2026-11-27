@@ -108,6 +108,24 @@ input[type=tel],input[type=number]{height:44px;padding:0 16px;border-radius:999p
 .faq .fb{padding:0 18px 16px;font-size:13.5px;line-height:1.88;color:var(--muted)}
 .note{margin-top:22px;padding:16px 20px;border-radius:var(--radius-sm);background:var(--accent-soft);border-left:3px solid var(--accent);font-size:13.5px;line-height:1.9;color:var(--muted)}
 .note b{color:var(--ink)}
+
+
+/* cl-ss:css */
+.sbox{position:fixed;inset:0;z-index:80;display:none;align-items:flex-start;justify-content:center;padding:84px 18px 20px;background:rgba(9,19,38,.40);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)}
+.sbox.on{display:flex}
+.sbox .panel{width:100%;max-width:600px;border-radius:20px;background:#fff;border:1px solid var(--stroke-2,rgba(20,50,110,.12));box-shadow:0 26px 64px rgba(12,26,52,.30);overflow:hidden}
+[data-theme="dark"] .sbox .panel{background:#111c2e;border-color:rgba(255,255,255,.14)}
+.sbox .inp{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke-2,rgba(20,50,110,.12))}
+.sbox .inp svg{width:17px;height:17px;color:var(--faint,#8695ab);flex:none}
+.sbox .inp input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink,#16213a);font-family:inherit;font-size:15px}
+.sbox .inp kbd{font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:2px 6px;border-radius:6px;border:1px solid var(--stroke-2,rgba(20,50,110,.12));color:var(--faint,#8695ab);flex:none}
+.sbox .res{max-height:54vh;overflow:auto;padding:8px}
+.sbox .item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px}
+.sbox .item:hover,.sbox .item.on{background:var(--primary-soft,rgba(43,123,243,.12))}
+.sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
+.sbox .item span{font-size:11.5px;color:var(--faint,#8695ab);white-space:nowrap}
+.sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint,#8695ab);text-align:center}
+/* /cl-ss:css */
 </style>
 </head>
 <body>
@@ -116,6 +134,9 @@ input[type=tel],input[type=number]{height:44px;padding:0 16px;border-radius:999p
   <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
   <span class="tagline">校区与到店</span>
   <div class="sp"></div>
+  <button class="icon-btn" id="searchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+  </button>
   <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
   </button>
@@ -141,7 +162,7 @@ input[type=tel],input[type=number]{height:44px;padding:0 16px;border-radius:999p
   </section>
 
   <section class="sec" id="campuses">
-    <div class="sec-head"><span>三个校区</span><h2>地址、交通、停车与可约时段</h2><p>下面每一条都是你到店前真正会用到的信息。课程顾问不会用「交通便利」这类话代替具体地址。</p></div>
+    <div class="sec-head"><span>三个校区</span><h2 id="ps1">地址、交通、停车与可约时段</h2><p>下面每一条都是你到店前真正会用到的信息。课程顾问不会用「交通便利」这类话代替具体地址。</p></div>
     <div class="vgrid">
 
       <div class="vcard">
@@ -197,7 +218,7 @@ input[type=tel],input[type=number]{height:44px;padding:0 16px;border-radius:999p
         <div class="rows">
           <div class="row"><k>地铁</k><v>1 号线「云谷路」A 口，步行 <b>10 分钟</b>（约 760 米）</v></div>
           <div class="row"><k>公交</k><v>53 路 / 604 路「紫云路口」站，步行 5 分钟</v></div>
-          <div class="row"><k>停车</k><v>利港广场地面与地下车位，<b>凭上课签到免 3 小时</b></div>
+          <div class="row"><k>停车</k><v>利港广场地面与地下车位，<b>凭上课签到免 3 小时</b></v></div>
           <div class="row"><k>教室</k><v><b>4 间</b>教室，含 1 间可容纳 8 人的竞赛小班教室</v></div>
           <div class="row"><k>开放</k><v>周五 <b>15:00–20:00</b>；周六日 <b>9:00–18:00</b>；周一二三四闭馆</v></div>
         </div>
@@ -243,7 +264,7 @@ input[type=tel],input[type=number]{height:44px;padding:0 16px;border-radius:999p
   </section>
 
   <section class="sec" id="flow">
-    <div class="sec-head"><span>到店流程</span><h2>来一次，你会经历什么</h2><p>总共 75 分钟。孩子进教室测评，家长看教室和教材，最后一起听建议——不含推销环节。</p></div>
+    <div class="sec-head"><span>到店流程</span><h2 id="ps2">来一次，你会经历什么</h2><p>总共 75 分钟。孩子进教室测评，家长看教室和教材，最后一起听建议——不含推销环节。</p></div>
     <div class="steps">
       <div class="step"><i>01</i><h4>预约与确认</h4><p>线上选校区、日期与时段，提交后 2 小时内课程顾问电话确认。到店前一晚再发一次短信提醒，含导航定位。</p></div>
       <div class="step"><i>02</i><h4>到店 15 分钟</h4><p>前台登记后，孩子直接进教室做能力测评（约 20 分钟，不考试、不计分）；家长由顾问带着看教室、看教材、看往期作品。</p></div>
@@ -256,7 +277,7 @@ input[type=tel],input[type=number]{height:44px;padding:0 16px;border-radius:999p
   </section>
 
   <section class="sec" id="visit">
-    <div class="sec-head"><span>预约到店</span><h2>选一个你方便的时间</h2><p>可约未来 14 天内的周末时段。工作日下午的时段请直接电话 400-860-2026，顾问会按当天排课安排。</p></div>
+    <div class="sec-head"><span>预约到店</span><h2 id="ps3">选一个你方便的时间</h2><p>可约未来 14 天内的周末时段。工作日下午的时段请直接电话 400-860-2026，顾问会按当天排课安排。</p></div>
 
     <div class="book">
       <div>
@@ -309,7 +330,7 @@ input[type=tel],input[type=number]{height:44px;padding:0 16px;border-radius:999p
   </section>
 
   <section class="sec" id="cfaq">
-    <div class="sec-head"><span>到店前常问</span><h2>六个具体问题</h2></div>
+    <div class="sec-head"><span>到店前常问</span><h2 id="ps4">六个具体问题</h2></div>
     <div class="faq">
       <details open>
         <summary>家长能进教室陪着吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
@@ -478,6 +499,54 @@ input[type=tel],input[type=number]{height:44px;padding:0 16px;border-radius:999p
   render();
 })();
 </script>
+
+
+<!-- cl-ss:tail -->
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="sInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="sRes"></div>
+  </div>
+</div>
+<script src="search-index.js"></script>
+<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('sbox');
+  var sInput = document.getElementById('sInput');
+  var sRes = document.getElementById('sRes');
+  var sBtn = document.getElementById('searchBtn');
+  var lastFocus = null;
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function openSearch() { lastFocus = document.activeElement; sbox.classList.add('on'); setTimeout(function () { sInput.focus(); if (sInput.value) sInput.select(); }, 30); }
+  function closeSearch() { sbox.classList.remove('on'); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p + ' ' + (it.x || '')).toLowerCase().indexOf(q) > -1; }) : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) { sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试</div>'; return; }
+    sRes.innerHTML = list.map(function (it, i) {
+      var h = it.u + (it.id ? '#' + it.id : '');
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + h + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) { a.addEventListener('click', function () { sbox.classList.remove('on'); }); });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+})();
+</script>
+<!-- /cl-ss:tail -->
 </body>
 </html>
 

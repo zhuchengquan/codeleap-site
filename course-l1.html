@@ -105,6 +105,24 @@ a{color:inherit;text-decoration:none}
 .foot{max-width:940px;margin:0 auto;padding:0 20px 52px;font-size:12px;line-height:1.9;color:var(--faint)}
 .foot a{color:var(--primary)}
 .arrow{width:14px;height:14px;display:inline-block;vertical-align:middle}
+
+
+/* cl-ss:css */
+.sbox{position:fixed;inset:0;z-index:80;display:none;align-items:flex-start;justify-content:center;padding:84px 18px 20px;background:rgba(9,19,38,.40);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)}
+.sbox.on{display:flex}
+.sbox .panel{width:100%;max-width:600px;border-radius:20px;background:#fff;border:1px solid var(--stroke-2,rgba(20,50,110,.12));box-shadow:0 26px 64px rgba(12,26,52,.30);overflow:hidden}
+[data-theme="dark"] .sbox .panel{background:#111c2e;border-color:rgba(255,255,255,.14)}
+.sbox .inp{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke-2,rgba(20,50,110,.12))}
+.sbox .inp svg{width:17px;height:17px;color:var(--faint,#8695ab);flex:none}
+.sbox .inp input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink,#16213a);font-family:inherit;font-size:15px}
+.sbox .inp kbd{font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:2px 6px;border-radius:6px;border:1px solid var(--stroke-2,rgba(20,50,110,.12));color:var(--faint,#8695ab);flex:none}
+.sbox .res{max-height:54vh;overflow:auto;padding:8px}
+.sbox .item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px}
+.sbox .item:hover,.sbox .item.on{background:var(--primary-soft,rgba(43,123,243,.12))}
+.sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
+.sbox .item span{font-size:11.5px;color:var(--faint,#8695ab);white-space:nowrap}
+.sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint,#8695ab);text-align:center}
+/* /cl-ss:css */
 </style>
 </head>
 <body>
@@ -113,6 +131,9 @@ a{color:inherit;text-decoration:none}
   <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
   <div class="lvtab"><a href="course-l1.html" class="on">L1</a><a href="course-l2.html">L2</a><a href="course-l3.html">L3</a><a href="course-l4.html">L4</a></div>
   <div class="sp"></div>
+  <button class="icon-btn" id="searchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+  </button>
   <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
   </button>
@@ -140,7 +161,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>学完这 48 课时</span>
-      <h2>孩子真正带走的三个能力</h2>
+      <h2 id="ps1">孩子真正带走的三个能力</h2>
       <p>不是「会几个工具」，而是三件能带着走的事。</p>
     </div>
     <div class="skills"><div class="skill"><i>01</i><h3>把想法拆成步骤</h3><p>先想清楚「先做什么、再做什么」，这是所有编程的起点，也是很多孩子缺的第一块。</p></div><div class="skill"><i>02</i><h3>用循环代替重复</h3><p>发现哪些动作在重复，然后用一块「重复执行」替掉十块积木。</p></div><div class="skill"><i>03</i><h3>讲清楚自己的作品</h3><p>每学期至少上台讲一次：做了什么、哪里最难、怎么解决的。</p></div></div>
@@ -149,7 +170,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>课时怎么排</span>
-      <h2>48 课时，五个模块</h2>
+      <h2 id="ps2">48 课时，五个模块</h2>
       <p>五个模块加总正好 48 课时，没有「赠送课时」的模糊空间。</p>
     </div>
     <div class="card">
@@ -162,7 +183,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>会做出什么</span>
-      <h2>三个能拿出手的作品</h2>
+      <h2 id="ps3">三个能拿出手的作品</h2>
       <p>每学期至少完成三个完整作品，都要能跑、能演示、能讲清楚。</p>
     </div>
     <div class="works"><div class="work"><b>会讲故事的动画短片</b><span>三个角色、四幕剧情，用广播控制出场顺序</span></div><div class="work"><b>迷宫探险小游戏</b><span>方向键控制角色，碰到墙就退回起点</span></div><div class="work"><b>像素画板与电子贺卡</b><span>自己画的点阵图，配上录音和音乐</span></div></div>
@@ -171,7 +192,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>这个阶段的三道坎</span>
-      <h2>孩子一定会卡住的地方</h2>
+      <h2 id="ps4">孩子一定会卡住的地方</h2>
       <p>提前知道卡在哪，比事后抱怨「学不会」有用。</p>
     </div>
     <div class="blocks"><div class="blk"><h3><span class="n">01</span>点了绿旗，角色一动不动</h3><p>不是不会做，是积木没接在「当绿旗被点击」下面，或者坐标没设。我们不让老师直接说答案，而是让孩子把积木按顺序念一遍——念到卡住的地方，问题就出来了。</p></div><div class="blk"><h3><span class="n">02</span>循环靠复制粘贴</h3><p>同一组积木复制十遍，改一个要改十处。这时才教「重复执行」，孩子立刻明白它省的是什么。</p></div><div class="blk"><h3><span class="n">03</span>一报错就把鼠标一推</h3><p>第一节课就立一条规则：先看角色还在不在、变量有没有值，再问老师。这条规则能救后面三年。</p></div></div>
@@ -180,7 +201,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>可以考什么</span>
-      <h2>这一阶段的认证目标</h2>
+      <h2 id="ps5">这一阶段的认证目标</h2>
       <p>考级是顺带的验证，不是教学目的。我们不额外刷题、不承诺过级。</p>
     </div>
     <div class="chips"><span>电子学会 图形化 一级</span><span>电子学会 图形化 二级</span><span>GESP 图形化 一级</span></div>
@@ -189,7 +210,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>学费</span>
-      <h2>一期一价，含全部材料</h2>
+      <h2 id="ps6">一期一价，含全部材料</h2>
     </div>
     <div class="price"><article class="pcard"><h3>线下小班</h3><p class="sub">高新 / 政务 / 滨湖校区</p><div class="amt"><small>¥</small><b>4980</b><span>/ 学年</span></div><ul><li>48 课时，每次 90 分钟</li><li>6 人小班，主讲 + 助教</li><li>含教材与作品素材</li><li>前两次课不满意全额退</li></ul></article><article class="pcard"><h3>线上直播</h3><p class="sub">全国开课</p><div class="amt"><small>¥</small><b>3980</b><span>/ 学年</span></div><ul><li>48 课时，同进度同课件</li><li>6 人直播小班，可看回放</li><li>需自备电脑与网络</li><li>前两次课不满意全额退</li></ul></article></div>
   </section>
@@ -197,7 +218,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>常见问题</span>
-      <h2>家长最常问的四件事</h2>
+      <h2 id="ps7">家长最常问的四件事</h2>
     </div>
     <div class="faq"><details open><summary>孩子不会打字，能学吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">能。图形化阶段全程拖拽积木，只有改名字时才需要输入几个字母，老师会代劳或让孩子自己慢慢敲。</div></details><details><summary>一节课几个孩子？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">6 人满班，配一名主讲和一名助教。助教主要负责看屏幕、帮孩子找卡点，保证没有人被落下。</div></details><details><summary>学完 L1 能做什么？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">能独立做出三个完整小作品，理解顺序、循环、条件、事件四个核心概念，可以自然进入 L2 的变量与列表。</div></details><details><summary>家长需要陪着上课吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">不需要，也不建议。家长在场孩子遇卡会先看家长脸色而不是自己想。每节课后会有课堂报告推送到家长端。</div></details></div>
   </section>
@@ -234,6 +255,54 @@ a{color:inherit;text-decoration:none}
 })();
 </script>
 
+
+
+<!-- cl-ss:tail -->
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="sInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="sRes"></div>
+  </div>
+</div>
+<script src="search-index.js"></script>
+<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('sbox');
+  var sInput = document.getElementById('sInput');
+  var sRes = document.getElementById('sRes');
+  var sBtn = document.getElementById('searchBtn');
+  var lastFocus = null;
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function openSearch() { lastFocus = document.activeElement; sbox.classList.add('on'); setTimeout(function () { sInput.focus(); if (sInput.value) sInput.select(); }, 30); }
+  function closeSearch() { sbox.classList.remove('on'); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p + ' ' + (it.x || '')).toLowerCase().indexOf(q) > -1; }) : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) { sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试</div>'; return; }
+    sRes.innerHTML = list.map(function (it, i) {
+      var h = it.u + (it.id ? '#' + it.id : '');
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + h + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) { a.addEventListener('click', function () { sbox.classList.remove('on'); }); });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+})();
+</script>
+<!-- /cl-ss:tail -->
 </body>
 </html>
 

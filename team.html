@@ -114,6 +114,24 @@ a{color:inherit;text-decoration:none}
 .cta .tt{flex:1;min-width:240px}
 .cta b{display:block;font-size:15.5px;font-weight:700}
 .cta span{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.7}
+
+
+/* cl-ss:css */
+.sbox{position:fixed;inset:0;z-index:80;display:none;align-items:flex-start;justify-content:center;padding:84px 18px 20px;background:rgba(9,19,38,.40);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)}
+.sbox.on{display:flex}
+.sbox .panel{width:100%;max-width:600px;border-radius:20px;background:#fff;border:1px solid var(--stroke-2,rgba(20,50,110,.12));box-shadow:0 26px 64px rgba(12,26,52,.30);overflow:hidden}
+[data-theme="dark"] .sbox .panel{background:#111c2e;border-color:rgba(255,255,255,.14)}
+.sbox .inp{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke-2,rgba(20,50,110,.12))}
+.sbox .inp svg{width:17px;height:17px;color:var(--faint,#8695ab);flex:none}
+.sbox .inp input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink,#16213a);font-family:inherit;font-size:15px}
+.sbox .inp kbd{font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:2px 6px;border-radius:6px;border:1px solid var(--stroke-2,rgba(20,50,110,.12));color:var(--faint,#8695ab);flex:none}
+.sbox .res{max-height:54vh;overflow:auto;padding:8px}
+.sbox .item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px}
+.sbox .item:hover,.sbox .item.on{background:var(--primary-soft,rgba(43,123,243,.12))}
+.sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
+.sbox .item span{font-size:11.5px;color:var(--faint,#8695ab);white-space:nowrap}
+.sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint,#8695ab);text-align:center}
+/* /cl-ss:css */
 </style>
 </head>
 <body>
@@ -122,6 +140,9 @@ a{color:inherit;text-decoration:none}
   <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
   <span class="tagline">师资与教研</span>
   <div class="sp"></div>
+  <button class="icon-btn" id="searchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+  </button>
   <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
   </button>
@@ -148,7 +169,7 @@ a{color:inherit;text-decoration:none}
   </section>
 
   <section class="sec" id="people">
-    <div class="sec-head"><span>四位主讲</span><h2>他们各自擅长什么，也各自不擅长什么</h2><p>下面每个人的「边界」一栏是真话：不是每个老师都能带所有阶段。把孩子放进不匹配的老师手里，双方都累。</p></div>
+    <div class="sec-head"><span>四位主讲</span><h2 id="ps1">他们各自擅长什么，也各自不擅长什么</h2><p>下面每个人的「边界」一栏是真话：不是每个老师都能带所有阶段。把孩子放进不匹配的老师手里，双方都累。</p></div>
     <div class="tgrid">
 
       <article class="tcard">
@@ -231,7 +252,7 @@ a{color:inherit;text-decoration:none}
   </section>
 
   <section class="sec" id="hire">
-    <div class="sec-head"><span>怎么选人</span><h2>三道关，淘汰率 78%</h2><p>每年收到约 240 份简历，最终入职 6 到 8 人。我们不看重学校排名，看重两件事。</p></div>
+    <div class="sec-head"><span>怎么选人</span><h2 id="ps2">三道关，淘汰率 78%</h2><p>每年收到约 240 份简历，最终入职 6 到 8 人。我们不看重学校排名，看重两件事。</p></div>
     <div class="gate">
       <div class="gt"><i>GATE 01</i><h4>笔试：拆概念</h4><p>不给题让你做，给你一个概念（比如「什么是变量」），要求在 300 字内讲给 8 岁孩子听懂。写不出来的一律淘汰——自己懂和能教会，是两件事。</p></div>
       <div class="gt"><i>GATE 02</i><h4>试讲：真孩子在场</h4><p>面对 4 个真实学员讲 20 分钟。看三件事：孩子动手时间占比、出错时第一反应（给答案还是问为什么）、有没有人走神。</p></div>
@@ -241,7 +262,7 @@ a{color:inherit;text-decoration:none}
   </section>
 
   <section class="sec" id="rnd">
-    <div class="sec-head"><span>怎么备课</span><h2>一节课在上台前，会经过四道工序</h2><p>家长看到的是一次 90 分钟的课，看不到的是它被推翻过多少次。下面是我们真实的教研循环。</p></div>
+    <div class="sec-head"><span>怎么备课</span><h2 id="ps3">一节课在上台前，会经过四道工序</h2><p>家长看到的是一次 90 分钟的课，看不到的是它被推翻过多少次。下面是我们真实的教研循环。</p></div>
     <div class="loop">
       <div class="lp"><span class="k">01</span><div><h4>周备课会 · 每周一</h4><p>下周每节课的「卡点」提前预演：这节课孩子最可能在<b>哪一步卡住</b>，卡住了怎么接。不是过课件，是过难点。</p></div></div>
       <div class="lp"><span class="k">02</span><div><h4>双周磨课 · 每两周一次</h4><p>同一节课，两位老师各讲一遍，其余人只做一件事：<b>记录孩子可能走神的时刻</b>。讲完后统一改课件，改完再讲。</p></div></div>
@@ -265,7 +286,7 @@ a{color:inherit;text-decoration:none}
   </section>
 
   <section class="sec" id="grow">
-    <div class="sec-head"><span>新师成长</span><h2>入职 90 天，只做三件事</h2><p>不安排新老师直接独立带班。90 天是硬门槛，跳不过去。</p></div>
+    <div class="sec-head"><span>新师成长</span><h2 id="ps4">入职 90 天，只做三件事</h2><p>不安排新老师直接独立带班。90 天是硬门槛，跳不过去。</p></div>
     <div class="steps">
       <div class="st"><i>0–30</i><h4>跟课与助教</h4><p>跟满 20 课时，做助教：点名、设备、个别辅导、记录。这一阶段学的是「课堂真实长什么样」，不是教学方法。</p></div>
       <div class="st"><i>31–60</i><h4>三轮试讲</h4><p>同一节课讲三遍，每遍由教研组长听并给书面意见。三遍都过不了的，延长一个月或转岗。</p></div>
@@ -292,7 +313,7 @@ a{color:inherit;text-decoration:none}
   </section>
 
   <section class="sec" id="tfaq">
-    <div class="sec-head"><span>家长常问</span><h2>关于老师，四个实际问题</h2></div>
+    <div class="sec-head"><span>家长常问</span><h2 id="ps5">关于老师，四个实际问题</h2></div>
     <div class="faq">
       <details open>
         <summary>能指定老师吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
@@ -339,5 +360,53 @@ a{color:inherit;text-decoration:none}
   });
 })();
 </script>
+
+
+<!-- cl-ss:tail -->
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="sInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="sRes"></div>
+  </div>
+</div>
+<script src="search-index.js"></script>
+<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('sbox');
+  var sInput = document.getElementById('sInput');
+  var sRes = document.getElementById('sRes');
+  var sBtn = document.getElementById('searchBtn');
+  var lastFocus = null;
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function openSearch() { lastFocus = document.activeElement; sbox.classList.add('on'); setTimeout(function () { sInput.focus(); if (sInput.value) sInput.select(); }, 30); }
+  function closeSearch() { sbox.classList.remove('on'); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p + ' ' + (it.x || '')).toLowerCase().indexOf(q) > -1; }) : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) { sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试</div>'; return; }
+    sRes.innerHTML = list.map(function (it, i) {
+      var h = it.u + (it.id ? '#' + it.id : '');
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + h + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) { a.addEventListener('click', function () { sbox.classList.remove('on'); }); });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+})();
+</script>
+<!-- /cl-ss:tail -->
 </body>
 </html>

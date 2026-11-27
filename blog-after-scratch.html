@@ -84,6 +84,24 @@ a{color:inherit;text-decoration:none}
 .side .toc{display:grid;gap:8px;font-size:12.5px;color:var(--muted)}
 
 .art{min-width:0}
+
+
+/* cl-ss:css */
+.sbox{position:fixed;inset:0;z-index:80;display:none;align-items:flex-start;justify-content:center;padding:84px 18px 20px;background:rgba(9,19,38,.40);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)}
+.sbox.on{display:flex}
+.sbox .panel{width:100%;max-width:600px;border-radius:20px;background:#fff;border:1px solid var(--stroke-2,rgba(20,50,110,.12));box-shadow:0 26px 64px rgba(12,26,52,.30);overflow:hidden}
+[data-theme="dark"] .sbox .panel{background:#111c2e;border-color:rgba(255,255,255,.14)}
+.sbox .inp{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke-2,rgba(20,50,110,.12))}
+.sbox .inp svg{width:17px;height:17px;color:var(--faint,#8695ab);flex:none}
+.sbox .inp input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink,#16213a);font-family:inherit;font-size:15px}
+.sbox .inp kbd{font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:2px 6px;border-radius:6px;border:1px solid var(--stroke-2,rgba(20,50,110,.12));color:var(--faint,#8695ab);flex:none}
+.sbox .res{max-height:54vh;overflow:auto;padding:8px}
+.sbox .item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px}
+.sbox .item:hover,.sbox .item.on{background:var(--primary-soft,rgba(43,123,243,.12))}
+.sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
+.sbox .item span{font-size:11.5px;color:var(--faint,#8695ab);white-space:nowrap}
+.sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint,#8695ab);text-align:center}
+/* /cl-ss:css */
 </style>
 </head>
 <body>
@@ -91,6 +109,9 @@ a{color:inherit;text-decoration:none}
   <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
   <span class="tagline">知识库</span>
   <div class="sp"></div>
+  <button class="icon-btn" id="searchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+  </button>
   <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
   </button>
@@ -105,13 +126,13 @@ a{color:inherit;text-decoration:none}
     <p class="lead">孩子 Scratch 学了两年，作品做得挺像样，接下来呢？这是家长最常卡住的地方。市面上有三种说法，都说自己对。这篇不劝你选哪条，只把三条路各自的代价讲清楚。</p>
     
 <p>先说一句不太讨喜的话：Scratch 学两年之后，如果还在「做一个更好看的 Scratch 作品」，边际收益已经很低了。图形化的天花板不在工具，在于它刻意隐藏了所有工程细节。所以问题不是要不要走，而是往哪走。</p>
-<h2>一、先用三个信号自查</h2>
+<h2 id="ps1">一、先用三个信号自查</h2>
 <ul>
 <li><b>孩子对「代码长什么样」的反应。</b><span>给他看一眼 Python 代码，是「这什么鬼」还是「我能试试」。前者说明还没到转真代码的时机，硬转只会消耗兴趣。</span></li>
 <li><b>数学底子。</b><span>分数、负数、取余这三个概念能不能用。Python 的列表下标从 0 开始、用取模判断周期性，都吃这个基础。</span></li>
 <li><b>目标是作品还是成绩。</b><span>想做游戏、做工具，走 Python；想拿竞赛成绩、走升学材料，走 C++。这两个目标的技术栈从第一天就分叉，走错要重来。</span></li>
 </ul>
-<h2>二、三条路的对比</h2>
+<h2 id="ps2">二、三条路的对比</h2>
 <div class="tbl"><table>
 <tr><th>路线</th><th>适龄</th><th>学什么</th><th>出口</th><th>课时 / 学费</th></tr>
 <tr><td><b>继续图形化加深</b><br>（L2）</td><td>8–10 岁</td><td>变量、列表、克隆、简单算法、硬件体感</td><td>作品更复杂，但仍不具备真代码能力</td><td>48 课时 / 4980 元</td></tr>
@@ -119,7 +140,7 @@ a{color:inherit;text-decoration:none}
 <tr><td><b>转 C++ 竞赛</b><br>（L4）</td><td>11 岁以上</td><td>算法、数据结构、复杂度、应试节奏</td><td>CSP-J/S 等级证书，部分地区的升学材料</td><td>48 课时 / 7980 元</td></tr>
 </table></div>
 <p>三个数字值得注意：课时都是 48；价格差在 L4（每次 120 分钟、8 人班、含 OJ 账号与模考讲评）；出口差别最大的是 L4——CSP-J 一等奖在部分地区是实打实的升学材料，而 Python 的出口是能力和作品，不能直接换成分数。</p>
-<h2>三、为什么我们不让 9 岁孩子直接上 C++</h2>
+<h2 id="ps3">三、为什么我们不让 9 岁孩子直接上 C++</h2>
 <p>每年都有家长问：反正最后要考 CSP，为什么不早点学 C++？原因是 C++ 的前置门槛不在语法，在<b>数学和抽象</b>：</p>
 <ul>
 <li><b>要先能「看见」内存。</b><span>数组越界、指针、浮点误差，这些概念要求孩子能在大脑里画出一块内存的样子。这个能力通常在 11 岁前后才稳定。</span></li>
@@ -127,7 +148,7 @@ a{color:inherit;text-decoration:none}
 <li><b>学习曲线太陡。</b><span>前 10 课时几乎都在处理编译错误和格式问题，对耐心的消耗极大，很容易把兴趣磨掉。</span></li>
 </ul>
 <p>我们见过最典型的失败：9 岁转 C++，前三周哭着来上课，两个月后回退到 Python，前后浪费一个学期。所以我们的分界线是两个条件同时满足：<b>11 岁以上，且能用分数和负数做运算</b>。缺一个都建议先补。</p>
-<h2>四、转 Python 的第一个月会发生什么</h2>
+<h2 id="ps4">四、转 Python 的第一个月会发生什么</h2>
 <p>说实话：会不适应。图形化里拖一个「重复 10 次」，代码里要写 <code>for i in range(10)</code>，孩子第一次要同时记语法、拼写和缩进。第一个月最常见的三个崩溃点：</p>
 <ul>
 <li><b>缩进报错。</b><span>报 <code>IndentationError</code>，孩子看不出哪里错——因为空格是看不见的。这一关通常要 3 到 5 次课才过。</span></li>
@@ -183,6 +204,54 @@ a{color:inherit;text-decoration:none}
   });
 })();
 </script>
+
+
+<!-- cl-ss:tail -->
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="sInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="sRes"></div>
+  </div>
+</div>
+<script src="search-index.js"></script>
+<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('sbox');
+  var sInput = document.getElementById('sInput');
+  var sRes = document.getElementById('sRes');
+  var sBtn = document.getElementById('searchBtn');
+  var lastFocus = null;
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function openSearch() { lastFocus = document.activeElement; sbox.classList.add('on'); setTimeout(function () { sInput.focus(); if (sInput.value) sInput.select(); }, 30); }
+  function closeSearch() { sbox.classList.remove('on'); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p + ' ' + (it.x || '')).toLowerCase().indexOf(q) > -1; }) : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) { sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试</div>'; return; }
+    sRes.innerHTML = list.map(function (it, i) {
+      var h = it.u + (it.id ? '#' + it.id : '');
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + h + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) { a.addEventListener('click', function () { sbox.classList.remove('on'); }); });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+})();
+</script>
+<!-- /cl-ss:tail -->
 </body>
 </html>
 

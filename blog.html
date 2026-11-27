@@ -79,6 +79,24 @@ a{color:inherit;text-decoration:none}
 .sub input{height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass-2);color:var(--ink);font-family:inherit;font-size:13.5px;min-width:200px}
 .sub button{height:42px;padding:0 20px;border-radius:999px;border:0;background:var(--primary);color:#fff;font-family:inherit;font-size:13.5px;cursor:pointer}
 .sub .hint{width:100%;font-size:12px;color:var(--faint);margin-top:-6px}
+
+
+/* cl-ss:css */
+.sbox{position:fixed;inset:0;z-index:80;display:none;align-items:flex-start;justify-content:center;padding:84px 18px 20px;background:rgba(9,19,38,.40);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)}
+.sbox.on{display:flex}
+.sbox .panel{width:100%;max-width:600px;border-radius:20px;background:#fff;border:1px solid var(--stroke-2,rgba(20,50,110,.12));box-shadow:0 26px 64px rgba(12,26,52,.30);overflow:hidden}
+[data-theme="dark"] .sbox .panel{background:#111c2e;border-color:rgba(255,255,255,.14)}
+.sbox .inp{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke-2,rgba(20,50,110,.12))}
+.sbox .inp svg{width:17px;height:17px;color:var(--faint,#8695ab);flex:none}
+.sbox .inp input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink,#16213a);font-family:inherit;font-size:15px}
+.sbox .inp kbd{font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:2px 6px;border-radius:6px;border:1px solid var(--stroke-2,rgba(20,50,110,.12));color:var(--faint,#8695ab);flex:none}
+.sbox .res{max-height:54vh;overflow:auto;padding:8px}
+.sbox .item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px}
+.sbox .item:hover,.sbox .item.on{background:var(--primary-soft,rgba(43,123,243,.12))}
+.sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
+.sbox .item span{font-size:11.5px;color:var(--faint,#8695ab);white-space:nowrap}
+.sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint,#8695ab);text-align:center}
+/* /cl-ss:css */
 </style>
 </head>
 <body>
@@ -86,6 +104,9 @@ a{color:inherit;text-decoration:none}
   <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
   <span class="tagline">知识库</span>
   <div class="sp"></div>
+  <button class="icon-btn" id="searchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+  </button>
   <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
   </button>
@@ -110,7 +131,7 @@ a{color:inherit;text-decoration:none}
   </section>
 
   <section class="sec" id="posts" style="margin-top:20px">
-    <div class="sec-head"><span>长文</span><h2>三个最常卡住家长的决策点</h2><p>要不要开始、考级怎么搞、学完去哪——按孩子真实情况判断，而不是按年龄表。</p></div>
+    <div class="sec-head"><span>长文</span><h2 id="ps1">三个最常卡住家长的决策点</h2><p>要不要开始、考级怎么搞、学完去哪——按孩子真实情况判断，而不是按年龄表。</p></div>
     <div class="posts"><a class="post" href="blog-when-to-start.html">
   <span class="k">选课判断</span>
   <h3>孩子几岁开始学编程合适？先看他能不能做这三件事</h3>
@@ -135,7 +156,7 @@ a{color:inherit;text-decoration:none}
   </section>
 
   <section class="sec" id="qa">
-    <div class="sec-head"><span>速答</span><h2>报名前最常问的 8 个问题</h2><p>答案都是我们实际执行的口径，与招生简章、服务条款一致。</p></div>
+    <div class="sec-head"><span>速答</span><h2 id="ps2">报名前最常问的 8 个问题</h2><p>答案都是我们实际执行的口径，与招生简章、服务条款一致。</p></div>
     <div class="qa"><details><summary>零基础能直接学 Python 吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">10 岁以上可以。9 岁以下建议先用 8 课时图形化过渡，把顺序、循环、变量这三个概念过一遍，否则第一个月会一直卡在拼写和缩进上。</div></details>
 <details><summary>一节课多长时间、几个孩子？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">L1–L3 每次 90 分钟、6 人小班；L4 竞赛班每次 120 分钟、8 人班。全部为主讲老师 + 助教双师配置。</div></details>
 <details><summary>缺课怎么办？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">提前 4 小时请假即视为有效请假，每学年 4 次免费补课，补课不跨阶段。没请假按正常消课处理。</div></details>
@@ -147,7 +168,7 @@ a{color:inherit;text-decoration:none}
   </section>
 
   <section class="sec" id="news">
-    <div class="sec-head"><span>机构动态</span><h2>开班、考级与教研</h2><p>只记事实，不做宣传。</p></div>
+    <div class="sec-head"><span>机构动态</span><h2 id="ps3">开班、考级与教研</h2><p>只记事实，不做宣传。</p></div>
     <div class="news"><div class="row"><time>2026-11-24</time><b>2027 寒假集训营开放报名，三个营期各 12 人</b><em>招生</em></div>
 <div class="row"><time>2026-11-21</time><b>12 月 GESP 考场安排确认，考点在高新校区机房</b><em>考级</em></div>
 <div class="row"><time>2026-11-16</time><b>本月教研公开课：怎么教孩子读报错信息</b><em>教研</em></div>
@@ -202,6 +223,54 @@ a{color:inherit;text-decoration:none}
   });
 })();
 </script>
+
+
+<!-- cl-ss:tail -->
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="sInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="sRes"></div>
+  </div>
+</div>
+<script src="search-index.js"></script>
+<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('sbox');
+  var sInput = document.getElementById('sInput');
+  var sRes = document.getElementById('sRes');
+  var sBtn = document.getElementById('searchBtn');
+  var lastFocus = null;
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function openSearch() { lastFocus = document.activeElement; sbox.classList.add('on'); setTimeout(function () { sInput.focus(); if (sInput.value) sInput.select(); }, 30); }
+  function closeSearch() { sbox.classList.remove('on'); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p + ' ' + (it.x || '')).toLowerCase().indexOf(q) > -1; }) : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) { sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试</div>'; return; }
+    sRes.innerHTML = list.map(function (it, i) {
+      var h = it.u + (it.id ? '#' + it.id : '');
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + h + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) { a.addEventListener('click', function () { sbox.classList.remove('on'); }); });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+})();
+</script>
+<!-- /cl-ss:tail -->
 </body>
 </html>
 
