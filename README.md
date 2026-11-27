@@ -78,7 +78,8 @@ python -m http.server 8000
 ├── parent.html           家长中心
 ├── campus.html           校区与到店
 ├── blog.html             知识库
-├── blog-*.html           九篇长文
+├── blog-*.html           九篇长文（含 BlogPosting 结构化数据）
+├── feed.xml              RSS 订阅（九篇长文）
 ├── results.html          荣誉与成果
 ├── camp.html             寒假营
 ├── brochure.html         招生简章（可打印）
