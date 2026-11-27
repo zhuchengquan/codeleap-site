@@ -11,6 +11,7 @@ import * as p8 from './p8-admissions.mjs';
 import * as p9 from './p9-family.mjs';
 import * as p10 from './p10-stage-finder.mjs';
 import * as p11 from './p11-plan.mjs';
+import * as p12 from './p12-level-test.mjs';
 import { buildIndex } from './site-index.mjs';
 
 const OUT = 'C:/Users/24693/Doubao/chats/2026-11-26/new-chat-1/codeleap-site';
@@ -27,6 +28,7 @@ const pages = [
   ['family.html', p9.html],
   ['stage-finder.html', p10.html],
   ['plan-calculator.html', p11.html],
+  ['level-test.html', p12.html],
 ];
 
 const index = buildIndex({ specialHtml: Object.fromEntries(pages) });

@@ -1007,6 +1007,11 @@ section[id] { scroll-margin-top: 80px; }
 
 
 
+
+
+@media (max-width: 760px) {
+  .tools { grid-template-columns: 1fr; }
+}
 /* cl-search:css */
 #clSearchBtn{flex:none}
 .brand{flex:none;white-space:nowrap}
@@ -1040,10 +1045,6 @@ section[id] { scroll-margin-top: 80px; }
 .cl-sbox .item span{font-size:11.5px;color:var(--faint);white-space:nowrap}
 .cl-sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint);text-align:center}
 /* /cl-search:css */
-
-@media (max-width: 760px) {
-  .tools { grid-template-columns: 1fr; }
-}
 </style>
 <link rel="preload" as="image" href="assets/hero.webp" imagesrcset="assets/hero-640.webp 640w, assets/hero.webp 1000w" imagesizes="(max-width: 880px) 92vw, 540px" fetchpriority="high">
 </head>
@@ -1101,6 +1102,7 @@ section[id] { scroll-margin-top: 80px; }
       <button class="icon-btn" id="clSearchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
       </button>
+      
       
       
       
@@ -1510,6 +1512,7 @@ section[id] { scroll-margin-top: 80px; }
           <span class="tg">去估算 →</span>
         </a>
       </div>
+      <p class="price-note" style="margin-top:14px">还拿不准孩子的底子？<a href="level-test.html" style="color:var(--primary);font-weight:500">做 8 道选择题</a>，看建议起点和错题清单，不用键盘。</p>
 
       <div class="referral reveal">
         <div>
@@ -2884,6 +2887,7 @@ section[id] { scroll-margin-top: 80px; }
   }
 })();
 </script>
+
 
 
 
