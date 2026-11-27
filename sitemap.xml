@@ -133,6 +133,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://codeleap.example/teaching.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codeleap.example/admissions.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://codeleap.example/family.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://codeleap.example/operations.html</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>

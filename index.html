@@ -360,6 +360,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .method-quote b { display: block; margin-top: 8px; font-size: 13px; color: var(--muted); font-weight: 500; }
 .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.sys-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 980px) { .sys-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .sys-grid { grid-template-columns: 1fr; } }
 .feature { padding: 22px; border-radius: var(--radius-sm); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); transition: transform .2s ease, background .2s ease; }
 .feature:hover { transform: translateY(-3px); background: var(--glass-strong); }
 .feature .ico { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); margin-bottom: 14px; }
@@ -1643,10 +1646,10 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow"><i></i>体系与平台</span>
-        <h2>课程表之外，还有六件事</h2>
-        <p>课程回答「学什么」。孩子在哪上课、怎么被评估、作品归谁、器材怎么管、校区怎么运转——这六页逐条写清楚，家长可以先看再决定。</p>
+        <h2>课程表之外，还有九件事</h2>
+        <p>课程回答「学什么」。孩子在哪上课、怎么被评估、作品归谁、器材怎么管、老师怎么备课、校区怎么运转——这九页逐条写清楚，家长可以先看再决定。</p>
       </div>
-      <div class="features reveal">
+      <div class="sys-grid reveal">
         <a class="feature" href="curriculum-map.html" style="display:block">
           <span class="ico"><svg><use href="#i-layers"></use></svg></span>
           <h3>课程 × 考级</h3>
@@ -1676,6 +1679,21 @@ section[id] { scroll-margin-top: 80px; }
           <span class="ico"><svg><use href="#i-users"></use></svg></span>
           <h3>校区运营</h3>
           <p>从签约到开课的 30 天四阶段、六类角色的权限边界、课时与退课规则，给校长和合作机构看。</p>
+        </a>
+        <a class="feature" href="teaching.html" style="display:block">
+          <span class="ico"><svg><use href="#i-clock"></use></svg></span>
+          <h3>备课与授课</h3>
+          <p>90 分钟怎么切成六段、备课七步各有什么产出、教案八个字段、四种课型与六种现场状况的处置。</p>
+        </a>
+        <a class="feature" href="admissions.html" style="display:block">
+          <span class="ico"><svg><use href="#i-file"></use></svg></span>
+          <h3>招生与学员</h3>
+          <p>从线索、试听、测评、建档、分班到续费与流失预警的完整链路，含四条分班原则与积分边界。</p>
+        </a>
+        <a class="feature" href="family.html" style="display:block">
+          <span class="ico"><svg><use href="#i-chat"></use></svg></span>
+          <h3>家校沟通</h3>
+          <p>六个固定沟通节点、三种家长会、微信五条规范与五条禁止、投诉处理四步时限。</p>
         </a>
       </div>
     </div>
@@ -1898,6 +1916,9 @@ section[id] { scroll-margin-top: 80px; }
           <li><a href="studio.html">作品与创作</a></li>
           <li><a href="hardware.html">教具与硬件</a></li>
           <li><a href="operations.html">校区运营</a></li>
+          <li><a href="teaching.html">备课与授课</a></li>
+          <li><a href="admissions.html">招生与学员</a></li>
+          <li><a href="family.html">家校沟通</a></li>
           <li><a href="camp.html">2027 寒假集训营</a></li>
           <li><a href="results.html">荣誉与成果</a></li>
           <li><a href="course-l1.html">L1 课程页</a></li>

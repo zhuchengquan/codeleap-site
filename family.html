@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>家校沟通 · 码跃少儿编程</title>
+<meta name="description" content="六个固定沟通节点、三种家长会的分工、微信沟通五条规范与五条禁止、投诉处理四步时限、家庭配合建议，以及家长最常问的八个问题的真实回答。">
+<link rel="canonical" href="https://codeleap.example/family.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="家校沟通 · 码跃少儿编程">
+<meta property="og:description" content="六个固定沟通节点、三种家长会的分工、微信沟通五条规范与五条禁止、投诉处理四步时限、家庭配合建议，以及家长最常问的八个问题的真实回答。">
+<meta property="og:url" content="https://codeleap.example/family.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b7bf3'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' fill='%23fff' text-anchor='middle'%3E%E7%A0%81%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f9fe;--bg-2:#eef4fd;--ink:#16213a;--muted:#56657e;--faint:#8695ab;--primary:#2b7bf3;--primary-soft:rgba(43,123,243,.10);--accent:#f0663a;--accent-soft:rgba(240,102,58,.10);--ok:#12a06a;--ok-soft:rgba(18,160,106,.12);--glass:rgba(255,255,255,.72);--glass-2:rgba(255,255,255,.94);--glass-head:rgba(255,255,255,.88);--stroke:rgba(27,52,92,.10);--stroke-2:rgba(27,52,92,.16);--shadow:0 12px 32px rgba(26,48,84,.07);--radius:18px;--radius-sm:13px;--font-display:"Nunito","Noto Sans SC",sans-serif;--font-body:"Nunito","Noto Sans SC",sans-serif;--font-mono:"JetBrains Mono","Noto Sans SC",monospace}
+[data-theme="dark"]{--bg:#0d1524;--bg-2:#101a2c;--ink:#eef3fb;--muted:#a7b6cc;--faint:#7d8ea8;--primary:#5a9dff;--primary-soft:rgba(90,157,255,.14);--accent:#ff8660;--accent-soft:rgba(255,134,96,.12);--ok:#4dd49b;--ok-soft:rgba(77,212,155,.15);--glass:rgba(255,255,255,.06);--glass-2:rgba(255,255,255,.10);--glass-head:rgba(18,28,46,.88);--stroke:rgba(255,255,255,.10);--stroke-2:rgba(255,255,255,.18);--shadow:0 16px 40px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.78;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:11px 18px;background:var(--glass-head);border-bottom:1px solid var(--stroke);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);flex-wrap:wrap}
+.nav{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.nav::-webkit-scrollbar{display:none}
+@media(max-width:820px){.nav{order:9;flex:1 1 100%;padding:2px 0 0}}
+.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:15.5px}
+.brand .m{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:var(--primary);color:#fff;font-size:14px;font-weight:700}
+.tagline{font-size:12.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted)}
+.sp{flex:1}
+.icon-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 16px;border:1px solid var(--stroke-2);border-radius:999px;background:var(--glass);color:var(--ink);font-family:inherit;font-size:13.5px;white-space:nowrap}
+.btn.active{border-color:var(--primary);color:var(--primary);background:var(--primary-soft);font-weight:600}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 22px;border-radius:999px;background:var(--accent);color:#fff;font-size:14.5px;box-shadow:0 10px 24px rgba(240,102,58,.26);border:0;cursor:pointer;font-family:inherit}
+.wrap{max-width:1020px;margin:0 auto;padding:32px 20px 60px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.05em;color:var(--primary)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--primary);font-style:normal}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+@media(max-width:880px){.hero{grid-template-columns:1fr;gap:24px}}
+.hero.solo{grid-template-columns:1fr}
+.hero.solo .lead{max-width:760px}
+.hero h1{margin:11px 0 13px;font-size:clamp(26px,3.8vw,37px);font-weight:800;line-height:1.3}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{margin:0;font-size:14.5px;line-height:1.9;color:var(--muted);max-width:520px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:22px}
+@media(max-width:640px){.nums{grid-template-columns:repeat(2,1fr)}}
+.n{padding:13px 15px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.n b{display:block;font-family:var(--font-display);font-size:21px;font-weight:800;color:var(--accent);line-height:1.15;font-variant-numeric:tabular-nums}
+.n span{display:block;font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.6}
+.shot{border-radius:var(--radius);overflow:hidden;border:1px solid var(--stroke);box-shadow:var(--shadow);margin:0}
+.shot img{display:block;width:100%;height:auto}
+.sec{margin-top:44px}
+.sec-head span{display:block;font-size:12px;letter-spacing:.06em;color:var(--faint);margin-bottom:6px}
+.sec-head h2{margin:0;font-size:clamp(20px,2.6vw,26px);font-weight:700;line-height:1.35}
+.sec-head p{margin:8px 0 0;font-size:13.5px;line-height:1.8;color:var(--muted);max-width:660px}
+.box{padding:22px 24px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);box-shadow:var(--shadow)}
+.box h4{margin:0 0 10px;font-size:14.5px;font-weight:700}
+.box ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.box li{font-size:13px;line-height:1.85;color:var(--muted)}
+.box li b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+@media(max-width:860px){.three{grid-template-columns:1fr}}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.tiles.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.tiles{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.tiles.g2{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tiles{grid-template-columns:1fr}}
+@media(max-width:600px){.tiles.g2{grid-template-columns:1fr}}
+.tile{padding:19px 21px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.tile i{font-family:var(--font-mono);font-size:11.5px;font-style:normal;color:var(--accent);letter-spacing:.02em}
+.tile h4{margin:8px 0 6px;font-size:15px;font-weight:700;line-height:1.4}
+.tile p{margin:0;font-size:13px;line-height:1.82;color:var(--muted)}
+.matrix{width:100%;border-collapse:collapse;margin-top:20px;font-size:13px;background:var(--glass-2);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.matrix th,.matrix td{border-bottom:1px solid var(--stroke);padding:11px 13px;text-align:left;vertical-align:top;line-height:1.7}
+.matrix thead th{background:var(--primary-soft);color:var(--ink);font-weight:600;font-size:12.5px;white-space:nowrap}
+.matrix tbody th{background:var(--bg-2);font-weight:600;white-space:nowrap;color:var(--ink)}
+.matrix td{color:var(--muted)}
+.matrix td b{color:var(--ink);font-weight:600}
+.matrix tr:last-child td,.matrix tr:last-child th{border-bottom:0}
+.table-wrap{overflow-x:auto;margin-top:20px;-webkit-overflow-scrolling:touch;border-radius:var(--radius);border:1px solid var(--stroke)}
+.table-wrap .matrix{margin-top:0;box-shadow:none;border-radius:0;min-width:720px}
+.timeline{margin-top:22px;display:grid;gap:0}
+.tl{display:grid;grid-template-columns:92px 26px 1fr;gap:0;align-items:start}
+.tl .when{padding:14px 0 0;font-family:var(--font-mono);font-size:12px;color:var(--faint);text-align:right;padding-right:12px}
+.tl .rail{position:relative;display:flex;justify-content:center;padding-top:18px}
+.tl .rail::before{content:"";position:absolute;top:0;bottom:-6px;width:1px;background:var(--stroke-2)}
+.tl .dot{width:9px;height:9px;border-radius:50%;background:var(--primary);position:relative;z-index:1}
+.tl:last-child .rail::before{bottom:auto;height:18px}
+.tl .what{padding:10px 0 18px 14px}
+.tl .what h4{margin:0 0 4px;font-size:14.5px;font-weight:700}
+.tl .what p{margin:0;font-size:13px;line-height:1.82;color:var(--muted)}
+.steps{display:grid;gap:10px;margin-top:20px}
+.stp{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:16px 18px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.stp .k{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--primary-soft);color:var(--primary);font-family:var(--font-mono);font-size:12px}
+.stp h4{margin:0 0 5px;font-size:14.5px;font-weight:700}
+.stp p{margin:0;font-size:13px;line-height:1.85;color:var(--muted)}
+.stp p b{color:var(--ink);font-weight:600}
+.check{display:grid;gap:7px;margin-top:16px}
+.check .c{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:13px;line-height:1.8;color:var(--muted)}
+.check .c i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ok-soft);color:var(--ok);font-style:normal;font-size:12px}
+.check .c i.x{background:var(--accent-soft);color:var(--accent)}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:8px 14px;margin-top:16px;font-size:13px;line-height:1.8}
+.kv k{color:var(--faint);font-size:12.5px}
+.kv v{color:var(--muted)}
+.kv v b{color:var(--ink);font-weight:600}
+.note{margin-top:18px;padding:16px 20px;border-radius:var(--radius-sm);background:var(--accent-soft);border-left:3px solid var(--accent);font-size:13.5px;line-height:1.9;color:var(--muted)}
+.note b{color:var(--ink)}
+.faq{display:grid;gap:8px;margin-top:20px}
+.faq details{border-radius:var(--radius-sm);border:1px solid var(--stroke);background:var(--glass-2);overflow:hidden}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;cursor:pointer;list-style:none;font-size:14px;font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{width:15px;height:15px;color:var(--faint);flex:none}
+.faq .fb{padding:0 18px 16px;font-size:13.5px;line-height:1.88;color:var(--muted)}
+.cta{margin-top:34px;display:flex;align-items:center;flex-wrap:wrap;gap:16px;padding:24px 26px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid rgba(240,102,58,.22)}
+.cta .tt{flex:1;min-width:240px}
+.cta b{display:block;font-size:15.5px;font-weight:700}
+.cta span{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.7}
+.foot{max-width:1020px;margin:0 auto;padding:0 20px 52px;font-size:12px;line-height:1.9;color:var(--faint)}
+.foot a{color:var(--primary)}
+.crumbs{font-size:12px;color:var(--faint);margin-bottom:10px}
+.crumbs a{color:var(--primary)}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <span class="tagline">家校沟通</span>
+  <div class="sp"></div>
+  <nav class="nav">
+  <a class="btn" href="curriculum-map.html">课程 × 考级</a>
+  <a class="btn" href="platform.html">平台与课堂</a>
+  <a class="btn" href="assessment.html">测评体系</a>
+  <a class="btn" href="studio.html">作品</a>
+  <a class="btn" href="hardware.html">教具</a>
+  <a class="btn" href="operations.html">校区运营</a>
+  </nav>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="btn-primary" href="index.html#trial" style="height:38px;padding:0 16px;font-size:13.5px">预约试听</a>
+</div>
+
+<div class="wrap">
+  <div class="crumbs"><a href="index.html">首页</a> / 和家长一起看</div>
+  <section class="hero solo">
+    <div>
+      <span class="eyebrow"><i></i>和家长一起看</span>
+      <h1>家校不是通知群，<br>是<em>一起看孩子变化的地方</em></h1>
+      <p class="lead">这一页讲沟通机制：什么时候会收到什么、家长会怎么开、微信上什么能说什么不能说、投诉怎么处理、以及家长在家能帮上什么忙。</p>
+      <div class="nums">
+<div class="n"><b>6 个</b><span>固定沟通节点，不靠临时想起</span></div>
+<div class="n"><b>3 种</b><span>家长会：集体 / 一对一 / 线上</span></div>
+<div class="n"><b>24 小时</b><span>投诉首次回复上限</span></div>
+<div class="n"><b>5 条</b><span>微信沟通里明确不做的事</span></div></div>
+    </div>
+    
+  </section>
+
+<section class="sec"><div class="sec-head"><span>沟通节奏</span><h2>六个固定节点，不靠临时想起</h2><p>家校沟通最怕两件事：平时没声音，出事才联系。把节点固定下来，家长对「什么时候会收到什么」有预期。</p></div>
+<div class="table-wrap"><table class="matrix">
+<thead><tr><th>节点</th><th>形式</th><th>说什么</th><th>时长</th></tr></thead>
+<tbody>
+<tr><th>每节课后</th><td>家长端推送课堂报告</td><td>参与度、卡点、下节课建议，三条，不超过 150 字</td><td>阅读 1 分钟</td></tr>
+<tr><th>每周</th><td>作业批改 + 一句反馈</td><td>一处可以改的地方，不写泛泛的表扬</td><td>阅读 1 分钟</td></tr>
+<tr><th>每月</th><td>月度小结（文字）</td><td>本月完成了什么、下月重点、是否需要加练</td><td>阅读 3 分钟</td></tr>
+<tr><th>每阶段末</th><td>阶段报告 + 1 对 1 沟通</td><td>八个字段的书面报告，配 20 分钟面谈或电话</td><td>20 分钟</td></tr>
+<tr><th>每学期</th><td>家长开放日</td><td>进课堂看一节完整的课，不表演、不压缩</td><td>90 分钟</td></tr>
+<tr><th>随时</th><td>家长端留言 / 教务电话</td><td>请假、调班、费用、突发问题</td><td>按事项</td></tr>
+</tbody></table></div>
+<div class="note"><b>固定节点的意义：</b>家长最怕的不是孩子学得慢，是「不知道在发生什么」。六个节点把「不知道」压缩到最多一个月。</div></section><section class="sec"><div class="sec-head"><span>家长会</span><h2>三种形式，各管一件事</h2><p>集体会讲共性，一对一讲这个孩子，线上短会解决临时问题。混着用，哪种都做不好。</p></div>
+<div class="tiles">
+  <div class="tile"><i>形式一</i><h4>集体家长会</h4><p>每学期初一次，讲本学期的课程地图、考级与比赛节点、家庭配合事项。不超过 60 分钟，留 20 分钟提问。</p></div>
+  <div class="tile"><i>形式二</i><h4>一对一沟通</h4><p>每阶段末一次，20 分钟。只谈这一个孩子：做到了什么、卡在哪、下一步三个选项。</p></div>
+  <div class="tile"><i>形式三</i><h4>线上短会</h4><p>临时问题时用，15 分钟以内，提前发议题。不在群里用长语音讨论单个孩子。</p></div>
+</div>
+<div class="note"><b>不在群里谈单个孩子：</b>成绩、卡点、情绪问题一律私聊。群里只发班级公共信息：调课、活动、材料清单。</div></section><section class="sec"><div class="sec-head"><span>微信规范</span><h2>五条规范，五条不做</h2><p>微信是最高频的沟通渠道，也最容易出事。规则写在前面，比事后解释有用。</p></div>
+<div class="two">
+  <div class="box"><h4>五条规范</h4><ul>
+    <li><b>时段</b>：工作日 9:00–20:30 回复，节假日顺延，紧急事项走电话</li>
+    <li><b>实名</b>：老师用「姓名 + 科目 + 校区」的固定昵称，不用网名</li>
+    <li><b>留痕</b>：涉及调班、退费、投诉的沟通，事后在系统里补一条记录</li>
+    <li><b>一次说清</b>：一条消息说完一件事，不发连续 10 条短句</li>
+    <li><b>对孩子说真话</b>：进步说具体，问题也说具体，不用「挺好的」糊过去</li>
+  </ul></div>
+  <div class="box"><h4>五条不做</h4><ul>
+    <li>不私收转账、不代收现金，所有费用走对公或系统</li>
+    <li>不承诺「包过级」「包升学」「保送」，这类话一次都不说</li>
+    <li>不评价其他机构、其他老师、其他孩子</li>
+    <li>不在群里发孩子的分数排名与错误截图</li>
+    <li>不在晚上 10 点后发非紧急消息，不用语音轰炸</li>
+  </ul></div>
+</div></section><section class="sec"><div class="sec-head"><span>投诉</span><h2>四步处理，每步有时限</h2><p>投诉处理的关键不是「让家长满意」，是「让家长知道进展」。拖着不回，比结论不利更伤信任。</p></div>
+<div class="steps">
+  <div class="stp"><span class="k">01</span><div><h4>24 小时内首次回复</h4><p>先确认收到，说明谁在处理、什么时候给结论。不辩解、不先问「是不是有什么误会」。</p></div></div>
+  <div class="stp"><span class="k">02</span><div><h4>48 小时内查清事实</h4><p>调课堂记录、作业记录、沟通记录，必要时找同班其他家长了解。只记录事实，不带判断。</p></div></div>
+  <div class="stp"><span class="k">03</span><div><h4>5 个工作日内给方案</h4><p>三种可能：道歉并纠正、换老师或换班、按合同退费。方案要具体到动作与时间，不写「我们会加强管理」。</p></div></div>
+  <div class="stp"><span class="k">04</span><div><h4>7 个工作日内闭环</h4><p>涉及退费的按未消耗课时核算，7 个工作日内办结。办结后一周回访一次，确认问题没有再出现。</p></div></div>
+</div>
+<div class="note"><b>投诉不进入老师个人考核的「扣分项」：</b>否则老师会倾向于压下投诉。我们只看「是否按流程处理」，不看「有没有被投诉」。</div></section><section class="sec"><div class="sec-head"><span>家庭配合</span><h2>希望家长做的，和不建议做的</h2></div>
+<div class="two">
+  <div class="box"><h4>希望家长做的三件事</h4><ul>
+    <li><b>看报告，但不逐条追问</b>：报告是结论，不是过程记录。有疑问在阶段沟通时说</li>
+    <li><b>作业只提醒，不代做</b>：孩子卡住时让他先讲思路，讲不清再联系老师</li>
+    <li><b>允许孩子做得难看</b>：第一版作品粗糙是正常的，改到第三版才有进步</li>
+  </ul></div>
+  <div class="box"><h4>不建议家长做的三件事</h4><ul>
+    <li><b>不比进度</b>：同班孩子的起点不同，比进度会让孩子隐藏困难</li>
+    <li><b>不把编程当加分工具</b>：只盯着证书，孩子很快会只做「能拿分」的题</li>
+    <li><b>不在课上递答案</b>：旁听时插手，孩子会学会「等大人来救」</li>
+  </ul></div>
+</div></section><section class="sec"><div class="sec-head"><span>高频问题</span><h2>八个家长真会问的问题</h2><p>这些不是客服话术，是教研组按真实提问整理的回答。</p></div>
+<div class="check">
+  <div class="c"><i>Q1</i><span><b>孩子回家不说课上做了什么，正常吗？</b> 正常。7–10 岁孩子往往记不住「过程」，但能记住「我做出了什么」。让他打开作品给你看，比问「今天学了什么」有效</span></div>
+  <div class="c"><i>Q2</i><span><b>作业要在家里做多久？</b> L1 约 15 分钟，L3 约 30 分钟，L4 约 45 分钟。超过这个时长说明卡住了，可以停手，第二天问老师</span></div>
+  <div class="c"><i>Q3</i><span><b>家长不会编程，怎么辅导？</b> 不需要会。你只需要做一件事：让孩子讲给你听。讲得清楚，说明他真懂了</span></div>
+  <div class="c"><i>Q4</i><span><b>孩子说「太难了不想学」怎么办？</b> 先分清是「这一节难」还是「这个阶段难」。前者补一节课就过去了，后者需要降阶，不要硬撑</span></div>
+  <div class="c"><i>Q5</i><span><b>能不能只学不考级？</b> 可以。考级是可选出口，不是必修。不参加考级不影响正常升阶与结业</span></div>
+  <div class="c"><i>Q6</i><span><b>换老师会不会影响孩子？</b> 会有两周适应期。我们要求新老师第一节课前读完孩子的全部报告，并在课上主动提一次「你上次做的那个作品」</span></div>
+  <div class="c"><i>Q7</i><span><b>课时用不完可以退吗？</b> 可以。前两次课不满意全额退；第三次起按未消耗课时退，教材与已发生的器材损耗据实扣除，7 个工作日办结</span></div>
+  <div class="c"><i>Q8</i><span><b>孩子的作品版权归谁？</b> 归孩子。机构要用作品做展示或招生物料，必须单独取得家长书面授权，且可以不授权</span></div>
+</div></section>
+
+<section class="sec"><div class="sec-head"><span>FAQ</span><h2>家长最常问的四个问题</h2></div><div class="faq"><details><summary>家长可以随时给老师发消息吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">可以发，老师在工作时段（工作日 9:00–20:30）回复。涉及请假、调班、费用的事项请同时发给教务，避免老师在上课期间漏看。</div></details>
+<details><summary>课堂报告为什么这么短？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">报告是给家长的结论，不是给教研的过程记录。三条、150 字以内，家长 1 分钟能读完，才可能每节都看。详细过程留在系统里，阶段沟通时展开。</div></details>
+<details><summary>开放日一定要参加吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">不强制，但建议至少参加一次。看一节完整的课，比看十份报告更能判断孩子在这儿的真实状态。</div></details>
+<details><summary>对老师不满意，可以直接要求换吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">可以。说明具体原因即可，不要求评价前任老师。我们会在一周内安排，尽量不改变孩子的班次与时间。</div></details></div></section>
+
+  <section class="cta">
+    <div class="tt"><b>想先看看我们怎么跟家长沟通？</b><span>约一次试听，课后你会收到一份真实的课堂报告样例和一份阶段报告样例——不是宣传册，是平时发的那种。</span></div>
+    <a class="btn-primary" href="index.html#trial">预约试听</a>
+  </section>
+
+</div>
+
+<div class="foot">
+  <p><b>码跃少儿编程 CodeLeap</b> · 合肥 · 高新 / 政务 / 滨湖三校区 · 400-860-2026</p>
+  <p><a href="index.html">官网首页</a> · <a href="curriculum-map.html">课程 × 考级</a> · <a href="teaching.html">备课与授课</a> · <a href="platform.html">平台与课堂</a> · <a href="assessment.html">测评体系</a> · <a href="studio.html">作品与创作</a> · <a href="hardware.html">教具与硬件</a> · <a href="admissions.html">招生与学员</a> · <a href="family.html">家校沟通</a> · <a href="operations.html">校区运营</a> · <a href="blog.html">知识库</a> · <a href="team.html">师资与教研</a> · <a href="campus.html">校区与到店</a> · <a href="enroll.html">在线报名</a></p>
+  <p>内容示例站点：页面中的机构数据、师资、价格与流程均为演示内容，正式上线前需替换为真实信息与合同条款。</p>
+</div>
+
+<script>
+(function () {
+  var KEY = "codeleap-theme";
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem(KEY); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  var btn = document.getElementById("themeBtn");
+  if (btn) btn.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+  });
+  document.querySelectorAll(".faq summary").forEach(function (s) {
+    s.addEventListener("click", function () {
+      var d = s.parentElement;
+      if (!d.open) document.querySelectorAll(".faq details[open]").forEach(function (o) { if (o !== d) o.open = false; });
+    });
+  });
+})();
+</script>
+</body>
+</html>

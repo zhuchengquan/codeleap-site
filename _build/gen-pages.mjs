@@ -6,6 +6,9 @@ import * as p3 from './p3-assessment.mjs';
 import * as p4 from './p4-studio.mjs';
 import * as p5 from './p5-hardware.mjs';
 import * as p6 from './p6-operations.mjs';
+import * as p7 from './p7-teaching.mjs';
+import * as p8 from './p8-admissions.mjs';
+import * as p9 from './p9-family.mjs';
 
 const OUT = 'C:/Users/24693/Doubao/chats/2026-11-26/new-chat-1/codeleap-site';
 
@@ -16,6 +19,9 @@ const pages = [
   ['studio.html', p4.html],
   ['hardware.html', p5.html],
   ['operations.html', p6.html],
+  ['teaching.html', p7.html],
+  ['admissions.html', p8.html],
+  ['family.html', p9.html],
 ];
 
 for (const [file, html] of pages) {
