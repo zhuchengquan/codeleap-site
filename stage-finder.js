@@ -69,6 +69,7 @@
       '<div class="acts">' +
         '<a class="btn-primary" href="' + INFO[lv].href + '">看 ' + lv + ' 的课程页</a>' +
         '<a class="btn" href="index.html#trial">预约入学测评</a>' +
+        '<a class="btn" href="plan-calculator.html">算课时与费用</a>' +
         '<a class="btn" href="curriculum-map.html">看课程 × 考级</a>' +
       '</div>' +
       (warn ? '<div class="warn">' + warn + '</div>' : '');
