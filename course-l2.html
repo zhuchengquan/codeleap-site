@@ -189,10 +189,21 @@ a{color:inherit;text-decoration:none}
     <div class="works"><div class="work"><b>体感水果切切乐</b><span>用摄像头识别手部位置，挥手切水果并计分</span></div><div class="work"><b>打地鼠与弹球对战</b><span>克隆体控制、随机出洞、双人对战计分</span></div><div class="work"><b>智能感应小夜灯（硬件）</b><span>光敏传感器 + 灯的联动，做出实物</span></div></div>
   </section>
 
-  <section class="sec">
+    <section class="sec">
+    <div class="sec-head">
+      <span>课堂实录</span>
+      <h2 id="ps4">这一级到底练什么：三个课堂片段</h2>
+      <p>从「能做出一个东西」到「能管住一组东西」，这一级的重心在变量、克隆与硬件。</p>
+    </div>
+    <div class="blocks"><div class="blk"><h3><span class="n">01</span>变量第一次有用</h3><p>做打地鼠，分数要一直累加。孩子第一次理解变量不是「一个数字」，而是一个会变的盒子：打中一次，盒子里的数就加一。</p></div><div class="blk"><h3><span class="n">02</span>克隆十个</h3><p>想让十个水果同时下落，孩子先手动复制了十次。老师问：如果是一百个呢？引入克隆后，孩子自己说出「用一个重复执行就行」。</p></div><div class="blk"><h3><span class="n">03</span>传感器不听话</h3><p>光线传感器读数一直在跳，判断「天亮了」总是失败。老师教他先连取三次平均、再设阈值——第一次接触「数据会抖，要先处理再判断」。</p></div></div>
+    <div class="works" style="grid-template-columns:repeat(2,1fr);margin-top:14px"><div class="work"><b>变量</b><span>用变量记录分数、生命、倒计时，并显示在舞台上</span></div><div class="work"><b>列表</b><span>把一组数据存进列表，遍历处理后更新画面</span></div><div class="work"><b>克隆与广播</b><span>用克隆生成多个角色，用广播控制出场顺序</span></div><div class="work"><b>传感器</b><span>把读数变成可判断的条件：取平均、设阈值、加去抖</span></div></div>
+    <p style="margin-top:14px;font-size:13.5px;line-height:1.75;color:var(--muted)">这一级不练：不要求手写代码语法、不做算法题、硬件只做输入不做复杂电路。先把「一组数据怎么管」这件事吃透。</p>
+  </section>
+
+<section class="sec">
     <div class="sec-head">
       <span>这个阶段的三道坎</span>
-      <h2 id="ps4">孩子一定会卡住的地方</h2>
+      <h2 id="ps5">孩子一定会卡住的地方</h2>
       <p>提前知道卡在哪，比事后抱怨「学不会」有用。</p>
     </div>
     <div class="blocks"><div class="blk"><h3><span class="n">01</span>变量名乱成一团</h3><p>score1、score2、score3 摆一屏，过两周自己都不认识。我们要求从这一阶段起，变量名必须写大人的话：分数、生命值、剩余次数。</p></div><div class="blk"><h3><span class="n">02</span>克隆体越跑越卡</h3><p>克隆了不删，几千个角色堆在后台，电脑风扇开始响。规则很简单：每次做克隆，先问「它什么时候消失」。</p></div><div class="blk"><h3><span class="n">03</span>连点十下出十个效果</h3><p>缺状态判断。加一个「正在播放」的变量当门，播放中不接受新点击——这是所有游戏都要处理的事。</p></div></div>
@@ -201,7 +212,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>可以考什么</span>
-      <h2 id="ps5">这一阶段的认证目标</h2>
+      <h2 id="ps6">这一阶段的认证目标</h2>
       <p>考级是顺带的验证，不是教学目的。我们不额外刷题、不承诺过级。</p>
     </div>
     <div class="chips"><span>电子学会 图形化 三级</span><span>电子学会 图形化 四级</span><span>GESP 图形化 二至三级</span></div>
@@ -210,7 +221,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>学费</span>
-      <h2 id="ps6">一期一价，含全部材料</h2>
+      <h2 id="ps7">一期一价，含全部材料</h2>
     </div>
     <div class="price"><article class="pcard"><h3>线下小班</h3><p class="sub">高新 / 政务 / 滨湖校区</p><div class="amt"><small>¥</small><b>4980</b><span>/ 学年</span></div><ul><li>48 课时，含硬件单元</li><li>6 人小班，器材学校提供</li><li>含教材与传感器套件使用</li><li>前两次课不满意全额退</li></ul></article><article class="pcard"><h3>线上直播</h3><p class="sub">全国开课</p><div class="amt"><small>¥</small><b>3980</b><span>/ 学年</span></div><ul><li>48 课时，硬件单元改为模拟</li><li>6 人直播小班，可看回放</li><li>体感部分需自备摄像头</li><li>前两次课不满意全额退</li></ul></article></div>
   </section>
@@ -218,7 +229,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>常见问题</span>
-      <h2 id="ps7">家长最常问的四件事</h2>
+      <h2 id="ps8">家长最常问的四件事</h2>
     </div>
     <div class="faq"><details open><summary>必须自己买硬件吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">不用。线下课的光敏、超声波等器材由校区提供，课上用完回收。如果孩子想在家复现，可以按清单自购，不强制。</div></details><details><summary>L1 学完直接进 L2 可以吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">可以，但建议先做一次 40 分钟测评。如果孩子对坐标和事件还不熟，我们会先补两节衔接课。</div></details><details><summary>和电子学会考级什么关系？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">L2 的内容覆盖电子学会图形化三、四级的主要考点，但不为考级而教——考级只是顺带验证，不额外刷题。</div></details><details><summary>线上课怎么上硬件？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">线上班的硬件单元改为虚拟仿真与浏览器传感器，体感和实物部分少一些，其余进度与线下一致。</div></details></div>
   </section>
@@ -227,7 +238,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>家长视角</span>
-      <h2 id="ps8">最容易误判的三件事</h2>
+      <h2 id="ps9">最容易误判的三件事</h2>
       <p>硬件阶段最容易被「灯亮了」骗过去。三个误判，判断标准都不是作品能不能跑，而是孩子能不能改。</p>
     </div>
     <div class="blocks">

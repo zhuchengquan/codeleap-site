@@ -189,10 +189,21 @@ a{color:inherit;text-decoration:none}
     <div class="works"><div class="work"><b>海龟绘图：分形与图案</b><span>用递归画出分形树与螺旋，理解「自己调用自己」</span></div><div class="work"><b>猜数字与文字冒险游戏</b><span>输入输出、随机数、多分支剧情</span></div><div class="work"><b>班级成绩统计小工具</b><span>读文件、算平均分与排名，输出成表格</span></div></div>
   </section>
 
-  <section class="sec">
+    <section class="sec">
+    <div class="sec-head">
+      <span>课堂实录</span>
+      <h2 id="ps4">这一级到底练什么：三个课堂片段</h2>
+      <p>从图形化转到 Python，最大的变化不是语法，是「看不见的规则」变多了。</p>
+    </div>
+    <div class="blocks"><div class="blk"><h3><span class="n">01</span>缩进报错</h3><p>第一节课就撞上 IndentationError。老师只教两句：先看行号，再看上一行结尾有没有冒号。孩子第一次知道，报错是线索，不是判决。</p></div><div class="blk"><h3><span class="n">02</span>把重复收起来</h3><p>画三座一样的房子，代码写了三遍。老师让他把这段「包起来、起个名字」，函数第一次有了用处——不是为了考试，是为了少写两遍。</p></div><div class="blk"><h3><span class="n">03</span>第一次算次数</h3><p>猜数字游戏，孩子问「为什么最多七次就能猜到一百？」老师带他算 2 的七次方，第一次接触「次数是可以算出来的」。</p></div></div>
+    <div class="works" style="grid-template-columns:repeat(2,1fr);margin-top:14px"><div class="work"><b>写结构</b><span>独立写出 60–100 行、含三个以上函数的程序</span></div><div class="work"><b>管数据</b><span>用列表与字典管理一组数据，增删改查都不乱</span></div><div class="work"><b>读报错</b><span>看懂常见英文报错，定位到具体行并改对</span></div><div class="work"><b>想方法</b><span>用枚举或模拟解决一个小问题，并说清为什么能过</span></div></div>
+    <p style="margin-top:14px;font-size:13.5px;line-height:1.75;color:var(--muted)">这一级不练：不刷竞赛题、不碰动态规划、不追求写得快。语法还没稳的时候追难度，只会把错误习惯固化。</p>
+  </section>
+
+<section class="sec">
     <div class="sec-head">
       <span>这个阶段的三道坎</span>
-      <h2 id="ps4">孩子一定会卡住的地方</h2>
+      <h2 id="ps5">孩子一定会卡住的地方</h2>
       <p>提前知道卡在哪，比事后抱怨「学不会」有用。</p>
     </div>
     <div class="blocks"><div class="blk"><h3><span class="n">01</span>IndentationError：代码「坏了」</h3><p>看着像程序出错，其实只是缩进少了一格。孩子第一次知道代码对空格也较真，从此写代码会先对齐。</p></div><div class="blk"><h3><span class="n">02</span>IndexError：列表里没有这一项</h3><p>下标从 0 开始，长度是 5 的列表最大下标是 4。让他先打印 len() 再访问，这个习惯能省掉一半的调试时间。</p></div><div class="blk"><h3><span class="n">03</span>能写出来，但讲不出为什么</h3><p>问「为什么用列表不用十个变量」，答不上来就是没真懂。每次项目结束都要口头复述一遍思路。</p></div></div>
@@ -201,7 +212,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>可以考什么</span>
-      <h2 id="ps5">这一阶段的认证目标</h2>
+      <h2 id="ps6">这一阶段的认证目标</h2>
       <p>考级是顺带的验证，不是教学目的。我们不额外刷题、不承诺过级。</p>
     </div>
     <div class="chips"><span>电子学会 Python 一级</span><span>GESP Python 一至二级</span></div>
@@ -210,7 +221,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>学费</span>
-      <h2 id="ps6">一期一价，含全部材料</h2>
+      <h2 id="ps7">一期一价，含全部材料</h2>
     </div>
     <div class="price"><article class="pcard"><h3>线下小班</h3><p class="sub">高新 / 政务 / 滨湖校区</p><div class="amt"><small>¥</small><b>4980</b><span>/ 学年</span></div><ul><li>48 课时，每次 90 分钟</li><li>6 人小班，主讲 + 助教</li><li>含教材与 OJ 练习账号</li><li>前两次课不满意全额退</li></ul></article><article class="pcard"><h3>线上直播</h3><p class="sub">全国开课</p><div class="amt"><small>¥</small><b>3980</b><span>/ 学年</span></div><ul><li>48 课时，同进度同课件</li><li>6 人直播小班，可看回放</li><li>需自备可装 Python 的电脑</li><li>前两次课不满意全额退</li></ul></article></div>
   </section>
@@ -218,7 +229,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>常见问题</span>
-      <h2 id="ps7">家长最常问的四件事</h2>
+      <h2 id="ps8">家长最常问的四件事</h2>
     </div>
     <div class="faq"><details open><summary>需要先学图形化吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">不必须。9 岁以上、能独立完成 40 分钟专注任务的孩子可以直接从 Python 开始。测评会判断是否适合。</div></details><details><summary>电脑有什么要求？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">Windows 或 macOS 均可，能装 Python 3 就行，四年前的机器也够用。不需要独立显卡。</div></details><details><summary>多久能做出一个完整游戏？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">大约第 30 课时开始做 Pygame 小游戏，第 40 课时能拿出可玩版本。前面是必要的基础，跳过会卡在调试上。</div></details><details><summary>和 GESP Python 怎么对应？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">L3 的内容覆盖 GESP Python 一至二级的考点。想考三级的学员，通常需要再学一期专项，或在 L4 转 C++。</div></details></div>
   </section>
@@ -227,7 +238,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec">
     <div class="sec-head">
       <span>家长视角</span>
-      <h2 id="ps8">最容易误判的三件事</h2>
+      <h2 id="ps9">最容易误判的三件事</h2>
       <p>Python 阶段最危险的一句话是「能跑就行」。三个误判，指向同一件事：能不能改。</p>
     </div>
     <div class="blocks">
