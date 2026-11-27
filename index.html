@@ -427,6 +427,15 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .plan .btn { margin-top: auto; width: 100%; }
 .price-note { text-align: center; margin-top: 22px; font-size: 13.5px; color: var(--muted); }
 
+/* ===== 自助工具 ===== */
+.tools { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+.tool { display: block; text-decoration: none; color: var(--ink); padding: 22px 24px; border-radius: var(--radius); background: var(--glass-strong); border: 1px solid var(--stroke-2); box-shadow: var(--shadow-sm); transition: transform .22s ease, box-shadow .22s ease; }
+.tool:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.tool .tk { display: inline-block; padding: 3px 10px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); font-size: 12px; letter-spacing: .06em; margin-bottom: 12px; }
+.tool h3 { margin: 0 0 8px; font-size: 17px; line-height: 1.45; }
+.tool p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.7; }
+.tool .tg { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; color: var(--primary); font-size: 13px; font-weight: 600; transition: gap .22s ease; }
+.tool:hover .tg { gap: 10px; }
 /* ===== 评价 ===== */
 .quote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .quote { padding: 26px; border-radius: var(--radius); background: var(--glass); border: 1px solid var(--stroke); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); display: flex; flex-direction: column; }
@@ -1031,6 +1040,10 @@ section[id] { scroll-margin-top: 80px; }
 .cl-sbox .item span{font-size:11.5px;color:var(--faint);white-space:nowrap}
 .cl-sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint);text-align:center}
 /* /cl-search:css */
+
+@media (max-width: 760px) {
+  .tools { grid-template-columns: 1fr; }
+}
 </style>
 <link rel="preload" as="image" href="assets/hero.webp" imagesrcset="assets/hero-640.webp 640w, assets/hero.webp 1000w" imagesizes="(max-width: 880px) 92vw, 540px" fetchpriority="high">
 </head>
@@ -1483,7 +1496,20 @@ section[id] { scroll-margin-top: 80px; }
         </div>
       </div>
       <p class="price-note">两人同报各减 ¥300 · 老学员续费 9 折 · 兄妹同报第二人 8.5 折 · 价格含全部教材与平台使用费</p>
-      <p class="price-note" style="margin-top:10px">想按「目标」算要读几期、多少课时？<a href="plan-calculator.html" style="color:var(--primary);font-weight:500">用课时与费用粗算</a>（选年级、基础与目标，出阶段明细与线下线上两套价）；起点拿不准，先做 <a href="stage-finder.html" style="color:var(--primary);font-weight:500">四道题精测</a></p>
+      <div class="tools reveal">
+        <a class="tool" href="stage-finder.html">
+          <span class="tk">四道题 · 约一分钟</span>
+          <h3>定起点：L1 到 L4，孩子该从哪一级进</h3>
+          <p>年级、编程经验、能否独立动手、数学吃不吃力四项打分，出建议阶段、阶段说明和三条提醒。</p>
+          <span class="tg">开始自测 →</span>
+        </a>
+        <a class="tool" href="plan-calculator.html">
+          <span class="tk">两分钟 · 出明细</span>
+          <h3>算课时：到 GESP-3 / CSP-J 要读几期</h3>
+          <p>按起点与目标串出阶段链，给总课时、期数、月数，以及线下与线上两套总价与阶段单价。</p>
+          <span class="tg">去估算 →</span>
+        </a>
+      </div>
 
       <div class="referral reveal">
         <div>
