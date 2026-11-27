@@ -24,6 +24,7 @@ export const OTHER = [
   ['blog-gesp-1.html', 'GESP 一级备考'],
   ['blog-after-scratch.html', 'Scratch 之后'],
   ['blog-format-choice.html', '班型怎么选'],
+  ['blog-competition-path.html', '竞赛路径'],
   ['camp.html', '假期集训'],
   ['campus.html', '校区与到店'],
   ['course-l1.html', 'L1 启蒙'],
