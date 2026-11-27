@@ -96,6 +96,18 @@ a{color:inherit;text-decoration:none}
 .sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
 .sbox .item span{font-size:11.5px;color:var(--faint,#8695ab);white-space:nowrap}
 .sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint,#8695ab);text-align:center}
+.path{display:grid;margin-top:18px}
+.pstep{display:grid;grid-template-columns:62px minmax(0,1fr);gap:20px;position:relative;padding-bottom:26px}
+.pstep:last-child{padding-bottom:0}
+.pstep::before{content:"";position:absolute;left:30px;top:64px;bottom:2px;width:1px;background:var(--stroke-2,rgba(20,50,110,.12))}
+.pstep:last-child::before{display:none}
+.pn{width:61px;height:61px;border-radius:50%;display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:600;color:var(--primary,#2b7bf3);background:var(--primary-soft,rgba(43,123,243,.12));border:1px solid var(--stroke,rgba(20,50,110,.1))}
+.pstep .pb h3{margin:2px 0 8px;font-size:16.5px;font-weight:700;line-height:1.5}
+.pstep .pb .q{margin:0 0 10px;display:inline-block;font-size:12.5px;line-height:1.7;color:var(--primary,#2b7bf3);background:var(--primary-soft,rgba(43,123,243,.12));border-radius:8px;padding:6px 10px}
+.pstep .pb p{margin:0 0 10px;font-size:14px;line-height:1.85;color:var(--muted,#5b6b85)}
+.pstep .pb a{font-size:13px;font-weight:600;color:var(--primary,#2b7bf3);text-decoration:none;border-bottom:1px solid rgba(43,123,243,.35);padding-bottom:1px}
+.pstep .pb a:hover{opacity:.8}
+@media(max-width:620px){.pstep{grid-template-columns:48px minmax(0,1fr);gap:14px}.pn{width:47px;height:47px;font-size:12px}.pstep::before{left:23px;top:50px}}
 /* /cl-ss:css */
 </style>
 </head>
@@ -124,14 +136,65 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
     <div class="stats">
-      <div class="st"><b>5</b><span>篇长文，每篇 2000 字以上，不写水词</span></div>
+      <div class="st"><b>6</b><span>篇长文，每篇 2000 字以上，不写水词</span></div>
       <div class="st"><b>12</b><span>条家长高频问答，含我们最常劝退的情况</span></div>
       <div class="st"><b>0</b><span>承诺。没有「保证学会」「保过」这类话</span></div>
     </div>
   </section>
 
+  <section class="sec" id="path" style="margin-top:20px">
+    <div class="sec-head"><span>决策路径</span><h2 id="ps4">从零到竞赛，五步走</h2><p>每一步只问一个问题，答案不同就走不同的路。按顺序看，不必五篇一起读。</p></div>
+    <div class="path">
+      <div class="pstep">
+        <div class="pn">01</div>
+        <div class="pb">
+          <h3>要不要开始</h3>
+          <p class="q">判断问题：能接住五步指令、失败后愿意重来、能独立坐住 25 分钟吗？</p>
+          <p>三条都过就可以开始，6 岁半也行；只过两条可以入班，但前两个月需要家长陪着稳定节奏；三条都不过，先不报班，用拼图、按图纸搭积木这类活动养习惯。</p>
+          <a href="blog-when-to-start.html">读《孩子几岁开始学编程合适》→</a>
+        </div>
+      </div>
+      <div class="pstep">
+        <div class="pn">02</div>
+        <div class="pb">
+          <h3>图形化学完之后去哪</h3>
+          <p class="q">判断问题：孩子能不能在大脑里维护「现在这个值是什么」？</p>
+          <p>能处理变量，就转 Python；能处理变量、数学也不吃力、想要成绩，走 C++ 竞赛线；只是喜欢做东西，继续图形化做更复杂的项目也不算浪费。</p>
+          <a href="blog-after-scratch.html">读《Scratch 学完之后去哪》→</a>
+        </div>
+      </div>
+      <div class="pstep">
+        <div class="pn">03</div>
+        <div class="pb">
+          <h3>选什么班型</h3>
+          <p class="q">判断问题：孩子缺的是「即时纠错」，还是「同伴与表达」？</p>
+          <p>缺即时纠错、或进度偏离超过一学期，短期一对一更有效；缺同伴氛围和当众讲作品的机会，留在小班。低龄阶段一律建议线下，因为老师要看得见孩子的手。</p>
+          <a href="blog-format-choice.html">读《小班、一对一、线上课》→</a>
+        </div>
+      </div>
+      <div class="pstep">
+        <div class="pn">04</div>
+        <div class="pb">
+          <h3>要不要考级</h3>
+          <p class="q">判断问题：想要一张能力凭证，还是只想确认孩子学得怎么样？</p>
+          <p>要凭证就按级别考，GESP 每年 3、6、9、12 月各一场，90 分以上可跨级；只是想确认水平，用阶段测评更省时间，报告能看出卡在哪一类题上。</p>
+          <a href="blog-gesp-1.html">读《GESP 一级到底考什么》→</a> <a href="assessment.html">看测评体系 →</a>
+        </div>
+      </div>
+      <div class="pstep">
+        <div class="pn">05</div>
+        <div class="pb">
+          <h3>要不要打比赛</h3>
+          <p class="q">判断问题：数学不吃力、能忍「一道题改 40 分钟」、对排名有正向反应，三条同时成立吗？</p>
+          <p>三条都成立，才建议往 CSP-J/S 走，并接受「两三年拿不到一等奖是常见结果」；只成立一两条，先考一次 GESP 或打一场校内模拟赛试水。</p>
+          <a href="blog-competition-path.html">读《要不要打比赛》→</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="sec" id="posts" style="margin-top:20px">
-    <div class="sec-head"><span>长文</span><h2 id="ps1">五个最常卡住家长的决策点</h2><p>要不要开始、学完去哪、考级怎么搞、班型怎么选、要不要打比赛——按孩子真实情况判断，而不是按年龄表。</p></div>
+    <div class="sec-head"><span>长文</span><h2 id="ps1">六个最常卡住家长的问题</h2><p>要不要开始、学完去哪、班型怎么选、考级怎么搞、要不要打比赛、数学吃不吃力——按孩子真实情况判断，而不是按年龄表。</p></div>
     <div class="posts"><a class="post" href="blog-when-to-start.html">
   <span class="k">选课判断</span>
   <h3>孩子几岁开始学编程合适？先看他能不能做这三件事</h3>
@@ -166,7 +229,15 @@ a{color:inherit;text-decoration:none}
   <p>等级认证、白名单赛事、信息学奥赛是三条不同的路。附完整时间表、三种起跑线与真实成本，也写明哪类孩子我们建议别走。</p>
   <span class="f"><span>2026-11-26</span><span>约 9 分钟</span></span>
   <span class="go">读全文 →</span>
+</a>
+<a class="post" href="blog-math.html">
+  <span class="k">数学与编程</span>
+  <h3>编程和数学到底是什么关系？先分清三种「数学」</h3>
+  <p>编程吃的是「把关系写成规则」，不是计算速度。附各阶段真实数学门槛、三种落后的处理方式，以及编程能帮数学的三个具体迁移。</p>
+  <span class="f"><span>2026-11-27</span><span>约 8 分钟</span></span>
+  <span class="go">读全文 →</span>
 </a></div>
+
   </section>
 
   <section class="sec" id="qa">

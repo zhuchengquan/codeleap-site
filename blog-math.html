@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>编程和数学到底是什么关系？先分清三种「数学」 · 码跃少儿编程</title>
+<meta name="description" content="编程吃的是「把关系写成规则」，不是计算速度。附各阶段真实数学门槛表、三种落后的处理方式，以及编程能帮数学的三个具体迁移。">
+<link rel="canonical" href="https://codeleap.example/blog-math.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="编程和数学到底是什么关系？先分清三种「数学」">
+<meta property="og:description" content="编程吃的是「把关系写成规则」，不是计算速度。附各阶段真实数学门槛表、三种落后的处理方式，以及编程能帮数学的三个具体迁移。">
+<meta property="og:url" content="https://codeleap.example/blog-math.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b7bf3'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' fill='%23fff' text-anchor='middle'%3E%E7%A0%81%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f9fe;--bg-2:#eef4fd;--ink:#16213a;--muted:#56657e;--faint:#8695ab;--primary:#2b7bf3;--primary-soft:rgba(43,123,243,.10);--accent:#f0663a;--accent-soft:rgba(240,102,58,.10);--ok:#12a06a;--ok-soft:rgba(18,160,106,.12);--glass:rgba(255,255,255,.72);--glass-2:rgba(255,255,255,.94);--glass-head:rgba(255,255,255,.88);--stroke:rgba(27,52,92,.10);--stroke-2:rgba(27,52,92,.16);--shadow:0 12px 32px rgba(26,48,84,.07);--radius:18px;--radius-sm:13px;--font-display:"Nunito","Noto Sans SC",sans-serif;--font-body:"Nunito","Noto Sans SC",sans-serif;--font-mono:"JetBrains Mono","Noto Sans SC",monospace}
+[data-theme="dark"]{--bg:#0d1524;--bg-2:#101a2c;--ink:#eef3fb;--muted:#a7b6cc;--faint:#7d8ea8;--primary:#5a9dff;--primary-soft:rgba(90,157,255,.14);--accent:#ff8660;--accent-soft:rgba(255,134,96,.12);--ok:#4dd49b;--ok-soft:rgba(77,212,155,.15);--glass:rgba(255,255,255,.06);--glass-2:rgba(255,255,255,.10);--glass-head:rgba(18,28,46,.88);--stroke:rgba(255,255,255,.10);--stroke-2:rgba(255,255,255,.18);--shadow:0 16px 40px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.78;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-display);letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:11px 18px;background:var(--glass-head);border-bottom:1px solid var(--stroke);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:15.5px}
+.brand .m{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:var(--primary);color:#fff;font-size:14px;font-weight:700}
+.tagline{font-size:12.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted)}
+.sp{flex:1}
+.icon-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 16px;border:1px solid var(--stroke-2);border-radius:999px;background:var(--glass);color:var(--ink);font-family:inherit;font-size:13.5px}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 22px;border-radius:999px;background:var(--accent);color:#fff;font-size:14.5px;box-shadow:0 10px 24px rgba(240,102,58,.26)}
+.btn-line{display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--ink);font-size:14px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.05em;color:var(--primary)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--primary);font-style:normal}
+.wrap{max-width:1000px;margin:0 auto;padding:32px 20px 60px}
+.foot{max-width:1000px;margin:0 auto;padding:0 20px 52px;font-size:12px;line-height:1.9;color:var(--faint)}
+.foot a{color:var(--primary)}
+
+.art-wrap{max-width:1080px;margin:0 auto;padding:26px 20px 60px;display:grid;grid-template-columns:minmax(0,720px) 260px;gap:44px;align-items:start}
+@media(max-width:980px){.art-wrap{grid-template-columns:1fr;gap:0}.side{display:none}}
+.crumb{font-size:12px;color:var(--faint);margin-bottom:16px}
+.crumb a{color:var(--primary)}
+.art h1{margin:8px 0 14px;font-size:clamp(24px,3.3vw,33px);font-weight:800;line-height:1.36;letter-spacing:.01em}
+.art .meta-line{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--faint);margin-bottom:20px}
+.art .lead{margin:0 0 8px;font-size:15.5px;line-height:1.95;color:var(--muted);padding-bottom:22px;border-bottom:1px solid var(--stroke)}
+.art p{margin:0 0 18px;font-size:15.5px;line-height:1.96;color:var(--ink)}
+.art h2{margin:36px 0 14px;font-size:20px;font-weight:700;line-height:1.45}
+.art ul,.art ol{margin:0 0 18px;padding-left:22px;display:grid;gap:9px}
+.art li{font-size:15px;line-height:1.92;color:var(--ink)}
+.art li b{font-weight:600;color:var(--ink)}
+.art li span{color:var(--muted)}
+.art code{font-family:var(--font-mono);font-size:13px;padding:1px 5px;border-radius:5px;background:var(--primary-soft);color:var(--primary)}
+.note{margin:24px 0;padding:16px 20px;border-radius:var(--radius-sm);background:var(--primary-soft);border-left:3px solid var(--primary);font-size:14px;line-height:1.92;color:var(--muted)}
+.note b{color:var(--ink)}
+.quote{margin:26px 0;padding:2px 0 2px 18px;border-left:2px solid var(--stroke-2);font-size:15px;line-height:1.94;color:var(--muted)}
+.tbl{margin:20px 0 24px;border:1px solid var(--stroke);border-radius:var(--radius-sm);overflow:hidden}
+.tbl table{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th{text-align:left;padding:10px 14px;background:var(--primary-soft);color:var(--ink);font-weight:600;font-size:13px}
+.tbl td{padding:10px 14px;border-top:1px solid var(--stroke);color:var(--muted);line-height:1.7;vertical-align:top}
+.tbl td b{color:var(--ink)}
+.author{margin:40px 0 0;padding:18px 20px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);display:flex;gap:14px;align-items:flex-start;box-shadow:var(--shadow)}
+.author img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none}
+.author b{display:block;font-size:14px}
+.author span{display:block;font-size:12.5px;line-height:1.75;color:var(--muted);margin-top:3px}
+.related{margin-top:38px}
+.related h3{font-size:12px;margin:0 0 12px;color:var(--faint);font-weight:500;letter-spacing:.06em}
+.rel{display:grid;gap:10px}
+.rel a{display:block;padding:15px 18px;border-radius:var(--radius-sm);border:1px solid var(--stroke);background:var(--glass-2)}
+.rel a:hover{border-color:var(--stroke-2)}
+.rel b{font-size:14px;font-weight:600}
+.rel span{display:block;font-size:12px;color:var(--faint);margin-top:4px}
+.cta{margin-top:34px;display:flex;align-items:center;flex-wrap:wrap;gap:16px;padding:24px 26px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid rgba(240,102,58,.22)}
+.cta .tt{flex:1;min-width:230px}
+.cta b{display:block;font-size:15.5px;font-weight:700}
+.cta span{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.7}
+.side{position:sticky;top:26px}
+.side .box{padding:18px 20px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);box-shadow:var(--shadow)}
+.side h4{margin:0 0 10px;font-size:12px;letter-spacing:.06em;color:var(--faint);font-weight:500}
+.side ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.side li{font-size:13px;line-height:1.6}
+.side li a{color:var(--primary)}
+.side .k{display:block;font-size:12px;color:var(--faint);margin-top:2px}
+.side .toc{display:grid;gap:8px;font-size:12.5px;color:var(--muted)}
+
+.art{min-width:0}
+
+
+/* cl-ss:css */
+.sbox{position:fixed;inset:0;z-index:80;display:none;align-items:flex-start;justify-content:center;padding:84px 18px 20px;background:rgba(9,19,38,.40);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)}
+.sbox.on{display:flex}
+.sbox .panel{width:100%;max-width:600px;border-radius:20px;background:#fff;border:1px solid var(--stroke-2,rgba(20,50,110,.12));box-shadow:0 26px 64px rgba(12,26,52,.30);overflow:hidden}
+[data-theme="dark"] .sbox .panel{background:#111c2e;border-color:rgba(255,255,255,.14)}
+.sbox .inp{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke-2,rgba(20,50,110,.12))}
+.sbox .inp svg{width:17px;height:17px;color:var(--faint,#8695ab);flex:none}
+.sbox .inp input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink,#16213a);font-family:inherit;font-size:15px}
+.sbox .inp kbd{font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:2px 6px;border-radius:6px;border:1px solid var(--stroke-2,rgba(20,50,110,.12));color:var(--faint,#8695ab);flex:none}
+.sbox .res{max-height:54vh;overflow:auto;padding:8px}
+.sbox .item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px}
+.sbox .item:hover,.sbox .item.on{background:var(--primary-soft,rgba(43,123,243,.12))}
+.sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
+.sbox .item span{font-size:11.5px;color:var(--faint,#8695ab);white-space:nowrap}
+.sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint,#8695ab);text-align:center}
+/* /cl-ss:css */
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <span class="tagline">知识库</span>
+  <div class="sp"></div>
+  <button class="icon-btn" id="searchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+  </button>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="btn" href="index.html">官网首页</a>
+</div>
+<div class="art-wrap">
+    <article class="art">
+    <p class="crumb"><a href="blog.html">知识库</a> · <a href="curriculum-map.html">课程 × 考级</a> · <a href="assessment.html">测评体系</a> / 数学与编程</p>
+    <span class="eyebrow"><i></i>数学与编程</span>
+    <h1>编程和数学到底是什么关系？先分清三种「数学」</h1>
+    <div class="meta-line"><span>2026-11-27</span><span>阅读约 8 分钟</span><span>作者：王雨晴</span></div>
+    <p class="lead">这是家长问得第二多的问题，仅次于「几岁开始」。答案不是「数学好才能学编程」，也不是「学编程能提高数学」——这两句话都对了一半，也都误人。这篇把关系拆开讲，给出每个阶段真实的数学门槛。</p>
+
+<p>先给结论：<b>编程吃的是「把关系写成规则」的能力，不是计算速度。</b>算得快不快，与能不能写出程序，关系比多数家长想的小得多。</p>
+
+<h2 id="ps1">一、先把三种「数学」分开</h2>
+<div class="tbl"><table>
+<tr><th>类型</th><th>主要出现在哪</th><th>它要求什么</th></tr>
+<tr><td style="white-space:nowrap"><b>校内算术</b></td><td>分数、小数、负数、方程</td><td>计算准确、规则熟练</td></tr>
+<tr><td style="white-space:nowrap"><b>竞赛数学</b></td><td>数论、组合计数、递推</td><td>发现结构、会证明、会估算</td></tr>
+<tr><td style="white-space:nowrap"><b>算法里的数学</b></td><td>坐标、取模、复杂度、边界条件</td><td>把关系翻译成可执行的步骤</td></tr>
+</table></div>
+<p>编程主要吃第三种。孩子要把「每走一步就减一格血」翻译成 <code>hp = hp - 1</code>，把「只处理偶数」翻译成 <code>i % 2 == 0</code>——这不是算术题，是翻译题。所以一个计算常出错的孩子，完全可能写出结构清晰的程序；反过来，一个口算很快的孩子，也可能在「把条件写清楚」这一步卡住。</p>
+
+<h2 id="ps2">二、编程真正训练的，是「说清楚」</h2>
+<p>我们课上有个固定练习：给一段自然语言描述，要求孩子先写出三行——<b>输入是什么、要算什么、输出什么</b>，然后才允许敲代码。多数孩子第一次写不出来，不是因为不会算，而是因为原句里「最多」「至少」「如果不」这些条件被忽略了。</p>
+<p>这件事和数学的关系是：<b>数学题也是这么读的。</b>应用题丢分，九成不是算错，是条件没读全。所以编程和数学真正相通的地方，是「把一段话拆成条件和步骤」的能力，而不是计算本身。</p>
+
+<h2 id="ps3">三、数学在哪一步会成为瓶颈</h2>
+<p>不同阶段对数学的要求不一样，卡住的表现也不一样。这张表可以直接拿去对照孩子的现状。</p>
+<div class="tbl"><table>
+<tr><th>阶段</th><th>需要的数学</th><th>卡住时的表现</th></tr>
+<tr><td style="white-space:nowrap"><b>L1–L2 图形化</b></td><td>数到 20、上下左右、坐标初步、正负方向</td><td>角色总走出边界，循环次数数错，坐标填反</td></tr>
+<tr><td style="white-space:nowrap"><b>L3 Python</b></td><td>整数四则、小数、取整、百分比</td><td>单位换算题读不懂，平均值算成总和，格式全对但结果错</td></tr>
+<tr><td style="white-space:nowrap"><b>L4 C++ 入门</b></td><td>分数与负数运算、简单方程、坐标系</td><td>距离、斜率类题目推不动，变量含义写到第三行就混</td></tr>
+<tr><td style="white-space:nowrap"><b>CSP-J 备赛</b></td><td>整除与质数、组合计数初步、递推</td><td>看题就跳，或只会写暴力解法拿部分分</td></tr>
+<tr><td style="white-space:nowrap"><b>CSP-S 备赛</b></td><td>排列组合、概率、矩阵、图论里的数学</td><td>复杂题无法建模，代码写得出但算法选错</td></tr>
+</table></div>
+<p>注意前两行的门槛非常低：<b>L1 只需要「数得清、分得清方向」。</b>把 L1 的数学门槛想得很高，是很多家长迟迟不敢报班的原因，其实没必要。</p>
+
+<h2 id="ps4">四、数学暂时落后的孩子，能不能学</h2>
+<p>分三种情况，处理方式完全不同：</p>
+<ul>
+<li><b>只是算得慢、常粗心。</b><span>可以学，而且往往学得不错。编程要求把每一步写死，粗心的孩子在这里会被迫养成检查习惯——写完先自己念一遍输出。</span></li>
+<li><b>概念没跟上（分数、负数、方程）。</b><span>先补 4 到 8 周再进 L3/L4，别硬上。硬上的结果不是学不会编程，是每次课都在补数学，兴趣被消耗掉。</span></li>
+<li><b>明显抗拒数学、一见应用题就崩。</b><span>先在 L1/L2 做项目，把「我能做出东西」的感觉保住。数学补上来再谈进阶，顺序反了会两头都丢。</span></li>
+</ul>
+<p>要提醒一句：<b>「数学不好」是个很粗的判断。</b>我们测评时会分开看三件事——计算准确率、读题完整度、抽象接受度。前两项可以短期补，第三项要靠时间。真正因为第三项而学不了编程的孩子，比例比家长以为的低得多。</p>
+
+<h2 id="ps5">五、反过来，编程能不能帮数学</h2>
+<p>能，但有条件：<b>不会自动发生，需要有人点破。</b>三个具体迁移：</p>
+<div class="tbl"><table>
+<tr><th>编程里的做法</th><th>对应数学里的能力</th><th>怎么点破</th></tr>
+<tr><td>写「输入 / 计算 / 输出」三行</td><td>应用题拆解</td><td>做题前先让孩子说「已知什么、要求什么」</td></tr>
+<tr><td>给未知量起变量名</td><td>方程里的设未知数</td><td>问「这个 x 代表什么，单位是什么」</td></tr>
+<tr><td>用坐标、列表、遍历</td><td>函数、统计表、规律题</td><td>把一张统计表读成「输入一行、输出一行」</td></tr>
+</table></div>
+<p>最有效的一条是第三行。孩子在图形化里拖过「x 增加 5、y 增加 3」的积木，再看一次函数图像，理解会快很多——因为他已经在屏幕上见过「输入变、输出跟着变」这件事。</p>
+<div class="quote">我们常用一句话提醒家长：编程不是数学补习班。它能帮孩子把抽象关系看得见，但不能替代练习和计算训练。</div>
+
+<h2 id="ps6">六、给家长的三条具体做法</h2>
+<ul>
+<li><b>不提前学下学期的课本，改用已学的数学做编程题。</b><span>用三年级的口算写「算平均数」的程序，比提前学五年级内容更有价值——前者在练翻译，后者只是在抢跑。</span></li>
+<li><b>把错题讲成流程，而不是讲成错误。</b><span>不说「你怎么又算错了」，改说「这道题的条件有哪几个、你漏了哪一个」。这句话练的是读题习惯，编程和数学通用。</span></li>
+<li><b>用表格和坐标练抽象。</b><span>每周挑一张统计表或一个坐标图，让孩子说出「横着是什么、竖着是什么、变的是哪个」。三分钟，比刷十道题有用。</span></li>
+</ul>
+
+<h2 id="ps7">七、我们的口径</h2>
+<div class="tbl"><table>
+<tr><th>阶段</th><th>数学要求</th><th>不达标怎么办</th></tr>
+<tr><td><b>L1 图形化启蒙</b></td><td>能数到 20，分得清上下左右</td><td>先用不插电活动练方向与顺序</td></tr>
+<tr><td><b>L2 图形化进阶</b></td><td>整数四则、坐标初步</td><td>课内穿插 4 课时数学小专题</td></tr>
+<tr><td style="white-space:nowrap"><b>L3 Python</b></td><td>分数小数、百分比、取整</td><td>开课前补 4 课时单位与比例</td></tr>
+<tr><td style="white-space:nowrap"><b>L4 C++ 入门</b></td><td>分数与负数、简单方程、坐标系</td><td>先做 8 课时衔接再进班</td></tr>
+<tr><td><b>竞赛方向</b></td><td>整除、组合计数、递推初步</td><td>按 CSP-J 专题补，不整册重学</td></tr>
+</table></div>
+<p>最后一句总结：<b>编程不吃「算得快」，吃「说得清」。</b>孩子能不能把一件事的条件、步骤、结果说清楚，比他的心算速度重要得多。这也是我们测评里最看重的一项。</p>
+
+    <div class="author">
+      <img src="assets/teacher-wang.jpg" srcset="assets/teacher-wang.jpg 240w" sizes="52px" width="52" height="52" alt="王雨晴" loading="lazy" decoding="async">
+      <div><b>王雨晴</b><span>Scratch / Python 教研组长 · 北师大教育学</span></div>
+    </div>
+    <div class="related">
+      <h3>接着读</h3>
+      <div class="rel"><a href="blog-when-to-start.html"><b>孩子几岁开始学编程合适？先看他能不能做这三件事</b><span>选课判断 · 8 分钟</span></a><a href="blog-competition-path.html"><b>要不要打比赛？从 GESP 到 CSP-J/S 的完整路径</b><span>竞赛路径 · 9 分钟</span></a></div>
+    </div>
+    <div class="cta">
+      <div class="tt"><b>先带孩子做一次免费测评</b><span>45 分钟试听 + 一次能力测评，会分开看计算、读题、抽象三项，给一份书面建议。不合适我们会直说。</span></div>
+      <a class="btn-primary" href="index.html#trial">预约免费试听</a>
+    </div>
+  </article>
+  <aside class="side">
+    <div class="box">
+      <h4>本文涉及的阶段</h4>
+      <ul>
+        <li><a href="course-l2.html">L2 进阶图形化与硬件</a><span class="k">8–10 岁 · 48 课时</span></li>
+        <li><a href="course-l3.html">L3 Python 编程</a><span class="k">9–12 岁 · 48 课时</span></li>
+        <li><a href="course-l4.html">L4 C++ 竞赛</a><span class="k">11–16 岁 · 48 课时</span></li>
+      </ul>
+    </div>
+    <div class="box" style="margin-top:12px">
+      <h4>知识库</h4>
+      <div class="toc"><a href="blog-when-to-start.html">几岁开始学编程合适</a><a href="blog-gesp-1.html">GESP 一级怎么准备</a><a href="blog-after-scratch.html">Scratch 之后学什么</a><a href="blog-format-choice.html">班型怎么选</a><a href="blog-competition-path.html">竞赛路径</a><a href="blog-math.html">数学与编程</a><a href="blog.html">全部文章与速答</a></div>
+    </div>
+  </aside>
+</div>
+<div class="foot">
+  <p><b>码跃少儿编程 CodeLeap</b> · 合肥 · 高新 / 政务 / 滨湖三校区 · 400-860-2026</p>
+  <p><a href="index.html">官网首页</a> · <a href="index.html#courses">课程体系</a> · <a href="course-l1.html">L1</a> · <a href="course-l2.html">L2</a> · <a href="course-l3.html">L3</a> · <a href="course-l4.html">L4</a> · <a href="blog.html">知识库</a> · <a href="team.html">师资与教研</a> · <a href="campus.html">校区与到店</a> · <a href="results.html">荣誉与成果</a> · <a href="camp.html">寒假营</a> · <a href="enroll.html">在线报名</a> · <a href="brochure.html">招生简章</a> · <a href="parent.html">家长中心</a> · <a href="legal.html">政策与条款</a></p>
+  <p>内容示例站点：文中课表、价格、人数与统计数据均为演示用途，正式上线前请替换为真实信息；教育判断类内容仅供参考，不构成对个体孩子的结论。</p>
+</div>
+<script>
+(function () {
+  var KEY = "codeleap-theme";
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem(KEY); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  var btn = document.getElementById("themeBtn");
+  if (btn) btn.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+  });
+})();
+</script>
+
+
+<!-- cl-ss:tail -->
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="sInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="sRes"></div>
+  </div>
+</div>
+<script src="search-index.js"></script>
+<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('sbox');
+  var sInput = document.getElementById('sInput');
+  var sRes = document.getElementById('sRes');
+  var sBtn = document.getElementById('searchBtn');
+  var lastFocus = null;
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function openSearch() { lastFocus = document.activeElement; sbox.classList.add('on'); setTimeout(function () { sInput.focus(); if (sInput.value) sInput.select(); }, 30); }
+  function closeSearch() { sbox.classList.remove('on'); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p + ' ' + (it.x || '')).toLowerCase().indexOf(q) > -1; }) : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) { sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试</div>'; return; }
+    sRes.innerHTML = list.map(function (it, i) {
+      var h = it.u + (it.id ? '#' + it.id : '');
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + h + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) { a.addEventListener('click', function () { sbox.classList.remove('on'); }); });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+})();
+</script>
+<!-- /cl-ss:tail -->
+</body>
+</html>
+
+
