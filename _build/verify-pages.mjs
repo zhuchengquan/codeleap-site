@@ -45,11 +45,12 @@ for (const f of FILES) {
   if (stack.length) errs.push('unclosed: ' + stack.map(s => s.tag).join(','));
   if (errs.length) problems.push(...errs.slice(0, 6));
 
-  // local links exist
-  const links = [...src.matchAll(/href="([^"#?]+)(?:[^"]*)?"/g)].map(x => x[1]);
-  const missing = [...new Set(links)].filter(l => !l.startsWith('http') && !l.startsWith('data:') && !fs.existsSync(path.join(ROOT, l)));
+  // local links exist（脚本与样式里的字符串不算链接）
+  const clean = src.replace(/<script[\s\S]*?<\/script>/gi, '').replace(/<style[\s\S]*?<\/style>/gi, '');
+  const links = [...clean.matchAll(/href="([^"#?]+)(?:[^"]*)?"/g)].map(x => x[1]);
+  const missing = [...new Set(links)].filter(l => !/^(https?:|data:|mailto:|tel:)/.test(l) && !fs.existsSync(path.join(ROOT, l)));
 
-  const h2 = [...src.matchAll(/<h2>([^<]+)</g)].map(x => x[1]);
+  const h2 = [...clean.matchAll(/<h2>([^<]+)</g)].map(x => x[1]);
   const kb = (Buffer.byteLength(src) / 1024).toFixed(1);
 
   console.log(`${problems.length || missing.length ? 'BAD ' : 'OK  '} ${f}  ${kb}KB  h2=${h2.length}`);

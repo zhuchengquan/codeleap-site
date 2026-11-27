@@ -24,7 +24,144 @@ const pages = [
   ['family.html', p9.html],
 ];
 
+const NAME = {
+  'platform.html': '平台与课堂',
+  'curriculum-map.html': '课程 × 考级',
+  'assessment.html': '测评体系',
+  'studio.html': '作品与创作',
+  'hardware.html': '教具与硬件',
+  'operations.html': '校区运营',
+  'teaching.html': '备课与授课',
+  'admissions.html': '招生与学员',
+  'family.html': '家校沟通',
+};
+
+const strip = (s) => s
+  .replace(/<[^>]+>/g, '')
+  .replace(/&amp;/g, '&')
+  .replace(/&lt;/g, '<')
+  .replace(/&gt;/g, '>')
+  .replace(/\s+/g, ' ')
+  .trim();
+
+// 构建站内搜索索引：每页一条总览 + 每条 sec-head 一条
+const index = [];
 for (const [file, html] of pages) {
-  fs.writeFileSync(path.join(OUT, file), html, 'utf8');
-  console.log(`${file} ${(Buffer.byteLength(html) / 1024).toFixed(1)} KB`);
+  const name = NAME[file] || file;
+  const h1 = strip((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [, name])[1]);
+  index.push({ u: file, p: name, k: '总览', t: h1, id: '' });
+  const re = /<div class="sec-head"><span>([\s\S]*?)<\/span><h2>([\s\S]*?)<\/h2>/g;
+  let m, i = 0;
+  while ((m = re.exec(html))) {
+    i += 1;
+    index.push({ u: file, p: name, k: strip(m[1]), t: strip(m[2]), id: 's' + i });
+  }
 }
+
+const BTN = `<button class="icon-btn" id="searchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg></button>
+  `;
+
+const SCRIPT = `<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('sbox');
+  var sInput = document.getElementById('sInput');
+  var sRes = document.getElementById('sRes');
+  var sBtn = document.getElementById('searchBtn');
+  var lastFocus = null;
+
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+  function openSearch() {
+    lastFocus = document.activeElement;
+    sbox.classList.add('on');
+    setTimeout(function () { sInput.focus(); sInput.select(); }, 30);
+  }
+  function closeSearch() {
+    sbox.classList.remove('on');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function hrefOf(it) { return it.u + (it.id ? '#' + it.id : ''); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q
+      ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p).toLowerCase().indexOf(q) > -1; })
+      : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) {
+      sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试，比如「排课」「报告」「投诉」</div>';
+      return;
+    }
+    sRes.innerHTML = list.map(function (it, i) {
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + hrefOf(it) + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) {
+      a.addEventListener('click', function () { sbox.classList.remove('on'); });
+    });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+
+  // 本页目录：按 sec-head 顺序编号，与索引一致
+  var heads = [].slice.call(document.querySelectorAll('.wrap .sec .sec-head h2'));
+  var toc = document.getElementById('toc');
+  var dock = document.getElementById('tdock');
+  var fab = document.getElementById('tocFab');
+  var html = '<b>本页目录</b>';
+  heads.forEach(function (h, i) { h.id = 's' + (i + 1); html += '<a href="#s' + (i + 1) + '">' + esc(h.textContent) + '</a>'; });
+  if (heads.length) {
+    if (toc) toc.innerHTML = html;
+    if (dock) dock.innerHTML = html;
+  }
+  if (fab) fab.addEventListener('click', function () { dock.classList.toggle('on'); });
+  if (dock) dock.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') dock.classList.remove('on');
+  });
+  var links = (toc ? toc.querySelectorAll('a') : []);
+  var dlinks = (dock ? dock.querySelectorAll('a') : []);
+  function spy() {
+    var y = window.scrollY + 130, cur = -1;
+    heads.forEach(function (h, i) { if (h.getBoundingClientRect().top + window.scrollY <= y) cur = i; });
+    links.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+    dlinks.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+  }
+  window.addEventListener('scroll', spy, { passive: true });
+  spy();
+})();
+</script>`;
+
+const TAIL = (idxJson) => `
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="sInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="sRes"></div>
+  </div>
+</div>
+<button class="icon-btn tocFab" id="tocFab" type="button" aria-label="打开本页目录"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></button>
+<div class="tdock" id="tdock" aria-label="本页目录"></div>
+<aside class="toc" id="toc" aria-label="本页目录"></aside>
+<script>window.__IDX=${idxJson};</script>
+${SCRIPT}
+`;
+
+let fail = 0;
+for (const [file, html] of pages) {
+  if (!html.includes('<button class="icon-btn" id="themeBtn"')) { console.error('missing themeBtn in ' + file); fail += 1; continue; }
+  if (!html.includes('</body>')) { console.error('missing </body> in ' + file); fail += 1; continue; }
+  let out = html.replace('<button class="icon-btn" id="themeBtn"', BTN + '<button class="icon-btn" id="themeBtn"');
+  out = out.replace('</body>', TAIL(JSON.stringify(index)) + '</body>');
+  fs.writeFileSync(path.join(OUT, file), out, 'utf8');
+  console.log(`${file} ${(Buffer.byteLength(out) / 1024).toFixed(1)} KB`);
+}
+console.log(`index entries: ${index.length}` + (fail ? `  FAIL ${fail}` : ''));

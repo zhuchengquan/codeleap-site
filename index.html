@@ -994,6 +994,41 @@ section[id] { scroll-margin-top: 80px; }
   .notch { padding: 8px 14px; font-size: 12.5px; gap: 8px; }
   .notch .nt { display: none; }
 }
+
+
+/* cl-search:css */
+#clSearchBtn{flex:none}
+.brand{flex:none;white-space:nowrap}
+.nav-links{flex-wrap:nowrap;min-width:0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{white-space:nowrap;flex:none}
+@media (min-width:1180px){
+  .nav-inner{gap:16px}
+  .nav-links a{padding:7px 9px;font-size:13.5px}
+  .brand{font-size:21px}
+}
+@media (min-width:861px) and (max-width:1179px){
+  .nav-links a[href="#news"], .nav-links a[href="#results"]{display:none}
+  .nav-inner{gap:14px}
+  .nav-links a{padding:7px 8px;font-size:13px}
+}
+.nav-actions{flex:none}
+.nav-actions .btn{white-space:nowrap;flex:none}
+.cl-sbox{position:fixed;inset:0;z-index:120;display:none;align-items:flex-start;justify-content:center;padding:88px 18px 20px;background:rgba(8,18,36,.40);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)}
+.cl-sbox.on{display:flex}
+.cl-sbox .panel{width:100%;max-width:600px;border-radius:20px;background:rgba(255,255,255,.96);border:1px solid var(--stroke-2);box-shadow:0 28px 68px rgba(12,26,52,.32);overflow:hidden}
+[data-theme="dark"] .cl-sbox .panel{background:rgba(14,22,36,.96);border-color:rgba(255,255,255,.14)}
+.cl-sbox .inp{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke-2)}
+.cl-sbox .inp svg{width:17px;height:17px;color:var(--faint);flex:none}
+.cl-sbox .inp input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font-family:inherit;font-size:15px}
+.cl-sbox .inp kbd{font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:2px 6px;border-radius:6px;border:1px solid var(--stroke-2);color:var(--faint);flex:none}
+.cl-sbox .res{max-height:56vh;overflow:auto;padding:8px}
+.cl-sbox .item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px}
+.cl-sbox .item:hover,.cl-sbox .item.on{background:var(--primary-soft)}
+.cl-sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
+.cl-sbox .item span{font-size:11.5px;color:var(--faint);white-space:nowrap}
+.cl-sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint);text-align:center}
+/* /cl-search:css */
 </style>
 <link rel="preload" as="image" href="assets/hero.webp" imagesrcset="assets/hero-640.webp 640w, assets/hero.webp 1000w" imagesizes="(max-width: 880px) 92vw, 540px" fetchpriority="high">
 </head>
@@ -1048,6 +1083,12 @@ section[id] { scroll-margin-top: 80px; }
       <a href="#system">体系专题</a>
     </nav>
     <div class="nav-actions">
+      <button class="icon-btn" id="clSearchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      </button>
+      
+      
+      
       <button class="icon-btn" id="themeToggle" type="button" aria-label="切换明暗模式">
         <svg class="moon"><use href="#i-moon"></use></svg>
         <svg class="sun"><use href="#i-sun"></use></svg>
@@ -1133,7 +1174,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow"><i></i>课程体系</span>
-        <h2>从积木到 C++，一条路走到竞赛</h2>
+        <h2 id="h1">从积木到 C++，一条路走到竞赛</h2>
         <p>四个阶段按认知发展衔接，先建立兴趣与自信，再过渡到代码与算法。点击任一阶段查看课时、作品和可参加的认证。</p>
       </div>
 
@@ -1213,7 +1254,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow"><i></i>教学模式</span>
-        <h2>为什么孩子在这里能坚持下来</h2>
+        <h2 id="h2">为什么孩子在这里能坚持下来</h2>
         <p>编程课不该是听老师讲、照着抄。我们把每节课都设计成一次"动手做、当场跑、上台讲"的循环。</p>
       </div>
       <div class="method-grid">
@@ -1281,7 +1322,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow"><i></i>师资团队</span>
-        <h2>懂计算机，更懂孩子</h2>
+        <h2 id="h3">懂计算机，更懂孩子</h2>
         <p>所有主讲老师均为计算机相关专业出身，经 60 小时儿童教学培训与 3 轮试讲考核后上岗，每学期接受教研考核。</p>
       </div>
       <div class="teacher-grid">
@@ -1314,7 +1355,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow"><i></i>学员成果</span>
-        <h2>奖项是结果，作品是过程</h2>
+        <h2 id="h4">奖项是结果，作品是过程</h2>
         <p>2025 学年，码跃学员参加 GESP、CSP-J/S、蓝桥杯等赛事共 310 人次。下面是部分数据与学员代表作品。</p>
       </div>
       <div class="results-grid">
@@ -1350,7 +1391,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head center reveal">
         <span class="eyebrow"><i></i>学费与班型</span>
-        <h2>透明的价格，按阶段付费</h2>
+        <h2 id="h5">透明的价格，按阶段付费</h2>
         <p>不卖多年课包，按学年付费；前两次课不满意全额退。</p>
       </div>
       <div class="seg reveal" role="group" aria-label="选择上课方式">
@@ -1467,7 +1508,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow"><i></i>家长评价</span>
-        <h2>家长们怎么说</h2>
+        <h2 id="h6">家长们怎么说</h2>
       </div>
       <div class="quote-grid">
         <blockquote class="quote reveal">
@@ -1494,7 +1535,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow"><i></i>近期开班</span>
-        <h2>这个月新开的班，还剩几个位</h2>
+        <h2 id="h7">这个月新开的班，还剩几个位</h2>
         <p>以下是 2026 年 12 月已排定的班次。选择校区筛选，点「预约」直接登记，顾问会确认名额后再锁定。</p>
       </div>
       <div class="sched-filters reveal" id="schedFilters" role="group" aria-label="按校区筛选">
@@ -1539,7 +1580,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow"><i></i>报名流程</span>
-        <h2>四步开始第一节课</h2>
+        <h2 id="h8">四步开始第一节课</h2>
       </div>
       <ol class="steps reveal">
         <li class="step"><h3>预约试听</h3><p>留下孩子年龄与意向课程，课程顾问 1 个工作日内联系确认时间。</p></li>
@@ -1556,7 +1597,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow"><i></i>校区与时间</span>
-        <h2>线下三个校区，线上全国开课</h2>
+        <h2 id="h9">线下三个校区，线上全国开课</h2>
         <p>所有线下校区均设小班教室与家长等候区，线上班与线下班使用同一套教研与课件。</p>
       </div>
       <div class="campus-grid">
@@ -1576,7 +1617,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container about-grid">
       <div class="reveal">
         <span class="eyebrow"><i></i>关于码跃</span>
-        <h2 style="font-family:var(--font-display);font-weight:700;font-size:clamp(27px,3.2vw,38px);line-height:1.34;letter-spacing:0.01em;margin:16px 0 14px">做中学，赛中学</h2>
+        <h2 style="font-family:var(--font-display);font-weight:700;font-size:clamp(27px,3.2vw,38px);line-height:1.34;letter-spacing:0.01em;margin:16px 0 14px" id="h10">做中学，赛中学</h2>
         <p>码跃少儿编程成立于 2018 年，从一间 6 人小教室开始，到今天服务 3200 余名学员。我们始终只做一件事：让孩子用编程把想法做出来。</p>
         <p>我们不承诺"人人都能拿奖"，但承诺每个孩子都能在课堂上完成属于自己的作品，并能清楚地讲出它是怎么运行的。竞赛是给有兴趣、有天赋的孩子的额外通道，而不是所有孩子的终点。</p>
         <div class="hero-cta" style="margin-top:24px">
@@ -1621,7 +1662,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow"><i></i>教育资讯</span>
-        <h2>家长最常问的问题，我们写成文章</h2>
+        <h2 id="h11">家长最常问的问题，我们写成文章</h2>
         <p>选课、考级、备赛、学习习惯，教研组每周整理一篇。点开可以读全文。</p>
       </div>
       <div class="sched-filters reveal" id="newsFilters" role="group" aria-label="按主题筛选资讯">
@@ -1646,7 +1687,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow"><i></i>体系与平台</span>
-        <h2>课程表之外，还有九件事</h2>
+        <h2 id="h12">课程表之外，还有九件事</h2>
         <p>课程回答「学什么」。孩子在哪上课、怎么被评估、作品归谁、器材怎么管、老师怎么备课、校区怎么运转——这九页逐条写清楚，家长可以先看再决定。</p>
       </div>
       <div class="sys-grid reveal">
@@ -1704,7 +1745,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head center reveal">
         <span class="eyebrow"><i></i>常见问题</span>
-        <h2>家长最关心的几件事</h2>
+        <h2 id="h13">家长最关心的几件事</h2>
       </div>
       <div class="faq reveal">
         <details open>
@@ -1740,7 +1781,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow"><i></i>加入我们</span>
-        <h2>我们在找懂技术、也喜欢孩子的人</h2>
+        <h2 id="h14">我们在找懂技术、也喜欢孩子的人</h2>
         <p>全职岗位提供五险一金、系统教研培训与竞赛带队补贴。简历投递至 hr@codeleap.example（演示邮箱）。</p>
       </div>
       <div class="job-list reveal">
@@ -1782,7 +1823,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head center reveal">
         <span class="eyebrow"><i></i>服务承诺</span>
-        <h2>退费、转班与补课规则</h2>
+        <h2 id="h15">退费、转班与补课规则</h2>
         <p>规则写在这里，报名之前就能完整读完。</p>
       </div>
       <div class="faq reveal">
@@ -1820,7 +1861,7 @@ section[id] { scroll-margin-top: 80px; }
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow"><i></i>预约免费试听</span>
-        <h2>留个信息，孩子来上一节课</h2>
+        <h2 id="h16">留个信息，孩子来上一节课</h2>
         <p>提交后课程顾问将在 1 个工作日内与您联系确认时间。试听当天完成测评并出具学习方案。</p>
       </div>
       <div class="trial-grid">
@@ -2811,5 +2852,57 @@ section[id] { scroll-margin-top: 80px; }
   }
 })();
 </script>
+
+
+<!-- cl-search:tail -->
+<div class="cl-sbox" id="clSbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="clSInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="clSRes"></div>
+  </div>
+</div>
+<script>window.__IDX=[{"u":"platform.html","p":"平台与课堂","k":"总览","t":"不是把纸笔换成平板，是让 90 分钟每个动作都留痕","id":""},{"u":"platform.html","p":"平台与课堂","k":"账号体系","t":"三类账号，三套权限","id":"s1"},{"u":"platform.html","p":"平台与课堂","k":"课堂留痕","t":"一节课结束，留下六条记录","id":"s2"},{"u":"platform.html","p":"平台与课堂","k":"课堂工具","t":"四个工具，各自解决一个问题","id":"s3"},{"u":"platform.html","p":"平台与课堂","k":"家长视角","t":"你能看到什么，看不到什么","id":"s4"},{"u":"platform.html","p":"平台与课堂","k":"数据与隐私","t":"孩子数据的五条硬规则","id":"s5"},{"u":"platform.html","p":"平台与课堂","k":"故障自查","t":"90% 的「打不开」，这三步能自己解决","id":"s6"},{"u":"platform.html","p":"平台与课堂","k":"FAQ","t":"家长最常问的四个问题","id":"s7"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"总览","t":"一张表说清楚：几岁学什么，什么时候考什么","id":""},{"u":"curriculum-map.html","p":"课程 × 考级","k":"主矩阵","t":"四个阶段，各自对应什么考级与比赛","id":"s1"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"典型节奏","t":"从三年级到初一，一条常见的五年线","id":"s2"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"考级口径","t":"GESP 八级，分别对应什么能力","id":"s3"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"竞赛口径","t":"CSP 与白名单赛事，什么时候进","id":"s4"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"常见错配","t":"三种最容易走弯路的安排","id":"s5"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"排课路径","t":"四种排法，走完一个阶段的时间差一倍","id":"s6"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"FAQ","t":"家长最常问的四个问题","id":"s7"},{"u":"assessment.html","p":"测评体系","k":"总览","t":"不靠感觉说「学得不错」，靠四层可回看的测评","id":""},{"u":"assessment.html","p":"测评体系","k":"四层测评","t":"从进门到赛前，四次不同目的的「体检」","id":"s1"},{"u":"assessment.html","p":"测评体系","k":"入学测评","t":"30 分钟，看三件事","id":"s2"},{"u":"assessment.html","p":"测评体系","k":"报告字段","t":"一份阶段报告，固定八个字段","id":"s3"},{"u":"assessment.html","p":"测评体系","k":"报告解读","t":"拿到报告，家长只需要读三行","id":"s4"},{"u":"assessment.html","p":"测评体系","k":"日常训练","t":"OJ 题库：练手，不是刷榜","id":"s5"},{"u":"assessment.html","p":"测评体系","k":"不达标怎么办","t":"四种情况，四种处置","id":"s6"},{"u":"assessment.html","p":"测评体系","k":"FAQ","t":"家长最常问的四个问题","id":"s7"},{"u":"studio.html","p":"作品与创作","k":"总览","t":"作品不是一张截图，是换台电脑也能跑起来的东西","id":""},{"u":"studio.html","p":"作品与创作","k":"编辑器","t":"四种编辑器，各自的能力与限制","id":"s1"},{"u":"studio.html","p":"作品与创作","k":"发布流程","t":"从做完到能发给爷爷奶奶，五步","id":"s2"},{"u":"studio.html","p":"作品与创作","k":"创意区","t":"可以看到人的作品，但不能私聊","id":"s3"},{"u":"studio.html","p":"作品与创作","k":"作品集","t":"每个阶段，只留三件","id":"s4"},{"u":"studio.html","p":"作品与创作","k":"家庭侧","t":"在家里怎么打开、要不要陪着","id":"s5"},{"u":"studio.html","p":"作品与创作","k":"版权","t":"作品是孩子的，不是机构的","id":"s6"},{"u":"studio.html","p":"作品与创作","k":"FAQ","t":"家长最常问的四个问题","id":"s7"},{"u":"hardware.html","p":"教具与硬件","k":"总览","t":"硬件课不是拼装课，是让程序真的动起来","id":""},{"u":"hardware.html","p":"教具与硬件","k":"器材","t":"两套器材，各自解决什么问题","id":"s1"},{"u":"hardware.html","p":"教具与硬件","k":"开箱验收","t":"课前 10 分钟，固定 12 项","id":"s2"},{"u":"hardware.html","p":"教具与硬件","k":"使用规范","t":"五条动作规范，比讲十遍原理有用","id":"s3"},{"u":"hardware.html","p":"教具与硬件","k":"维护与损耗","t":"坏了怎么算，提前说清楚","id":"s4"},{"u":"hardware.html","p":"教具与硬件","k":"安全边界","t":"我们做什么，明确不做什么","id":"s5"},{"u":"hardware.html","p":"教具与硬件","k":"FAQ","t":"家长最常问的四个问题","id":"s6"},{"u":"operations.html","p":"校区运营","k":"总览","t":"开一个校区，难的不是招生，是把顺序排对","id":""},{"u":"operations.html","p":"校区运营","k":"校区启用","t":"把「开一个校区」拆成 30 天","id":"s1"},{"u":"operations.html","p":"校区运营","k":"角色权限","t":"六类角色，权限互不越界","id":"s2"},{"u":"operations.html","p":"校区运营","k":"课时规则","t":"课时、请假、补课、退课、结转","id":"s3"},{"u":"operations.html","p":"校区运营","k":"月度对账","t":"每月固定核对五件事","id":"s4"},{"u":"operations.html","p":"校区运营","k":"支持响应","t":"出问题找谁，多久有回音","id":"s5"},{"u":"operations.html","p":"校区运营","k":"合作方式","t":"三种合作，各自适合谁","id":"s6"},{"u":"operations.html","p":"校区运营","k":"FAQ","t":"家长最常问的四个问题","id":"s7"},{"u":"teaching.html","p":"备课与授课","k":"总览","t":"一节课好不好，看的是课前那七步","id":""},{"u":"teaching.html","p":"备课与授课","k":"90 分钟","t":"一节课切成六段，每段都有明确动作","id":"s1"},{"u":"teaching.html","p":"备课与授课","k":"备课","t":"七步备课，每步都要有产出","id":"s2"},{"u":"teaching.html","p":"备课与授课","k":"教案","t":"一页 A4，固定八个字段","id":"s3"},{"u":"teaching.html","p":"备课与授课","k":"课型","t":"四种课，结构不一样","id":"s4"},{"u":"teaching.html","p":"备课与授课","k":"现场","t":"六种常见状况，先做什么","id":"s5"},{"u":"teaching.html","p":"备课与授课","k":"课后","t":"下课不等于结束，24 小时内三件事","id":"s6"},{"u":"teaching.html","p":"备课与授课","k":"课堂片段","t":"四个真实片段，看老师怎么接","id":"s7"},{"u":"teaching.html","p":"备课与授课","k":"资源包","t":"一节课背后，有七样东西","id":"s8"},{"u":"teaching.html","p":"备课与授课","k":"高频问题","t":"十二个技术问题，一句话提示","id":"s9"},{"u":"teaching.html","p":"备课与授课","k":"FAQ","t":"家长最常问的四个问题","id":"s10"},{"u":"admissions.html","p":"招生与学员","k":"总览","t":"招生的核心不是说服，是把「不匹配」提前说出口","id":""},{"u":"admissions.html","p":"招生与学员","k":"学员生命周期","t":"从一条线索，到一次结业","id":"s1"},{"u":"admissions.html","p":"招生与学员","k":"线索","t":"四类来源，四种跟进节奏","id":"s2"},{"u":"admissions.html","p":"招生与学员","k":"试听转化","t":"五个动作，不做第六个","id":"s3"},{"u":"admissions.html","p":"招生与学员","k":"建档","t":"十二个字段，当天填完","id":"s4"},{"u":"admissions.html","p":"招生与学员","k":"分班","t":"四条原则，和四种变更","id":"s5"},{"u":"admissions.html","p":"招生与学员","k":"积分","t":"奖励持续行为，不奖励分数","id":"s6"},{"u":"admissions.html","p":"招生与学员","k":"流失","t":"三个信号出现，就要介入","id":"s7"},{"u":"admissions.html","p":"招生与学员","k":"FAQ","t":"家长最常问的四个问题","id":"s8"},{"u":"family.html","p":"家校沟通","k":"总览","t":"家校不是通知群，是一起看孩子变化的地方","id":""},{"u":"family.html","p":"家校沟通","k":"沟通节奏","t":"六个固定节点，不靠临时想起","id":"s1"},{"u":"family.html","p":"家校沟通","k":"家长会","t":"三种形式，各管一件事","id":"s2"},{"u":"family.html","p":"家校沟通","k":"微信规范","t":"五条规范，五条不做","id":"s3"},{"u":"family.html","p":"家校沟通","k":"投诉","t":"四步处理，每步有时限","id":"s4"},{"u":"family.html","p":"家校沟通","k":"家庭配合","t":"希望家长做的，和不建议做的","id":"s5"},{"u":"family.html","p":"家校沟通","k":"高频问题","t":"八个家长真会问的问题","id":"s6"},{"u":"family.html","p":"家校沟通","k":"FAQ","t":"家长最常问的四个问题","id":"s7"},{"u":"index.html","p":"首页","k":"章节","t":"从积木到 C++，一条路走到竞赛","id":"h1"},{"u":"index.html","p":"首页","k":"章节","t":"为什么孩子在这里能坚持下来","id":"h2"},{"u":"index.html","p":"首页","k":"章节","t":"懂计算机，更懂孩子","id":"h3"},{"u":"index.html","p":"首页","k":"章节","t":"奖项是结果，作品是过程","id":"h4"},{"u":"index.html","p":"首页","k":"章节","t":"透明的价格，按阶段付费","id":"h5"},{"u":"index.html","p":"首页","k":"章节","t":"家长们怎么说","id":"h6"},{"u":"index.html","p":"首页","k":"章节","t":"这个月新开的班，还剩几个位","id":"h7"},{"u":"index.html","p":"首页","k":"章节","t":"四步开始第一节课","id":"h8"},{"u":"index.html","p":"首页","k":"章节","t":"线下三个校区，线上全国开课","id":"h9"},{"u":"index.html","p":"首页","k":"章节","t":"做中学，赛中学","id":"h10"},{"u":"index.html","p":"首页","k":"章节","t":"家长最常问的问题，我们写成文章","id":"h11"},{"u":"index.html","p":"首页","k":"章节","t":"课程表之外，还有九件事","id":"h12"},{"u":"index.html","p":"首页","k":"章节","t":"家长最关心的几件事","id":"h13"},{"u":"index.html","p":"首页","k":"章节","t":"我们在找懂技术、也喜欢孩子的人","id":"h14"},{"u":"index.html","p":"首页","k":"章节","t":"退费、转班与补课规则","id":"h15"},{"u":"index.html","p":"首页","k":"章节","t":"留个信息，孩子来上一节课","id":"h16"},{"u":"index.html","p":"首页","k":"章节","t":"","id":"readerTitle"}];</script>
+<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('clSbox');
+  var sInput = document.getElementById('clSInput');
+  var sRes = document.getElementById('clSRes');
+  var sBtn = document.getElementById('clSearchBtn');
+  var lastFocus = null;
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function openSearch() {
+    lastFocus = document.activeElement;
+    sbox.classList.add('on');
+    setTimeout(function () { sInput.focus(); sInput.select(); }, 30);
+  }
+  function closeSearch() { sbox.classList.remove('on'); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p).toLowerCase().indexOf(q) > -1; }) : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) { sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试</div>'; return; }
+    sRes.innerHTML = list.map(function (it, i) {
+      var h = it.u + (it.id ? '#' + it.id : '');
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + h + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) { a.addEventListener('click', function () { sbox.classList.remove('on'); }); });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+})();
+</script>
+<!-- /cl-search:tail -->
 </body>
 </html>

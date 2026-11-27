@@ -123,6 +123,33 @@ a{color:inherit;text-decoration:none}
 .foot a{color:var(--primary)}
 .crumbs{font-size:12px;color:var(--faint);margin-bottom:10px}
 .crumbs a{color:var(--primary)}
+#searchBtn{flex:none}
+.sbox{position:fixed;inset:0;z-index:60;display:none;align-items:flex-start;justify-content:center;padding:76px 18px 20px;background:rgba(12,22,40,.34);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px)}
+.sbox.on{display:flex}
+.sbox .panel{width:100%;max-width:620px;border-radius:20px;background:var(--glass-2);border:1px solid var(--stroke-2);box-shadow:0 26px 64px rgba(14,28,54,.30);overflow:hidden}
+.sbox .inp{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke)}
+.sbox .inp svg{width:17px;height:17px;color:var(--faint);flex:none}
+.sbox .inp input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font-family:inherit;font-size:15px}
+.sbox .inp kbd{font-family:var(--font-mono);font-size:10.5px;padding:2px 6px;border-radius:6px;border:1px solid var(--stroke-2);color:var(--faint);flex:none}
+.sbox .res{max-height:54vh;overflow:auto;padding:8px}
+.sbox .item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px}
+.sbox .item:hover,.sbox .item.on{background:var(--primary-soft)}
+.sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
+.sbox .item span{font-size:11.5px;color:var(--faint);white-space:nowrap}
+.sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint);text-align:center}
+.toc{display:none}
+@media(min-width:1420px){.toc{display:block;position:fixed;top:92px;right:12px;width:178px;max-height:calc(100vh - 150px);overflow:auto;padding:13px 12px;border-radius:14px;background:var(--glass);border:1px solid var(--stroke);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}}
+.toc b{display:block;font-size:11px;letter-spacing:.07em;color:var(--faint);margin:0 0 8px;font-weight:600}
+.toc a{display:block;padding:4px 6px;border-radius:7px;font-size:12px;color:var(--muted);line-height:1.5}
+.toc a:hover{color:var(--ink)}
+.toc a.on{background:var(--primary-soft);color:var(--primary);font-weight:600}
+.tocFab{position:fixed;right:16px;bottom:18px;z-index:40;display:none}
+@media(max-width:1419px){.tocFab{display:grid}}
+.tdock{position:fixed;left:0;right:0;bottom:0;z-index:55;max-height:62vh;overflow:auto;padding:16px 20px 28px;background:var(--glass-2);border-top:1px solid var(--stroke);border-radius:18px 18px 0 0;box-shadow:0 -18px 44px rgba(14,28,54,.22);transform:translateY(104%);transition:transform .26s ease}
+.tdock.on{transform:none}
+.tdock b{display:block;font-size:11px;letter-spacing:.07em;color:var(--faint);margin:0 0 6px;font-weight:600}
+.tdock a{display:block;padding:9px 6px;border-bottom:1px solid var(--stroke);font-size:13.5px;color:var(--muted)}
+.tdock a.on{color:var(--primary);font-weight:600}
 </style>
 </head>
 <body>
@@ -139,6 +166,7 @@ a{color:inherit;text-decoration:none}
   <a class="btn" href="hardware.html">教具</a>
   <a class="btn" href="operations.html">校区运营</a>
   </nav>
+  <button class="icon-btn" id="searchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg></button>
   <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
   </button>
@@ -186,7 +214,34 @@ a{color:inherit;text-decoration:none}
   <k>下阶段建议</k><v>继续 / 补 4 课时 / 降阶重学，三选一并写理由</v>
   <k>教师备注</k><v>一句话，具体到某件事，禁止写「表现良好」这类空话</v>
 </div>
-<div class="note"><b>为什么把字段固定死：</b>不固定字段，报告就会变成「老师凭印象写两句」。固定之后，换老师接手也能看懂这个孩子的问题在哪。</div></section><section class="sec"><div class="sec-head"><span>日常训练</span><h2>OJ 题库：练手，不是刷榜</h2></div>
+<div class="note"><b>为什么把字段固定死：</b>不固定字段，报告就会变成「老师凭印象写两句」。固定之后，换老师接手也能看懂这个孩子的问题在哪。</div></section><section class="sec"><div class="sec-head"><span>报告解读</span><h2>拿到报告，家长只需要读三行</h2><p>八字段不是让家长全读，是让老师不能含糊。家长真正要抓的是：卡点在哪、是不是真会、下一步怎么办。</p></div>
+<div class="three">
+  <div class="box"><h4>先看卡点类型</h4><ul>
+    <li><b>概念不清</b>：要补讲解，不是多练</li>
+    <li><b>拼写与语法</b>：多练就能好，别当成不认真</li>
+    <li><b>调试方法</b>：要教「怎么找错」，不是替他改</li>
+    <li><b>注意力</b>：先看课堂环境与时长，再谈学习方法</li>
+  </ul></div>
+  <div class="box"><h4>再看独立完成度</h4><ul>
+    <li><b>独立完成</b>才算掌握，这是唯一硬标准</li>
+    <li>「提示后完成」＝<b>知道思路但落不了地</b>，下阶段要补动手量</li>
+    <li>老师改动超 30% 的作品，<b>不算孩子的作品</b></li>
+  </ul></div>
+  <div class="box"><h4>最后看下阶段建议</h4><ul>
+    <li><b>继续</b>：按原节奏走，不用加课</li>
+    <li><b>补 4 课时</b>：只补卡点，不重讲整阶段</li>
+    <li><b>降阶重学</b>：前置断层，硬撑下去只会更慢</li>
+  </ul></div>
+</div>
+<div class="table-wrap" style="margin-top:18px"><table class="matrix">
+<thead><tr><th>报告里的一句话</th><th>家长常见的读法</th><th>更准确的读法</th></tr></thead>
+<tbody>
+<tr><th>「提示后完成」</th><td>差不多会了</td><td>思路到了、手上没到；下阶段要减少提示、增加独立练习</td></tr>
+<tr><th>「作业提交率 90%」</th><td>学习态度好，能力也上来了</td><td>提交率只说明愿意交，能力看独立完成度与卡点是否收敛</td></tr>
+<tr><th>「建议补 4 课时」</th><td>又要卖课</td><td>补的是具体两个卡点，补完有复测，没补上不收费继续补</td></tr>
+<tr><th>「本期进步明显」</th><td>可以进下一阶段了</td><td>要看进步发生在哪一项；只有独立完成度上升才算真进步</td></tr>
+</tbody></table></div>
+<div class="note"><b>复测怎么约：</b>阶段报告发出后 2 周内安排一次 20 分钟复测，只测报告里标「未掌握」的项，不重测全部。复测结果直接写进下一份报告的起点，不用家长自己记。</div></section><section class="sec"><div class="sec-head"><span>日常训练</span><h2>OJ 题库：练手，不是刷榜</h2></div>
 <div class="two">
   <div class="box"><h4>题库怎么用</h4><ul>
     <li><b>按知识点推送</b>：学完循环推循环题，不混着推</li>
@@ -245,6 +300,96 @@ a{color:inherit;text-decoration:none}
       if (!d.open) document.querySelectorAll(".faq details[open]").forEach(function (o) { if (o !== d) o.open = false; });
     });
   });
+})();
+</script>
+
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="sInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="sRes"></div>
+  </div>
+</div>
+<button class="icon-btn tocFab" id="tocFab" type="button" aria-label="打开本页目录"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></button>
+<div class="tdock" id="tdock" aria-label="本页目录"></div>
+<aside class="toc" id="toc" aria-label="本页目录"></aside>
+<script>window.__IDX=[{"u":"platform.html","p":"平台与课堂","k":"总览","t":"不是把纸笔换成平板，是让 90 分钟每个动作都留痕","id":""},{"u":"platform.html","p":"平台与课堂","k":"账号体系","t":"三类账号，三套权限","id":"s1"},{"u":"platform.html","p":"平台与课堂","k":"课堂留痕","t":"一节课结束，留下六条记录","id":"s2"},{"u":"platform.html","p":"平台与课堂","k":"课堂工具","t":"四个工具，各自解决一个问题","id":"s3"},{"u":"platform.html","p":"平台与课堂","k":"家长视角","t":"你能看到什么，看不到什么","id":"s4"},{"u":"platform.html","p":"平台与课堂","k":"数据与隐私","t":"孩子数据的五条硬规则","id":"s5"},{"u":"platform.html","p":"平台与课堂","k":"故障自查","t":"90% 的「打不开」，这三步能自己解决","id":"s6"},{"u":"platform.html","p":"平台与课堂","k":"FAQ","t":"家长最常问的四个问题","id":"s7"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"总览","t":"一张表说清楚：几岁学什么，什么时候考什么","id":""},{"u":"curriculum-map.html","p":"课程 × 考级","k":"主矩阵","t":"四个阶段，各自对应什么考级与比赛","id":"s1"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"典型节奏","t":"从三年级到初一，一条常见的五年线","id":"s2"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"考级口径","t":"GESP 八级，分别对应什么能力","id":"s3"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"竞赛口径","t":"CSP 与白名单赛事，什么时候进","id":"s4"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"常见错配","t":"三种最容易走弯路的安排","id":"s5"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"排课路径","t":"四种排法，走完一个阶段的时间差一倍","id":"s6"},{"u":"curriculum-map.html","p":"课程 × 考级","k":"FAQ","t":"家长最常问的四个问题","id":"s7"},{"u":"assessment.html","p":"测评体系","k":"总览","t":"不靠感觉说「学得不错」，靠四层可回看的测评","id":""},{"u":"assessment.html","p":"测评体系","k":"四层测评","t":"从进门到赛前，四次不同目的的「体检」","id":"s1"},{"u":"assessment.html","p":"测评体系","k":"入学测评","t":"30 分钟，看三件事","id":"s2"},{"u":"assessment.html","p":"测评体系","k":"报告字段","t":"一份阶段报告，固定八个字段","id":"s3"},{"u":"assessment.html","p":"测评体系","k":"报告解读","t":"拿到报告，家长只需要读三行","id":"s4"},{"u":"assessment.html","p":"测评体系","k":"日常训练","t":"OJ 题库：练手，不是刷榜","id":"s5"},{"u":"assessment.html","p":"测评体系","k":"不达标怎么办","t":"四种情况，四种处置","id":"s6"},{"u":"assessment.html","p":"测评体系","k":"FAQ","t":"家长最常问的四个问题","id":"s7"},{"u":"studio.html","p":"作品与创作","k":"总览","t":"作品不是一张截图，是换台电脑也能跑起来的东西","id":""},{"u":"studio.html","p":"作品与创作","k":"编辑器","t":"四种编辑器，各自的能力与限制","id":"s1"},{"u":"studio.html","p":"作品与创作","k":"发布流程","t":"从做完到能发给爷爷奶奶，五步","id":"s2"},{"u":"studio.html","p":"作品与创作","k":"创意区","t":"可以看到人的作品，但不能私聊","id":"s3"},{"u":"studio.html","p":"作品与创作","k":"作品集","t":"每个阶段，只留三件","id":"s4"},{"u":"studio.html","p":"作品与创作","k":"家庭侧","t":"在家里怎么打开、要不要陪着","id":"s5"},{"u":"studio.html","p":"作品与创作","k":"版权","t":"作品是孩子的，不是机构的","id":"s6"},{"u":"studio.html","p":"作品与创作","k":"FAQ","t":"家长最常问的四个问题","id":"s7"},{"u":"hardware.html","p":"教具与硬件","k":"总览","t":"硬件课不是拼装课，是让程序真的动起来","id":""},{"u":"hardware.html","p":"教具与硬件","k":"器材","t":"两套器材，各自解决什么问题","id":"s1"},{"u":"hardware.html","p":"教具与硬件","k":"开箱验收","t":"课前 10 分钟，固定 12 项","id":"s2"},{"u":"hardware.html","p":"教具与硬件","k":"使用规范","t":"五条动作规范，比讲十遍原理有用","id":"s3"},{"u":"hardware.html","p":"教具与硬件","k":"维护与损耗","t":"坏了怎么算，提前说清楚","id":"s4"},{"u":"hardware.html","p":"教具与硬件","k":"安全边界","t":"我们做什么，明确不做什么","id":"s5"},{"u":"hardware.html","p":"教具与硬件","k":"FAQ","t":"家长最常问的四个问题","id":"s6"},{"u":"operations.html","p":"校区运营","k":"总览","t":"开一个校区，难的不是招生，是把顺序排对","id":""},{"u":"operations.html","p":"校区运营","k":"校区启用","t":"把「开一个校区」拆成 30 天","id":"s1"},{"u":"operations.html","p":"校区运营","k":"角色权限","t":"六类角色，权限互不越界","id":"s2"},{"u":"operations.html","p":"校区运营","k":"课时规则","t":"课时、请假、补课、退课、结转","id":"s3"},{"u":"operations.html","p":"校区运营","k":"月度对账","t":"每月固定核对五件事","id":"s4"},{"u":"operations.html","p":"校区运营","k":"支持响应","t":"出问题找谁，多久有回音","id":"s5"},{"u":"operations.html","p":"校区运营","k":"合作方式","t":"三种合作，各自适合谁","id":"s6"},{"u":"operations.html","p":"校区运营","k":"FAQ","t":"家长最常问的四个问题","id":"s7"},{"u":"teaching.html","p":"备课与授课","k":"总览","t":"一节课好不好，看的是课前那七步","id":""},{"u":"teaching.html","p":"备课与授课","k":"90 分钟","t":"一节课切成六段，每段都有明确动作","id":"s1"},{"u":"teaching.html","p":"备课与授课","k":"备课","t":"七步备课，每步都要有产出","id":"s2"},{"u":"teaching.html","p":"备课与授课","k":"教案","t":"一页 A4，固定八个字段","id":"s3"},{"u":"teaching.html","p":"备课与授课","k":"课型","t":"四种课，结构不一样","id":"s4"},{"u":"teaching.html","p":"备课与授课","k":"现场","t":"六种常见状况，先做什么","id":"s5"},{"u":"teaching.html","p":"备课与授课","k":"课后","t":"下课不等于结束，24 小时内三件事","id":"s6"},{"u":"teaching.html","p":"备课与授课","k":"课堂片段","t":"四个真实片段，看老师怎么接","id":"s7"},{"u":"teaching.html","p":"备课与授课","k":"资源包","t":"一节课背后，有七样东西","id":"s8"},{"u":"teaching.html","p":"备课与授课","k":"高频问题","t":"十二个技术问题，一句话提示","id":"s9"},{"u":"teaching.html","p":"备课与授课","k":"FAQ","t":"家长最常问的四个问题","id":"s10"},{"u":"admissions.html","p":"招生与学员","k":"总览","t":"招生的核心不是说服，是把「不匹配」提前说出口","id":""},{"u":"admissions.html","p":"招生与学员","k":"学员生命周期","t":"从一条线索，到一次结业","id":"s1"},{"u":"admissions.html","p":"招生与学员","k":"线索","t":"四类来源，四种跟进节奏","id":"s2"},{"u":"admissions.html","p":"招生与学员","k":"试听转化","t":"五个动作，不做第六个","id":"s3"},{"u":"admissions.html","p":"招生与学员","k":"建档","t":"十二个字段，当天填完","id":"s4"},{"u":"admissions.html","p":"招生与学员","k":"分班","t":"四条原则，和四种变更","id":"s5"},{"u":"admissions.html","p":"招生与学员","k":"积分","t":"奖励持续行为，不奖励分数","id":"s6"},{"u":"admissions.html","p":"招生与学员","k":"流失","t":"三个信号出现，就要介入","id":"s7"},{"u":"admissions.html","p":"招生与学员","k":"FAQ","t":"家长最常问的四个问题","id":"s8"},{"u":"family.html","p":"家校沟通","k":"总览","t":"家校不是通知群，是一起看孩子变化的地方","id":""},{"u":"family.html","p":"家校沟通","k":"沟通节奏","t":"六个固定节点，不靠临时想起","id":"s1"},{"u":"family.html","p":"家校沟通","k":"家长会","t":"三种形式，各管一件事","id":"s2"},{"u":"family.html","p":"家校沟通","k":"微信规范","t":"五条规范，五条不做","id":"s3"},{"u":"family.html","p":"家校沟通","k":"投诉","t":"四步处理，每步有时限","id":"s4"},{"u":"family.html","p":"家校沟通","k":"家庭配合","t":"希望家长做的，和不建议做的","id":"s5"},{"u":"family.html","p":"家校沟通","k":"高频问题","t":"八个家长真会问的问题","id":"s6"},{"u":"family.html","p":"家校沟通","k":"FAQ","t":"家长最常问的四个问题","id":"s7"}];</script>
+<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('sbox');
+  var sInput = document.getElementById('sInput');
+  var sRes = document.getElementById('sRes');
+  var sBtn = document.getElementById('searchBtn');
+  var lastFocus = null;
+
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+  function openSearch() {
+    lastFocus = document.activeElement;
+    sbox.classList.add('on');
+    setTimeout(function () { sInput.focus(); sInput.select(); }, 30);
+  }
+  function closeSearch() {
+    sbox.classList.remove('on');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function hrefOf(it) { return it.u + (it.id ? '#' + it.id : ''); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q
+      ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p).toLowerCase().indexOf(q) > -1; })
+      : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) {
+      sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试，比如「排课」「报告」「投诉」</div>';
+      return;
+    }
+    sRes.innerHTML = list.map(function (it, i) {
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + hrefOf(it) + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) {
+      a.addEventListener('click', function () { sbox.classList.remove('on'); });
+    });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+
+  // 本页目录：按 sec-head 顺序编号，与索引一致
+  var heads = [].slice.call(document.querySelectorAll('.wrap .sec .sec-head h2'));
+  var toc = document.getElementById('toc');
+  var dock = document.getElementById('tdock');
+  var fab = document.getElementById('tocFab');
+  var html = '<b>本页目录</b>';
+  heads.forEach(function (h, i) { h.id = 's' + (i + 1); html += '<a href="#s' + (i + 1) + '">' + esc(h.textContent) + '</a>'; });
+  if (heads.length) {
+    if (toc) toc.innerHTML = html;
+    if (dock) dock.innerHTML = html;
+  }
+  if (fab) fab.addEventListener('click', function () { dock.classList.toggle('on'); });
+  if (dock) dock.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') dock.classList.remove('on');
+  });
+  var links = (toc ? toc.querySelectorAll('a') : []);
+  var dlinks = (dock ? dock.querySelectorAll('a') : []);
+  function spy() {
+    var y = window.scrollY + 130, cur = -1;
+    heads.forEach(function (h, i) { if (h.getBoundingClientRect().top + window.scrollY <= y) cur = i; });
+    links.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+    dlinks.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+  }
+  window.addEventListener('scroll', spy, { passive: true });
+  spy();
 })();
 </script>
 </body>
