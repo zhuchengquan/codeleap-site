@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>四道题定起点 · 码跃少儿编程</title>
+<meta name="description" content="四道选择题估算孩子的编程起点：年级、编程经验、独立动手能力、数学进度，公开评分规则，给出 L1–L4 建议与第一步动作，不替代入学测评。">
+<link rel="canonical" href="https://codeleap.example/stage-finder.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="四道题定起点 · 码跃少儿编程">
+<meta property="og:description" content="四道选择题估算孩子的编程起点：年级、编程经验、独立动手能力、数学进度，公开评分规则，给出 L1–L4 建议与第一步动作，不替代入学测评。">
+<meta property="og:url" content="https://codeleap.example/stage-finder.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b7bf3'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' fill='%23fff' text-anchor='middle'%3E%E7%A0%81%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f9fe;--bg-2:#eef4fd;--ink:#16213a;--muted:#56657e;--faint:#8695ab;--primary:#2b7bf3;--primary-soft:rgba(43,123,243,.10);--accent:#f0663a;--accent-soft:rgba(240,102,58,.10);--ok:#12a06a;--ok-soft:rgba(18,160,106,.12);--glass:rgba(255,255,255,.72);--glass-2:rgba(255,255,255,.94);--glass-head:rgba(255,255,255,.88);--stroke:rgba(27,52,92,.10);--stroke-2:rgba(27,52,92,.16);--shadow:0 12px 32px rgba(26,48,84,.07);--radius:18px;--radius-sm:13px;--font-display:"Nunito","Noto Sans SC",sans-serif;--font-body:"Nunito","Noto Sans SC",sans-serif;--font-mono:"JetBrains Mono","Noto Sans SC",monospace}
+[data-theme="dark"]{--bg:#0d1524;--bg-2:#101a2c;--ink:#eef3fb;--muted:#a7b6cc;--faint:#7d8ea8;--primary:#5a9dff;--primary-soft:rgba(90,157,255,.14);--accent:#ff8660;--accent-soft:rgba(255,134,96,.12);--ok:#4dd49b;--ok-soft:rgba(77,212,155,.15);--glass:rgba(255,255,255,.06);--glass-2:rgba(255,255,255,.10);--glass-head:rgba(18,28,46,.88);--stroke:rgba(255,255,255,.10);--stroke-2:rgba(255,255,255,.18);--shadow:0 16px 40px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.78;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:11px 18px;background:var(--glass-head);border-bottom:1px solid var(--stroke);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);flex-wrap:wrap}
+.nav{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.nav::-webkit-scrollbar{display:none}
+@media(max-width:820px){.nav{order:9;flex:1 1 100%;padding:2px 0 0}}
+.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:15.5px}
+.brand .m{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:var(--primary);color:#fff;font-size:14px;font-weight:700}
+.tagline{font-size:12.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted)}
+.sp{flex:1}
+.icon-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 16px;border:1px solid var(--stroke-2);border-radius:999px;background:var(--glass);color:var(--ink);font-family:inherit;font-size:13.5px;white-space:nowrap}
+.btn.active{border-color:var(--primary);color:var(--primary);background:var(--primary-soft);font-weight:600}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 22px;border-radius:999px;background:var(--accent);color:#fff;font-size:14.5px;box-shadow:0 10px 24px rgba(240,102,58,.26);border:0;cursor:pointer;font-family:inherit}
+.wrap{max-width:1020px;margin:0 auto;padding:32px 20px 60px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.05em;color:var(--primary)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--primary);font-style:normal}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+@media(max-width:880px){.hero{grid-template-columns:1fr;gap:24px}}
+.hero.solo{grid-template-columns:1fr}
+.hero.solo .lead{max-width:760px}
+.hero h1{margin:11px 0 13px;font-size:clamp(26px,3.8vw,37px);font-weight:800;line-height:1.3}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{margin:0;font-size:14.5px;line-height:1.9;color:var(--muted);max-width:520px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:22px}
+@media(max-width:640px){.nums{grid-template-columns:repeat(2,1fr)}}
+.n{padding:13px 15px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.n b{display:block;font-family:var(--font-display);font-size:21px;font-weight:800;color:var(--accent);line-height:1.15;font-variant-numeric:tabular-nums}
+.n span{display:block;font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.6}
+.shot{border-radius:var(--radius);overflow:hidden;border:1px solid var(--stroke);box-shadow:var(--shadow);margin:0}
+.shot img{display:block;width:100%;height:auto}
+.sec{margin-top:44px}
+.sec-head span{display:block;font-size:12px;letter-spacing:.06em;color:var(--faint);margin-bottom:6px}
+.sec-head h2{margin:0;font-size:clamp(20px,2.6vw,26px);font-weight:700;line-height:1.35}
+.sec-head p{margin:8px 0 0;font-size:13.5px;line-height:1.8;color:var(--muted);max-width:660px}
+.box{padding:22px 24px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);box-shadow:var(--shadow)}
+.box h4{margin:0 0 10px;font-size:14.5px;font-weight:700}
+.box ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.box li{font-size:13px;line-height:1.85;color:var(--muted)}
+.box li b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+@media(max-width:860px){.three{grid-template-columns:1fr}}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.tiles.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.tiles{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.tiles.g2{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tiles{grid-template-columns:1fr}}
+@media(max-width:600px){.tiles.g2{grid-template-columns:1fr}}
+.tile{padding:19px 21px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.tile i{font-family:var(--font-mono);font-size:11.5px;font-style:normal;color:var(--accent);letter-spacing:.02em}
+.tile h4{margin:8px 0 6px;font-size:15px;font-weight:700;line-height:1.4}
+.tile p{margin:0;font-size:13px;line-height:1.82;color:var(--muted)}
+.matrix{width:100%;border-collapse:collapse;margin-top:20px;font-size:13px;background:var(--glass-2);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.matrix th,.matrix td{border-bottom:1px solid var(--stroke);padding:11px 13px;text-align:left;vertical-align:top;line-height:1.7}
+.matrix thead th{background:var(--primary-soft);color:var(--ink);font-weight:600;font-size:12.5px;white-space:nowrap}
+.matrix tbody th{background:var(--bg-2);font-weight:600;white-space:nowrap;color:var(--ink)}
+.matrix td{color:var(--muted)}
+.matrix td b{color:var(--ink);font-weight:600}
+.matrix tr:last-child td,.matrix tr:last-child th{border-bottom:0}
+.table-wrap{overflow-x:auto;margin-top:20px;-webkit-overflow-scrolling:touch;border-radius:var(--radius);border:1px solid var(--stroke)}
+.table-wrap .matrix{margin-top:0;box-shadow:none;border-radius:0;min-width:720px}
+.timeline{margin-top:22px;display:grid;gap:0}
+.tl{display:grid;grid-template-columns:92px 26px 1fr;gap:0;align-items:start}
+.tl .when{padding:14px 0 0;font-family:var(--font-mono);font-size:12px;color:var(--faint);text-align:right;padding-right:12px}
+.tl .rail{position:relative;display:flex;justify-content:center;padding-top:18px}
+.tl .rail::before{content:"";position:absolute;top:0;bottom:-6px;width:1px;background:var(--stroke-2)}
+.tl .dot{width:9px;height:9px;border-radius:50%;background:var(--primary);position:relative;z-index:1}
+.tl:last-child .rail::before{bottom:auto;height:18px}
+.tl .what{padding:10px 0 18px 14px}
+.tl .what h4{margin:0 0 4px;font-size:14.5px;font-weight:700}
+.tl .what p{margin:0;font-size:13px;line-height:1.82;color:var(--muted)}
+.steps{display:grid;gap:10px;margin-top:20px}
+.stp{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:16px 18px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.stp .k{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--primary-soft);color:var(--primary);font-family:var(--font-mono);font-size:12px}
+.stp h4{margin:0 0 5px;font-size:14.5px;font-weight:700}
+.stp p{margin:0;font-size:13px;line-height:1.85;color:var(--muted)}
+.stp p b{color:var(--ink);font-weight:600}
+.check{display:grid;gap:7px;margin-top:16px}
+.check .c{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:13px;line-height:1.8;color:var(--muted)}
+.check .c i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ok-soft);color:var(--ok);font-style:normal;font-size:12px}
+.check .c i.x{background:var(--accent-soft);color:var(--accent)}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:8px 14px;margin-top:16px;font-size:13px;line-height:1.8}
+.kv k{color:var(--faint);font-size:12.5px}
+.kv v{color:var(--muted)}
+.kv v b{color:var(--ink);font-weight:600}
+.note{margin-top:18px;padding:16px 20px;border-radius:var(--radius-sm);background:var(--accent-soft);border-left:3px solid var(--accent);font-size:13.5px;line-height:1.9;color:var(--muted)}
+.note b{color:var(--ink)}
+.faq{display:grid;gap:8px;margin-top:20px}
+.faq details{border-radius:var(--radius-sm);border:1px solid var(--stroke);background:var(--glass-2);overflow:hidden}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;cursor:pointer;list-style:none;font-size:14px;font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{width:15px;height:15px;color:var(--faint);flex:none}
+.faq .fb{padding:0 18px 16px;font-size:13.5px;line-height:1.88;color:var(--muted)}
+.cta{margin-top:34px;display:flex;align-items:center;flex-wrap:wrap;gap:16px;padding:24px 26px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid rgba(240,102,58,.22)}
+.cta .tt{flex:1;min-width:240px}
+.cta b{display:block;font-size:15.5px;font-weight:700}
+.cta span{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.7}
+.foot{max-width:1020px;margin:0 auto;padding:0 20px 52px;font-size:12px;line-height:1.9;color:var(--faint)}
+.foot a{color:var(--primary)}
+.crumbs{font-size:12px;color:var(--faint);margin-bottom:10px}
+.crumbs a{color:var(--primary)}
+#searchBtn{flex:none}
+.sbox{position:fixed;inset:0;z-index:60;display:none;align-items:flex-start;justify-content:center;padding:76px 18px 20px;background:rgba(12,22,40,.34);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px)}
+.sbox.on{display:flex}
+.sbox .panel{width:100%;max-width:620px;border-radius:20px;background:var(--glass-2);border:1px solid var(--stroke-2);box-shadow:0 26px 64px rgba(14,28,54,.30);overflow:hidden}
+.sbox .inp{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke)}
+.sbox .inp svg{width:17px;height:17px;color:var(--faint);flex:none}
+.sbox .inp input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font-family:inherit;font-size:15px}
+.sbox .inp kbd{font-family:var(--font-mono);font-size:10.5px;padding:2px 6px;border-radius:6px;border:1px solid var(--stroke-2);color:var(--faint);flex:none}
+.sbox .res{max-height:54vh;overflow:auto;padding:8px}
+.sbox .item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px}
+.sbox .item:hover,.sbox .item.on{background:var(--primary-soft)}
+.sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
+.sbox .item span{font-size:11.5px;color:var(--faint);white-space:nowrap}
+.sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint);text-align:center}
+.toc{display:none}
+@media(min-width:1420px){.toc{display:block;position:fixed;top:92px;right:12px;width:178px;max-height:calc(100vh - 150px);overflow:auto;padding:13px 12px;border-radius:14px;background:var(--glass);border:1px solid var(--stroke);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}}
+.toc b{display:block;font-size:11px;letter-spacing:.07em;color:var(--faint);margin:0 0 8px;font-weight:600}
+.toc a{display:block;padding:4px 6px;border-radius:7px;font-size:12px;color:var(--muted);line-height:1.5}
+.toc a:hover{color:var(--ink)}
+.toc a.on{background:var(--primary-soft);color:var(--primary);font-weight:600}
+.tocFab{position:fixed;right:16px;bottom:18px;z-index:40;display:none}
+@media(max-width:1419px){.tocFab{display:grid}}
+.tdock{position:fixed;left:0;right:0;bottom:0;z-index:55;max-height:62vh;overflow:auto;padding:16px 20px 28px;background:var(--glass-2);border-top:1px solid var(--stroke);border-radius:18px 18px 0 0;box-shadow:0 -18px 44px rgba(14,28,54,.22);transform:translateY(104%);transition:transform .26s ease}
+.tdock.on{transform:none}
+.tdock b{display:block;font-size:11px;letter-spacing:.07em;color:var(--faint);margin:0 0 6px;font-weight:600}
+.tdock a{display:block;padding:9px 6px;border-bottom:1px solid var(--stroke);font-size:13.5px;color:var(--muted)}
+.tdock a.on{color:var(--primary);font-weight:600}
+.finder{margin-top:22px;padding:24px 26px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);box-shadow:var(--shadow)}
+.finder .q{margin-bottom:16px}
+.finder .q>b{display:block;font-size:14px;font-weight:600;margin-bottom:9px;line-height:1.5}
+.finder .q>b i{font-family:var(--font-mono);font-style:normal;font-size:11px;color:var(--accent);margin-right:8px}
+.finder .opts{display:flex;flex-wrap:wrap;gap:8px}
+.finder .opt{padding:8px 14px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);font-family:inherit;font-size:12.5px;color:var(--muted);cursor:pointer;line-height:1.4}
+.finder .opt:hover{color:var(--ink)}
+.finder .opt.on{border-color:var(--primary);background:var(--primary-soft);color:var(--primary);font-weight:600}
+.finder .hint{margin-top:4px;font-size:12px;color:var(--faint)}
+.finder .red{margin-top:20px;padding:20px 22px;border-radius:var(--radius-sm);background:var(--primary-soft);border:1px solid rgba(43,123,243,.22)}
+.finder .red .lv{display:flex;align-items:baseline;flex-wrap:wrap;gap:9px}
+.finder .red .lv i{font-style:normal;font-family:var(--font-body);font-size:11px;letter-spacing:.08em;color:var(--faint);font-weight:700}
+.finder .red .lv b{font-family:var(--font-display);font-size:30px;font-weight:800;color:var(--primary);line-height:1.15;font-variant-numeric:tabular-nums}
+.finder .red .lv span{font-size:12.5px;font-weight:600;color:var(--muted)}
+.finder .red p{margin:8px 0 0;font-size:13px;line-height:1.85;color:var(--muted)}
+.finder .red .acts{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.finder .red .warn{margin-top:12px;padding:10px 13px;border-radius:9px;background:var(--accent-soft);border-left:3px solid var(--accent);font-size:12.5px;line-height:1.8;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <span class="tagline">选阶段</span>
+  <div class="sp"></div>
+  <nav class="nav">
+  <a class="btn" href="curriculum-map.html">课程 × 考级</a>
+  <a class="btn" href="platform.html">平台与课堂</a>
+  <a class="btn" href="assessment.html">测评体系</a>
+  <a class="btn" href="studio.html">作品</a>
+  <a class="btn" href="hardware.html">教具</a>
+  <a class="btn" href="operations.html">校区运营</a>
+  </nav>
+  <button class="icon-btn" id="searchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg></button>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="btn-primary" href="index.html#trial" style="height:38px;padding:0 16px;font-size:13.5px">预约试听</a>
+</div>
+
+<div class="wrap">
+  <div class="crumbs"><a href="index.html">首页</a> / 四道题定起点</div>
+  <section class="hero solo">
+    <div>
+      <span class="eyebrow"><i></i>四道题定起点</span>
+      <h1>别按年龄猜，<br>按四个<em>能被观察的事实</em>算</h1>
+      <p class="lead">年级、经验、遇到难题的反应、数学进度——这四件事比「几岁」更能决定孩子该从哪一级开始。选完四题，给你一个起点和下一步动作。</p>
+      <div class="nums"><div class="n"><b>4</b><span>道单选题，2 分钟</span></div><div class="n"><b>8</b><span>分制，规则全公开</span></div><div class="n"><b>4</b><span>档起点 L1–L4</span></div><div class="n"><b>0</b><span>推销，结果可自己复算</span></div></div>
+    </div>
+    
+  </section>
+
+<section class="sec"><div class="sec-head"><span>四道题</span><h2>先定起点，再谈报哪个班</h2><p>家长最常问「我孩子该从哪一级开始」。与其按年龄猜，不如按四个能被观察的事实算一遍。</p></div>
+<div class="finder" id="finder">
+  <div class="q" data-k="grade">
+    <b><i>01</i>孩子现在几年级？</b>
+    <div class="opts">
+      <button class="opt" type="button" data-v="g12">小学 1–2 年级</button>
+      <button class="opt" type="button" data-v="g34">小学 3–4 年级</button>
+      <button class="opt" type="button" data-v="g56">小学 5–6 年级</button>
+      <button class="opt" type="button" data-v="g7">初一及以上</button>
+    </div>
+  </div>
+  <div class="q" data-k="exp">
+    <b><i>02</i>之前接触过编程吗？</b>
+    <div class="opts">
+      <button class="opt" type="button" data-v="none">完全没接触</button>
+      <button class="opt" type="button" data-v="scr">玩过 Scratch 或类似图形化</button>
+      <button class="opt" type="button" data-v="lang">学过一段 Python 或 C++</button>
+    </div>
+  </div>
+  <div class="q" data-k="solo">
+    <b><i>03</i>遇到不会做的题，孩子通常？</b>
+    <div class="opts">
+      <button class="opt" type="button" data-v="try">自己先试一会儿，试不出来才求助</button>
+      <button class="opt" type="button" data-v="ask">马上问人，但愿意自己动手改</button>
+      <button class="opt" type="button" data-v="give">直接说不会，等人来帮</button>
+    </div>
+  </div>
+  <div class="q" data-k="math">
+    <b><i>04</i>数学大概学到哪？</b>
+    <div class="opts">
+      <button class="opt" type="button" data-v="frac">分数、小数与简单方程都会</button>
+      <button class="opt" type="button" data-v="int">整数四则运算没问题</button>
+      <button class="opt" type="button" data-v="none">除法还不熟</button>
+    </div>
+  </div>
+  <div class="red" id="res" hidden></div>
+  <p class="hint" id="hint">选完四题，这里会给出建议起点。结果只作参考，不替代入学测评。</p>
+</div>
+<script src="stage-finder.js"></script></section><section class="sec"><div class="sec-head"><span>规则</span><h2>分数怎么算，全部公开</h2><p>不搞黑箱。你可以自己算一遍，也可以拿它和我们的测评结果对照。</p></div>
+<div class="table-wrap"><table class="matrix">
+<thead><tr><th>题目</th><th>选项与得分</th><th>为什么这样定</th></tr></thead>
+<tbody>
+<tr><th>年级</th><td>1–2 年级 0 / 3–4 年级 1 / 5–6 年级 2 / 初一以上 3</td><td>年级反映抽象能力与课业余量，不是智力</td></tr>
+<tr><th>编程经验</th><td>没接触 0 / 图形化 1 / Python 或 C++ 2（乘 1.5 倍权重）</td><td>经验决定起点能否跳过基础模块，权重最高</td></tr>
+<tr><th>独立动手</th><td>自己先试 1 / 问人但肯改 0.5 / 等人帮 0</td><td>编程是「自己试出来」的，这一项比聪明更重要</td></tr>
+<tr><th>数学进度</th><td>分数与方程 1 / 整数四则 0.5 / 除法不熟 0</td><td>L3 起要用小数、取整与坐标，L4 要用复杂度估算</td></tr>
+</tbody></table></div>
+<div class="note"><b>总分与档位：</b>满分 8 分。≤ 2 分 → L1；2.5–4 分 → L2；4.5–6 分 → L3；6.5 分以上 → L4。这套规则是公开的，你可以自己算一遍，看和你预期差在哪。</div></section><section class="sec"><div class="sec-head"><span>结果怎么用</span><h2>四档结果，各自的第一步</h2><p>同一个分数在不同阶段含义不同。下面是每一档真正该做的第一件事。</p></div>
+<div class="tiles g2">
+  <div class="tile"><i>L1</i><h4>从图形化开始，先建立「顺序」</h4><p>目标是能独立做出三个小作品、讲清先做什么再做什么。这一档不建议加速，先把「自己动手」的习惯养出来。</p></div>
+  <div class="tile"><i>L2</i><h4>图形化 + 硬件，补「变量」这一关</h4><p>硬件能让抽象概念看得见，但真正的分水岭是变量与克隆。入学前会补测这两项。</p></div>
+  <div class="tile"><i>L3</i><h4>直接进 Python，但要过结构关</h4><p>能写一段不等于能拆几块。前 8 课时会重点看「能不能把需求拆成函数」，拆不动就先补。</p></div>
+  <div class="tile"><i>L4</i><h4>进 C++ 与算法，先确认数学底</h4><p>分数、方程、复杂度估算要能跟上。数学没到位的，先补 4 次数学专题再进算法模块。</p></div>
+</div>
+<div class="note"><b>不管落在哪一档，都要做一次入学测评：</b>这份问卷只回答「大概从哪开始」，测评回答的是「现在具体缺哪两项」。前者是方向，后者是处方。</div></section><section class="sec"><div class="sec-head"><span>例外</span><h2>三种情况，我们不建议现在开始</h2><p>招生不是越多越好。有些孩子现在来，学得慢、伤兴趣，过半年反而更快。</p></div>
+<div class="check">
+  <div class="c"><i class="x">×</i><span><b>还不满 6 岁</b>：手部精细动作与持续注意力都还没到位。可以先来玩两次体验课，不建议正式开课。</span></div>
+  <div class="c"><i class="x">×</i><span><b>完全没接触过、且遇到难题只会等人帮</b>：先上一次「自己试 15 分钟」的体验课再决定。我们不建议用上课替代「愿意自己动手」这件事。</span></div>
+  <div class="c"><i class="x">×</i><span><b>目标直接冲 CSP-J、但除法还不熟</b>：先把数学补到分数与简单方程，否则算法课会变成背模板。</span></div>
+  <div class="c"><i>✓</i><span><b>更常见的正确做法</b>：先测评定起点 → 按阶段打基础 → 学期末冲一次考级 → 有余力再进竞赛。</span></div>
+</div></section>
+
+<section class="sec"><div class="sec-head"><span>FAQ</span><h2>家长最常问的四个问题</h2></div><div class="faq"><details><summary>这个结果准吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">它只能给出方向，不能给出处方。四个事实都是可观察的，所以方向通常不会太偏；但「具体缺哪两项能力」必须靠 30 分钟的入学测评，问卷看不出来。</div></details>
+<details><summary>为什么不直接按年龄推荐？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">同一年龄的孩子，独立动手能力可以差两年。我们见过三年级能自己拆函数的孩子，也见过六年级一遇卡点就等人的孩子，按年龄一刀切一定会错一半。</div></details>
+<details><summary>算出来和我预期不一样，听谁的？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">先听测评。如果你算出来是 L3、预期是 L2，多半是「经验」这一项给高了——玩过 Scratch 不等于建立过变量概念，测评会当场验证。</div></details>
+<details><summary>一定要做测评才能报名吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">要。测评不收费、30 分钟，目的是定起点而不是筛选。定错起点的代价是几个月的时间和兴趣，比一次测评贵得多。</div></details></div></section>
+
+  <section class="cta">
+    <div class="tt"><b>算完还是拿不准？</b><span>约一次 30 分钟的入学测评：三个环节、当场出结论，给「建议起点 + 需要补的两项能力」，不推销课包。</span></div>
+    <a class="btn-primary" href="index.html#trial">预约入学测评</a>
+  </section>
+
+</div>
+
+<div class="foot">
+  <p><b>码跃少儿编程 CodeLeap</b> · 合肥 · 高新 / 政务 / 滨湖三校区 · 400-860-2026</p>
+  <p><a href="index.html">官网首页</a> · <a href="curriculum-map.html">课程 × 考级</a> · <a href="stage-finder.html">四道题定起点</a> · <a href="teaching.html">备课与授课</a> · <a href="platform.html">平台与课堂</a> · <a href="assessment.html">测评体系</a> · <a href="studio.html">作品与创作</a> · <a href="hardware.html">教具与硬件</a> · <a href="admissions.html">招生与学员</a> · <a href="family.html">家校沟通</a> · <a href="operations.html">校区运营</a> · <a href="blog.html">知识库</a> · <a href="team.html">师资与教研</a> · <a href="campus.html">校区与到店</a> · <a href="enroll.html">在线报名</a></p>
+  <p>内容示例站点：页面中的机构数据、师资、价格与流程均为演示内容，正式上线前需替换为真实信息与合同条款。</p>
+</div>
+
+<script>
+(function () {
+  var KEY = "codeleap-theme";
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem(KEY); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  var btn = document.getElementById("themeBtn");
+  if (btn) btn.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+  });
+  document.querySelectorAll(".faq summary").forEach(function (s) {
+    s.addEventListener("click", function () {
+      var d = s.parentElement;
+      if (!d.open) document.querySelectorAll(".faq details[open]").forEach(function (o) { if (o !== d) o.open = false; });
+    });
+  });
+})();
+</script>
+
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="sInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="sRes"></div>
+  </div>
+</div>
+<button class="icon-btn tocFab" id="tocFab" type="button" aria-label="打开本页目录"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></button>
+<div class="tdock" id="tdock" aria-label="本页目录"></div>
+<aside class="toc" id="toc" aria-label="本页目录"></aside>
+<script src="search-index.js"></script>
+<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('sbox');
+  var sInput = document.getElementById('sInput');
+  var sRes = document.getElementById('sRes');
+  var sBtn = document.getElementById('searchBtn');
+  var lastFocus = null;
+
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+  function openSearch() {
+    lastFocus = document.activeElement;
+    sbox.classList.add('on');
+    setTimeout(function () { sInput.focus(); sInput.select(); }, 30);
+  }
+  function closeSearch() {
+    sbox.classList.remove('on');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function hrefOf(it) { return it.u + (it.id ? '#' + it.id : ''); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q
+      ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p + ' ' + (it.x || '')).toLowerCase().indexOf(q) > -1; })
+      : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) {
+      sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试，比如「排课」「报告」「投诉」</div>';
+      return;
+    }
+    sRes.innerHTML = list.map(function (it, i) {
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + hrefOf(it) + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) {
+      a.addEventListener('click', function () { sbox.classList.remove('on'); });
+    });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+
+  // 本页目录：按 sec-head 顺序编号，与索引一致
+  var heads = [].slice.call(document.querySelectorAll('.wrap .sec .sec-head h2'));
+  var toc = document.getElementById('toc');
+  var dock = document.getElementById('tdock');
+  var fab = document.getElementById('tocFab');
+  var html = '<b>本页目录</b>';
+  heads.forEach(function (h, i) { h.id = 's' + (i + 1); html += '<a href="#s' + (i + 1) + '">' + esc(h.textContent) + '</a>'; });
+  if (heads.length) {
+    if (toc) toc.innerHTML = html;
+    if (dock) dock.innerHTML = html;
+  }
+  if (fab) fab.addEventListener('click', function () { dock.classList.toggle('on'); });
+  if (dock) dock.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') dock.classList.remove('on');
+  });
+  var links = (toc ? toc.querySelectorAll('a') : []);
+  var dlinks = (dock ? dock.querySelectorAll('a') : []);
+  function spy() {
+    var y = window.scrollY + 130, cur = -1;
+    heads.forEach(function (h, i) { if (h.getBoundingClientRect().top + window.scrollY <= y) cur = i; });
+    links.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+    dlinks.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+  }
+  window.addEventListener('scroll', spy, { passive: true });
+  spy();
+})();
+</script>
+</body>
+</html>

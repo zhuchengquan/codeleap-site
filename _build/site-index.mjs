@@ -14,6 +14,7 @@ export const SPECIAL = [
   ['teaching.html', '备课与授课'],
   ['admissions.html', '招生与学员'],
   ['family.html', '家校沟通'],
+  ['stage-finder.html', '四道题定起点'],
 ];
 
 // 手写页：章节取 h2，锚点由 patch-all 写入 ps1..N
