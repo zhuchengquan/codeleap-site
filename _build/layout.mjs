@@ -134,8 +134,9 @@ const NAV = [
   ["curriculum-map.html", "课程 × 考级"],
   ["platform.html", "平台与课堂"],
   ["assessment.html", "测评体系"],
-  ["operations.html", "校区运营"],
   ["studio.html", "作品"],
+  ["hardware.html", "教具"],
+  ["operations.html", "校区运营"],
 ];
 
 export function cnQuotes(html) {
