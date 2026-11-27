@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>孩子说不想学了，先分清是三种「不想」 · 码跃少儿编程</title>
+<meta name="description" content="累了、卡住了、真的不喜欢了，三种的处理方式相反。附三种坎的处理表、一次二十分钟的谈话脚本，以及遇到这种情况我们的固定流程。">
+<link rel="canonical" href="https://codeleap.example/blog-quit.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="孩子说不想学了，先分清是三种「不想」">
+<meta property="og:description" content="累了、卡住了、真的不喜欢了，三种的处理方式相反。附三种坎的处理表、一次二十分钟的谈话脚本，以及遇到这种情况我们的固定流程。">
+<meta property="og:url" content="https://codeleap.example/blog-quit.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b7bf3'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' fill='%23fff' text-anchor='middle'%3E%E7%A0%81%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f9fe;--bg-2:#eef4fd;--ink:#16213a;--muted:#56657e;--faint:#8695ab;--primary:#2b7bf3;--primary-soft:rgba(43,123,243,.10);--accent:#f0663a;--accent-soft:rgba(240,102,58,.10);--ok:#12a06a;--ok-soft:rgba(18,160,106,.12);--glass:rgba(255,255,255,.72);--glass-2:rgba(255,255,255,.94);--glass-head:rgba(255,255,255,.88);--stroke:rgba(27,52,92,.10);--stroke-2:rgba(27,52,92,.16);--shadow:0 12px 32px rgba(26,48,84,.07);--radius:18px;--radius-sm:13px;--font-display:"Nunito","Noto Sans SC",sans-serif;--font-body:"Nunito","Noto Sans SC",sans-serif;--font-mono:"JetBrains Mono","Noto Sans SC",monospace}
+[data-theme="dark"]{--bg:#0d1524;--bg-2:#101a2c;--ink:#eef3fb;--muted:#a7b6cc;--faint:#7d8ea8;--primary:#5a9dff;--primary-soft:rgba(90,157,255,.14);--accent:#ff8660;--accent-soft:rgba(255,134,96,.12);--ok:#4dd49b;--ok-soft:rgba(77,212,155,.15);--glass:rgba(255,255,255,.06);--glass-2:rgba(255,255,255,.10);--glass-head:rgba(18,28,46,.88);--stroke:rgba(255,255,255,.10);--stroke-2:rgba(255,255,255,.18);--shadow:0 16px 40px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.78;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-display);letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:11px 18px;background:var(--glass-head);border-bottom:1px solid var(--stroke);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:15.5px}
+.brand .m{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:var(--primary);color:#fff;font-size:14px;font-weight:700}
+.tagline{font-size:12.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted)}
+.sp{flex:1}
+.icon-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 16px;border:1px solid var(--stroke-2);border-radius:999px;background:var(--glass);color:var(--ink);font-family:inherit;font-size:13.5px}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 22px;border-radius:999px;background:var(--accent);color:#fff;font-size:14.5px;box-shadow:0 10px 24px rgba(240,102,58,.26)}
+.btn-line{display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--ink);font-size:14px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.05em;color:var(--primary)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--primary);font-style:normal}
+.wrap{max-width:1000px;margin:0 auto;padding:32px 20px 60px}
+.foot{max-width:1000px;margin:0 auto;padding:0 20px 52px;font-size:12px;line-height:1.9;color:var(--faint)}
+.foot a{color:var(--primary)}
+
+.art-wrap{max-width:1080px;margin:0 auto;padding:26px 20px 60px;display:grid;grid-template-columns:minmax(0,720px) 260px;gap:44px;align-items:start}
+@media(max-width:980px){.art-wrap{grid-template-columns:1fr;gap:0}.side{display:none}}
+.crumb{font-size:12px;color:var(--faint);margin-bottom:16px}
+.crumb a{color:var(--primary)}
+.art h1{margin:8px 0 14px;font-size:clamp(24px,3.3vw,33px);font-weight:800;line-height:1.36;letter-spacing:.01em}
+.art .meta-line{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--faint);margin-bottom:20px}
+.art .lead{margin:0 0 8px;font-size:15.5px;line-height:1.95;color:var(--muted);padding-bottom:22px;border-bottom:1px solid var(--stroke)}
+.art p{margin:0 0 18px;font-size:15.5px;line-height:1.96;color:var(--ink)}
+.art h2{margin:36px 0 14px;font-size:20px;font-weight:700;line-height:1.45}
+.art ul,.art ol{margin:0 0 18px;padding-left:22px;display:grid;gap:9px}
+.art li{font-size:15px;line-height:1.92;color:var(--ink)}
+.art li b{font-weight:600;color:var(--ink)}
+.art li span{color:var(--muted)}
+.art code{font-family:var(--font-mono);font-size:13px;padding:1px 5px;border-radius:5px;background:var(--primary-soft);color:var(--primary)}
+.note{margin:24px 0;padding:16px 20px;border-radius:var(--radius-sm);background:var(--primary-soft);border-left:3px solid var(--primary);font-size:14px;line-height:1.92;color:var(--muted)}
+.note b{color:var(--ink)}
+.quote{margin:26px 0;padding:2px 0 2px 18px;border-left:2px solid var(--stroke-2);font-size:15px;line-height:1.94;color:var(--muted)}
+.tbl{margin:20px 0 24px;border:1px solid var(--stroke);border-radius:var(--radius-sm);overflow:hidden}
+.tbl table{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th{text-align:left;padding:10px 14px;background:var(--primary-soft);color:var(--ink);font-weight:600;font-size:13px}
+.tbl td{padding:10px 14px;border-top:1px solid var(--stroke);color:var(--muted);line-height:1.7;vertical-align:top}
+.tbl td b{color:var(--ink)}
+.author{margin:40px 0 0;padding:18px 20px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);display:flex;gap:14px;align-items:flex-start;box-shadow:var(--shadow)}
+.author img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none}
+.author b{display:block;font-size:14px}
+.author span{display:block;font-size:12.5px;line-height:1.75;color:var(--muted);margin-top:3px}
+.related{margin-top:38px}
+.related h3{font-size:12px;margin:0 0 12px;color:var(--faint);font-weight:500;letter-spacing:.06em}
+.rel{display:grid;gap:10px}
+.rel a{display:block;padding:15px 18px;border-radius:var(--radius-sm);border:1px solid var(--stroke);background:var(--glass-2)}
+.rel a:hover{border-color:var(--stroke-2)}
+.rel b{font-size:14px;font-weight:600}
+.rel span{display:block;font-size:12px;color:var(--faint);margin-top:4px}
+.cta{margin-top:34px;display:flex;align-items:center;flex-wrap:wrap;gap:16px;padding:24px 26px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid rgba(240,102,58,.22)}
+.cta .tt{flex:1;min-width:230px}
+.cta b{display:block;font-size:15.5px;font-weight:700}
+.cta span{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.7}
+.side{position:sticky;top:26px}
+.side .box{padding:18px 20px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);box-shadow:var(--shadow)}
+.side h4{margin:0 0 10px;font-size:12px;letter-spacing:.06em;color:var(--faint);font-weight:500}
+.side ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.side li{font-size:13px;line-height:1.6}
+.side li a{color:var(--primary)}
+.side .k{display:block;font-size:12px;color:var(--faint);margin-top:2px}
+.side .toc{display:grid;gap:8px;font-size:12.5px;color:var(--muted)}
+
+.art{min-width:0}
+
+
+/* cl-ss:css */
+.sbox{position:fixed;inset:0;z-index:80;display:none;align-items:flex-start;justify-content:center;padding:84px 18px 20px;background:rgba(9,19,38,.40);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)}
+.sbox.on{display:flex}
+.sbox .panel{width:100%;max-width:600px;border-radius:20px;background:#fff;border:1px solid var(--stroke-2,rgba(20,50,110,.12));box-shadow:0 26px 64px rgba(12,26,52,.30);overflow:hidden}
+[data-theme="dark"] .sbox .panel{background:#111c2e;border-color:rgba(255,255,255,.14)}
+.sbox .inp{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke-2,rgba(20,50,110,.12))}
+.sbox .inp svg{width:17px;height:17px;color:var(--faint,#8695ab);flex:none}
+.sbox .inp input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink,#16213a);font-family:inherit;font-size:15px}
+.sbox .inp kbd{font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:2px 6px;border-radius:6px;border:1px solid var(--stroke-2,rgba(20,50,110,.12));color:var(--faint,#8695ab);flex:none}
+.sbox .res{max-height:54vh;overflow:auto;padding:8px}
+.sbox .item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px}
+.sbox .item:hover,.sbox .item.on{background:var(--primary-soft,rgba(43,123,243,.12))}
+.sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
+.sbox .item span{font-size:11.5px;color:var(--faint,#8695ab);white-space:nowrap}
+.sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint,#8695ab);text-align:center}
+/* /cl-ss:css */
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <span class="tagline">知识库</span>
+  <div class="sp"></div>
+  <button class="icon-btn" id="searchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+  </button>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="btn" href="index.html">官网首页</a>
+</div>
+<div class="art-wrap">
+    <article class="art">
+    <p class="crumb"><a href="blog.html">知识库</a> · <a href="curriculum-map.html">课程 × 考级</a> · <a href="family.html">家长服务</a> / 中途放弃</p>
+    <span class="eyebrow"><i></i>学习状态</span>
+    <h1>孩子说不想学了，先分清是三种「不想」</h1>
+    <div class="meta-line"><span>2026-11-27</span><span>阅读约 8 分钟</span><span>作者：王雨晴</span></div>
+    <p class="lead">「不想学了」这四个字，背后至少是三种完全不同的情况：累了、卡住了、真的不喜欢了。三种的处理方式相反——一种要放松节奏，一种要精准拆坎，一种要允许离开。分不清就动手，多半会把还能救的课停掉，或者把该停的课拖成两年。</p>
+
+<p>先把一个事实摆出来：<b>没有任何一门课能让所有孩子从头兴奋到尾。</b>学编程的第四到第八个月，是最容易掉队的区间——新鲜感过去了，难度开始上升，作品还没到能拿出去炫耀的程度。这个阶段流失率最高，也最考验家长判断。</p>
+
+<h2 id="ps1">一、三种「不想」，先分清是哪一种</h2>
+<p>不用猜，问三个问题就有大致方向：</p>
+<ul>
+<li><b>最近一次做出完整作品是什么时候？</b><span>想不起来，或者已经两三个月没有——大概率是「累」，节奏出了问题。</span></li>
+<li><b>他是讨厌这门课，还是讨厌某一个具体的点？</b><span>能说清「我讨厌递归」「我讨厌报错」，是「挫」；说不清、只说「就是不想去」，更像「厌」。</span></li>
+<li><b>如果现在把编程换成他喜欢的另一门课，他愿意去吗？</b><span>愿意，说明问题在这门课上；也不愿意，说明问题在「上课」这件事上，先别急着换课。</span></li>
+</ul>
+<div class="note"><b>一个提醒：</b>孩子说「不想学」的当场，往往不是真实想法，而是某节课受了挫、或者当天太累。至少观察两周、跨过四次课再下结论。当场退课和当场加课，都是情绪决策。</div>
+
+<h2 id="ps2">二、第一种：累——放松节奏，不是停掉课</h2>
+<p>「累」的典型表现不是哭闹，而是<b>钝</b>：上课前开始拖延、作品越做越简单、下课不再主动讲、问什么都说「还行」。</p>
+<p>原因通常很具体：连续十几周都在学新概念，没有一次「做出来能拿出手」的成就感。孩子不是不想学，是看不到自己学到的东西有什么用。</p>
+<p>处理方式三件事，一周内能做完：</p>
+<ul>
+<li><b>把作业减半，保留一个完整作品。</b><span>接下来四次课只做一件事：做出一个能演示给家里人看的东西。做完再谈新内容。</span></li>
+<li><b>降一次频。</b><span>每周两次改每周一次，持续一个月。少上一次不会掉队，硬撑着上才会掉队。</span></li>
+<li><b>给一个真实的观众。</b><span>让他把作品讲给爷爷奶奶、讲给同学听。被看见一次，比十次鼓励有用。</span></li>
+</ul>
+
+<h2 id="ps3">三、第二种：挫——找到那个具体的坎</h2>
+<p>「挫」是最值得投入处理的一种，因为它是可修的。孩子不是不喜欢编程，是被某一个具体的点挡住了。常见的坎只有那么几个：</p>
+<div class="tbl"><table>
+<tr><th>坎</th><th>典型表现</th><th>处理方式</th></tr>
+<tr><td style="white-space:nowrap"><b>图形化转 Python</b></td><td>思路都对，一写就报错；拼写、缩进、括号反复出错</td><td>先只练「照着改」，两周内不要求独立写；把语法错误和逻辑错误分开处理</td></tr>
+<tr><td style="white-space:nowrap"><b>循环与嵌套</b></td><td>单层会写，两层就乱；说不清「现在走到第几轮」</td><td>退回纸面，用格子画每一轮的值；能用嘴讲清再回电脑</td></tr>
+<tr><td style="white-space:nowrap"><b>递归</b></td><td>看得懂，自己写不出；一写就栈溢出</td><td>先只做「缩小规模」这一步；用三层以内的例子，画调用栈</td></tr>
+<tr><td style="white-space:nowrap"><b>读题与边界</b></td><td>会做但总丢分；样例过、隐藏点错</td><td>专门练读题：把条件抄成清单，逐条对照；先练十道只错在边界的题</td></tr>
+</table></div>
+<p>处理「挫」的原则是<b>把坎拆小，小到他今天就能过</b>。一个孩子卡在递归上，不是因为递归难，而是因为没人把「调用自己」这件事拆成三步给他看。拆开之后，通常两三次课就能过去。</p>
+<p>还有一个动作很有效：<b>允许回退一级做复习课。</b>很多家长怕「退回去就落后了」，实际上在坎上硬撑三个月，比回去补三节课慢得多。</p>
+
+<h2 id="ps4">四、第三种：厌——兴趣真的换了，别硬留</h2>
+<p>「厌」的判断标准很硬：不是某一节课难，而是<b>所有课都不想上</b>；同时对别的活动明显有热情（机器人、篮球、画画）。这时候继续加码，只会把「不喜欢编程」变成「不喜欢学习」。</p>
+<p>我们的建议是先停四周，而不是当场退费：</p>
+<ul>
+<li><b>停课期间保留学位，不消课。</b><span>四周内随时可以回来，回到原来的班或换一个班都行。</span></li>
+<li><b>四周后问一个问题：</b>「如果重新开始，你想做点什么？」<span>能说出具体想做的作品，说明只是暂时疲劳；说不出，就是真的换了兴趣。</span></li>
+<li><b>真的换了，就干净地结束。</b><span>按未消耗课时退费，七个工作日内办结。不要用「钱都交了」把他留在教室里——那会让他以后对所有课都提不起劲。</span></li>
+</ul>
+
+<h2 id="ps5">五、家长最容易做错的三件事</h2>
+<p>这三件事我们见过太多次，每一件都在把孩子往反方向推：</p>
+<ul>
+<li><b>用钱施压。</b><span>「一年小一万，你说不上就不上？」孩子听到的不是珍惜，是负债。他会继续去上课，但不再投入。</span></li>
+<li><b>用别人比较。</b><span>「同班的明明都学到 L3 了。」比较制造的是羞耻，不是动力。而且进度差异在这个阶段非常正常。</span></li>
+<li><b>用奖励交换。</b><span>「学完这期给你买手机。」外部奖励一旦引入，孩子就会把学习和交易绑定；奖励撤掉，动力归零。</span></li>
+</ul>
+
+<h2 id="ps6">六、一次二十分钟的谈话，可以这么走</h2>
+<p>不用长篇大论，二十分钟、四个段落，比讲一小时道理管用：</p>
+<div class="tbl"><table>
+<tr><th>时间</th><th>说什么</th><th>不要说什么</th></tr>
+<tr><td style="white-space:nowrap"><b>0–5 分钟</b></td><td>「最近哪节课最没意思？」让他指到具体一节</td><td>不要问「你为什么不想学」，这个问题太大，孩子答不出</td></tr>
+<tr><td style="white-space:nowrap"><b>5–12 分钟</b></td><td>让他讲一个卡住的点，你只复述、不评价</td><td>不要接「这有什么难的」「你应该认真听」</td></tr>
+<tr><td style="white-space:nowrap"><b>12–18 分钟</b></td><td>一起定一个小目标：两周内做出什么</td><td>不要定「这学期考到 90 分」，太远的目标等于没有目标</td></tr>
+<tr><td style="white-space:nowrap"><b>18–20 分钟</b></td><td>把选择摆出来：继续 / 换节奏 / 停四周，各说清代价</td><td>不要说「你自己决定」，八岁孩子承担不了这个决定</td></tr>
+</table></div>
+<p>这场谈话的关键不是说服，而是<b>把孩子从「被动接受安排」变成「参与决定」</b>。同样一门课，自己参与定的节奏，坚持率会明显不一样。</p>
+
+<h2 id="ps7">七、遇到这种情况，我们怎么做</h2>
+<p>把我们的流程写出来，方便你对照，也方便你提要求：</p>
+<ul>
+<li><b>收到反馈 48 小时内，班主任先联系孩子。</b><span>不是先找家长谈续费，是先问孩子「最近哪一节最没意思」。</span></li>
+<li><b>给出三个方案，而不是一个结论。</b><span>换班（换老师或换时段）、降频（每周一次）、停四周（保留学位不消课）。</span></li>
+<li><b>不承诺「下节课就有趣」。</b><span>这类话说出来就是骗人。我们能承诺的是把坎拆小、把节奏调对。</span></li>
+<li><b>退费按公开口径。</b><span>前两次课不满意全额退；第三次起按未消耗课时退，七个工作日内办结，不扣手续费。</span></li>
+</ul>
+<div class="note"><b>写在最后：</b>孩子说不想学，多数时候不是态度问题，是节奏问题——要么太久没有成就感，要么卡在一个没人帮他拆的坎上。真正该停的课很少，被误停的课很多。先分清是哪一种「不想」，再动手。</div>
+  </article>
+  <aside class="side">
+    <div class="box">
+      <h4>本文涉及的阶段</h4>
+      <ul>
+        <li><a href="course-l2.html">L2 进阶图形化与硬件</a><span class="k">8–10 岁 · 48 课时</span></li>
+        <li><a href="course-l3.html">L3 Python 编程</a><span class="k">9–12 岁 · 48 课时</span></li>
+        <li><a href="course-l4.html">L4 C++ 竞赛</a><span class="k">11–16 岁 · 48 课时</span></li>
+      </ul>
+    </div>
+    <div class="box" style="margin-top:12px">
+      <h4>知识库</h4>
+      <div class="toc"><a href="blog-when-to-start.html">几岁开始学编程合适</a><a href="blog-gesp-1.html">GESP 一级怎么准备</a><a href="blog-after-scratch.html">Scratch 之后学什么</a><a href="blog-format-choice.html">班型怎么选</a><a href="blog-competition-path.html">竞赛路径</a><a href="blog-math.html">数学与编程</a><a href="blog-trial.html">试听课看什么</a><a href="blog-online.html">线上课怎么上</a><a href="blog.html">全部文章与速答</a></div>
+    </div>
+  </aside>
+</div>
+<div class="foot">
+  <p><b>码跃少儿编程 CodeLeap</b> · 合肥 · 高新 / 政务 / 滨湖三校区 · 400-860-2026</p>
+  <p><a href="index.html">官网首页</a> · <a href="index.html#courses">课程体系</a> · <a href="course-l1.html">L1</a> · <a href="course-l2.html">L2</a> · <a href="course-l3.html">L3</a> · <a href="course-l4.html">L4</a> · <a href="blog.html">知识库</a> · <a href="team.html">师资与教研</a> · <a href="campus.html">校区与到店</a> · <a href="results.html">荣誉与成果</a> · <a href="camp.html">寒假营</a> · <a href="enroll.html">在线报名</a> · <a href="brochure.html">招生简章</a> · <a href="parent.html">家长中心</a> · <a href="legal.html">政策与条款</a></p>
+  <p>内容示例站点：文中课表、价格、人数与统计数据均为演示用途，正式上线前请替换为真实信息；教育判断类内容仅供参考，不构成对个体孩子的结论。</p>
+</div>
+<script>
+(function () {
+  var KEY = "codeleap-theme";
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem(KEY); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  var btn = document.getElementById("themeBtn");
+  if (btn) btn.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+  });
+})();
+</script>
+
+
+<!-- cl-ss:tail -->
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="sInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="sRes"></div>
+  </div>
+</div>
+<script src="search-index.js"></script>
+<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('sbox');
+  var sInput = document.getElementById('sInput');
+  var sRes = document.getElementById('sRes');
+  var sBtn = document.getElementById('searchBtn');
+  var lastFocus = null;
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function openSearch() { lastFocus = document.activeElement; sbox.classList.add('on'); setTimeout(function () { sInput.focus(); if (sInput.value) sInput.select(); }, 30); }
+  function closeSearch() { sbox.classList.remove('on'); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p + ' ' + (it.x || '')).toLowerCase().indexOf(q) > -1; }) : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) { sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试</div>'; return; }
+    sRes.innerHTML = list.map(function (it, i) {
+      var h = it.u + (it.id ? '#' + it.id : '');
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + h + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) { a.addEventListener('click', function () { sbox.classList.remove('on'); }); });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+})();
+</script>
+<!-- /cl-ss:tail -->
+</body>
+</html>
+
+
