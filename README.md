@@ -26,7 +26,7 @@
 | `blog.html` + 3 篇文章页 | 知识库：长文 + 8 条速答 + 机构动态 + 订阅 |
 | `results.html` | 荣誉与成果：KPI、逐年趋势、赛事分布、获奖记录、学员故事、统计口径 |
 | `camp.html` | 寒假集训营活动页（倒计时、三个营、价格、报名） |
-| `brochure.html` / `招生简章.pdf` | A4 两页可打印招生简章 |
+| `brochure.html` + `brochure-2026-2027.pdf` | 招生简章：A4 两页网页版（可直接打印）+ 4 页 PDF（约 430KB，含课程与价格、优惠与退费条款、退费算例、报名四步、三校区与 FAQ；`brochure-print.html` 是 PDF 排版源，`noindex` 不收录） |
 | `team.html` | 师资与教研：四位主讲的边界、选人三道关、教研四工序、课堂观察表、90 天新师路径 |
 | `curriculum-map.html` | 课程 × 考级：L1–L4 主矩阵、三年级→初一五年节奏、GESP 八级能力对照、CSP 与白名单赛事、三种错配、四种排课路径与加减速判据 |
 | `platform.html` | 平台与课堂：三类账号权限、一节课六条记录、四个课堂工具、家长端可见/不可见、隐私五条 |
@@ -82,7 +82,9 @@ python -m http.server 8000
 ├── feed.xml              RSS 订阅（九篇长文）
 ├── results.html          荣誉与成果
 ├── camp.html             寒假营
-├── brochure.html         招生简章（可打印）
+├── brochure.html         招生简章（可打印，A4 两页）
+├── brochure-print.html   简章 PDF 排版源（4 页，noindex）
+├── brochure-2026-2027.pdf 简章 PDF（4 页，A4）
 ├── team.html             师资与教研
 ├── curriculum-map.html   课程 × 考级
 ├── platform.html         平台与课堂
@@ -121,6 +123,18 @@ python -m http.server 8000
 | 家校沟通 | 家长什么时候会收到什么，出问题找谁？ | 六个固定节点、三种家长会、微信规范、投诉时限、家庭配合 |
 
 `operations.html` 面向校长与合作机构，页内三种合作方式已明确标注「不构成招商承诺、收益承诺或授权要约」，正式合作以书面合同为准。`_build/` 是这九页的生成与校验脚本（`layout.mjs` 提供统一骨架，`p1`–`p9` 是内容模块，`gen-pages.mjs` 输出 HTML 并注入搜索入口与目录，`patch-index.mjs` 给首页装同一套搜索，`patch-all.mjs` 给其余手写页装搜索入口，`site-index.mjs` 汇总全站章节、`build-search.mjs` 生成全站共用的 `search-index.js`，`verify-pages.mjs` 与 `scan-links.mjs` 做标签、链接与 sitemap 校验），仅开发时使用，不参与站点运行。
+
+## 招生简章 PDF 怎么重新生成
+
+`brochure-print.html` 是排版源（4 页 A4，`@page size: A4; margin: 0`，每页固定 210×297mm），改完内容后在本机执行：
+
+```powershell
+chrome.exe --headless=new --print-to-pdf="brochure-2026-2027.pdf" `
+  --no-pdf-header-footer "file:///.../brochure-print.html"
+python _build\pdf-meta.py brochure-2026-2027.pdf brochure-2026-2027.pdf
+```
+
+字体用系统雅黑（`Microsoft YaHei`）而不再挂 CDN 中文字体，PDF 从 1.5MB 降到约 430KB；`_build\pdf-meta.py` 用 pypdf 写标题、作者、主题与关键词，顺带校验页数是否为 4。
 
 ## 关于 `manual.html`（第三方内容存档）
 
