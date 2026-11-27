@@ -28,6 +28,7 @@ export const OTHER = [
   ['blog-competition-path.html', '竞赛路径'],
   ['blog-math.html', '数学与编程'],
   ['blog-trial.html', '试听课看什么'],
+  ['blog-online.html', '线上课怎么上'],
   ['camp.html', '假期集训'],
   ['campus.html', '校区与到店'],
   ['course-l1.html', 'L1 启蒙'],
