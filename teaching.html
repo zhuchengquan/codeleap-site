@@ -220,7 +220,36 @@ a{color:inherit;text-decoration:none}
   <div class="tile"><i>片段 02</i><h4>变量为什么是 0</h4><p>角色一直在原地。让孩子把变量显示打开，盯着数字看三次点击，他自己会发现「忘了加 1」。</p></div>
   <div class="tile"><i>片段 03</i><h4>作品跑不起来</h4><p>先问「在你自己电脑上能跑吗」，再问「换一台呢」。九成问题出在引用了本地的图片或插件。</p></div>
   <div class="tile"><i>片段 04</i><h4>赛前第一次模考</h4><p>全班的分数都低于平时。不讲题，先讲「限时状态下怎么读题」，再让他们重做第一题。</p></div>
-</div></section>
+</div></section><section class="sec"><div class="sec-head"><span>资源包</span><h2>一节课背后，有七样东西</h2><p>家长看到的是 90 分钟，老师拿到手的是一套资源。七件套缺一件，课堂就会往「凭感觉」滑。</p></div>
+<div class="table-wrap"><table class="matrix">
+<thead><tr><th>资源</th><th>内容</th><th>谁用</th><th>更新频率</th></tr></thead>
+<tbody>
+<tr><th>教案</th><td>一页 A4，八个字段（目标、新概念、前置、案例、分层任务、卡点、观察重点、课后动作）</td><td>主讲</td><td>每学期修订一次</td></tr>
+<tr><th>课件</th><td>12–16 页，只放演示与提问，不放假代码截图</td><td>主讲 / 助教</td><td>每学期修订一次</td></tr>
+<tr><th>案例代码</th><td>可运行、可拆解、不超过 40 行的完整源码，附三个「故意写错」的版本</td><td>主讲</td><td>每学期跑一遍全平台</td></tr>
+<tr><th>分层题单</th><td>A 基础 / B 加一档 / C 挑战，各 2–3 题，标明预计用时</td><td>学员</td><td>每学期替换 30%</td></tr>
+<tr><th>验收表</th><td>这节课「算学会了」的三条可观察标准</td><td>主讲 / 教务</td><td>每学期修订一次</td></tr>
+<tr><th>微课</th><td>3–5 分钟，只讲一个卡点，缺课时补看</td><td>学员 / 家长</td><td>按需补录</td></tr>
+<tr><th>家长一句话</th><td>课后发给家长的那句话的模板，含「今天具体做到了什么」的填空</td><td>主讲</td><td>随课程同步</td></tr>
+</tbody></table></div>
+<div class="note"><b>七件套缺一件会怎样：</b>缺验收表，老师就凭感觉说「学会了」；缺分层题单，快的孩子闲着、慢的孩子卡着；缺家长一句话，家长就只剩分数可看。</div></section><section class="sec"><div class="sec-head"><span>高频问题</span><h2>十二个技术问题，一句话提示</h2><p>这些是 L1–L4 课堂上反复出现的卡点。表里给的是提示语，不是答案——答案要孩子自己跑出来。</p></div>
+<div class="table-wrap"><table class="matrix">
+<thead><tr><th>现象</th><th>常见原因</th><th>一句话提示（不给答案）</th></tr></thead>
+<tbody>
+<tr><th>克隆出来的角色只有一个在动</th><td>变量建成了「仅适用于当前角色」</td><td>「这个变量是每个克隆体自己的，还是大家共用的？」</td></tr>
+<tr><th>重复执行里动作越来越慢</th><td>循环里叠了等待，或每轮都新建克隆体</td><td>「数一数，跑完 10 次一共新建了几个角色？」</td></tr>
+<tr><th>角色走到边边就消失</th><td>坐标超出舞台范围，或没做边界判断</td><td>「舞台的 x 最大是多少？它现在走到哪了？」</td></tr>
+<tr><th>画笔线条断断续续</th><td>抬笔后没有落笔，或移动用了「移到」</td><td>「你现在是抬着笔走，还是落着笔走？」</td></tr>
+<tr><th>列表里的数据取不出来</th><td>索引从 1 开始，或取了第 0 项</td><td>「第一项是第几项？你取的是第几项？」</td></tr>
+<tr><th>函数调用后什么都没发生</th><td>定义了但没调用，或参数传错顺序</td><td>「这个函数在哪儿被叫到过？」</td></tr>
+<tr><th>递归跑到一半报错</th><td>缺少终止条件，或终止条件永远不成立</td><td>「它什么时候会停？把那个条件读一遍。」</td></tr>
+<tr><th>输入一个数字却当成文字</th><td>没有做类型转换，字符串比较与数值比较不同</td><td>「你输入的是 5，还是「5」？」</td></tr>
+<tr><th>小数算出来是 0.30000000004</th><td>浮点数精度，不是程序错了</td><td>「你希望保留几位？那就让它只显示几位。」</td></tr>
+<tr><th>字符串拼接少了空格</th><td>直接相加没有分隔符</td><td>「把结果读出来听听，哪里连在一起了？」</td></tr>
+<tr><th>读文件报找不到路径</th><td>相对路径与运行目录不一致</td><td>「你运行的时候，站在哪个文件夹里？」</td></tr>
+<tr><th>同样的代码换台电脑就报错</th><td>引用了本地图片、插件或未安装的库</td><td>「这份代码带走的时候，带上了什么没带？」</td></tr>
+</tbody></table></div>
+<div class="note"><b>这张表的用法：</b>贴在教室墙上，孩子卡住先自己查一遍，查不到再举手。老师只念提示语，不念答案。</div></section>
 
 <section class="sec"><div class="sec-head"><span>FAQ</span><h2>家长最常问的四个问题</h2></div><div class="faq"><details><summary>家长可以旁听吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">可以，提前和教务说一声。旁听时请坐在后排，不打断课堂、不给孩子递答案；课堂问题课后统一答疑。每学期还有一次专门的家长开放日。</div></details>
 <details><summary>孩子跟不上进度怎么办？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">先看是「这一节跟不上」还是「这个阶段跟不上」。前者用补课解决，后者要降阶重学。两种情况都不会让孩子在课上硬撑。</div></details>
