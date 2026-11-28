@@ -61,6 +61,8 @@ a{color:inherit;text-decoration:none}
 .tile p{margin:0;font-size:13px;line-height:1.82;color:var(--muted)}
 .matrix{width:100%;border-collapse:collapse;margin-top:20px;font-size:13px;background:var(--glass-2);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
 .matrix th,.matrix td{border-bottom:1px solid var(--stroke);padding:11px 13px;text-align:left;vertical-align:top;line-height:1.7}
+.matrix a{color:var(--primary);font-weight:600}
+.matrix a:hover{text-decoration:underline;text-underline-offset:3px}
 .matrix thead th{background:var(--primary-soft);color:var(--ink);font-weight:600;font-size:12.5px;white-space:nowrap}
 .matrix tbody th{background:var(--bg-2);font-weight:600;white-space:nowrap;color:var(--ink)}
 .matrix td{color:var(--muted)}
@@ -204,6 +206,7 @@ const NAV = [
   ["studio.html", "作品"],
   ["hardware.html", "教具"],
   ["operations.html", "校区运营"],
+  ["site-map.html", "全站地图"],
 ];
 
 export function cnQuotes(html) {
@@ -280,7 +283,7 @@ ${faq ? `<section class="sec"><div class="sec-head"><span>FAQ</span><h2>家长�
 
 <div class="foot">
   <p><b>码跃少儿编程 CodeLeap</b> · 合肥 · 高新 / 政务 / 滨湖三校区 · 400-860-2026</p>
-  <p><a href="index.html">官网首页</a> · <a href="curriculum-map.html">课程 × 考级</a> · <a href="stage-finder.html">四道题定起点</a> · <a href="plan-calculator.html">课时与费用粗算</a> · <a href="level-test.html">水平小测 8 题</a> · <a href="study-mode.html">自学还是报班</a> · <a href="teaching.html">备课与授课</a> · <a href="platform.html">平台与课堂</a> · <a href="assessment.html">测评体系</a> · <a href="studio.html">作品与创作</a> · <a href="hardware.html">教具与硬件</a> · <a href="admissions.html">招生与学员</a> · <a href="family.html">家校沟通</a> · <a href="operations.html">校区运营</a> · <a href="blog.html">知识库</a> · <a href="team.html">师资与教研</a> · <a href="campus.html">校区与到店</a> · <a href="enroll.html">在线报名</a></p>
+  <p><a href="index.html">官网首页</a> · <a href="curriculum-map.html">课程 × 考级</a> · <a href="stage-finder.html">四道题定起点</a> · <a href="plan-calculator.html">课时与费用粗算</a> · <a href="level-test.html">水平小测 8 题</a> · <a href="study-mode.html">自学还是报班</a> · <a href="site-map.html">全站地图</a> · <a href="teaching.html">备课与授课</a> · <a href="platform.html">平台与课堂</a> · <a href="assessment.html">测评体系</a> · <a href="studio.html">作品与创作</a> · <a href="hardware.html">教具与硬件</a> · <a href="admissions.html">招生与学员</a> · <a href="family.html">家校沟通</a> · <a href="operations.html">校区运营</a> · <a href="blog.html">知识库</a> · <a href="team.html">师资与教研</a> · <a href="campus.html">校区与到店</a> · <a href="enroll.html">在线报名</a></p>
   <p>内容示例站点：页面中的机构数据、师资、价格与流程均为演示内容，正式上线前需替换为真实信息与合同条款。</p>
 </div>
 

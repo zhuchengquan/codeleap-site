@@ -18,6 +18,7 @@ export const SPECIAL = [
   ['plan-calculator.html', '课时与费用粗算'],
   ['level-test.html', '水平小测 8 题'],
   ['study-mode.html', '自学还是报班'],
+  ['site-map.html', '全站内容地图'],
 ];
 
 // 手写页：章节取 h2，锚点由 patch-all 写入 ps1..N
