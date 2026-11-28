@@ -415,6 +415,37 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: .01em; }
 .sbox .item span{font-size:11.5px;color:var(--faint,#8695ab);white-space:nowrap}
 .sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint,#8695ab);text-align:center}
 /* /cl-ss:css */
+
+/* 学习档案导读（与全站版式对齐） */
+.sec{padding:6px 0 0;margin-top:48px;border-top:1px solid var(--stroke)}
+.sec .wrap{padding-top:30px}
+.kicker{margin:0 0 8px;font-family:var(--font-display);font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);font-weight:700}
+.sec h2{margin:0 0 10px;font-size:29px;line-height:1.36;color:var(--ink);font-weight:700;letter-spacing:-.01em}
+.lead{margin:0;max-width:740px;font-size:14.5px;line-height:1.92;color:var(--muted)}
+.table-wrap{overflow-x:auto;margin-top:18px;border-radius:16px;border:1px solid var(--stroke);background:var(--glass-2)}
+.matrix{width:100%;border-collapse:collapse;font-size:13px;min-width:660px}
+.matrix th,.matrix td{border-bottom:1px solid var(--stroke);padding:12px 14px;text-align:left;vertical-align:top}
+.matrix thead th{background:var(--primary-soft);color:var(--ink);font-weight:600;font-size:12px;letter-spacing:.04em;white-space:nowrap}
+.matrix tbody th{background:var(--bg-2);font-weight:600;color:var(--ink);white-space:nowrap}
+.matrix td{color:var(--muted)}
+.matrix td b{color:var(--ink);font-weight:600}
+.matrix tr:last-child th,.matrix tr:last-child td{border-bottom:0}
+.note{margin-top:18px;padding:15px 18px;border-radius:14px;background:var(--primary-soft);border:1px solid var(--stroke);font-size:13px;line-height:1.9;color:var(--muted)}
+.note b{color:var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.box{padding:20px 22px;border-radius:16px;background:var(--glass-2);border:1px solid var(--stroke)}
+.box h4{margin:0 0 10px;font-size:14.5px;font-weight:700;color:var(--ink)}
+.box ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.box li{font-size:13px;line-height:1.85;color:var(--muted)}
+.box li b{color:var(--ink);font-weight:600}
+.faq{display:grid;gap:8px;margin-top:18px}
+.faq details{border-radius:14px;border:1px solid var(--stroke);background:var(--glass-2);overflow:hidden}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;font-size:14px;font-weight:600;cursor:pointer;list-style:none;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{width:15px;height:15px;flex:none;color:var(--faint);transition:transform .18s}
+.faq details[open] summary svg{transform:rotate(180deg)}
+.faq .fb{padding:0 18px 16px;font-size:13.5px;line-height:1.88;color:var(--muted)}
 </style>
 <link rel="canonical" href="https://codeleap.example/parent.html">
 <meta property="og:type" content="website">
@@ -577,6 +608,78 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: .01em; }
       </div>
     </div>
 
+  </section>
+<section class="sec" id="read">
+    <div class="wrap">
+      <p class="kicker">学习档案</p>
+      <h2>四块信息，各自什么时候看</h2>
+      <p class="lead">档案不是每天刷的。四块信息节奏不同，看错频率只会增加焦虑。下面是我们建议的看法。</p>
+      <div class="table-wrap"><table class="matrix">
+        <thead><tr><th>看什么</th><th>多久看一次</th><th>看到什么</th><th>看到之后做什么</th></tr></thead>
+        <tbody>
+          <tr><th>课时进度</th><td>每周一次，两分钟</td><td>剩余课时、本月有没有连续请假</td><td>余 6 课时以下考虑续费；连续两周没到课，先联系顾问排补课</td></tr>
+          <tr><th>课堂报告</th><td>每节课当天</td><td>三个目标哪个达成、卡在哪一步、老师写的下一步</td><td>同一目标连续两次「未达成」再找老师，不要单次就下结论</td></tr>
+          <tr><th>作品集</th><td>每月一次，十分钟</td><td>有没有新作品、旧作品有没有改过</td><td>一个月没有新增，先问出勤和课堂状态，不要问「今天学了什么」</td></tr>
+          <tr><th>赛事提醒</th><td>按报名节点</td><td>建议级别、报名截止、赛前辅导安排</td><td>按老师建议的级别报，不跳级；截止前 3 天再确认一次</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section class="sec" id="ten">
+    <div class="wrap">
+      <p class="kicker">每月十分钟</p>
+      <h2>和孩子一起看，不要自己看</h2>
+      <p class="lead">档案里最重要的是孩子自己讲得出来。每月抽十分钟，按三步走。</p>
+      <div class="two">
+        <div class="box">
+          <h4>三步</h4>
+          <ul>
+            <li><b>一、打开作品集，让他挑一件讲。</b>家长只问「这里怎么做的」「如果重做，你想改哪里」，不评价好坏。</li>
+            <li><b>二、点开最近一份课堂报告，只读「下一步」。</b>前面三个目标不用逐条念，孩子听到评价容易防御。</li>
+            <li><b>三、看课时进度，确认下个月有没有请假冲突。</b>有冲突当场和顾问改时间，不要等到课前一天。</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>三不要</h4>
+          <ul>
+            <li><b>不要边看边纠错。</b>「你这画得不对」会让孩子下次不愿打开作品。</li>
+            <li><b>不要拿别人家孩子比较。</b>档案里只有自己孩子的记录，比较没有数据基础。</li>
+            <li><b>不要看完什么也不说。</b>至少说一件你记住的事，比如「这个计分你改了三次，我看到了」。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="signals">
+    <div class="wrap">
+      <p class="kicker">三种信号</p>
+      <h2>别等期末，出现这三种就沟通</h2>
+      <p class="lead">大部分问题不是突然发生的，是连续几周的小信号被忽略。下面三种，任何一种出现都值得一次十分钟沟通。</p>
+      <div class="table-wrap"><table class="matrix">
+        <thead><tr><th>信号</th><th>先看什么</th><th>怎么沟通</th></tr></thead>
+        <tbody>
+          <tr><th>连续两次报告，同一个目标「未达成」</th><td>两次报告之间有没有缺课；家里有没有打开过作品</td><td>约老师十分钟，问「课堂上他卡在哪一步」，不问「是不是不认真」</td></tr>
+          <tr><th>作品集一个月没有新增</th><td>出勤记录、课堂状态、有没有换班</td><td>先排除请假和设备问题；仍无改善，再谈换班型或暂停</td></tr>
+          <tr><th>孩子说「我都会了」</th><td>让他从作品集挑一件讲给你听</td><td>讲得清，是熟练；讲不清，是熟悉操作而不是理解，和老师对一下下一步</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note"><b>两个边界：</b>档案只记录自己孩子，看不到其他学员；课堂报告不是实时监控，不提供上课直播。想进班看，每学期有一次家长开放课，找顾问约。</div>
+    </div>
+  </section>
+
+  <section class="sec" id="pfaq">
+    <div class="wrap">
+      <p class="kicker">家长端</p>
+      <h2>关于档案的四个问题</h2>
+      <div class="faq">
+        <details open><summary>课堂报告多久出？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">当天 18:00 前。含三个课堂目标、达成情况、卡点和下一步，由主讲老师写，教研组长每周抽查。</div></details>
+        <details><summary>报告里写「未达成」，是不是没学会？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">不是。它指当堂设定的目标没有全部完成，报告会写卡在哪一步、下一步怎么补。单次未达成正常，连续两次才需要沟通。</div></details>
+        <details><summary>能看孩子上课的实时画面吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">不提供。教室内不装家长可见的摄像头。每学期一次家长开放课，可进班听 40 分钟，需提前一周预约。</div></details>
+        <details><summary>换手机号后档案还在吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">在。账号跟学员编号绑定，换手机号找顾问改绑定即可，历史报告和作品不丢。</div></details>
+      </div>
+    </div>
   </section>
 </main>
 
