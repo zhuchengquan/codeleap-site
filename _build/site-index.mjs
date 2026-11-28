@@ -20,6 +20,7 @@ export const SPECIAL = [
   ['study-mode.html', '自学还是报班'],
   ['site-map.html', '全站内容地图'],
   ['pricing.html', '价格与优惠'],
+  ['faq.html', '四十个高频问题'],
 ];
 
 // 手写页：章节取 h2，锚点由 patch-all 写入 ps1..N

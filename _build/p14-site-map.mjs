@@ -45,6 +45,9 @@ ${t('26', 'parent.html', '家长中心（演示）', '家长端能看到什么�
 </div>`;
 
 const reads = `
+<div class="tiles g2">
+${t('FAQ', 'faq.html', '四十个高频问题', '八类四十问：起点、进度、请假、老师、平台、竞赛、价格、线上；每条给数字与时限，另列六个我们答不上来的问题。')}
+</div>
 <div class="table-wrap"><table class="matrix">
 <thead><tr><th style="width:44px">#</th><th style="width:210px">长文</th><th>解决哪个问题</th><th style="width:74px">读多久</th></tr></thead>
 <tbody>
@@ -62,6 +65,9 @@ const reads = `
 <div class="note"><b>知识库入口：</b><a href="blog.html">十篇长文与 18 条速答</a> 是上面十篇的目录页，含 18 条一句话回答、RSS 订阅与按主题筛选。每篇文末都回到「下一步该做什么」，不留在读完就完。</div>`;
 
 const byQuestion = `
+<div class="tiles g2">
+${t('FAQ', 'faq.html', '四十个高频问题', '八类四十问：起点、进度、请假、老师、平台、竞赛、价格、线上；每条给数字与时限，另列六个我们答不上来的问题。')}
+</div>
 <div class="table-wrap"><table class="matrix">
 <thead><tr><th style="width:250px">你现在的处境</th><th>先看这一页</th><th>再看这一页</th></tr></thead>
 <tbody>
@@ -130,7 +136,7 @@ const faq = [
   faqItem('这张地图是给人看的，还是给搜索引擎看的？', '给人看的。分组按「你现在的处境」而不是按文件目录：先定位、看课程、看交付、做决定、继续读。搜索引擎另有一份 sitemap.xml，两者不混用。'),
   faqItem('为什么有的页面没列进来？', '三类页不列：404 页、打印排版页（brochure-print.html）、内部存档页（manual.html，已 noindex 并被 robots 屏蔽）。它们是给机器或内部用的，不是给家长读的。'),
   faqItem('我只记得一句话，怎么找到它在哪一页？', '用站内搜索：右上角放大镜，或按 Ctrl+K、直接敲 /。索引 280 多条章节，命中后直接跳到那一段，不用逐页翻。'),
-  faqItem('站点现在一共有多少内容？', '39 个可导航页面：9 个专题、4 个家长工具、11 篇知识库长文（含目录页）、4 个课程页，以及首页、价格与优惠、简章、条款、校区等。另有 5 页招生简章 PDF 与一份 RSS。所有数据均为演示口径。'),
+  faqItem('站点现在一共有多少内容？', '40 个可导航页面：9 个专题、4 个家长工具、11 篇知识库长文（含目录页）、4 个课程页，以及首页、价格与优惠、四十个高频问题、简章、条款、校区等。另有 5 页招生简章 PDF 与一份 RSS。所有数据均为演示口径。'),
 ].join('\n');
 
 export const html = shell({
@@ -139,9 +145,9 @@ export const html = shell({
   desc: '按处境而不是按目录排列的全站地图：四个家长工具、四个级别课程、教学与交付、报名与条款、十一篇知识库长文，以及十三种处境各自该看哪两页。',
   tagline: '全站地图',
   eyebrow: '内容地图',
-  h1: '三十九页，<br>按你<em>现在的处境</em>排',
+  h1: '四十页，<br>按你<em>现在的处境</em>排',
   lead: '这个站点不按文件目录组织，按家长真正会遇到的顺序组织：先定位、再看课程、然后看交付、最后做决定。找不到入口时，从这张地图进。',
-  stats: `<div class="n"><b>39</b><span>个可导航页面</span></div><div class="n"><b>4</b><span>个不用留电话的工具</span></div><div class="n"><b>11</b><span>篇知识库长文</span></div><div class="n"><b>13</b><span>种处境，各自两页</span></div>`,
+  stats: `<div class="n"><b>40</b><span>个可导航页面</span></div><div class="n"><b>4</b><span>个不用留电话的工具</span></div><div class="n"><b>11</b><span>篇知识库长文</span></div><div class="n"><b>13</b><span>种处境，各自两页</span></div>`,
   body: body.join('\n'),
   cta,
   faq,
