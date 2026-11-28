@@ -71,6 +71,7 @@
         '<a class="btn" href="index.html#trial">预约入学测评</a>' +
         '<a class="btn" href="plan-calculator.html">算课时与费用</a>' +
         '<a class="btn" href="level-test.html">做八道题测底子</a>' +
+      '<a class="btn" href="study-mode.html">五道题：自学还是报班</a>' +
         '<a class="btn" href="curriculum-map.html">看课程 × 考级</a>' +
       '</div>' +
       (warn ? '<div class="warn">' + warn + '</div>' : '');

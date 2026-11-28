@@ -61,6 +61,7 @@
         '<div class="acts">' +
           '<a class="btn-primary" href="index.html#trial">预约入学测评</a>' +
           '<a class="btn" href="stage-finder.html">四道题精测起点</a>' +
+      '<a class="btn" href="study-mode.html">五道题：自学还是报班</a>' +
         '</div>' +
         '<div class="warn">提醒：这条提示只在「起点高于目标」时出现。若孩子实际水平低于问卷描述，仍可能要从更早的阶段补起，以测评结论为准。</div>';
       res.hidden = false;
@@ -109,6 +110,7 @@
       '<div class="acts">' +
         '<a class="btn-primary" href="index.html#trial">预约入学测评</a>' +
         '<a class="btn" href="stage-finder.html">四道题精测起点</a>' +
+      '<a class="btn" href="study-mode.html">五道题：自学还是报班</a>' +
         '<a class="btn" href="course-' + (start === 'J' ? 'l4' : start === 'S' ? 'l4' : start.toLowerCase()) + '.html">看起点课程</a>' +
       '</div>' +
       warns.map(function (w) { return '<div class="warn">' + w + '</div>'; }).join('');

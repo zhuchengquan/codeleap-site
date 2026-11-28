@@ -88,6 +88,7 @@
       '<div class="acts">' +
       '<a class="btn" href="plan-calculator.html">按这个起点算课时与费用</a>' +
       '<a class="btn" href="stage-finder.html">再做四道题（家长自评）</a>' +
+      '<a class="btn" href="study-mode.html">五道题：自学还是报班</a>' +
       '<a class="btn-primary" href="index.html#trial">预约入学测评</a>' +
       '</div>';
     res.hidden = false;

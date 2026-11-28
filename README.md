@@ -26,7 +26,7 @@
 | `blog.html` + 10 篇文章页 | 知识库：十篇长文 + 18 条速答 + 机构动态 + RSS 订阅 |
 | `results.html` | 荣誉与成果：KPI、逐年趋势、赛事分布、获奖记录、学员故事、统计口径 |
 | `camp.html` | 寒假集训营活动页（倒计时、三个营、价格、报名） |
-| `brochure.html` + `brochure-2026-2027.pdf` | 招生简章：A4 两页网页版（可直接打印）+ 4 页 PDF（约 430KB，含课程与价格、优惠与退费条款、退费算例、报名四步、三校区与 FAQ；`brochure-print.html` 是 PDF 排版源，`noindex` 不收录） |
+| `brochure.html` + `brochure-2026-2027.pdf` | 招生简章：A4 两页网页版（可直接打印）+ 5 页 PDF（约 450KB，含课程与价格、师资与教研、优惠与退费条款、退费算例、报名四步、三校区与 FAQ；`brochure-print.html` 是 PDF 排版源，`noindex` 不收录） |
 | `team.html` | 师资与教研：四位主讲的边界、选人三道关、教研四工序、课堂观察表、90 天新师路径 |
 | `curriculum-map.html` | 课程 × 考级：L1–L4 主矩阵、三年级→初一五年节奏、GESP 八级能力对照、CSP 与白名单赛事、三种错配、四种排课路径与加减速判据 |
 | `platform.html` | 平台与课堂：三类账号权限、一节课六条记录、四个课堂工具、家长端可见/不可见、隐私五条 |
@@ -83,8 +83,8 @@ python -m http.server 8000
 ├── results.html          荣誉与成果
 ├── camp.html             寒假营
 ├── brochure.html         招生简章（可打印，A4 两页）
-├── brochure-print.html   简章 PDF 排版源（4 页，noindex）
-├── brochure-2026-2027.pdf 简章 PDF（4 页，A4）
+├── brochure-print.html   简章 PDF 排版源（5 页，noindex）
+├── brochure-2026-2027.pdf 简章 PDF（5 页，A4）
 ├── team.html             师资与教研
 ├── curriculum-map.html   课程 × 考级
 ├── platform.html         平台与课堂
@@ -127,7 +127,7 @@ python -m http.server 8000
 
 ## 招生简章 PDF 怎么重新生成
 
-`brochure-print.html` 是排版源（4 页 A4，`@page size: A4; margin: 0`，每页固定 210×297mm），改完内容后在本机执行：
+`brochure-print.html` 是排版源（5 页 A4，`@page size: A4; margin: 0`，每页固定 210×297mm），改完内容后在本机执行：
 
 ```powershell
 chrome.exe --headless=new --print-to-pdf="brochure-2026-2027.pdf" `
