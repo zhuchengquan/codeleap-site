@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>师资与教研 · 码跃少儿编程</title>
-<meta name="description" content="四位主讲的教学方式、带班边界与真实案例；我们怎么选老师（三道关，淘汰率 78%）、怎么备课（周备课、双周磨课、课堂观察表、家长报告），以及新师 90 天路径。">
+<meta name="description" content="四位主讲的教学方式、带班边界与真实案例；四个角色的分工、怎么选老师（三道关，淘汰率 78%，入职 60 小时培训 + 每学期 40 小时教研）、怎么备课（周备课、双周磨课、课堂观察表、教案八字段、录像复盘、家长开放课），以及新师 90 天路径。">
 <link rel="canonical" href="https://codeleap.example/team.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="码跃少儿编程 CodeLeap">
@@ -91,6 +91,7 @@ a{color:inherit;text-decoration:none}
 .form-card td{padding:11px 20px;border-top:1px solid var(--stroke);color:var(--muted);line-height:1.75}
 .form-card td b{color:var(--ink)}
 .form-card td:last-child{white-space:nowrap;color:var(--primary);font-family:var(--font-mono);font-size:12px}
+.form-card.wide td:last-child{white-space:normal;font-family:inherit;font-size:13px;color:var(--muted);line-height:1.75}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
 @media(max-width:800px){.steps{grid-template-columns:1fr}}
 .st{padding:20px 22px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
@@ -251,6 +252,21 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
+  <section class="sec" id="roles">
+    <div class="sec-head"><span>谁管什么</span><h2 id="ps2b">四个角色，各管一段</h2><p>家长常问「我孩子的课到底是谁定的」。这张表把四个角色的边界写清楚，也写清你什么时候会见到他们。</p></div>
+    <div class="form-card wide">
+      <div class="hd">角色分工 · 谁负责什么，家长什么时候见到</div>
+      <table>
+        <tr><th style="width:108px">角色</th><th style="width:92px">谁</th><th>负责什么</th><th style="width:184px">家长什么时候会见到</th></tr>
+        <tr><td><b>教学总监</b></td><td>李思远</td><td>定大纲与考核口径，处理跨级别的教学争议（跳级、补课、转阶段）</td><td>入学测评说明会、每期家长开放课</td></tr>
+        <tr><td><b>教研组长</b></td><td>王雨晴</td><td>L1–L3 教案与作业设计，新教师过课的第一道评审</td><td>试听课、学期中家长会</td></tr>
+        <tr><td><b>竞赛主教练</b></td><td>陈昊</td><td>L4 题库、模拟赛命题与讲评、赛前集训排期</td><td>模拟赛讲评、赛前家长沟通</td></tr>
+        <tr><td><b>启蒙主讲</b></td><td>赵一诺</td><td>L1 课堂节奏与低龄沟通，作品演示与家长沟通</td><td>试听课、每期作品日</td></tr>
+      </table>
+    </div>
+    <div class="note"><b>为什么把边界写出来：</b>「谁都管」等于「没人管」。孩子卡住先找主讲；跳级、补课、跨阶段争议找教学总监。两件事分开，才不会互相踢皮球。</div>
+  </section>
+
   <section class="sec" id="hire">
     <div class="sec-head"><span>怎么选人</span><h2 id="ps2">三道关，淘汰率 78%</h2><p>每年收到约 240 份简历，最终入职 6 到 8 人。我们不看重学校排名，看重两件事。</p></div>
     <div class="gate">
@@ -258,6 +274,7 @@ a{color:inherit;text-decoration:none}
       <div class="gt"><i>GATE 02</i><h4>试讲：真孩子在场</h4><p>面对 4 个真实学员讲 20 分钟。看三件事：孩子动手时间占比、出错时第一反应（给答案还是问为什么）、有没有人走神。</p></div>
       <div class="gt"><i>GATE 03</i><h4>跟课 20 课时</h4><p>作为助教完整跟 20 课时，写 20 份课堂观察记录。带班老师逐份点评，不合格的延长跟课或淘汰。</p></div>
     </div>
+    <div class="note"><b>入职培训 60 小时，每学期再加 40 小时：</b>60 小时含课堂控场、低龄沟通、常见错误预判；每学期 40 小时教研培训计入考勤，缺席要补。培训不发生在真实课堂上试错，发生在孩子不在场的时候。</div>
     <div class="note"><b>一条硬标准：</b>孩子出错时，第一反应是「直接给正确答案」的人，无论学历多好都不入职。因为给答案只要 3 秒，教会要 10 分钟——而我们要的是后者。</div>
   </section>
 
@@ -285,7 +302,32 @@ a{color:inherit;text-decoration:none}
     <div class="note"><b>为什么把「出错处理」单列一项：</b>它是家长最难观察到、但对孩子影响最大的一项。给答案的老师，孩子会越来越依赖提示；引导定位的老师，孩子半年后会开始自己看报错。</div>
   </section>
 
-  <section class="sec" id="grow">
+    <div class="two">
+      <div class="box">
+        <h4>教案八字段，缺一项不算完成</h4>
+        <ul>
+          <li><b>目标</b>：这节课结束，孩子能独立做出什么。</li>
+          <li><b>前置</b>：上次课留下的哪个卡点必须先补。</li>
+          <li><b>例题</b>：一道讲透的题，不贪多。</li>
+          <li><b>易错点</b>：预判三个，写清卡住时怎么接。</li>
+          <li><b>分层任务</b>：快、中、慢三档，同一节课不同终点。</li>
+          <li><b>时间切片</b>：每 10 分钟做什么，连续讲解不超过 12 分钟。</li>
+          <li><b>作业</b>：一次能独立完成、也能讲给家长听。</li>
+          <li><b>复盘记录</b>：课后 24 小时内写，下次备课会先看这一栏。</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h4>录像复盘与家长开放课</h4>
+        <ul>
+          <li><b>每两周</b>随机抽一节课堂录像，只看两件事：老师讲了多少分钟、有没有人被落下。结论写进下一版教案。</li>
+          <li><b>每期一次</b>家长开放课：坐后排看完整一节，不看表演课；看完当场填一张观察表，反馈进教研会。</li>
+          <li><b>开放课不挑班</b>：抽到哪个班上哪个班，提前一周通知，不接受指定「最好的那节课」。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>三件事对家长的意义：</b>你能查的不是「老师很负责」这种话，而是教案有没有这八栏、开放课能不能随时来、录像复盘有没有留下改过的痕迹。这三样都在，教研才算真的在跑。</div>
+
+      <section class="sec" id="grow">
     <div class="sec-head"><span>新师成长</span><h2 id="ps4">入职 90 天，只做三件事</h2><p>不安排新老师直接独立带班。90 天是硬门槛，跳不过去。</p></div>
     <div class="steps">
       <div class="st"><i>0–30</i><h4>跟课与助教</h4><p>跟满 20 课时，做助教：点名、设备、个别辅导、记录。这一阶段学的是「课堂真实长什么样」，不是教学方法。</p></div>
@@ -312,7 +354,21 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
-  <section class="sec" id="tfaq">
+<section class="sec" id="check">
+    <div class="sec-head"><span>家长怎么核</span><h2 id="ps4b">三个问题，问出真实水平</h2><p>这三句是家长最该问的，也是我们要求每位主讲必须当场答出的。答不出来通常不是话术问题，是没真正管过班。</p></div>
+    <div class="form-card wide">
+      <div class="hd">问什么 · 合格回答长什么样</div>
+      <table>
+        <tr><th style="width:168px">可以问什么</th><th>合格回答的样子</th></tr>
+        <tr><td><b>带我孩子这节课的是谁？</b></td><td>给出姓名、教龄、带过几期同级班，而不是「我们的老师都很资深」</td></tr>
+        <tr><td><b>能指定老师试听吗？</b></td><td>能，且说明如果指定老师满班，会给替代时段而不是换人</td></tr>
+        <tr><td><b>中途换老师怎么办？</b></td><td>提前告知并说明衔接方案：新老师先看课堂记录与卡点清单，前两次课不加新内容</td></tr>
+      </table>
+    </div>
+    <div class="note"><b>顺带一问，最能筛人：</b>「上节课我孩子卡在哪一步？」能答出具体步骤（比如「列表下标从 0 开始，他总从 1 数」）的老师，是真的在看每个孩子；答「整体还不错」的，多半只记住了课堂气氛。</div>
+  </section>
+
+    <section class="sec" id="tfaq">
     <div class="sec-head"><span>家长常问</span><h2 id="ps5">关于老师，四个实际问题</h2></div>
     <div class="faq">
       <details open>
