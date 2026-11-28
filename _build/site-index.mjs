@@ -31,6 +31,7 @@ export const OTHER = [
   ['blog-trial.html', '试听课看什么'],
   ['blog-online.html', '线上课怎么上'],
   ['blog-quit.html', '不想学了怎么办'],
+  ['blog-self-study.html', '自学与报班'],
   ['camp.html', '假期集训'],
   ['campus.html', '校区与到店'],
   ['course-l1.html', 'L1 启蒙'],

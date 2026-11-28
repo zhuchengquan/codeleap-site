@@ -5,7 +5,7 @@
 <link>https://zhuchengquan.github.io/codeleap-site/blog.html</link>
 <description>选课判断、考级准备与学习路径，写清代价和边界，不承诺结果。</description>
 <language>zh-CN</language>
-<lastBuildDate>2026-11-27T15:25:09Z</lastBuildDate>
+<lastBuildDate>2026-11-28T03:01:13Z</lastBuildDate>
 <atom:link href="https://zhuchengquan.github.io/codeleap-site/feed.xml" rel="self" type="application/rss+xml"/>
 <item>
 <title>孩子几岁开始学编程合适？先看他能不能做这三件事</title>
@@ -69,6 +69,13 @@
 <guid isPermaLink="true">https://zhuchengquan.github.io/codeleap-site/blog-quit.html</guid>
 <pubDate>Fri, 27 Nov 2026 01:00:00 GMT</pubDate>
 <description>累了、卡住了、真的不喜欢了，三种的处理方式相反。附三种坎的处理表、一次二十分钟的谈话脚本，以及遇到这种情况我们的固定流程。</description>
+</item>
+<item>
+<title>免费教程那么多，为什么还有人报班</title>
+<link>https://zhuchengquan.github.io/codeleap-site/blog-self-study.html</link>
+<guid isPermaLink="true">https://zhuchengquan.github.io/codeleap-site/blog-self-study.html</guid>
+<pubDate>Sat, 28 Nov 2026 01:00:00 GMT</pubDate>
+<description>入门阶段的自学资源确实够用，但反馈、节奏、同伴、信息这四件事免费资源不给。附自学与报班六维对比表、四个断点、不必报班的四种情况，以及五个能当场验证的问题。</description>
 </item>
 </channel>
 </rss>

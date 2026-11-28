@@ -6,7 +6,7 @@ const site = 'https://zhuchengquan.github.io/codeleap-site/';
 const articles = [
   'blog-when-to-start.html', 'blog-gesp-1.html', 'blog-after-scratch.html',
   'blog-format-choice.html', 'blog-competition-path.html', 'blog-math.html',
-  'blog-trial.html', 'blog-online.html', 'blog-quit.html',
+  'blog-trial.html', 'blog-online.html', 'blog-quit.html', 'blog-self-study.html',
 ];
 
 function pick(html, re) {
