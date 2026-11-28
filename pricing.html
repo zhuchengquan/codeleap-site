@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>价格与优惠：四个级别、四条减免、三个退费算例 · 码跃少儿编程</title>
+<meta name="description" content="L1–L4 线下线上价目表、单课时成本、四条优惠的叠加规则与到手价、三个退费算例、付款与发票、五个常见价格误解，以及自己算一遍的工具入口。">
+<link rel="canonical" href="https://codeleap.example/pricing.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="码跃少儿编程 CodeLeap">
+<meta property="og:title" content="价格与优惠：四个级别、四条减免、三个退费算例 · 码跃少儿编程">
+<meta property="og:description" content="L1–L4 线下线上价目表、单课时成本、四条优惠的叠加规则与到手价、三个退费算例、付款与发票、五个常见价格误解，以及自己算一遍的工具入口。">
+<meta property="og:url" content="https://codeleap.example/pricing.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b7bf3'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' fill='%23fff' text-anchor='middle'%3E%E7%A0%81%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f9fe;--bg-2:#eef4fd;--ink:#16213a;--muted:#56657e;--faint:#8695ab;--primary:#2b7bf3;--primary-soft:rgba(43,123,243,.10);--accent:#f0663a;--accent-soft:rgba(240,102,58,.10);--ok:#12a06a;--ok-soft:rgba(18,160,106,.12);--glass:rgba(255,255,255,.72);--glass-2:rgba(255,255,255,.94);--glass-head:rgba(255,255,255,.88);--stroke:rgba(27,52,92,.10);--stroke-2:rgba(27,52,92,.16);--shadow:0 12px 32px rgba(26,48,84,.07);--radius:18px;--radius-sm:13px;--font-display:"Nunito","Noto Sans SC",sans-serif;--font-body:"Nunito","Noto Sans SC",sans-serif;--font-mono:"JetBrains Mono","Noto Sans SC",monospace}
+[data-theme="dark"]{--bg:#0d1524;--bg-2:#101a2c;--ink:#eef3fb;--muted:#a7b6cc;--faint:#7d8ea8;--primary:#5a9dff;--primary-soft:rgba(90,157,255,.14);--accent:#ff8660;--accent-soft:rgba(255,134,96,.12);--ok:#4dd49b;--ok-soft:rgba(77,212,155,.15);--glass:rgba(255,255,255,.06);--glass-2:rgba(255,255,255,.10);--glass-head:rgba(18,28,46,.88);--stroke:rgba(255,255,255,.10);--stroke-2:rgba(255,255,255,.18);--shadow:0 16px 40px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.78;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:11px 18px;background:var(--glass-head);border-bottom:1px solid var(--stroke);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);flex-wrap:wrap}
+.nav{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.nav::-webkit-scrollbar{display:none}
+@media(max-width:820px){.nav{order:9;flex:1 1 100%;padding:2px 0 0}}
+.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:15.5px}
+.brand .m{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:var(--primary);color:#fff;font-size:14px;font-weight:700}
+.tagline{font-size:12.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted)}
+.sp{flex:1}
+.icon-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--stroke-2);background:var(--glass);color:var(--muted);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 16px;border:1px solid var(--stroke-2);border-radius:999px;background:var(--glass);color:var(--ink);font-family:inherit;font-size:13.5px;white-space:nowrap}
+.btn.active{border-color:var(--primary);color:var(--primary);background:var(--primary-soft);font-weight:600}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 22px;border-radius:999px;background:var(--accent);color:#fff;font-size:14.5px;box-shadow:0 10px 24px rgba(240,102,58,.26);border:0;cursor:pointer;font-family:inherit}
+.wrap{max-width:1020px;margin:0 auto;padding:32px 20px 60px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.05em;color:var(--primary)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--primary);font-style:normal}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+@media(max-width:880px){.hero{grid-template-columns:1fr;gap:24px}}
+.hero.solo{grid-template-columns:1fr}
+.hero.solo .lead{max-width:760px}
+.hero h1{margin:11px 0 13px;font-size:clamp(26px,3.8vw,37px);font-weight:800;line-height:1.3}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{margin:0;font-size:14.5px;line-height:1.9;color:var(--muted);max-width:520px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:22px}
+@media(max-width:640px){.nums{grid-template-columns:repeat(2,1fr)}}
+.n{padding:13px 15px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.n b{display:block;font-family:var(--font-display);font-size:21px;font-weight:800;color:var(--accent);line-height:1.15;font-variant-numeric:tabular-nums}
+.n span{display:block;font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.6}
+.shot{border-radius:var(--radius);overflow:hidden;border:1px solid var(--stroke);box-shadow:var(--shadow);margin:0}
+.shot img{display:block;width:100%;height:auto}
+.sec{margin-top:44px}
+.sec-head span{display:block;font-size:12px;letter-spacing:.06em;color:var(--faint);margin-bottom:6px}
+.sec-head h2{margin:0;font-size:clamp(20px,2.6vw,26px);font-weight:700;line-height:1.35}
+.sec-head p{margin:8px 0 0;font-size:13.5px;line-height:1.8;color:var(--muted);max-width:660px}
+.box{padding:22px 24px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);box-shadow:var(--shadow)}
+.box h4{margin:0 0 10px;font-size:14.5px;font-weight:700}
+.box ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.box li{font-size:13px;line-height:1.85;color:var(--muted)}
+.box li b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+@media(max-width:860px){.three{grid-template-columns:1fr}}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.tiles.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.tiles{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.tiles.g2{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tiles{grid-template-columns:1fr}}
+@media(max-width:600px){.tiles.g2{grid-template-columns:1fr}}
+.tile{padding:19px 21px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.tile i{font-family:var(--font-mono);font-size:11.5px;font-style:normal;color:var(--accent);letter-spacing:.02em}
+.tile h4{margin:8px 0 6px;font-size:15px;font-weight:700;line-height:1.4}
+.tile p{margin:0;font-size:13px;line-height:1.82;color:var(--muted)}
+.matrix{width:100%;border-collapse:collapse;margin-top:20px;font-size:13px;background:var(--glass-2);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.matrix th,.matrix td{border-bottom:1px solid var(--stroke);padding:11px 13px;text-align:left;vertical-align:top;line-height:1.7}
+.matrix a{color:var(--primary);font-weight:600}
+.matrix a:hover{text-decoration:underline;text-underline-offset:3px}
+.matrix thead th{background:var(--primary-soft);color:var(--ink);font-weight:600;font-size:12.5px;white-space:nowrap}
+.matrix tbody th{background:var(--bg-2);font-weight:600;white-space:nowrap;color:var(--ink)}
+.matrix td{color:var(--muted)}
+.matrix td b{color:var(--ink);font-weight:600}
+.matrix tr:last-child td,.matrix tr:last-child th{border-bottom:0}
+.table-wrap{overflow-x:auto;margin-top:20px;-webkit-overflow-scrolling:touch;border-radius:var(--radius);border:1px solid var(--stroke)}
+.table-wrap .matrix{margin-top:0;box-shadow:none;border-radius:0;min-width:720px}
+.timeline{margin-top:22px;display:grid;gap:0}
+.tl{display:grid;grid-template-columns:92px 26px 1fr;gap:0;align-items:start}
+.tl .when{padding:14px 0 0;font-family:var(--font-mono);font-size:12px;color:var(--faint);text-align:right;padding-right:12px}
+.tl .rail{position:relative;display:flex;justify-content:center;padding-top:18px}
+.tl .rail::before{content:"";position:absolute;top:0;bottom:-6px;width:1px;background:var(--stroke-2)}
+.tl .dot{width:9px;height:9px;border-radius:50%;background:var(--primary);position:relative;z-index:1}
+.tl:last-child .rail::before{bottom:auto;height:18px}
+.tl .what{padding:10px 0 18px 14px}
+.tl .what h4{margin:0 0 4px;font-size:14.5px;font-weight:700}
+.tl .what p{margin:0;font-size:13px;line-height:1.82;color:var(--muted)}
+.steps{display:grid;gap:10px;margin-top:20px}
+.stp{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:16px 18px;border-radius:var(--radius-sm);background:var(--glass-2);border:1px solid var(--stroke)}
+.stp .k{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--primary-soft);color:var(--primary);font-family:var(--font-mono);font-size:12px}
+.stp h4{margin:0 0 5px;font-size:14.5px;font-weight:700}
+.stp p{margin:0;font-size:13px;line-height:1.85;color:var(--muted)}
+.stp p b{color:var(--ink);font-weight:600}
+.check{display:grid;gap:7px;margin-top:16px}
+.check .c{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:13px;line-height:1.8;color:var(--muted)}
+.check .c i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ok-soft);color:var(--ok);font-style:normal;font-size:12px}
+.check .c i.x{background:var(--accent-soft);color:var(--accent)}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:8px 14px;margin-top:16px;font-size:13px;line-height:1.8}
+.kv k{color:var(--faint);font-size:12.5px}
+.kv v{color:var(--muted)}
+.kv v b{color:var(--ink);font-weight:600}
+.note{margin-top:18px;padding:16px 20px;border-radius:var(--radius-sm);background:var(--accent-soft);border-left:3px solid var(--accent);font-size:13.5px;line-height:1.9;color:var(--muted)}
+.note b{color:var(--ink)}
+.faq{display:grid;gap:8px;margin-top:20px}
+.faq details{border-radius:var(--radius-sm);border:1px solid var(--stroke);background:var(--glass-2);overflow:hidden}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;cursor:pointer;list-style:none;font-size:14px;font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{width:15px;height:15px;color:var(--faint);flex:none}
+.faq .fb{padding:0 18px 16px;font-size:13.5px;line-height:1.88;color:var(--muted)}
+.cta{margin-top:34px;display:flex;align-items:center;flex-wrap:wrap;gap:16px;padding:24px 26px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid rgba(240,102,58,.22)}
+.cta .tt{flex:1;min-width:240px}
+.cta b{display:block;font-size:15.5px;font-weight:700}
+.cta span{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.7}
+.foot{max-width:1020px;margin:0 auto;padding:0 20px 52px;font-size:12px;line-height:1.9;color:var(--faint)}
+.foot a{color:var(--primary)}
+.crumbs{font-size:12px;color:var(--faint);margin-bottom:10px}
+.crumbs a{color:var(--primary)}
+#searchBtn{flex:none}
+.sbox{position:fixed;inset:0;z-index:60;display:none;align-items:flex-start;justify-content:center;padding:76px 18px 20px;background:rgba(12,22,40,.34);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px)}
+.sbox.on{display:flex}
+.sbox .panel{width:100%;max-width:620px;border-radius:20px;background:var(--glass-2);border:1px solid var(--stroke-2);box-shadow:0 26px 64px rgba(14,28,54,.30);overflow:hidden}
+.sbox .inp{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke)}
+.sbox .inp svg{width:17px;height:17px;color:var(--faint);flex:none}
+.sbox .inp input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font-family:inherit;font-size:15px}
+.sbox .inp kbd{font-family:var(--font-mono);font-size:10.5px;padding:2px 6px;border-radius:6px;border:1px solid var(--stroke-2);color:var(--faint);flex:none}
+.sbox .res{max-height:54vh;overflow:auto;padding:8px}
+.sbox .item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px}
+.sbox .item:hover,.sbox .item.on{background:var(--primary-soft)}
+.sbox .item b{font-size:13.5px;font-weight:600;line-height:1.5}
+.sbox .item span{font-size:11.5px;color:var(--faint);white-space:nowrap}
+.sbox .empty{padding:24px 14px;font-size:13px;color:var(--faint);text-align:center}
+.toc{display:none}
+@media(min-width:1420px){.toc{display:block;position:fixed;top:92px;right:12px;width:178px;max-height:calc(100vh - 150px);overflow:auto;padding:13px 12px;border-radius:14px;background:var(--glass);border:1px solid var(--stroke);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}}
+.toc b{display:block;font-size:11px;letter-spacing:.07em;color:var(--faint);margin:0 0 8px;font-weight:600}
+.toc a{display:block;padding:4px 6px;border-radius:7px;font-size:12px;color:var(--muted);line-height:1.5}
+.toc a:hover{color:var(--ink)}
+.toc a.on{background:var(--primary-soft);color:var(--primary);font-weight:600}
+.tocFab{position:fixed;right:16px;bottom:18px;z-index:40;display:none}
+@media(max-width:1419px){.tocFab{display:grid}}
+.tdock{position:fixed;left:0;right:0;bottom:0;z-index:55;max-height:62vh;overflow:auto;padding:16px 20px 28px;background:var(--glass-2);border-top:1px solid var(--stroke);border-radius:18px 18px 0 0;box-shadow:0 -18px 44px rgba(14,28,54,.22);transform:translateY(104%);transition:transform .26s ease}
+.tdock.on{transform:none}
+.tdock b{display:block;font-size:11px;letter-spacing:.07em;color:var(--faint);margin:0 0 6px;font-weight:600}
+.tdock a{display:block;padding:9px 6px;border-bottom:1px solid var(--stroke);font-size:13.5px;color:var(--muted)}
+.tdock a.on{color:var(--primary);font-weight:600}
+.finder{margin-top:22px;padding:24px 26px;border-radius:var(--radius);background:var(--glass-2);border:1px solid var(--stroke);box-shadow:var(--shadow)}
+.finder .q{margin-bottom:16px}
+.finder .q>b{display:block;font-size:14px;font-weight:600;margin-bottom:9px;line-height:1.5}
+.finder .q>b i{font-family:var(--font-mono);font-style:normal;font-size:11px;color:var(--accent);margin-right:8px}
+.finder .opts{display:flex;flex-wrap:wrap;gap:8px}
+.finder .opt{padding:8px 14px;border-radius:999px;border:1px solid var(--stroke-2);background:var(--glass);font-family:inherit;font-size:12.5px;color:var(--muted);cursor:pointer;line-height:1.4}
+.finder .opt:hover{color:var(--ink)}
+.finder .opt.on{border-color:var(--primary);background:var(--primary-soft);color:var(--primary);font-weight:600}
+.finder .hint{margin-top:4px;font-size:12px;color:var(--faint)}
+.finder .red{margin-top:20px;padding:20px 22px;border-radius:var(--radius-sm);background:var(--primary-soft);border:1px solid rgba(43,123,243,.22)}
+.finder .red .lv{display:flex;align-items:baseline;flex-wrap:wrap;gap:9px}
+.finder .red .lv i{font-style:normal;font-family:var(--font-body);font-size:11px;letter-spacing:.08em;color:var(--faint);font-weight:700}
+.finder .red .lv b{font-family:var(--font-display);font-size:30px;font-weight:800;color:var(--primary);line-height:1.15;font-variant-numeric:tabular-nums}
+.finder .red .lv span{font-size:12.5px;font-weight:600;color:var(--muted)}
+.finder .red p{margin:8px 0 0;font-size:13px;line-height:1.85;color:var(--muted)}
+.finder .red .acts{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.finder .red .warn{margin-top:12px;padding:10px 13px;border-radius:9px;background:var(--accent-soft);border-left:3px solid var(--accent);font-size:12.5px;line-height:1.8;color:var(--muted)}
+.finder .red .sums{display:flex;flex-wrap:wrap;gap:22px;margin-top:14px}
+.finder .qcode{margin:8px 0 0;padding:10px 12px;border-radius:8px;background:var(--glass);border:1px solid var(--stroke-2);font-family:var(--font-mono);font-size:12.5px;line-height:1.7;overflow-x:auto;white-space:pre}
+.finder .sub{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:6px}
+.finder .sub>button{padding:10px 20px;border-radius:999px;border:1px solid var(--primary);background:var(--primary);color:#fff;font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
+.finder .sub>button:disabled{opacity:.4;cursor:not-allowed}
+.finder .sub>span{font-size:12px;color:var(--faint)}
+.finder .red .list{margin-top:14px;border-top:1px dashed var(--stroke-2);padding-top:12px}
+.finder .red .list>div{font-size:12.5px;line-height:1.85;color:var(--muted);margin-bottom:4px}
+.finder .red .list b{color:var(--ink);font-weight:600}
+.finder .red p code{font-family:var(--font-mono);font-size:12px}
+.finder .red .sums>div{min-width:88px}
+.finder .red .sums b{display:block;font-family:var(--font-display);font-size:23px;font-weight:800;color:var(--ink);line-height:1.25;font-variant-numeric:tabular-nums}
+.finder .red .sums span{font-size:11px;letter-spacing:.05em;color:var(--faint)}
+.finder .red .phases{margin-top:16px;border:1px solid var(--stroke-2);border-radius:10px;overflow:hidden;background:var(--glass)}
+.finder .red .phases table{width:100%;border-collapse:collapse;font-size:12.5px}
+.finder .red .phases th{text-align:left;padding:9px 12px;background:var(--primary-soft);font-weight:600;font-size:11.5px;color:var(--ink);white-space:nowrap}
+.finder .red .phases td{padding:9px 12px;border-top:1px solid var(--stroke-2);color:var(--muted);line-height:1.6}
+.finder .red .phases td b{color:var(--ink)}
+.finder .red .two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.finder .red .two>div{padding:12px 14px;border-radius:10px;background:var(--glass);border:1px solid var(--stroke-2)}
+.finder .red .two b{display:block;font-family:var(--font-display);font-size:19px;font-weight:800;color:var(--primary);line-height:1.3;font-variant-numeric:tabular-nums}
+.finder .red .two span{font-size:11.5px;color:var(--faint)}
+@media(max-width:540px){.finder .red .two{grid-template-columns:1fr}.finder .red .sums{display:grid;grid-template-columns:1fr 1fr;gap:14px}.finder .red .phases th:nth-child(2),.finder .red .phases td:nth-child(2){display:none}.finder .red .phases th,.finder .red .phases td{padding:8px 10px;font-size:12px}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a class="brand" href="index.html"><span class="m">码</span>码跃少儿编程</a>
+  <span class="tagline">价格与优惠</span>
+  <div class="sp"></div>
+  <nav class="nav">
+  <a class="btn" href="curriculum-map.html">课程 × 考级</a>
+  <a class="btn active" href="pricing.html" aria-current="page">价格</a>
+  <a class="btn" href="platform.html">平台与课堂</a>
+  <a class="btn" href="assessment.html">测评体系</a>
+  <a class="btn" href="studio.html">作品</a>
+  <a class="btn" href="hardware.html">教具</a>
+  <a class="btn" href="operations.html">校区运营</a>
+  <a class="btn" href="site-map.html">全站地图</a>
+  </nav>
+  <button class="icon-btn" id="searchBtn" type="button" aria-label="搜索站内内容" title="搜索（Ctrl+K）"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg></button>
+  <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗模式">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+  </button>
+  <a class="btn-primary" href="index.html#trial" style="height:38px;padding:0 16px;font-size:13.5px">预约试听</a>
+</div>
+
+<div class="wrap">
+  <div class="crumbs"><a href="index.html">首页</a> / 价格</div>
+  <section class="hero solo">
+    <div>
+      <span class="eyebrow"><i></i>价格</span>
+      <h1>一期多少钱，<br><em>减在哪、退怎么算</em></h1>
+      <p class="lead">把价目表、优惠规则、退费算例放在同一页，是为了让家长在付款前就能自己复核。所有数字与报名页、招生简章一致，到店不加项。</p>
+      <div class="nums"><div class="n"><b>4</b><span>个级别，同级同价</span></div><div class="n"><b>4</b><span>条优惠，只取一条</span></div><div class="n"><b>3</b><span>个退费算例</span></div><div class="n"><b>7</b><span>个工作日办结，不扣手续费</span></div></div>
+    </div>
+    
+  </section>
+
+<section class="sec"><div class="sec-head"><span>价目表</span><h2>四个级别，两档价格</h2><p>先把数字摊开：一期 48 次课、有效期 12 个月、同级同价。线下与线上差 1,000（L4 差 1,500），差的是场地与设备，不是老师。</p></div>
+<div class="table-wrap"><table class="matrix">
+<thead><tr><th style="width:96px">级别</th><th>适合年龄</th><th>每期</th><th>单次</th><th>班额</th><th>线下</th><th>线上</th></tr></thead>
+<tbody>
+<tr><th>L1 启蒙</th><td>6–8 岁</td><td>48 课时</td><td>90 分钟</td><td>6 人</td><td><b>¥4,980</b></td><td>¥3,980</td></tr>
+<tr><th>L2 进阶</th><td>8–10 岁</td><td>48 课时</td><td>90 分钟</td><td>6 人</td><td><b>¥4,980</b></td><td>¥3,980</td></tr>
+<tr><th>L3 Python</th><td>9–12 岁</td><td>48 课时</td><td>90 分钟</td><td>6 人</td><td><b>¥4,980</b></td><td>¥3,980</td></tr>
+<tr><th>L4 竞赛</th><td>11–16 岁</td><td>48 课时</td><td>120 分钟</td><td>8 人</td><td><b>¥7,980</b></td><td>¥6,480</td></tr>
+</tbody></table></div>
+<div class="note"><b>一期 = 48 次课，有效期 12 个月：</b>按每周一次算正好一年，请假顺延不占课时；一期内没上完的课时可结转下一期，不退现。价格含教案、平台账号、教具使用与阶段测评，不含考级报名费、比赛差旅与自购设备。</div>
+<div class="two">
+  <div class="box">
+    <h4>三档价格差在哪</h4>
+    <ul>
+      <li><b>线上比线下低 1,000：</b>省的是场地、通勤与设备折旧，不省老师——线上同样主讲 + 助教双师，只是助教从驻班改为巡课。</li>
+      <li><b>L4 比 L1–L3 高 3,000：</b>单次 120 分钟（多 30 分钟）、8 人班要配竞赛教练、每题都要单独讲评，题库与模拟赛成本另算。</li>
+      <li><b>同级同价：</b>L1、L2、L3 三个级别单价一致，不因为「L3 更难」加价；难度体现在课时内容，不体现在价签。</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>单课时到底多少</h4>
+    <ul>
+      <li>L1–L3 线下：4,980 ÷ 48 ≈ <b>103.75 元/课时</b>；线上 ≈ 82.9 元。</li>
+      <li>L4 线下：7,980 ÷ 48 ≈ <b>166.25 元/课时</b>；线上 ≈ 135 元。</li>
+      <li>按分钟算，L1–L3 线下约 1.15 元/分钟，L4 约 1.39 元/分钟——差距来自师生比与讲评密度，不是「竞赛班溢价」。</li>
+    </ul>
+  </div>
+</div></section>
+<section class="sec"><div class="sec-head"><span>优惠</span><h2>四条优惠，只取一条</h2><p>不做满减券、不做限时秒杀、不做「今天报名再送十课时」。所有减免都在下面四条里，报名页自动取最低价。</p></div>
+<div class="table-wrap"><table class="matrix">
+<thead><tr><th style="width:120px">优惠</th><th>条件</th><th style="width:150px">减多少</th><th style="width:110px">能否叠加</th><th style="width:150px">L3 线下到手</th></tr></thead>
+<tbody>
+<tr><th>两人同报</th><td>两个及以上孩子同时报名，班型与级别不限</td><td>每人各减 300</td><td>不叠加</td><td>4,680</td></tr>
+<tr><th>续费</th><td>老学员在到期前 30 天内续下一期</td><td>整期 9 折</td><td>不叠加</td><td>4,482</td></tr>
+<tr><th>兄妹</th><td>同一家庭第二个孩子报名</td><td>整期 8.5 折</td><td>不叠加</td><td><b>4,233</b></td></tr>
+<tr><th>老带新</th><td>老学员推荐，新学员首次报名</td><td>双方各减 200</td><td>不叠加</td><td>4,780</td></tr>
+</tbody></table></div>
+<div class="note"><b>四条优惠不叠加，系统取最低价：</b>报名页会同时算出四种结果，直接显示最低的那一个，不需要家长自己比。上表以 L3 线下 4,980 为例；L4 线下 7,980 同规则，兄妹价 6,783。<b>不做「先涨后降」：</b>价目表全年公开，折扣只在上面四条里出现。</div></section>
+<section class="sec"><div class="sec-head"><span>退费</span><h2>三个算例，把退费算给你看</h2><p>退费规则最容易被含糊过去，所以直接给算例：上了几次、退多少、几天到账。数字可以自己按公式复核。</p></div>
+<div class="table-wrap"><table class="matrix">
+<thead><tr><th style="width:190px">情形</th><th>规则</th><th style="width:150px">L3 退多少</th><th style="width:150px">L4 退多少</th></tr></thead>
+<tbody>
+<tr><th>第 1–2 次课后</th><td>不满意全额退，已上的课不扣钱</td><td>4,980</td><td>7,980</td></tr>
+<tr><th>第 10 次课后</th><td>按未消耗课时退：38 课时 × 单课时价</td><td>3,942.5</td><td>6,317.5</td></tr>
+<tr><th>第 30 次课后</th><td>按未消耗课时退：18 课时 × 单课时价</td><td>1,867.5</td><td>2,992.5</td></tr>
+</tbody></table></div>
+<div class="note"><b>三个口径写死：</b>①「前两次不满意全额退」指第 1、2 次课结束后的 7 天内提出；②第三次起按未消耗课时退，单课时价 = 实付金额 ÷ 48（用过优惠就按优惠后的实付算，不按原价）；③7 个工作日内办结，不扣手续费，原路退回。上表按原价示例，便于核对。</div></section>
+<section class="sec"><div class="sec-head"><span>付款</span><h2>怎么付、开什么票、不含什么</h2><p>付款方式与发票提前写清；不含的项目也列出来，避免开课后才发现「这个还要另外买」。</p></div>
+<div class="two">
+  <div class="box">
+    <h4>怎么付</h4>
+    <ul>
+      <li><b>一次付清</b>：微信、支付宝、对公转账三选一，开课当天前完成。</li>
+      <li><b>两期付</b>：开课前付 60%，第 9 次课前付 40%；两期都开收据，不押证件。</li>
+      <li><b>发票</b>：普票与专票都能开，报名时填抬头与税号，5 个工作日内发电子票。</li>
+      <li><b>退费路径</b>：原路退回；对公付款退对公账户，不转个人微信。</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>价格里不含什么</h4>
+    <ul>
+      <li><b>考级报名费</b>：GESP、CSP 按主办方当期标准代收，不加价、不返点，缴费凭证转给家长。</li>
+      <li><b>比赛差旅</b>：外地赛事的交通食宿自理，赛前集训不额外收费。</li>
+      <li><b>自购设备</b>：线上课需要一台能装 Python 3.10 以上的电脑，Windows 或 Mac 均可。</li>
+      <li><b>加课</b>：按当期单课时价，提前 3 天约；不卖「课时包」、不催囤课。</li>
+    </ul>
+  </div>
+</div></section>
+<section class="sec"><div class="sec-head"><span>避坑</span><h2>听到这五句话，先停一下</h2><p>这五条不是我们的话术，是家长在别处常遇到的说法。逐条对照，能省掉大部分扯皮。</p></div>
+<div class="box">
+  <h4>五个最常见的价格误解</h4>
+  <ul>
+    <li><b>「便宜一定课时少」：</b>同级别课时数一样是 48 次；差别在线上少了场地与设备成本，不是砍课时。</li>
+    <li><b>「线上便宜所以内容缩水」：</b>同一套教案、同一套作业、同一份测评报告；线上少的是老师走到孩子身边那一步，所以更依赖孩子自己能读题。</li>
+    <li><b>「优惠可以全叠」：</b>四条只取一条。销售口头承诺「都能叠」的，先让他写进报名单再付款。</li>
+    <li><b>「退费要扣手续费」：</b>我们不扣。若对方要扣，问清扣的是哪一条、写在哪份文件里。</li>
+    <li><b>「续费一定同价」：</b>续费 9 折是当期政策，下一期价目表可能调整；我们会在涨价前 30 天书面告知老学员。</li>
+  </ul>
+</div></section>
+<section class="sec"><div class="sec-head"><span>自己算</span><h2>不想听人讲，就自己算一遍</h2><p>两个工具都不留电话：一个按级别与人数算实付，一个把简章下载下来慢慢看。</p></div><div class="tiles g2">
+<a class="tile" href="plan-calculator.html" style="display:block"><i>01</i><h4>课时与费用粗算</h4><p>选级别、班型、人数与学期数，算出课时、原价与优惠后实付，并列出每一项减免从哪来。结果可直接打印。</p></a>
+<a class="tile" href="brochure.html" style="display:block"><i>02</i><h4>招生简章（含 5 页 PDF）</h4><p>价目表、师资与教研、退费条款、三个算例、报名四步与三校区，A4 可打印，也能下载 PDF 转发给家里人。</p></a>
+</div></section>
+
+<section class="sec"><div class="sec-head"><span>FAQ</span><h2>家长最常问的四个问题</h2></div><div class="faq"><details><summary>为什么线上比线下便宜 1,000，老师会差一些吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">不会。同一套教案、同一批老师、同一份测评报告；线上省的是场地租金、通勤与设备折旧，助教从驻班改为巡课。代价是老师不能走到孩子身边替他看屏幕，所以线上更适合能自己读题、家里有人能接一手的孩子。</div></details>
+<details><summary>两个孩子一起报，能同时用兄妹折扣吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">不能，四条优惠只取一条。系统会把「两人同报各减 300」「兄妹 8.5 折」都算出来，取更低的那一个。以 L3 线下为例，兄妹价 4,233 比同报 4,680 更低，所以会显示 4,233。</div></details>
+<details><summary>上了几节课不满意，真的能全退吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">第 1、2 次课结束后的 7 天内提出，全额退，已上的课不扣钱。第三次起按未消耗课时退，单课时价按实付金额 ÷ 48 折算，7 个工作日内办结、不扣手续费、原路退回。</div></details>
+<details><summary>可以分期吗？会不会收利息？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="fb">可以分两期：开课前 60%，第 9 次课前 40%，不收利息、不押证件。也可以一次付清。两种方式都开收据，发票 5 个工作日内发电子票。</div></details></div></section>
+
+  <section class="cta">
+    <div class="tt"><b>算完了，想核对一下实际排课？</b><span>把孩子的年级、基础和每周可用的时间带来，30 分钟内给出分班建议、课时安排与最终报价——报价与网页上的数字一致，不会到店再加项。</span></div>
+    <a class="btn-primary" href="index.html#trial">预约到店核价</a>
+  </section>
+
+</div>
+
+<div class="foot">
+  <p><b>码跃少儿编程 CodeLeap</b> · 合肥 · 高新 / 政务 / 滨湖三校区 · 400-860-2026</p>
+  <p><a href="index.html">官网首页</a> · <a href="curriculum-map.html">课程 × 考级</a> · <a href="stage-finder.html">四道题定起点</a> · <a href="pricing.html">价格与优惠</a> · <a href="plan-calculator.html">课时与费用粗算</a> · <a href="level-test.html">水平小测 8 题</a> · <a href="study-mode.html">自学还是报班</a> · <a href="site-map.html">全站地图</a> · <a href="teaching.html">备课与授课</a> · <a href="platform.html">平台与课堂</a> · <a href="assessment.html">测评体系</a> · <a href="studio.html">作品与创作</a> · <a href="hardware.html">教具与硬件</a> · <a href="admissions.html">招生与学员</a> · <a href="family.html">家校沟通</a> · <a href="operations.html">校区运营</a> · <a href="blog.html">知识库</a> · <a href="team.html">师资与教研</a> · <a href="campus.html">校区与到店</a> · <a href="enroll.html">在线报名</a></p>
+  <p>内容示例站点：页面中的机构数据、师资、价格与流程均为演示内容，正式上线前需替换为真实信息与合同条款。</p>
+</div>
+
+<script>
+(function () {
+  var KEY = "codeleap-theme";
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem(KEY); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  var btn = document.getElementById("themeBtn");
+  if (btn) btn.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+  });
+  document.querySelectorAll(".faq summary").forEach(function (s) {
+    s.addEventListener("click", function () {
+      var d = s.parentElement;
+      if (!d.open) document.querySelectorAll(".faq details[open]").forEach(function (o) { if (o !== d) o.open = false; });
+    });
+  });
+})();
+</script>
+
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="panel">
+    <div class="inp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2l4.6 4.6"/></svg>
+      <input id="sInput" type="text" placeholder="搜索专题与章节，如「排课」「测评报告」「投诉」" autocomplete="off" aria-label="搜索关键词">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="res" id="sRes"></div>
+  </div>
+</div>
+<button class="icon-btn tocFab" id="tocFab" type="button" aria-label="打开本页目录"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></button>
+<div class="tdock" id="tdock" aria-label="本页目录"></div>
+<aside class="toc" id="toc" aria-label="本页目录"></aside>
+<script src="search-index.js"></script>
+<script>
+(function () {
+  var idx = window.__IDX || [];
+  var sbox = document.getElementById('sbox');
+  var sInput = document.getElementById('sInput');
+  var sRes = document.getElementById('sRes');
+  var sBtn = document.getElementById('searchBtn');
+  var lastFocus = null;
+
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+  function openSearch() {
+    lastFocus = document.activeElement;
+    sbox.classList.add('on');
+    setTimeout(function () { sInput.focus(); sInput.select(); }, 30);
+  }
+  function closeSearch() {
+    sbox.classList.remove('on');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function hrefOf(it) { return it.u + (it.id ? '#' + it.id : ''); }
+  function render() {
+    var q = sInput.value.trim().toLowerCase();
+    var list = q
+      ? idx.filter(function (it) { return (it.t + ' ' + it.k + ' ' + it.p + ' ' + (it.x || '')).toLowerCase().indexOf(q) > -1; })
+      : idx.slice(0, 8);
+    list = list.slice(0, 10);
+    if (!list.length) {
+      sRes.innerHTML = '<div class="empty">没有匹配的章节，换个词试试，比如「排课」「报告」「投诉」</div>';
+      return;
+    }
+    sRes.innerHTML = list.map(function (it, i) {
+      return '<a class="item' + (i === 0 ? ' on' : '') + '" href="' + hrefOf(it) + '"><b>' + esc(it.t) + '</b><span>' + esc(it.p) + ' · ' + esc(it.k) + '</span></a>';
+    }).join('');
+    sRes.querySelectorAll('.item').forEach(function (a) {
+      a.addEventListener('click', function () { sbox.classList.remove('on'); });
+    });
+  }
+  if (sBtn) sBtn.addEventListener('click', openSearch);
+  if (sInput) sInput.addEventListener('input', render);
+  if (sbox) sbox.addEventListener('click', function (e) { if (e.target === sbox) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sbox.classList.contains('on')) closeSearch();
+    var tag = (document.activeElement || {}).tagName;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openSearch(); }
+    if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+  });
+
+  // 本页目录：按 sec-head 顺序编号，与索引一致
+  var heads = [].slice.call(document.querySelectorAll('.wrap .sec .sec-head h2'));
+  var toc = document.getElementById('toc');
+  var dock = document.getElementById('tdock');
+  var fab = document.getElementById('tocFab');
+  var html = '<b>本页目录</b>';
+  heads.forEach(function (h, i) { h.id = 's' + (i + 1); html += '<a href="#s' + (i + 1) + '">' + esc(h.textContent) + '</a>'; });
+  if (heads.length) {
+    if (toc) toc.innerHTML = html;
+    if (dock) dock.innerHTML = html;
+  }
+  if (fab) fab.addEventListener('click', function () { dock.classList.toggle('on'); });
+  if (dock) dock.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') dock.classList.remove('on');
+  });
+  var links = (toc ? toc.querySelectorAll('a') : []);
+  var dlinks = (dock ? dock.querySelectorAll('a') : []);
+  function spy() {
+    var y = window.scrollY + 130, cur = -1;
+    heads.forEach(function (h, i) { if (h.getBoundingClientRect().top + window.scrollY <= y) cur = i; });
+    links.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+    dlinks.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+  }
+  window.addEventListener('scroll', spy, { passive: true });
+  spy();
+})();
+</script>
+</body>
+</html>
