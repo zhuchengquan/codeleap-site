@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2027 寒假集训营 · 码跃少儿编程</title>
-<meta name="description" content="码跃少儿编程 2027 寒假集训营：5 天 15 课时，每营 12 人，结营带走一个能玩的游戏。图形化、Python、C++ 三个营，合肥三个校区与线上同步开营。">
+<meta name="description" content="码跃少儿编程 2027 寒假集训营：5 天 15 课时，每营 12 人。三个营每天交什么、第五天结营展示怎么走、报名前必确认的六件事、携带清单与退改口径，全部写清。">
 <link rel="preconnect" href="https://miaoda.feishu.cn">
 <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
@@ -289,9 +289,25 @@ input.bad { border-color: var(--accent); }
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="码跃少儿编程 CodeLeap">
 <meta property="og:title" content="2027 寒假集训营 · 码跃少儿编程">
-<meta property="og:description" content="码跃少儿编程 2027 寒假集训营：5 天 15 课时，每营 12 人，结营带走一个能玩的游戏。图形化、Python、C++ 三个营，合肥三个校区与线上同步开营。">
+<meta property="og:description" content="码跃少儿编程 2027 寒假集训营：5 天 15 课时，每营 12 人。三个营每天交什么、第五天结营展示怎么走、报名前必确认的六件事、携带清单与退改口径，全部写清。">
 <meta property="og:url" content="https://codeleap.example/camp.html">
 <meta name="twitter:card" content="summary_large_image">
+<style>
+.ctbl-wrap{overflow-x:auto;margin-top:18px;border:1px solid var(--stroke);border-radius:14px;background:var(--glass-2)}
+.ctbl{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+.ctbl th,.ctbl td{padding:11px 13px;text-align:left;vertical-align:top;line-height:1.7;border-bottom:1px solid var(--stroke)}
+.ctbl thead th{background:var(--primary-soft);font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap}
+.ctbl tbody th{white-space:nowrap;font-weight:600;color:var(--ink);background:var(--bg-2)}
+.ctbl td{color:var(--muted)}
+.ctbl tr:last-child th,.ctbl tr:last-child td{border-bottom:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.box{padding:20px 22px;border-radius:16px;background:var(--glass-2);border:1px solid var(--stroke)}
+.box h4{margin:0 0 10px;font-size:14.5px;font-weight:700;color:var(--ink)}
+.box ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.box li{font-size:13px;line-height:1.85;color:var(--muted)}
+.box li b{color:var(--ink);font-weight:600}
+</style>
 </head>
 <body>
 
@@ -403,6 +419,74 @@ input.bad { border-color: var(--accent); }
 
   <section class="sec">
     <div class="sec-head">
+      <span>每天交什么</span>
+      <h2 id="ps2b">五天的产物，一天一件</h2>
+      <p>集训营不是「上五天课」，是五天做同一个东西。下表是三个营每天的交付物——第五天能展示什么，取决于前四天有没有真的做出来。</p>
+    </div>
+    <div class="ctbl-wrap">
+      <table class="ctbl">
+        <thead><tr><th style="width:56px">天</th><th>图形化游戏营</th><th>Python 小项目营</th><th>C++ 算法冲刺营</th></tr></thead>
+        <tbody>
+          <tr><th>第 1 天</th><td>角色与坐标，气球会飞、会随机出现</td><td>事件循环，窗口能开、蛇能按键移动</td><td>排序与二分，独立过 3 道模板题</td></tr>
+          <tr><th>第 2 天</th><td>克隆与随机，气球分批出现、有快有慢</td><td>碰撞检测，吃到食物加分、撞墙结束</td><td>二分边界，独立过 4 题，含 1 道错题重做</td></tr>
+          <tr><th>第 3 天</th><td>变量计分与倒计时，游戏有输赢</td><td>计分与难度递增，蛇越吃越快</td><td>贪心与枚举的取舍，讲评 3 道综合题</td></tr>
+          <tr><th>第 4 天</th><td>关卡与音效，第二关比第一关难</td><td>文件读写，做出能整理班级成绩的小工具</td><td>简单动规，2 道综合题写出完整推导</td></tr>
+          <tr><th>第 5 天</th><td>完整游戏打包，3 分钟讲给同学听</td><td>两个项目打包，现场演示并讲清一个卡点</td><td>3 小时模拟赛 + 逐题复盘，带走错题清单</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-line" style="margin-top:14px">每天 12:00 前必须跑通当天的东西，跑不通就留堂 15 分钟——不给「明天再说」留口子，因为第二天直接在前一天的作品上改。</div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span>结营</span>
+      <h2 id="ps2c">最后两小时，家长进场</h2>
+      <p>结营不是发张证书就结束。第五天上午留出两小时，让孩子把自己做的东西讲清楚——讲得清，才算真的会。</p>
+    </div>
+    <div class="days">
+      <div class="day"><div class="d"><b>10:30</b><span>最后一次调试</span></div><p>只修「演示必现」的问题，不加新功能。加功能是通病：越加越跑不通。</p></div>
+      <div class="day"><div class="d"><b>11:00</b><span>家长进场</span></div><p>坐后排，不打断。手机可以拍，但别开闪光灯、别出声提示。</p></div>
+      <div class="day"><div class="d"><b>11:10</b><span>每人 3 分钟</span></div><p>说三件事：<b>做了什么、卡在哪、怎么解决的</b>。说不清「怎么解决」的，老师当场补问。</p></div>
+      <div class="day"><div class="d"><b>11:50</b><span>证书与链接</span></div><p>结营证书、作品链接、五天过程记录一起发；源文件当场拷走，不留服务器。</p></div>
+      <div class="day"><div class="d"><b>12:00</b><span>结束</span></div><p>家长接走。来不了的，当天下午把作品链接与 3 分钟录像发到家长端。</p></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span>报名前</span>
+      <h2 id="ps2d">先确认这六件事，再缴费</h2>
+      <p>集训营是连续五天，冲突成本比常规课高。下面六件事在缴费前说清，避免开营后才发现不合适。</p>
+    </div>
+    <div class="two">
+      <div class="box">
+        <h4>六件事</h4>
+        <ul>
+          <li><b>接送时间：</b>每天 9:00–12:00，最早 8:40 开门；12:30 前必须接走。</li>
+          <li><b>午饭：</b>不含。上午营 12:00 结束，建议接回家吃；校区等候区可坐到 12:30。</li>
+          <li><b>设备：</b>线下由校区提供；线上自备电脑，开营前一天有 30 分钟设备测试。</li>
+          <li><b>缺席：</b>不单独补课。缺一天会明显掉队，可转下一期（名额允许时）。</li>
+          <li><b>退改：</b>按「政策与条款」3.2 执行，开营前 7 日以上全额退（扣材料费）。</li>
+          <li><b>分营：</b>按测评结果，不按年龄硬排；测评分营不收费用。</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h4>每天带什么</h4>
+        <ul>
+          <li><b>水杯</b>（校区有饮水机，不带饮料）。</li>
+          <li><b>外套</b>：教室空调偏冷，坐三小时容易凉。</li>
+          <li><b>笔记本与笔</b>（可选）：C++ 营建议带，用来抄错题。</li>
+          <li><b>线上营</b>：电脑、充电器、耳机；提前装好浏览器与 Python。</li>
+          <li><b>不带</b>：零食、玩具、电话手表（上课统一收进收纳盒）。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note-line" style="margin-top:14px">退改细则：开营前 7 日以上全额退（扣材料费）；7 日内退 90%；开营后按未开始天数折算、扣 10% 组织成本；已过 3 天及以上不退。详见 <a href="legal.html#camp" style="color:var(--primary);font-weight:500">政策与条款 3.2</a>。</div>
+  </section>
+
+    <section class="sec">
+    <div class="sec-head">
       <span>价格</span>
       <h2 id="ps3">一期一价，含材料与结营展示</h2>
     </div>
@@ -486,7 +570,7 @@ input.bad { border-color: var(--accent); }
   <section class="sec">
     <div class="sec-head">
       <span>常见问题</span>
-      <h2 id="ps5">家长最常问的四件事</h2>
+      <h2 id="ps5">家长最常问的六个问题</h2>
     </div>
     <div class="faq">
       <details open>
@@ -505,9 +589,16 @@ input.bad { border-color: var(--accent); }
         <summary>结营有证书吗？对升学有用吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
         <div class="fb">有结营证书和作品展示，但它是学习记录，不是竞赛奖项。真正对升学有帮助的是 GESP 与 CSP-J/S 的认证成绩，集训营里 C++ 营会顺带做赛前准备，证书本身不作任何升学承诺。</div>
       </details>
+      <details>
+        <summary>中午管饭吗？家长要全程陪着吗？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="fb">不管饭。上午营 12:00 结束，建议接回家吃；校区等候区可坐到 12:30。上课期间家长不陪，第五天结营展示可以来，坐后排看完整个展示。</div>
+      </details>
+      <details>
+        <summary>线下要自带电脑吗？线上呢？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="fb">线下不用，校区提供台式机与外设。线上要自备一台能装 Scratch 或 Python 的电脑（Windows / Mac 均可），开营前一天有 30 分钟设备测试，测不通可以改线下（名额允许时）。</div>
+      </details>
     </div>
   </section>
-
 </main>
 
 <div class="foot">
